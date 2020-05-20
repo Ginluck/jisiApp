@@ -185,7 +185,7 @@
         ShowMessage(@"没有家族id");
         return;
     }
-        NSDictionary * param =@{@"jzId":model.jzId,@"spouseId":@"1",@"firstGeneration":@"1"};
+        NSDictionary * param =@{@"jzId":@"1",@"spouseId":@"1",@"firstGeneration":@"1"};
         [RequestHelp POST:JS_SELECT_ZPLIST_URL parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyTreeModel class] json:result]];
