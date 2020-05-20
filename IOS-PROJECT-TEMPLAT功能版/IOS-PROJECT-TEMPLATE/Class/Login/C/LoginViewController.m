@@ -79,10 +79,13 @@
 //        [JPUSHService setAlias:modal.id completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
 //
 //        } seq:5];
-//        EMError *error = [[EMClient sharedClient] loginWithUsername:self.PWLView.UserNumberTF.text password:result[@"password"]];
-//        if (!error) {
-//            DLog(@"登录成功");
-//        }
+        [[EMClient sharedClient] loginWithUsername:self.NumberTF.text password:modal.password completion:^(NSString *aUsername, EMError *aError) {
+            if (!aError) {
+                NSLog(@"登录成功");
+            } else {
+                NSLog(@"登录失败的原因---%@", aError.errorDescription);
+            }
+        }];
     } failure:^(NSError *error) {
 
     }];
