@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"设置";
+   [self addNavigationTitleView:@"设置"];
     [self.view addSubview:self.tableView];
        [self.view sendSubviewToBack:self.tableView];
        self.tableView.backgroundColor=COLOR(244, 245, 246, .8);

@@ -17,7 +17,17 @@
 @end
 
 @implementation RegisterViewController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self hideNavigationBar:YES animated:NO];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    self.editing=NO;
+    [self hideNavigationBar:NO animated:NO];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.NavHeight.constant =kNavagationBarH;
@@ -25,8 +35,8 @@
      //需要点击的字符不同
         NSString *label_text2 = @"同意《协议》";
         NSMutableAttributedString *attributedString2 = [[NSMutableAttributedString alloc]initWithString:label_text2];
-        [attributedString2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(2, 2)];
-        [attributedString2 addAttribute:NSForegroundColorAttributeName value:[UIColor darkTextColor] range:NSMakeRange(2, 2)];
+        [attributedString2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(2, 4)];
+        [attributedString2 addAttribute:NSForegroundColorAttributeName value:[UIColor darkTextColor] range:NSMakeRange(2, 4)];
         
         self.xieyiLab.attributedText = attributedString2;
     //    WS(weakSelf);
@@ -151,6 +161,16 @@
         
     }];
     
+}
+- (IBAction)HideClick:(UIButton *)sender {
+    if ([sender.currentBackgroundImage isEqual:[UIImage imageNamed:@"eye_close"]] ) {
+        [sender setBackgroundImage:[UIImage imageNamed:@"eye_open"] forState:UIControlStateNormal];
+        self.PwdTF.secureTextEntry=NO;
+    }else
+    {
+        [sender setBackgroundImage:[UIImage imageNamed:@"eye_close"] forState:UIControlStateNormal];
+         self.PwdTF.secureTextEntry=YES;
+    }
 }
 
 /*

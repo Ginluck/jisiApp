@@ -65,7 +65,15 @@ static char *changeLocation = "location";
     dispatch_once(&once_t, ^{
        UITextField *textField = [[UITextField alloc] init];
        textField.placeholder = @" ";
-       color = [textField valueForKeyPath:@"_placeholderLabel.textColor"];
+    
+         if (@available(iOS 13.0, *)) {
+             Ivar ivar =  class_getInstanceVariable([UITextField class], "_placeholderLabel.textColor");
+             color = object_getIvar(textField, ivar);
+           } else {
+               color = [textField valueForKeyPath:@"_placeholderLabel.textColor"];
+           }
+        
+     
     });
     return color;
 }

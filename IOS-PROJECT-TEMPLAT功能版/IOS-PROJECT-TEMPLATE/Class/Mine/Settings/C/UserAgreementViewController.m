@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"用户协议";
+    [self addNavigationTitleView:@"用户协议"];
     // Do any additional setup after loading the view from its nib.
 }
 

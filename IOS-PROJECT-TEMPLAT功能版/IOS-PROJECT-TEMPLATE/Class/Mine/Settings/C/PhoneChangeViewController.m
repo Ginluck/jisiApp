@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"绑定手机";
+    [self addNavigationTitleView:@"绑定手机"];
     UserModel * model =[[UserManager shareInstance]getUser];
     self.PhoneLab.text=model.userPhone;
     // Do any additional setup after loading the view from its nib.

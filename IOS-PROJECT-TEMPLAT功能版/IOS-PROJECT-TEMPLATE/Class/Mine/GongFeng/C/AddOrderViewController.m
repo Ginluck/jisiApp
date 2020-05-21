@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"确认订单";
+    [self addNavigationTitleView:@"确认订单"];
     [self.BuyBtn addTarget:self action:@selector(GoNextView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.tableView];
        [self regisNib];

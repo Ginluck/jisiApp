@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.title =@"供奉记录";
+    [self addNavigationTitleView:@"供奉记录"];
         // Do any additional setup after loading the view from its nib.
         self.tabedSlideView.baseViewController = self;
         //未选中字体颜色

@@ -9,10 +9,10 @@
 #import "SetHeadViewController.h"
 #import "MyIntroductionViewController.h"
 #import "SheZhiNameViewController.h"
-#import "GusetChooseCityView.h"
+#import "AddrChooseController.h"
+#import "MineDataModel.h"
 @interface SetHeadViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
-@property(nonatomic,strong)GusetChooseCityView *GCCView;
 @property(nonatomic,strong)UIView *BackGroundView;
 @end
 
@@ -20,24 +20,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self GetBackGroundView];
+    [self addNavigationTitleView:@"个人资料"];
+    [self requsetData];
     // Do any additional setup after loading the view from its nib.
 }
--(void)GetBackGroundView
+-(void)requsetData
 {
-    _BackGroundView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
-           _BackGroundView.backgroundColor =[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-            [[[UIApplication sharedApplication]keyWindow]addSubview:self.BackGroundView];
-           UIButton * btn =[UIButton buttonWithType:UIButtonTypeCustom];
-           btn.frame =CGRectMake(0, 0, Screen_Width, Screen_Height);
-           btn.backgroundColor =[UIColor clearColor];
-           [btn addTarget:self action:@selector(removeBtnClick) forControlEvents:UIControlEventTouchUpInside];
-           [_BackGroundView addSubview:btn];
-           _BackGroundView.hidden=YES;
-    _GCCView=[[NSBundle mainBundle]loadNibNamed:@"GusetChooseCityView" owner:nil options:nil][0];
-          [_GCCView.CencelBtn addTarget:self action:@selector(removeBtnClick) forControlEvents:UIControlEventTouchUpInside];
-          _GCCView.frame=CGRectMake(0, Screen_Height, Screen_Width, 0);
-          [_BackGroundView addSubview:_GCCView];
+    UserModel * model =[[UserManager shareInstance]getUser];
+       NSDictionary* param_dic =@{@"userPhone":model.userPhone};
+       [RequestHelp POST:SELECT_USERINFO_url parameters:param_dic success:^(id result) {
+           MKLog(@"%@",result);
+         MineDataModel *model =[MineDataModel yy_modelWithJSON:result];
+            [self.HeadImg sd_setImageWithURL:[NSURL URLWithString:model.headAddress] placeholderImage:[UIImage imageNamed:@"临时占位图"]];
+            self.NumberLab.text=model.userPhone;
+            self.Namelab.text=model.realName;
+            self.AddressLab.text=model.address;
+       } failure:^(NSError *error) {
+           
+       }];
 }
 - (IBAction)Click:(UIButton *)sender {
      WS(weakSelf);
@@ -69,22 +69,27 @@
                 break;
             case 102:
             {
-                              self.editing =YES;
-                              self.BackGroundView.hidden=NO;
-                              self.GCCView.hidden=NO;
-                              [UIView animateWithDuration:0.5 animations:^{
-                                  self.GCCView.frame = CGRectMake(0,Screen_Height-(Screen_Height-kNavagationBarH-kBottomLayout)/2-50, Screen_Width,(Screen_Height-kNavagationBarH-kBottomLayout)/2+50);
-                                  
-                              }];
-                              self.GCCView.CMBlock = ^(NSString * _Nonnull shengId, NSString * _Nonnull shengName, NSString * _Nonnull shiId, NSString * _Nonnull shiName, NSString * _Nonnull xianId, NSString * _Nonnull xianName) {
-               //                           [weakSelf.GetDataDic setObject:shengId forKey:@"provinceId"];
-               //                           [weakSelf.GetDataDic setObject:shiId forKey:@"cityId"];
-               //                           [weakSelf.GetDataDic setObject:xianId forKey:@"areaId"];
-               //                          [sender setTitle:[NSString stringWithFormat:@"%@%@%@",shengName,shiName,xianName] forState:UIControlStateNormal];
-               //                   [sender setTitleColor:COLOR_HEX(0x666666) forState:UIControlStateNormal];
-                                        [weakSelf removeBtnClick];
-                                      };
-
+                AddrChooseController * avc =[AddrChooseController new];
+                avc.selectedRoomBlock = ^(NSObject * _Nonnull model) {
+                    if ([model isKindOfClass:[QMSReGeoCodePoi class]])
+                    {
+                        QMSReGeoCodePoi * code =(QMSReGeoCodePoi*)model;
+                       self.AddressLab.text=code.title;
+//                        self.addr =code.title;
+//                        self.lon =[NSString stringWithFormat:@"%f",code.location.longitude];
+//                        self.lat =[NSString stringWithFormat:@"%f",code.location.latitude];
+                    }
+                    else if ([model isKindOfClass:[QMSSuggestionPoiData class]])
+                    {
+                        QMSSuggestionPoiData * code =(QMSSuggestionPoiData*)model;
+//                        self.addr =code.title;
+//                        [self.detailAddr setTitle:code.title forState:UIControlStateNormal];
+//                        self.lon =[NSString stringWithFormat:@"%f",code.location.longitude];
+//                        self.lat =[NSString stringWithFormat:@"%f",code.location.latitude];
+                        self.AddressLab.text=code.title;
+                    }
+                };
+                [self.navigationController pushViewController:avc animated:YES];
             }
                 break;
             case 103:
@@ -189,13 +194,7 @@
         DismissHud();
     }];
 }
--(void)removeBtnClick
-{
-    [UIView animateWithDuration:0.5 animations:^{
-        self.BackGroundView.hidden=YES;
-         self.GCCView.frame =CGRectMake(0,Screen_Height, Screen_Width, 0);
-    }];
-}
+
 /*
 #pragma mark - Navigation
 

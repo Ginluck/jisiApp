@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetHeadViewController">
             <connections>
+                <outlet property="AddressLab" destination="zxt-Df-2cm" id="06I-la-3Sk"/>
+                <outlet property="HeadImg" destination="WIW-93-Fsk" id="pW9-e8-xsx"/>
+                <outlet property="Namelab" destination="0GS-zO-PHe" id="pZP-oi-RW7"/>
+                <outlet property="NumberLab" destination="hs5-16-p6a" id="4Zu-RT-h0U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

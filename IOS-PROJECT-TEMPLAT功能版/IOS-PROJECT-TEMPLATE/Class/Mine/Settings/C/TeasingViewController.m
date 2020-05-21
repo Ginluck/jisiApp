@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.BgView addSubview:self.TxtView];
-    self.title=@"意见反馈";
+    [self addNavigationTitleView:@"意见反馈"];
     // Do any additional setup after loading the view from its nib.
     self.TxtView.placeholder=@"写点什么吧...";
     self.TxtView.placeholderColor=[UIColor lightGrayColor];
