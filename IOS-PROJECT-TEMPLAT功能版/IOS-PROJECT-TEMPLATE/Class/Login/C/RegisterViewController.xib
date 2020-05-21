@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录页面底图" translatesAutoresizingMaskIntoConstraints="NO" id="yfT-Lv-TJx">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO图标" translatesAutoresizingMaskIntoConstraints="NO" id="As1-Z2-H0w">
                     <rect key="frame" x="162" y="92" width="90" height="90"/>
@@ -170,7 +170,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="bbT-dZ-pvl" firstAttribute="leading" secondItem="eHw-Wd-ueg" secondAttribute="leading" id="2aN-T2-TJ2"/>
                         <constraint firstItem="5Lj-sJ-JCy" firstAttribute="centerY" secondItem="bbT-dZ-pvl" secondAttribute="centerY" id="4jF-gr-AYg"/>
