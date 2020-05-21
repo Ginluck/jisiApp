@@ -17,5 +17,9 @@
     // Drawing code
 }
 */
-
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.height.constant =Screen_Width * 256/1027;
+}
 @end

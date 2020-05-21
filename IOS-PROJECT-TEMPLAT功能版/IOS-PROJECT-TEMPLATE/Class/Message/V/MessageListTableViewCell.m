@@ -16,22 +16,22 @@
     [super awakeFromNib];
     // Initialization code
 }
-//-(void)refresh:(MessageModelList *)model
-//{
-//    self.nameLabel.text =model.userName;
-//    self.messageLabel.text =model.lastMessage;
-//    self.timeLabel.text =model.messageTime;
-//    [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.headAddress] placeholderImage:ImageNamed(@"header")];
+-(void)refreshSystem:(MessageListModel *)model;
+{
+    self.nameLabel.text =model.title;
+    self.messageLabel.text =model.content;
+    self.timeLabel.text =model.create_time;
+    [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:KImageNamed(@"header")];
 //    if ([model.isRead isEqualToString:@"1"])
 //    {
-//        self.isRead.hidden =YES;
+        self.isRead.hidden =YES;
 //    }
 //    else
 //    {
 //        self.isRead.hidden=NO;
 //    }
-//    
-//}
+//
+}
 //-(void)refreshHouse:(SystemMessageModel *)model
 //{
 //    self.nameLabel.text =model.title;

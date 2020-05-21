@@ -532,6 +532,8 @@
 		715EED7524750E02009CF31A /* CallSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECE424750E02009CF31A /* CallSettingViewController.m */; };
 		715EED7624750E02009CF31A /* EMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECE624750E02009CF31A /* EMButton.m */; };
 		715EED7724750E02009CF31A /* EMStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECEB24750E02009CF31A /* EMStreamView.m */; };
+		715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */; };
+		715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EED7C24765FFA009CF31A /* MessageListModel.m */; };
 		719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */; };
 		719CEBC12474FEFF00E29E8C /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */; };
 		719CEBC22474FEFF00E29E8C /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 719CEBBC2474FEFF00E29E8C /* Loading.gif */; };
@@ -1401,6 +1403,9 @@
 		715EECEA24750E02009CF31A /* EMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMButton.h; sourceTree = "<group>"; };
 		715EECEB24750E02009CF31A /* EMStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStreamView.m; sourceTree = "<group>"; };
 		715EED782475249F009CF31A /* IOS-PROJECT-TEMPLATE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IOS-PROJECT-TEMPLATE.entitlements"; sourceTree = "<group>"; };
+		715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "洪真英-活着 (Cheer Up).mp3"; sourceTree = "<group>"; };
+		715EED7B24765FFA009CF31A /* MessageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
+		715EED7C24765FFA009CF31A /* MessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
 		719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
 		719CEBBC2474FEFF00E29E8C /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
@@ -1908,6 +1913,8 @@
 		711B0BAD246946E6009C84DB /* M */ = {
 			isa = PBXGroup;
 			children = (
+				715EED7B24765FFA009CF31A /* MessageListModel.h */,
+				715EED7C24765FFA009CF31A /* MessageListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3075,6 +3082,7 @@
 				71BEE55B22CB52A200E1B9E3 /* APPEntry */,
 				71BEE55A22CB529500E1B9E3 /* Frameworks */,
 				71BEE52222CB51EB00E1B9E3 /* ViewController.h */,
+				715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */,
 				71BEE52322CB51EB00E1B9E3 /* ViewController.m */,
 				71BEE52D22CB51ED00E1B9E3 /* Info.plist */,
 				71BEE52822CB51ED00E1B9E3 /* Assets.xcassets */,
@@ -3569,6 +3577,7 @@
 				715EED6924750E02009CF31A /* speaker_gray@2x.png in Resources */,
 				71E55BB5246E65C500255230 /* AddOrderTableViewCell.xib in Resources */,
 				715EEB4B24750DDC009CF31A /* icon_007.gif in Resources */,
+				715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */,
 				71E55BE1246E7C3F00255230 /* CitangHeaderView.xib in Resources */,
 				715EED6824750E02009CF31A /* mute_red@2x.png in Resources */,
 				715EEB4C24750DDC009CF31A /* icon_022.gif in Resources */,
@@ -4232,6 +4241,7 @@
 				711B0B8024692B0C009C84DB /* UIView+PYSearchExtension.m in Sources */,
 				715EECFA24750E02009CF31A /* AudioRecord.m in Sources */,
 				715EECEE24750E02009CF31A /* DemoCallManager.m in Sources */,
+				715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */,
 				711B0A922469294C009C84DB /* UserTextView.m in Sources */,
 				715EEBB624750DDC009CF31A /* EMAtGroupMembersViewController.m in Sources */,
 				711B0A9824692953009C84DB /* RegisterViewController.m in Sources */,

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CitangHeaderView : UIView
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *height;
 @end
 
 NS_ASSUME_NONNULL_END

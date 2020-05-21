@@ -10,11 +10,13 @@
 #import "CitangCell.h"
 #import "HomeTableHeaderView.h"
 #import "CitangListModel.h"
+#import <AVFoundation/AVFoundation.h> //音频视频框架
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
 @property(nonatomic,assign)NSInteger  page;
 @property(nonatomic,strong)HomeTableHeaderView  * headerView;
+@property(nonatomic,strong)AVAudioPlayer *player;
 @end
 
 @implementation HomeViewController
@@ -22,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"祠堂"];
-   
+    [self addNavigationItemWithImageName:@"音乐图标" itemType:kNavigationItemTypeRight action:@selector(soundClick)];
     [self.view addSubview:self.tableView];
     [self regisNib];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -34,6 +36,26 @@
         
     }];
     //     Do any additional setup after loading the view from its nib.
+}
+
+-(AVAudioPlayer *)player
+{
+    if (!_player) {
+          NSURL *url = [[NSBundle mainBundle] URLForResource:@"洪真英-活着 (Cheer Up).mp3" withExtension:nil];
+        _player =[[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil];
+    }
+    return _player;
+}
+-(void)soundClick
+{
+    [self.player prepareToPlay];
+    if (self.player.isPlaying) {
+        [self.player pause];
+    }
+    else
+    {
+        [self.player play];
+    }
 }
 -(HomeTableHeaderView *)headerView
 {

@@ -19,7 +19,7 @@
 /*
  常用文字，背景，线条颜色设置根据不同项目自定义补充
  */
-#define K_Prokect_MainColor COLOR(0, 0, 0, 0.7)      //主题颜色
+#define K_Prokect_MainColor COLOR(94, 17, 35, 1)      //主题颜色
 
 #define k_Project_TabbarTextColor COLOR_HEX(0x666666) //底部导航栏文字默认颜色
 #define kBGViewCOLOR COLOR_HEX(0xf5f5f5)

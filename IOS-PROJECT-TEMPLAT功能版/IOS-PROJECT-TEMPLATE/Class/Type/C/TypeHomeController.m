@@ -59,7 +59,7 @@
         _tableView.dataSource = self;
         _tableView.tableHeaderView =self.headerView;
         UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
-        imageV.image =KImageNamed(@"祠堂背景");
+        imageV.image =KImageNamed(@"家谱背景");
         _tableView.backgroundView =imageV;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;

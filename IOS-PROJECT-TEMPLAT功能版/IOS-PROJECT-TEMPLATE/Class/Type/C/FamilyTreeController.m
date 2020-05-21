@@ -14,6 +14,7 @@
 #import "AddNewMemberController.h"
 #import "MemberDetailController.h"
 #import "FamilyTreeModel.h"
+#import "EMChatViewController.h"
 @interface FamilyTreeController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,FamilyCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -124,7 +125,7 @@
 {
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-    SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:@[@"查看成员信息",@"编辑成员信息",@"添加上一代",@"添加下一代",@"删除"]];
+    SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:@[@"查看成员信息",@"编辑成员信息",@"添加上一代",@"添加下一代",@"发起聊天",@"删除"]];
     actionSheet.itemTextFont =MKFont(13);
     actionSheet.cancelTextFont =MKFont(13);
     actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
@@ -153,7 +154,11 @@
             [self.navigationController pushViewController:fvc animated:YES];
         }
         if (index == 4) {
-          
+//            EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:model.userPhone type:EMConversationTypeChat createIfNotExist:YES];
+//            chatController.userName =model.userName;
+//            chatController.sendUrl =model.headAddress;
+//            chatController.hidesBottomBarWhenPushed=YES;
+//            [self.navigationController pushViewController:chatController animated:YES];
         }
         MKLog(@"%@",text);
     }];

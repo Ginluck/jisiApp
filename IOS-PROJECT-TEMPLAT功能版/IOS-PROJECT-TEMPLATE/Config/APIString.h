@@ -59,8 +59,8 @@
 #define JS_SELECT_CTLIST_URL @"appCt/selectByAppCiTang"
 //添加上一代or下一代
 #define JS_ADD_NEWMEMBER_URL @"appZp/addAppZuPu"
-//寻找家族
-//#define JS_FIND_FAMILY_URL @"appJz/selectByUser"
+//系统消息
+#define JS_SYSMESSAGE_LILST_URL @"appPushRecord/list"
 
 
 

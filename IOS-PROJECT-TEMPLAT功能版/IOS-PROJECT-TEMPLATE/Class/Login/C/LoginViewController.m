@@ -79,7 +79,7 @@
 //        [JPUSHService setAlias:modal.id completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
 //
 //        } seq:5];
-        [[EMClient sharedClient] loginWithUsername:self.NumberTF.text password:modal.password completion:^(NSString *aUsername, EMError *aError) {
+        [[EMClient sharedClient] loginWithUsername:modal.ringLetterId password:modal.password completion:^(NSString *aUsername, EMError *aError) {
             if (!aError) {
                 NSLog(@"登录成功");
             } else {
