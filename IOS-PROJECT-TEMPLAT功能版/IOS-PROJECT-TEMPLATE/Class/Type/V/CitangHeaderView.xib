@@ -37,10 +37,14 @@
                 <constraint firstItem="ivh-wn-6tn" firstAttribute="trailing" secondItem="e8K-jP-mSE" secondAttribute="trailing" id="d8f-aa-aoW"/>
                 <constraint firstItem="ivh-wn-6tn" firstAttribute="leading" secondItem="e8K-jP-mSE" secondAttribute="leading" id="eJp-t0-A2p"/>
                 <constraint firstItem="dVq-ys-Im3" firstAttribute="top" secondItem="ivh-wn-6tn" secondAttribute="bottom" id="eYt-Zl-81J"/>
+                <constraint firstItem="dVq-ys-Im3" firstAttribute="bottom" secondItem="e8K-jP-mSE" secondAttribute="bottom" id="h0q-zF-5ZO"/>
                 <constraint firstItem="e8K-jP-mSE" firstAttribute="trailing" secondItem="dVq-ys-Im3" secondAttribute="trailing" id="ySj-EP-axz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="e8K-jP-mSE"/>
+            <connections>
+                <outlet property="height" destination="TIg-XX-YIJ" id="q0E-ZS-JbY"/>
+            </connections>
             <point key="canvasLocation" x="594" y="-102"/>
         </view>
     </objects>

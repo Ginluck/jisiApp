@@ -14,9 +14,12 @@
 #import "FamilyListModel.h"
 //引入地图库头文件
 #import <QMapKit/QMapKit.h>
+#import "FamilyDescController.h"
 @interface OrderHomeController ()<QMapViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
+
+@property(nonatomic,strong)NSMutableArray  * nameAry ;
 @property(nonatomic,assign)NSInteger  page;
 @property (nonatomic, strong) QMapView *mapView;
 @end
@@ -40,7 +43,13 @@
 }
 
 
-
+-(NSMutableArray *)nameAry
+{
+    if (!_nameAry) {
+        _nameAry =[NSMutableArray array];
+    }
+    return _nameAry;
+}
 -(void)setUICompoents
 {
     UIView * topView =[[UIView alloc]initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, 50)];
@@ -87,6 +96,7 @@
                     FamilyListModel * model =self.dataAry[i];
                         QPointAnnotation *pointAnnotation = [[QPointAnnotation alloc] init];
                         CLLocationCoordinate2D point = (CLLocationCoordinate2D){[model.lat floatValue],[model.lon floatValue]};
+                    [self.nameAry addObject:model.name];
                     pointAnnotation.coordinate = point;
                         // 点标注的标题
                     pointAnnotation.title = model.name;
@@ -112,7 +122,7 @@
     if ([annotation isKindOfClass:[QPointAnnotation class]]) {
         static NSString *annotationIdentifier = @"pointAnnotation";
         QPinAnnotationView *pinView = (QPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
-        pinView.selected=YES;
+        
         if (pinView == nil) {
             pinView = [[QPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
             pinView.canShowCallout = YES;
@@ -127,7 +137,16 @@
 
 - (void)mapView:(QMapView *)mapView didSelectAnnotationView:(QAnnotationView *)view
 {
+    NSInteger index =[self.nameAry indexOfObject:view.annotation.title];
     
+    FamilyListModel * model =self.dataAry[index];
+    
+    FamilyDescController * fvc =[FamilyDescController new];
+    fvc.hidesBottomBarWhenPushed=YES;
+    fvc.model=model;
+    [self.navigationController pushViewController:fvc animated:YES];
+    
+    MKLog(@"!");
 }
 -(void)viewWillAppear:(BOOL)animated
 {

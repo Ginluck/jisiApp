@@ -53,7 +53,7 @@
 {
     UserModel * model =[[UserManager shareInstance]getUser];
     
-    if (model.id != nil && [model.id intValue] > 0)
+    if (model.id != nil )
     {
         //已经登录
         return YES;
@@ -190,6 +190,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [application setApplicationIconBadgeNumber:0]; //清除角标
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];//清除APP所有通知消息
 }
 
 

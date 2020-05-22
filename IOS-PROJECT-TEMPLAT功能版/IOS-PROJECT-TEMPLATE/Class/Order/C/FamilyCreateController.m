@@ -24,7 +24,7 @@
 @property(nonatomic,strong)NSString * areaId;
 @property(nonatomic,strong)NSString * addr;
 @property(nonatomic,strong)NSString * imgUrl;
-
+@property(nonatomic,strong)NSString * areaAddr;
 @property(nonatomic,strong)NSString * lat;
 @property(nonatomic,strong)NSString * lon;
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
@@ -78,7 +78,7 @@
     
     NSLog( @"%@", [NSString stringWithFormat:@"id=%@ cid =%@  aid =%@",titleID,cityId,areaId]);
     [self.addrBtn setTitle:titleAddress forState:UIControlStateNormal];
-  
+    self.areaAddr =titleAddress;
     self.provinceId=titleID;
     if (cityId.length)
     {
@@ -227,7 +227,7 @@
     }
 
     UserModel * model =[[UserManager shareInstance]getUser];
-    NSDictionary* param_dic =@{@"provinceId":self.provinceId,@"cityId":self.cityId,@"areaId":self.areaId,@"address":self.addr,@"img":self.imgUrl,@"introduce":self.contentTV.text,@"name":self.nameTF.text,@"userUserId":model.id,@"lat":self.lat,@"lon":self.lon};
+    NSDictionary* param_dic =@{@"provinceId":self.provinceId,@"cityId":self.cityId,@"areaId":self.areaId,@"address":self.addr,@"img":self.imgUrl,@"introduce":self.contentTV.text,@"name":self.nameTF.text,@"userUserId":model.id,@"lat":self.lat,@"lon":self.lon,@"pcaName":self.areaAddr};
     [RequestHelp POST:JS_CREATE_FAMILY_URL parameters:param_dic success:^(id result) {
         MKLog(@"%@",result);
         ShowMessage(@"创建成功");

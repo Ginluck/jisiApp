@@ -14,6 +14,7 @@
 #import "AddNewMemberController.h"
 #import "MemberDetailController.h"
 #import "FamilyTreeModel.h"
+#import "EMChatViewController.h"
 @interface FamilyTreeController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,FamilyCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -124,38 +125,52 @@
 {
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-    SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:@[@"查看成员信息",@"编辑成员信息",@"添加上一代",@"添加下一代",@"删除"]];
+    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",@"删除"]];
+    if (!member.parentId.length)
+    {
+        [arr addObject:@"添加上一代"];
+    }
+    if (member.userPhone.length)
+    {
+          [arr addObject:@"发起聊天"];
+    }
+    SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:arr];
     actionSheet.itemTextFont =MKFont(13);
     actionSheet.cancelTextFont =MKFont(13);
     actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
     [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
-        NSString *text = [NSString stringWithFormat:@"第%ld行,%@",index, title];
-        if (index == 0) {
+        if ([title isEqualToString:@"查看成员信息"]) {
             MemberDetailController * dc =[[MemberDetailController alloc]init];
             [self.navigationController pushViewController:dc animated:YES];
         }
-        if (index==1) {
+        if ([title isEqualToString:@"编辑成员信息"]) {
             AddNewMemberController * fvc =[[AddNewMemberController alloc]init];
             fvc.member =member;
             fvc.type =@"1";
             [self.navigationController pushViewController:fvc animated:YES];
         }
-        if (index == 2) {
+        if ([title isEqualToString:@"添加上一代"]) {
             AddNewMemberController * fvc =[[AddNewMemberController alloc]init];
             fvc.member =member;
             fvc.type =@"2";
             [self.navigationController pushViewController:fvc animated:YES];
         }
-        if (index == 3) {
+        if ([title isEqualToString:@"添加下一代"]) {
             AddNewMemberController * fvc =[[AddNewMemberController alloc]init];
             fvc.member =member;
             fvc.type =@"3";
             [self.navigationController pushViewController:fvc animated:YES];
         }
-        if (index == 4) {
-          
+        if ([title isEqualToString:@"发起聊天"]) {
+            EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:member.userPhone type:EMConversationTypeChat createIfNotExist:YES];
+            chatController.userName =member.name;
+            chatController.sendUrl =member.headAddress;
+            chatController.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:chatController animated:YES];
         }
-        MKLog(@"%@",text);
+        if ([title isEqualToString:@"删除"]) {
+
+        }
     }];
 }
 

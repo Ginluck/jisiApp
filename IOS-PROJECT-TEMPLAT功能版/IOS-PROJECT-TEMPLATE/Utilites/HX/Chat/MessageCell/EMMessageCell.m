@@ -108,7 +108,7 @@
             make.width.height.equalTo(@40);
         }];
     } else {
-        _avatarView.image = [UIImage imageNamed:@"user_avatar_blue"];
+        [_avatarView sd_setImageWithURL:[NSURL URLWithString:self.sendUrl] placeholderImage:KImageNamed(@"user_avatar_blue")];
         [_avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(15);
             make.left.equalTo(self.contentView).offset(10);

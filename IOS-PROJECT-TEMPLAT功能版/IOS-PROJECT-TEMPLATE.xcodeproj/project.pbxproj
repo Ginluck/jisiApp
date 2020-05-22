@@ -20,6 +20,8 @@
 		71005ED6246A5408002F0BF1 /* TaoCanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71005ED4246A5408002F0BF1 /* TaoCanCell.m */; };
 		71005ED7246A5408002F0BF1 /* TaoCanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71005ED5246A5408002F0BF1 /* TaoCanCell.xib */; };
 		71005EDB246CDF95002F0BF1 /* FamilyListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71005EDA246CDF95002F0BF1 /* FamilyListModel.m */; };
+		71071DEE24776D04003CAAB7 /* ApplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71071DEC24776D04003CAAB7 /* ApplyController.m */; };
+		71071DEF24776D04003CAAB7 /* ApplyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71071DED24776D04003CAAB7 /* ApplyController.xib */; };
 		711B0A7C2469294C009C84DB /* IDSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711B0A572469294B009C84DB /* IDSafeViewController.m */; };
 		711B0A7D2469294C009C84DB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711B0A582469294B009C84DB /* SettingsViewController.m */; };
 		711B0A7E2469294C009C84DB /* PhoneChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711B0A592469294B009C84DB /* PhoneChangeViewController.xib */; };
@@ -161,6 +163,8 @@
 		7125006B22DC68120053B3EA /* libSVProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006A22DC68120053B3EA /* libSVProgressHUD.a */; };
 		7125006D22DC68120053B3EA /* libWMPageController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006C22DC68120053B3EA /* libWMPageController.a */; };
 		7125006F22DC68120053B3EA /* libYYModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006E22DC68120053B3EA /* libYYModel.a */; };
+		7125882B2477677100E7E50A /* FamilyDescController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712588292477677100E7E50A /* FamilyDescController.m */; };
+		7125882C2477677100E7E50A /* FamilyDescController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7125882A2477677100E7E50A /* FamilyDescController.xib */; };
 		713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CB247252D400A00867 /* FamilyTreeModel.m */; };
 		713F31CF2472534200A00867 /* FamilyTreeMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CE2472534200A00867 /* FamilyTreeMember.m */; };
 		713F31D32473888800A00867 /* AddrChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31D12473888800A00867 /* AddrChooseController.m */; };
@@ -533,6 +537,8 @@
 		715EED7524750E02009CF31A /* CallSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECE424750E02009CF31A /* CallSettingViewController.m */; };
 		715EED7624750E02009CF31A /* EMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECE624750E02009CF31A /* EMButton.m */; };
 		715EED7724750E02009CF31A /* EMStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECEB24750E02009CF31A /* EMStreamView.m */; };
+		715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */; };
+		715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EED7C24765FFA009CF31A /* MessageListModel.m */; };
 		719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */; };
 		719CEBC12474FEFF00E29E8C /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */; };
 		719CEBC22474FEFF00E29E8C /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 719CEBBC2474FEFF00E29E8C /* Loading.gif */; };
@@ -666,6 +672,9 @@
 		71005ED5246A5408002F0BF1 /* TaoCanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaoCanCell.xib; sourceTree = "<group>"; };
 		71005ED9246CDF95002F0BF1 /* FamilyListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyListModel.h; sourceTree = "<group>"; };
 		71005EDA246CDF95002F0BF1 /* FamilyListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyListModel.m; sourceTree = "<group>"; };
+		71071DEB24776D04003CAAB7 /* ApplyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplyController.h; sourceTree = "<group>"; };
+		71071DEC24776D04003CAAB7 /* ApplyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplyController.m; sourceTree = "<group>"; };
+		71071DED24776D04003CAAB7 /* ApplyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplyController.xib; sourceTree = "<group>"; };
 		711B0A562469294B009C84DB /* NewPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhoneViewController.h; sourceTree = "<group>"; };
 		711B0A572469294B009C84DB /* IDSafeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSafeViewController.m; sourceTree = "<group>"; };
 		711B0A582469294B009C84DB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -903,6 +912,9 @@
 		7125006A22DC68120053B3EA /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125006C22DC68120053B3EA /* libWMPageController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libWMPageController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125006E22DC68120053B3EA /* libYYModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		712588282477677100E7E50A /* FamilyDescController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyDescController.h; sourceTree = "<group>"; };
+		712588292477677100E7E50A /* FamilyDescController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyDescController.m; sourceTree = "<group>"; };
+		7125882A2477677100E7E50A /* FamilyDescController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDescController.xib; sourceTree = "<group>"; };
 		713F31CA247252D400A00867 /* FamilyTreeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeModel.h; sourceTree = "<group>"; };
 		713F31CB247252D400A00867 /* FamilyTreeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyTreeModel.m; sourceTree = "<group>"; };
 		713F31CD2472534200A00867 /* FamilyTreeMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeMember.h; sourceTree = "<group>"; };
@@ -1404,6 +1416,9 @@
 		715EECEA24750E02009CF31A /* EMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMButton.h; sourceTree = "<group>"; };
 		715EECEB24750E02009CF31A /* EMStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStreamView.m; sourceTree = "<group>"; };
 		715EED782475249F009CF31A /* IOS-PROJECT-TEMPLATE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IOS-PROJECT-TEMPLATE.entitlements"; sourceTree = "<group>"; };
+		715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "洪真英-活着 (Cheer Up).mp3"; sourceTree = "<group>"; };
+		715EED7B24765FFA009CF31A /* MessageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
+		715EED7C24765FFA009CF31A /* MessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
 		719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
 		719CEBBC2474FEFF00E29E8C /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
@@ -1925,6 +1940,8 @@
 		711B0BAD246946E6009C84DB /* M */ = {
 			isa = PBXGroup;
 			children = (
+				715EED7B24765FFA009CF31A /* MessageListModel.h */,
+				715EED7C24765FFA009CF31A /* MessageListModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -2926,6 +2943,12 @@
 				713F31D02473888800A00867 /* AddrChooseController.h */,
 				713F31D12473888800A00867 /* AddrChooseController.m */,
 				713F31D22473888800A00867 /* AddrChooseController.xib */,
+				712588282477677100E7E50A /* FamilyDescController.h */,
+				712588292477677100E7E50A /* FamilyDescController.m */,
+				7125882A2477677100E7E50A /* FamilyDescController.xib */,
+				71071DEB24776D04003CAAB7 /* ApplyController.h */,
+				71071DEC24776D04003CAAB7 /* ApplyController.m */,
+				71071DED24776D04003CAAB7 /* ApplyController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3094,6 +3117,7 @@
 				71BEE55B22CB52A200E1B9E3 /* APPEntry */,
 				71BEE55A22CB529500E1B9E3 /* Frameworks */,
 				71BEE52222CB51EB00E1B9E3 /* ViewController.h */,
+				715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */,
 				71BEE52322CB51EB00E1B9E3 /* ViewController.m */,
 				71BEE52D22CB51ED00E1B9E3 /* Info.plist */,
 				71BEE52822CB51ED00E1B9E3 /* Assets.xcassets */,
@@ -3590,6 +3614,7 @@
 				715EED6924750E02009CF31A /* speaker_gray@2x.png in Resources */,
 				71E55BB5246E65C500255230 /* AddOrderTableViewCell.xib in Resources */,
 				715EEB4B24750DDC009CF31A /* icon_007.gif in Resources */,
+				715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */,
 				71E55BE1246E7C3F00255230 /* CitangHeaderView.xib in Resources */,
 				715EED6824750E02009CF31A /* mute_red@2x.png in Resources */,
 				715EEB4C24750DDC009CF31A /* icon_022.gif in Resources */,
@@ -3639,6 +3664,7 @@
 				715EEB4624750DDC009CF31A /* icon_024_cover.png in Resources */,
 				715EE9D224750D7A009CF31A /* alert_default@2x.png in Resources */,
 				715EED2024750E02009CF31A /* animate_00055.png in Resources */,
+				71071DEF24776D04003CAAB7 /* ApplyController.xib in Resources */,
 				715EEB9824750DDC009CF31A /* msg_recv_audio02@3x.png in Resources */,
 				715EED3724750E02009CF31A /* animate_00074.png in Resources */,
 				715EEB9724750DDC009CF31A /* msg_location_white@2x.png in Resources */,
@@ -3868,6 +3894,7 @@
 				715EEB5624750DDC009CF31A /* icon_019.gif in Resources */,
 				711B0AB22469296E009C84DB /* FamilyMemberInfoController.xib in Resources */,
 				715EEB5E24750DDC009CF31A /* icon_020_cover.png in Resources */,
+				7125882C2477677100E7E50A /* FamilyDescController.xib in Resources */,
 				715EEB4A24750DDC009CF31A /* icon_013.gif in Resources */,
 				715EEB9524750DDC009CF31A /* msg_send_audio02@2x.png in Resources */,
 				715EED2324750E02009CF31A /* animate_00082.png in Resources */,
@@ -4064,6 +4091,7 @@
 				711B0ADB24692979009C84DB /* SJSheetFoot.m in Sources */,
 				715EEB8B24750DDC009CF31A /* EMMsgFileBubbleView.m in Sources */,
 				71534AFE239F6515009AF361 /* UserManager.m in Sources */,
+				7125882B2477677100E7E50A /* FamilyDescController.m in Sources */,
 				711B0AF0246929AF009C84DB /* LineView.m in Sources */,
 				711B0B04246929CE009C84DB /* MineTableViewCell.m in Sources */,
 				715EEB3E24750DDB009CF31A /* EMReadReceiptMemberModel.m in Sources */,
@@ -4253,6 +4281,8 @@
 				711B0B8024692B0C009C84DB /* UIView+PYSearchExtension.m in Sources */,
 				715EECFA24750E02009CF31A /* AudioRecord.m in Sources */,
 				715EECEE24750E02009CF31A /* DemoCallManager.m in Sources */,
+				715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */,
+				71071DEE24776D04003CAAB7 /* ApplyController.m in Sources */,
 				711B0A922469294C009C84DB /* UserTextView.m in Sources */,
 				715EEBB624750DDC009CF31A /* EMAtGroupMembersViewController.m in Sources */,
 				711B0A9824692953009C84DB /* RegisterViewController.m in Sources */,

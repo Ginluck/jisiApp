@@ -51,14 +51,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ip-I9-1B6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ip-I9-1B6">
                                         <rect key="frame" x="315" y="15" width="70" height="70"/>
                                         <color key="backgroundColor" red="0.61568627450000002" green="0.094117647060000004" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="KTp-AL-TKP"/>
                                             <constraint firstAttribute="width" constant="70" id="RCo-hO-aVR"/>
                                         </constraints>
-                                        <state key="normal" title="家族圈">
+                                        <state key="normal" image="家族 圈图标">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -116,6 +116,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="家族 圈图标" width="182" height="180"/>
         <image name="竹简图标" width="326" height="313"/>
     </resources>
 </document>

@@ -12,7 +12,7 @@
 //#import "MessageModelList.h"
 #import "SystemMessageController.h"
 //#import "HouseMessageViewController.h"
-
+#import "EMChatViewController.h"
 @interface MessageHomeController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSArray * dataArr;
@@ -116,17 +116,22 @@
             SystemMessageController * svc =[SystemMessageController new];
             svc.hidesBottomBarWhenPushed=YES;
             [self.navigationController pushViewController:svc animated:YES];
+//            EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:@"13273436004" type:EMConversationTypeChat createIfNotExist:YES];
+////                        chatController.userName =model.userName;
+////                        chatController.sendUrl =model.headAddress;
+//                        chatController.hidesBottomBarWhenPushed=YES;
+//                        [self.navigationController pushViewController:chatController animated:YES];
         }
     }
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    UserModel  * model =[[UserManager shareInstance]getUser];
-//    EMError *error = [[EMClient sharedClient] loginWithUsername:model.userPhone password:model.password];
-//    if (!error) {
-//        DLog(@"登录成功");
-//    }
+    UserModel  * model =[[UserManager shareInstance]getUser];
+    EMError *error = [[EMClient sharedClient] loginWithUsername:model.userPhone password:model.password];
+    if (!error) {
+        DLog(@"登录成功");
+    }
 //    self.dataArr =[[EMClient sharedClient].chatManager getAllConversations];
 //    if (self.dataAry.count)
 //    {

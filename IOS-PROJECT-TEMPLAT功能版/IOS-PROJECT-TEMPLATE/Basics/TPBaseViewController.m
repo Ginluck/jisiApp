@@ -222,7 +222,7 @@
             NSArray *arrray = self.navigationController.viewControllers;
             if (![self isEqual:[arrray firstObject]]){
                 
-                [self addNavigationItemWithImageName:@"返回" itemType:kNavigationItemTypeLeft action:@selector(back)];
+                [self addNavigationItemWithImageName:@"back_white" itemType:kNavigationItemTypeLeft action:@selector(back)];
             }
         }
     }

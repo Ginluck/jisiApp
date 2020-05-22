@@ -25,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"族谱"];
-    [self addNavigationItemWithTitle:@"族谱" itemType:kNavigationItemTypeRight action:@selector(goFamilyTree)];
     [self.view addSubview:self.tableView];
     [self regisNib];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -46,10 +45,7 @@
     }
     return _headerView;
 }
--(void)goFamilyTree
-{
 
-}
 -(UITableView *)tableView
 {
     if (!_tableView)
@@ -59,7 +55,7 @@
         _tableView.dataSource = self;
         _tableView.tableHeaderView =self.headerView;
         UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
-        imageV.image =KImageNamed(@"祠堂背景");
+        imageV.image =KImageNamed(@"家谱背景");
         _tableView.backgroundView =imageV;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;

@@ -8,7 +8,7 @@
 
 #import "TPBaseTableViewCell.h"
 //#import "MessageModelList.h"
-//#import "SystemMessageModel.h"
+#import "MessageListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,weak)IBOutlet UILabel * timeLabel;
 @property(nonatomic,weak)IBOutlet UILabel * isRead;
 //-(void)refresh:(MessageModelList *)model;
-//-(void)refreshSystem:(SystemMessageModel *)model;
+-(void)refreshSystem:(MessageListModel *)model;
 //-(void)refreshHouse:(SystemMessageModel *)model;
 @end
 
