@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *CustomerBtn;
 @property (weak, nonatomic) IBOutlet UIButton *GongFeng;
 @property (weak, nonatomic) IBOutlet UIButton *HeaderBtn;
-
+@property (weak, nonatomic) IBOutlet UILabel *NameLab;
+@property (weak, nonatomic) IBOutlet UILabel *PhoneLab;
+@property (weak, nonatomic) IBOutlet UIImageView *HeadImg;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F40324768FEB00B16077 /* MineDataModel.m */; };
 		43D7FC46BAC818DB99D825DD /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005E22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a */; };
 		71005EC0246A4706002F0BF1 /* JisiProController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71005EBE246A4706002F0BF1 /* JisiProController.m */; };
 		71005EC1246A4706002F0BF1 /* JisiProController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71005EBF246A4706002F0BF1 /* JisiProController.xib */; };
@@ -647,6 +648,8 @@
 
 /* Begin PBXFileReference section */
 		0F71A6506E07F2BD7DAE6187 /* Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig"; sourceTree = "<group>"; };
+		18C1F40224768FEB00B16077 /* MineDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
+		18C1F40324768FEB00B16077 /* MineDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		192026675E89DE0F104F7AA6 /* libPods-IOS-PROJECT-TEMPLATE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOS-PROJECT-TEMPLATE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21506B8CD3DCE940FF05FA63 /* libPods-IOS-PROJECT-TEMPLATETests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOS-PROJECT-TEMPLATETests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E330E6BAB19EA25C87E5B13 /* libPods-IOS-PROJECT-TEMPLATEUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOS-PROJECT-TEMPLATEUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1627,6 +1630,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C1F4052477CB4D00B16077 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		18C1F4062477CB5200B16077 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
 		3925BBAB13672EB3637F5948 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2852,6 +2869,8 @@
 		719D4B27239F7573003C6803 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				18C1F4062477CB5200B16077 /* M */,
+				18C1F4052477CB4D00B16077 /* V */,
 				71E55B6C246E658000255230 /* MyData */,
 				711B0B9624693FA8009C84DB /* GongFeng */,
 				711B0A542469294B009C84DB /* Settings */,
@@ -2863,6 +2882,9 @@
 		719D4B29239F7587003C6803 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				711B0AFA246929CD009C84DB /* MineTableViewCell.h */,
+				711B0AF9246929CD009C84DB /* MineTableViewCell.m */,
+				711B0AF5246929CC009C84DB /* MineTableViewCell.xib */,
 				711B0AFB246929CD009C84DB /* HomeHeaderView.h */,
 				711B0AF6246929CD009C84DB /* HomeHeaderView.m */,
 				711B0AF7246929CD009C84DB /* HomeHeaderView.xib */,
@@ -2871,9 +2893,6 @@
 				711B0AFC246929CD009C84DB /* HomePeopleCollectionViewCell.xib */,
 				711B0AFE246929CD009C84DB /* JYEqualCellSpaceFlowLayout.h */,
 				711B0AF8246929CD009C84DB /* JYEqualCellSpaceFlowLayout.m */,
-				711B0AFA246929CD009C84DB /* MineTableViewCell.h */,
-				711B0AF9246929CD009C84DB /* MineTableViewCell.m */,
-				711B0AF5246929CC009C84DB /* MineTableViewCell.xib */,
 				711B0AF3246929C5009C84DB /* CusPageControlWithView.h */,
 				711B0AF2246929C5009C84DB /* CusPageControlWithView.m */,
 				719D4B51239F7CB8003C6803 /* HomeHeaderCell.h */,
@@ -3376,6 +3395,8 @@
 				71EC5F95247771DE00407D7F /* MineDataModel.m */,
 				71E55B6E246E658000255230 /* HelpHouseCityModel.m */,
 				71E55B6F246E658000255230 /* HelpHouseCityModel.h */,
+				18C1F40224768FEB00B16077 /* MineDataModel.h */,
+				18C1F40324768FEB00B16077 /* MineDataModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -4308,6 +4329,7 @@
 				711B0A802469294C009C84DB /* AboutMeViewController.m in Sources */,
 				711B0B45246929E8009C84DB /* CountyModel.m in Sources */,
 				71BEE58A22CB5D3900E1B9E3 /* TPNavigationController.m in Sources */,
+				18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */,
 				71E55BB3246E65C500255230 /* AddOrderHeaderView.m in Sources */,
 				71E55B87246E658000255230 /* SetHeadViewController.m in Sources */,
 				715EEB3B24750DDB009CF31A /* EMMoreFunctionView.m in Sources */,
@@ -4499,6 +4521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "IOS-PROJECT-TEMPLATE/IOS-PROJECT-TEMPLATE.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6A6G58G8G;
 				ENABLE_BITCODE = NO;
@@ -4517,6 +4540,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = jisiapp.ios.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
