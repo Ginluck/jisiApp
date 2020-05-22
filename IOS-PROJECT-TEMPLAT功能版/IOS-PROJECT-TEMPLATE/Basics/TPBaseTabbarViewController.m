@@ -13,8 +13,8 @@
 #import "MessageHomeController.h"
 #import "PersonCenterController.h"
 #import "TypeHomeController.h"
-@interface TPBaseTabbarViewController ()
-
+@interface TPBaseTabbarViewController ()<UITabBarControllerDelegate>
+@property(nonatomic,strong)NSArray *VCArr;
 @end
 
 @implementation TPBaseTabbarViewController
@@ -29,6 +29,7 @@
     //    self.delegate=self;
     self.tabBar.backgroundColor=K_Prokect_MainColor;
     self.tabBar.barTintColor=K_Prokect_MainColor;
+    self.delegate=self;
     [self configTabbar];
 //    [self addNoti];
 }
@@ -43,7 +44,7 @@
     NSArray *titleArr = @[@"祠堂",@"族谱",@"寻祖",@"消息",@"我的"];
     NSArray *normalIconArr = @[@"祠堂图标",@"族谱图标",@"寻祖图标",@"消息图标",@"我的图标"];
     NSArray *selectedIconArr = @[@"祠堂图标",@"族谱图标",@"寻祖图标",@"消息图标",@"我的图标"];
-   NSArray *subVCs = @[[HomeViewController new],[TypeHomeController new],[OrderHomeController new],[MessageHomeController new],[PersonCenterController new]];
+   self.VCArr = @[[HomeViewController new],[TypeHomeController new],[OrderHomeController new],[MessageHomeController new],[PersonCenterController new]];
     NSMutableArray *navs = [NSMutableArray arrayWithCapacity:5];
     for (int i=0; i<titleArr.count; i++) {
         NSString *barTitle = titleArr[i];
@@ -52,7 +53,7 @@
         UITabBarItem * tabBarItem = [[UITabBarItem alloc]initWithTitle:barTitle image:[self tabBarItemImage:barNormalImage] selectedImage:[self tabBarItemImage:selectedNormalImage]];
         [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:k_Project_TabbarTextColor} forState:UIControlStateNormal];
         [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateSelected];
-        UIViewController *subViewController = subVCs[i];
+        UIViewController *subViewController = self.VCArr[i];
         subViewController.tabBarItem = tabBarItem;
         TPNavigationController *navController = [[TPNavigationController alloc]initWithRootViewController:subViewController];
         [navs addObject:navController];
@@ -72,5 +73,18 @@
     [nav popToRootViewControllerAnimated:YES];
 }
 
-
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    TPNavigationController * nav =(TPNavigationController*)viewController;
+    if ([nav.viewControllers[0] isKindOfClass:[HomeViewController class]]||[nav.viewControllers[0] isKindOfClass: [TypeHomeController class]]) {
+        UserModel * model =[[UserManager shareInstance]getUser];
+        if (!model.jzId.length)
+        {
+            ShowMessage(@"您暂时没有加入家族,请先寻找家族");
+            return NO;
+        }
+        return YES;;
+    }
+    return YES;
+}
 @end

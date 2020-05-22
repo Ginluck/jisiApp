@@ -123,6 +123,7 @@
 
 -(void)familyBtnClick:(FamliyTreeButton *)button
 {
+    UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
     NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",@"删除"]];
@@ -130,7 +131,7 @@
     {
         [arr addObject:@"添加上一代"];
     }
-    if (member.userPhone.length)
+    if (member.userPhone.length && ![member.userPhone isEqualToString:user.userPhone])
     {
           [arr addObject:@"发起聊天"];
     }

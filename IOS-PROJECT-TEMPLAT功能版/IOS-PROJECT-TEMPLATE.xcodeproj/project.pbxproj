@@ -621,6 +621,7 @@
 		71E55BE5246E7CDB00255230 /* ZupuHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55BE3246E7CDB00255230 /* ZupuHomeCell.m */; };
 		71E55BE6246E7CDB00255230 /* ZupuHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55BE4246E7CDB00255230 /* ZupuHomeCell.xib */; };
 		71E55BEB24723F6700255230 /* CitangListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55BEA24723F6700255230 /* CitangListModel.m */; };
+		71EC5F96247771DF00407D7F /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC5F95247771DE00407D7F /* MineDataModel.m */; };
 		8B7904F6CB736013CCA7923B /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21506B8CD3DCE940FF05FA63 /* libPods-IOS-PROJECT-TEMPLATETests.a */; };
 		8C0F704AC3E8DD30114C5F5A /* libPods-IOS-PROJECT-TEMPLATE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192026675E89DE0F104F7AA6 /* libPods-IOS-PROJECT-TEMPLATE.a */; };
 		B58C5CFA15C764C29F37CCC6 /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006022DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a */; };
@@ -1569,6 +1570,8 @@
 		71E55BE4246E7CDB00255230 /* ZupuHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZupuHomeCell.xib; sourceTree = "<group>"; };
 		71E55BE924723F6700255230 /* CitangListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitangListModel.h; sourceTree = "<group>"; };
 		71E55BEA24723F6700255230 /* CitangListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitangListModel.m; sourceTree = "<group>"; };
+		71EC5F94247771DE00407D7F /* MineDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
+		71EC5F95247771DE00407D7F /* MineDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		93F7777DC9FF2881B3C3946B /* Pods-IOS-PROJECT-TEMPLATETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATETests.debug.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATETests/Pods-IOS-PROJECT-TEMPLATETests.debug.xcconfig"; sourceTree = "<group>"; };
 		B549C0285FF86B05333F2611 /* Pods-IOS-PROJECT-TEMPLATEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATEUITests.release.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATEUITests/Pods-IOS-PROJECT-TEMPLATEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C11CF6FD2D9C7653F49807E0 /* Pods-IOS-PROJECT-TEMPLATE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATE.release.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE.release.xcconfig"; sourceTree = "<group>"; };
@@ -3369,6 +3372,8 @@
 		71E55B6D246E658000255230 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				71EC5F94247771DE00407D7F /* MineDataModel.h */,
+				71EC5F95247771DE00407D7F /* MineDataModel.m */,
 				71E55B6E246E658000255230 /* HelpHouseCityModel.m */,
 				71E55B6F246E658000255230 /* HelpHouseCityModel.h */,
 			);
@@ -4320,6 +4325,7 @@
 				711B0A812469294C009C84DB /* ChangePwdViewController.m in Sources */,
 				71BEE57E22CB597000E1B9E3 /* UIButton+layout.m in Sources */,
 				711B0B7C24692B0C009C84DB /* PYSearchSuggestionViewController.m in Sources */,
+				71EC5F96247771DF00407D7F /* MineDataModel.m in Sources */,
 				71005EC4246A4732002F0BF1 /* XingliProController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

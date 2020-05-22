@@ -165,7 +165,7 @@
     UserModel * model =[[UserManager shareInstance]getUser];
     
     if (!model.jzId.length) {
-        ShowMessage(@"没有家族id");
+        ShowMessage(@"您暂时还没有加入家族");
         return;
     }
 

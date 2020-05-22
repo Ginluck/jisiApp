@@ -69,13 +69,22 @@
 //    }
 //    
 //}
-//-(void)refreshSystem:(SystemMessageModel *)model
-//{
-//    self.nameLabel.text =model.title;
-//    self.messageLabel.text =model.content;
-//    self.timeLabel.text =model.create_time;
-//    self.headerImage.image =ImageNamed(@"系统消息");
-//}
+-(void)refreshMessage:(UserModel *)model
+{
+    self.nameLabel.text =model.userName;
+    self.messageLabel.text =model.lastMessage;
+    self.timeLabel.text =model.messageTime;
+    [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.headAddress]];
+    
+        if ([model.isRead isEqualToString:@"1"])
+        {
+           self.isRead.hidden =YES;
+        }
+        else
+        {
+            self.isRead.hidden=NO;
+        }
+}
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 //    [super setSelected:selected animated:animated];
 //

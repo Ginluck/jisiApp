@@ -91,7 +91,7 @@
     {
         MessageListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MessageListTableViewCell class]) forIndexPath:indexPath];
         cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
-//        [cell refresh:self.dataSource[indexPath.row]];
+        [cell refreshMessage:self.dataSource[indexPath.row]];
         return cell;
     }
     
@@ -99,16 +99,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==1) {
-//        MessageModelList* model=self.dataSource[indexPath.row];
-//        model.isRead =@"1";
-//        NSMutableArray * ary =[NSMutableArray arrayWithArray:self.dataSource];
-//        [ary replaceObjectAtIndex:indexPath.row withObject:model];
-//        self.dataSource =[NSArray arrayWithArray:ary];
-//        EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:model.userPhone type:EMConversationTypeChat createIfNotExist:YES];
-//        chatController.userName =model.userName;
-//        chatController.sendUrl =model.headAddress;
-//        chatController.hidesBottomBarWhenPushed=YES;
-//        [self.navigationController pushViewController:chatController animated:YES];
+        UserModel* model=self.dataSource[indexPath.row];
+        model.isRead =@"1";
+        NSMutableArray * ary =[NSMutableArray arrayWithArray:self.dataSource];
+        [ary replaceObjectAtIndex:indexPath.row withObject:model];
+        self.dataSource =[NSArray arrayWithArray:ary];
+        EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:model.userPhone type:EMConversationTypeChat createIfNotExist:YES];
+        chatController.userName =model.userName;
+        chatController.sendUrl =model.headAddress;
+        chatController.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:chatController animated:YES];
     }
     else
     {
@@ -132,66 +132,66 @@
     if (!error) {
         DLog(@"登录成功");
     }
-//    self.dataArr =[[EMClient sharedClient].chatManager getAllConversations];
-//    if (self.dataAry.count)
-//    {
-//        [self.tableView reloadData];
-//    }
-//    else
-//    {
-////        [self requestData];
-//    }
+     self.dataArr =[[EMClient sharedClient].chatManager getAllConversations];
+    if (self.dataAry.count)
+    {
+        [self.tableView reloadData];
+    }
+    else
+    {
+        [self requestData];
+    }
 //
     [self hideNavigationBar:NO animated:NO];
 }
 
-//-(void)requestData
-//{
-//    NSMutableArray* ary =[NSMutableArray array];
-//    for (EMConversation * conversation in self.dataArr)
-//    {
-//        [ary addObject:conversation.conversationId];
-//    }
-//
-//    NSString * phoneArray= [ary componentsJoinedByString:@","];
-//    [RequestHelp POST:BASE_PHONE_GAIN_MESSAGE_URL parameters:@{@"phoneArray":phoneArray} success:^(id result) {
-//        self.dataAry =[NSArray yy_modelArrayWithClass:[MessageModelList class] json:result];
-//        [self createDataSource];
-//    } failure:^(NSError *error) {
-//
-//    }];
-//}
+-(void)requestData
+{
+    NSMutableArray* ary =[NSMutableArray array];
+    for (EMConversation * conversation in self.dataArr)
+    {
+        [ary addObject:conversation.conversationId];
+    }
 
-//-(void)createDataSource
-//{
-//    NSMutableArray * array =[NSMutableArray array];
-//    for (EMConversation * con in self.dataArr)
-//    {
-//        for (MessageModelList * model in self.dataAry)
-//        {
-//            if ([model.userPhone isEqualToString:con.conversationId])
-//            {
-//                model.messageTime =[UIUtils getHXtimeStr:con.latestMessage.localTime];
-//                model.lastMessage =[self textFromMessage:con.latestMessage];
-//                [array addObject:model];
-//            }
-//        }
-//    }
-//    self.dataSource =[NSArray arrayWithArray:array];
-//    [self.tableView reloadData];
-//}
-//-(NSString *)textFromMessage:(EMMessage *)message
-//{
-//    EMMessageBody *body = message.body;
-//    if (body.type !=1) {
-//        return @"";
-//    }
-//
-//    EMTextMessageBody *textBody = (EMTextMessageBody *)body;
-//
-//    NSString *text = textBody.text;
-//    return text;
-//}
+    NSString * phoneArray= [ary componentsJoinedByString:@","];
+    [RequestHelp POST:JS_GETCONVERSATION_URL parameters:@{@"PhoneArray":phoneArray} success:^(id result) {
+        self.dataAry =[NSArray yy_modelArrayWithClass:[UserModel class] json:result];
+        [self createDataSource];
+    } failure:^(NSError *error) {
+
+    }];
+}
+
+-(void)createDataSource
+{
+    NSMutableArray * array =[NSMutableArray array];
+    for (EMConversation * con in self.dataArr)
+    {
+        for (UserModel * model in self.dataAry)
+        {
+            if ([model.userPhone isEqualToString:con.conversationId])
+            {
+                model.messageTime =[UIUtils getHXtimeStr:con.latestMessage.localTime];
+                model.lastMessage =[self textFromMessage:con.latestMessage];
+                [array addObject:model];
+            }
+        }
+    }
+    self.dataSource =[NSArray arrayWithArray:array];
+    [self.tableView reloadData];
+}
+-(NSString *)textFromMessage:(EMMessage *)message
+{
+    EMMessageBody *body = message.body;
+    if (body.type !=1) {
+        return @"";
+    }
+
+    EMTextMessageBody *textBody = (EMTextMessageBody *)body;
+
+    NSString *text = textBody.text;
+    return text;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return .1f;

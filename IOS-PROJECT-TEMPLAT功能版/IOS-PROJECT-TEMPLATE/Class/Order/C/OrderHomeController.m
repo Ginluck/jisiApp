@@ -122,11 +122,12 @@
     if ([annotation isKindOfClass:[QPointAnnotation class]]) {
         static NSString *annotationIdentifier = @"pointAnnotation";
         QPinAnnotationView *pinView = (QPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
-        
+        pinView.enabled =YES;
         if (pinView == nil) {
             pinView = [[QPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
             pinView.canShowCallout = YES;
             pinView.selected=YES;
+            pinView.enabled =YES;
         }
         
         return pinView;
