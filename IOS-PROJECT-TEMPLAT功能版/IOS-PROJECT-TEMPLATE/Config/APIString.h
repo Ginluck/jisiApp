@@ -35,6 +35,9 @@
 //修改手机号
 
 #define  registers_url  @"userApp/registers"
+//查找个人信息
+
+#define  SELECT_USERINFO_url  @"userApp/SELECT_USERINFO"
 
 
 //2.4.1 查询省

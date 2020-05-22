@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SetHeadViewController : TPBaseViewController
+@property (weak, nonatomic) IBOutlet UILabel *AddressLab;
+@property (weak, nonatomic) IBOutlet UILabel *NumberLab;
+@property (weak, nonatomic) IBOutlet UILabel *Namelab;
+@property (weak, nonatomic) IBOutlet UIImageView *HeadImg;
 
 @end
 

@@ -22,8 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    self.title=@"我的";
-//    123
+    [self addNavigationTitleView:@"我的"];
     [self addNavigationItemWithImageName:@"home" itemType:kNavigationItemTypeRight action:@selector(rightClick)];
     ////12345612321323
     // Do any additional setup after loading the view.

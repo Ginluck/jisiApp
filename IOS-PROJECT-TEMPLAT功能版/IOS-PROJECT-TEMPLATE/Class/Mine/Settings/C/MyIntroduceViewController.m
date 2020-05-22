@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"功能介绍";
+    [self addNavigationTitleView:@"功能介绍"];
     // Do any additional setup after loading the view from its nib.
 }
 

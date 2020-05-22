@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"修改密码";
+   [self addNavigationTitleView:@"修改密码"];
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)Submit:(id)sender {

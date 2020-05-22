@@ -42,9 +42,9 @@
     if (app.window.rootViewController)
     {
         LoginViewController *lVC = [LoginViewController new];
-
+             
         TPNavigationController *navC = [[TPNavigationController alloc]initWithRootViewController:lVC];
-
+            navC.modalPresentationStyle=UIModalPresentationFullScreen;
         [app.window.rootViewController presentViewController: navC animated:NO completion:nil];
     }
 }

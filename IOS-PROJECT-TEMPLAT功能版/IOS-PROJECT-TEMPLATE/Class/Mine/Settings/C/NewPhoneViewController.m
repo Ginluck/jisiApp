@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"输入新手机号";
+    [self addNavigationTitleView:@"输入新手机号"];
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)CodeClick:(JKCountDownButton *)sender {

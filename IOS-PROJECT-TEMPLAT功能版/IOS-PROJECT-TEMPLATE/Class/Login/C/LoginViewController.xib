@@ -23,9 +23,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-6N-U6Z">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录页面底图" translatesAutoresizingMaskIntoConstraints="NO" id="25I-qA-dE7">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO图标" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-6N-U6Z">
                     <rect key="frame" x="162" y="80" width="90" height="90"/>
-                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="seU-04-LYy"/>
                         <constraint firstAttribute="height" constant="90" id="vKO-JR-UUN"/>
@@ -124,6 +127,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="25I-qA-dE7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="01v-lb-zqi"/>
                 <constraint firstItem="GXc-sN-gas" firstAttribute="centerY" secondItem="XQk-i5-fWG" secondAttribute="centerY" id="15F-rt-8jS"/>
                 <constraint firstItem="GXc-sN-gas" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4VU-Ux-8gz"/>
                 <constraint firstItem="G8d-oB-anT" firstAttribute="top" secondItem="QZl-xZ-cyT" secondAttribute="bottom" constant="70" id="5vi-zX-Qks"/>
@@ -133,9 +137,12 @@
                 <constraint firstItem="GXc-sN-gas" firstAttribute="leading" secondItem="XQk-i5-fWG" secondAttribute="trailing" constant="8" id="LG2-so-iOf"/>
                 <constraint firstItem="G8d-oB-anT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="36" id="OOv-tc-D2Q"/>
                 <constraint firstItem="bmw-qK-6wf" firstAttribute="leading" secondItem="GXc-sN-gas" secondAttribute="trailing" constant="8" id="Pse-QJ-zTA"/>
+                <constraint firstItem="25I-qA-dE7" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="RoJ-ex-g3r"/>
                 <constraint firstItem="h7C-6N-U6Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Spu-gX-KyP"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4LA-QS-YhG" secondAttribute="trailing" constant="36" id="Xwt-Hg-pTG"/>
                 <constraint firstItem="h7C-6N-U6Z" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="36" id="hMU-SH-Wxq"/>
+                <constraint firstItem="25I-qA-dE7" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="iDi-Yv-Q21"/>
+                <constraint firstAttribute="bottom" secondItem="25I-qA-dE7" secondAttribute="bottom" id="ics-LN-brU"/>
                 <constraint firstItem="bmw-qK-6wf" firstAttribute="centerY" secondItem="GXc-sN-gas" secondAttribute="centerY" id="jp6-5w-Vcn"/>
                 <constraint firstItem="QZl-xZ-cyT" firstAttribute="top" secondItem="4LA-QS-YhG" secondAttribute="bottom" constant="24" id="ujN-T2-3eZ"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="QZl-xZ-cyT" secondAttribute="trailing" constant="36" id="xDL-0M-gKf"/>
@@ -143,7 +150,11 @@
                 <constraint firstItem="4LA-QS-YhG" firstAttribute="top" secondItem="h7C-6N-U6Z" secondAttribute="bottom" constant="50" id="zbv-xa-c9g"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="139" y="107"/>
+            <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="LOGO图标" width="116" height="134"/>
+        <image name="登录页面底图" width="400" height="694"/>
+    </resources>
 </document>

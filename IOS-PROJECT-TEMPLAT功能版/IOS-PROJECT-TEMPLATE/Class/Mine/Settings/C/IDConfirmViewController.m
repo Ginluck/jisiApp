@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"身份确认";
+    [self addNavigationTitleView:@"身份确认"];
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)Next:(id)sender {

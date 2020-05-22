@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"账户安全";
+   [self addNavigationTitleView:@"账户安全"];
     UserModel * model =[[UserManager shareInstance]getUser];
     self.PhoneLab.text=model.userPhone;
     // Do any additional setup after loading the view from its nib.
