@@ -12,6 +12,7 @@
 #import "SettingsViewController.h"
 #import "GongFengRecordViewController.h"
 #import "SetHeadViewController.h"
+#import "RZMessageViewController.h"
 @interface PersonCenterController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 
@@ -62,6 +63,7 @@
     MineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MineTableViewCell class]) forIndexPath:indexPath];
     [cell.GongFeng addTarget:self action:@selector(GongFengClick) forControlEvents:UIControlEventTouchUpInside];
     [cell.HeaderBtn addTarget:self action:@selector(HeaderClick) forControlEvents:UIControlEventTouchUpInside];
+    [cell.RZBtn addTarget:self action:@selector(RZClick) forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     return cell;
     
@@ -79,6 +81,13 @@
     GFRVC.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:GFRVC animated:YES];
 }
+-(void)RZClick
+{
+    RZMessageViewController *GFRVC=[RZMessageViewController new];
+    GFRVC.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:GFRVC animated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

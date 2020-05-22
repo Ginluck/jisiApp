@@ -9,7 +9,7 @@
 #import "TeasingViewController.h"
 #import "UserTextView.h"
 @interface TeasingViewController ()
-@property(nonatomic,strong)UserTextView *TxtView;
+@property (strong, nonatomic)  UserTextView *TxtView;
 @end
 
 @implementation TeasingViewController
@@ -18,19 +18,13 @@
     [super viewWillAppear:animated];
     [self hideNavigationBar:NO animated:NO];
 }
--(UserTextView *)TxtView
-{
-    if (!_TxtView) {
-        _TxtView =[[UserTextView alloc]initWithFrame:CGRectMake(16, 12, Screen_Width-32, 240-24)];
-    }
-    return _TxtView;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.BgView addSubview:self.TxtView];
+    _TxtView =[[UserTextView alloc]initWithFrame:CGRectMake(16, 16+kNavagationBarH, Screen_Width-32, 300)];
+    [self.view addSubview:self.TxtView];
     [self addNavigationTitleView:@"意见反馈"];
     // Do any additional setup after loading the view from its nib.
-    self.TxtView.placeholder=@"写点什么吧...";
+    self.TxtView.placeholder=@"请填写你的意见（必填）";
     self.TxtView.placeholderColor=[UIColor lightGrayColor];
     [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick)];
 }
@@ -68,6 +62,8 @@
     PhoneView.layer.borderColor=COLOR_HEX(0x8a96a5).CGColor;
     PhoneView.layer.borderWidth=.5;
 }
+
+
 /*
 #pragma mark - Navigation
 
