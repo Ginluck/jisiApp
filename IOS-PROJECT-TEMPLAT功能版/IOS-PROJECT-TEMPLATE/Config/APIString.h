@@ -38,6 +38,12 @@
 //查找个人信息
 
 #define  SELECT_USERINFO_url  @"userApp/SELECT_USERINFO"
+//认祖信息
+
+#define  selectByApply_url  @"apply/selectByApply"
+//通过和驳回
+
+#define  update_url  @"apply/update"
 
 
 //2.4.1 查询省

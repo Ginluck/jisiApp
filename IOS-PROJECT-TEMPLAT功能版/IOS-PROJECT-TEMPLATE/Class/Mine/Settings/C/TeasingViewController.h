@@ -12,7 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TeasingViewController : TPBaseViewController
-@property (weak, nonatomic) IBOutlet UIView *BgView;
+
+
 
 @end
 
