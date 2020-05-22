@@ -72,6 +72,8 @@
 #define JS_SYSMESSAGE_LILST_URL @"appPushRecord/list"
 //申请查看族谱
 #define JS_APPLYZP_URL @"apply/insert"
+//获取回话列表
+#define JS_GETCONVERSATION_URL @"userApp/BASE_PHONE_GAIN_MESSAGE"
 
 
 

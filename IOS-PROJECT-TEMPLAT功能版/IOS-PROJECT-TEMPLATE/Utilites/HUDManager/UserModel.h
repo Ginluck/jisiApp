@@ -48,4 +48,11 @@
 @property (nonatomic, copy) NSString *jzId;
 
 @property (nonatomic, copy) NSString *jzName;
+
+
+@property (nonatomic, copy) NSString *messageTime;
+
+@property (nonatomic, copy) NSString *lastMessage;
+
+@property (nonatomic, copy) NSString *isRead;
 @end

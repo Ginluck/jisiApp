@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,weak)IBOutlet UILabel * isRead;
 //-(void)refresh:(MessageModelList *)model;
 -(void)refreshSystem:(MessageListModel *)model;
-//-(void)refreshHouse:(SystemMessageModel *)model;
+-(void)refreshMessage:(UserModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END
