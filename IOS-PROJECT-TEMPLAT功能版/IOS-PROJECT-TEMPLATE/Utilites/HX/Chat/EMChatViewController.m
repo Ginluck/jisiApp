@@ -205,9 +205,9 @@
     
     self.titleLabel = [[UILabel alloc] init];
     self.titleLabel.font = [UIFont systemFontOfSize:18];
-    self.titleLabel.textColor = [UIColor blackColor];
+    self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.text = self.conversationModel.name;
+    self.titleLabel.text = self.userName;
     [titleView addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titleView);
@@ -217,7 +217,7 @@
     
     self.titleDetailLabel = [[UILabel alloc] init];
     self.titleDetailLabel.font = [UIFont systemFontOfSize:15];
-    self.titleDetailLabel.textColor = [UIColor grayColor];
+    self.titleDetailLabel.textColor = [UIColor whiteColor];
     self.titleDetailLabel.textAlignment = NSTextAlignmentCenter;
     [titleView addSubview:self.titleDetailLabel];
     [self.titleDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -230,7 +230,7 @@
     self.navigationItem.titleView = titleView;
     
     if (self.conversationModel.emModel.type != EMConversationTypeChat) {
-        self.titleDetailLabel.text = self.conversationModel.emModel.conversationId;
+         self.titleDetailLabel.text = self.userName;
     }
 }
 
@@ -324,7 +324,7 @@
         if (cell == nil) {
             cell = [[EMMessageTimeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EMMessageTimeCell"];
         }
-        
+     
         cell.timeLabel.text = cellString;
         
         return cell;
@@ -338,7 +338,7 @@
             cell = [[EMMessageCell alloc] initWithDirection:model.direction type:model.type];
             cell.delegate = self;
         }
-
+        cell.sendUrl =self.sendUrl;
         cell.model = model;
         return cell;
     }

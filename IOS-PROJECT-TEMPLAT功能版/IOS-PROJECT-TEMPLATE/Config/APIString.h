@@ -51,7 +51,7 @@
 
 //创建家族
 #define JS_CREATE_FAMILY_URL @"appJz/addJz"
-//族谱列表&寻找家族
+//族谱列表&寻找家族$家族详情
 #define JS_FAMILY_LIST_URL @"appJz/selectByUser"
 //查看族谱列表
 #define JS_SELECT_ZPLIST_URL @"appZp/selectByAppZuPu"
@@ -61,6 +61,8 @@
 #define JS_ADD_NEWMEMBER_URL @"appZp/addAppZuPu"
 //系统消息
 #define JS_SYSMESSAGE_LILST_URL @"appPushRecord/list"
+//申请查看族谱
+#define JS_APPLYZP_URL @"apply/insert"
 
 
 

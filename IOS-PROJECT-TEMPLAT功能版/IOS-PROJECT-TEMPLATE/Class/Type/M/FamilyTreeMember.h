@@ -27,7 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * state;
 @property(nonatomic,strong)NSString * updateTime;
 @property(nonatomic,strong)NSString * userUserId;
-
+@property(nonatomic,strong)NSString * headAddress;
+@property(nonatomic,strong)NSString * userPhone;
 
 @property(nonatomic,assign)NSInteger  parentIndex;
 @property(nonatomic,assign)NSInteger  parentSize;

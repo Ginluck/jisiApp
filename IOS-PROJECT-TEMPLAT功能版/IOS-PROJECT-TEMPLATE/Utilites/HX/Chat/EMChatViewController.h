@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class EMConversationModel;
 @interface EMChatViewController : EMRefreshViewController
-
+@property(nonatomic,strong)NSString * userName;
+@property (nonatomic, strong)NSString * sendUrl;
 @property(nonatomic, strong) UIAlertController *alertController;
 
 - (instancetype)initWithConversationId:(NSString *)aId

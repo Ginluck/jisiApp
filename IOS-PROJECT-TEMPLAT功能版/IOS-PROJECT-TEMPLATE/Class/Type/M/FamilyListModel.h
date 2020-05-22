@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * provinceId;
 @property(nonatomic,strong)NSString * updateTime;
 @property(nonatomic,strong)NSString * userUserId;
+@property(nonatomic,strong)NSString * pcaName;
 @property(nonatomic,strong)NSString * lat;
 @property(nonatomic,strong)NSString * lon;
 @end

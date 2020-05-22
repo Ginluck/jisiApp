@@ -25,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"族谱"];
-    [self addNavigationItemWithTitle:@"族谱" itemType:kNavigationItemTypeRight action:@selector(goFamilyTree)];
     [self.view addSubview:self.tableView];
     [self regisNib];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -46,10 +45,7 @@
     }
     return _headerView;
 }
--(void)goFamilyTree
-{
 
-}
 -(UITableView *)tableView
 {
     if (!_tableView)

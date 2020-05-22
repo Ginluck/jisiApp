@@ -19,78 +19,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Utilites/HUDManager/RequestHelp.m"
-            timestampString = "611215269.506891"
+            filePath = "IOS-PROJECT-TEMPLATE/Class/Order/C/ApplyController.m"
+            timestampString = "611807546.514629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "+POST:parameters:success:failure:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-ApplyClick:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Order/C/AddrChooseController.m"
-            timestampString = "611645901.760908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-searchWithSuggestionSearchOption:didReceiveResult:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Order/C/AddrChooseController.m"
-            timestampString = "611645901.7612031"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Order/C/OrderHomeController.m"
-            timestampString = "611645901.76144"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-textFieldShouldReturn:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Message/C/MessageHomeController.m"
-            timestampString = "611738387.456285"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "-viewWillAppear:"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[ApplyController ApplyClick:]_block_invoke"
+                  moduleName = "IOS-PROJECT-TEMPLATE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Order/C/ApplyController.m"
+                  timestampString = "611807130.975614"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[ApplyController ApplyClick:]_block_invoke_2"
+                  moduleName = "IOS-PROJECT-TEMPLATE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Order/C/ApplyController.m"
+                  timestampString = "611807130.981048"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

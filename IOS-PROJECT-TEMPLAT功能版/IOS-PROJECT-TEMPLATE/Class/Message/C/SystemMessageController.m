@@ -29,7 +29,7 @@
     [super viewDidLoad];
     [self addNavigationTitleView:@"系统消息"];
     [self.view addSubview:self.tableView];
-     [self postdata];
+
        self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
            [self postdata];
        }];
