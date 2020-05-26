@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SheZhiNameViewController : TPBaseViewController
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *NavHeight;
 @property (weak, nonatomic) IBOutlet UIView *NavView;
+@property (strong, nonatomic)NSString *NameStr;
 @end
 
 NS_ASSUME_NONNULL_END

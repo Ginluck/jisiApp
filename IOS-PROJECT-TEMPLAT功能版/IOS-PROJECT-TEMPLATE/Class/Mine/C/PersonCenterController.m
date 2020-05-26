@@ -38,9 +38,13 @@
 {
     if (!_tableView)
     {
-        _tableView =[[UITableView alloc]initWithFrame:CGRectMake(0, kNavagationBarH, Screen_Width, Screen_Height-kNavagationBarH-kBottomLayout) style:UITableViewStylePlain];
-        _tableView.delegate=self;
-        _tableView.dataSource=self;
+       _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-kNavagationBarH ) style:UITableViewStyleGrouped];
+               _tableView.delegate = self;
+               _tableView.dataSource = self;
+               UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+               imageV.image =KImageNamed(@"通用背景");
+               _tableView.backgroundView =imageV;
+               _tableView.showsVerticalScrollIndicator = NO;
         _tableView.backgroundColor =kBGViewCOLOR;
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MineTableViewCell class])];
         _tableView.separatorStyle = UITableViewCellEditingStyleNone;
@@ -49,6 +53,22 @@
         }
     }
     return _tableView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.01f;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01f;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

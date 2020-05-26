@@ -14,6 +14,7 @@
 @interface SetHeadViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
 @property(nonatomic,strong)UIView *BackGroundView;
+@property(nonatomic,strong)NSString *HeadImgStr;
 @end
 
 @implementation SetHeadViewController
@@ -35,6 +36,7 @@
             self.NumberLab.text=model.userPhone;
             self.Namelab.text=model.realName;
             self.AddressLab.text=model.address;
+           self.HeadImgStr=model.headAddress;
        } failure:^(NSError *error) {
            
        }];
@@ -64,6 +66,7 @@
             case 101:
             {
                 SheZhiNameViewController *SZNVC=[SheZhiNameViewController new];
+                SZNVC.NameStr =self.Namelab.text;
                 [self.navigationController pushViewController:SZNVC animated:YES];
             }
                 break;
@@ -88,6 +91,7 @@
 //                        self.lat =[NSString stringWithFormat:@"%f",code.location.latitude];
                         self.AddressLab.text=code.title;
                     }
+                    [self UpdateMyData];
                 };
                 [self.navigationController pushViewController:avc animated:YES];
             }
@@ -185,16 +189,24 @@
     [RequestHelp uploadPhotoData:data success:^(id result) {
         DLog(@"%@",result);
         DismissHud();
-//        if ([self.imgIndex isEqualToString:@"1"]) {
-//            [self.Btn1 sd_setBackgroundImageWithURL:result[@"url"] forState:UIControlStateNormal];
-//            [self.ImgDic setObject:result[@"url"] forKey:@"image1"];
-//        }
-       
+        self.HeadImgStr=result[@"url"];
+        [self UpdateMyData];
     } failure:^(NSError *error) {
         DismissHud();
     }];
 }
-
+-(void)UpdateMyData
+{
+    
+    NSDictionary* param_dic =@{@"realName":self.Namelab.text,@"address":self.AddressLab.text,@"headAddress":self.HeadImgStr};
+          [RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
+              MKLog(@"%@",result);
+              ShowMessage(@"修改成功");
+              
+          } failure:^(NSError *error) {
+              
+          }];
+}
 /*
 #pragma mark - Navigation
 
