@@ -67,6 +67,8 @@
     self.mapView = [[QMapView alloc] initWithFrame:CGRectMake(0, K_NaviHeight+50, Screen_Width, Screen_Height-K_NaviHeight-50)];
     //接受地图的delegate回调
     self.mapView.delegate = self;
+    [self.mapView setShowsUserLocation:YES];
+    [self.mapView setUserTrackingMode:QUserTrackingModeFollow];
     //把mapView添加到view中进行显示
     [self.view addSubview:self.mapView];
     

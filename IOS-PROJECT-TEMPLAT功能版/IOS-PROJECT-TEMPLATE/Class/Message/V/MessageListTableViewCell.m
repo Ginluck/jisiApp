@@ -71,7 +71,7 @@
 //}
 -(void)refreshMessage:(UserModel *)model
 {
-    self.nameLabel.text =model.userName;
+    self.nameLabel.text =model.realName;
     self.messageLabel.text =model.lastMessage;
     self.timeLabel.text =model.messageTime;
     [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.headAddress]];

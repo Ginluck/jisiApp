@@ -8,11 +8,15 @@
 
 #import "XingliProController.h"
 #import "JipinCell.h"
-@interface XingliProController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+#import "JipinModel.h"
+#import "BuyJPView.h"
+#import "JipinView.h"
+@class JPButton;
+@interface XingliProController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,JPCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
 @property(nonatomic,assign)NSInteger  page;
-
+@property (nonatomic,strong)BuyJPView * buyView;
 @end
 
 @implementation XingliProController
@@ -31,7 +35,25 @@
     }];
     //     Do any additional setup after loading the view from its nib.
 }
+-(void)JPCellClick:(JPButton*)button
+{
+    JipinModel* model =self.dataAry[button.row];
+    JipinChild * child =model.sacrificeList[button.tag];
+    [self.buyView refreshUI:child];
+    [self.view addSubview:self.buyView];
+    
+}
 
+
+-(BuyJPView *)buyView
+{
+    if (!_buyView) {
+        _buyView =[[[NSBundle mainBundle] loadNibNamed:@"BuyJPView" owner:self options:nil] firstObject];
+        _buyView.frame =CGRectMake(0, 0, 200,250);
+        _buyView.center =CGPointMake(Screen_Width/2, Screen_Height/2-50);
+    }
+    return _buyView;
+}
 -(UITableView *)tableView
 {
     if (!_tableView)
@@ -56,7 +78,7 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return self.dataAry.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -71,7 +93,9 @@
     
     JipinCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([JipinCell class]) forIndexPath:indexPath];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
-    [cell setCell:6];
+    cell.delegate=self;
+    JipinModel* model =self.dataAry[indexPath.section];
+    [cell setCell:model.sacrificeList row:indexPath.section];
     return cell;
 }
 
@@ -82,7 +106,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40.f;
+    return 30.f;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -90,13 +114,14 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
+    UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
     
-    UILabel * lab =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
+    UILabel * lab =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
     lab.textAlignment =NSTextAlignmentCenter;
     [lab setFont:MKFont(15)];
     lab.textColor =K_Prokect_MainColor;
-    lab.text =[NSString stringWithFormat:@"分类%d",section];
+    JipinModel * model =self.dataAry[section];
+    lab.text =model.name;
     [view addSubview:lab];
     
     return view;
@@ -134,21 +159,21 @@
 -(void)refreshPostData
 {
     
-    //    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"1",@"isApp":@"1"};
-    //    [RequestHelp POST:GET_HOUSESALE_URL parameters:param success:^(id result) {
-    //        DLog(@"%@",result);
-    //        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[HouseSaleInfo class] json:result[@"list"]]];
-    //        [self.tableView reloadData];
-    //        [self endRefresh];
-    //    } failure:^(NSError *error) {
-    //        [self endRefresh];
-    //    }];
+        NSDictionary * param =@{@"parentId":@"1"};
+        [RequestHelp POST:JS_JIPIN_LIST_URL parameters:param success:^(id result) {
+            DLog(@"%@",result);
+            [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[JipinModel class] json:result]];
+            [self.tableView reloadData];
+            [self endRefresh];
+        } failure:^(NSError *error) {
+            [self endRefresh];
+        }];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
-    
+    [self postDate];
 }
 
 @end

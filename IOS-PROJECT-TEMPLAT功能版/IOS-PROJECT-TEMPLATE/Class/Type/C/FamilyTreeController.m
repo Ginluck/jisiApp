@@ -31,14 +31,14 @@
     [self.view addSubview:self.tableView];
     [self regisNib];
     [self postDate];
-    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self postDate];
-    }];
-    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        self.page = self.page + 1;
-        [self refreshPostData];
-        
-    }];
+//    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [self postDate];
+//    }];
+//    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        self.page = self.page + 1;
+//        [self refreshPostData];
+//
+//    }];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)llook
@@ -54,6 +54,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-K_NaviHeight) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+        imageV.image =KImageNamed(@"通用背景");
+        _tableView.backgroundView =imageV;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;
         _tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
@@ -86,6 +89,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FamilyTreeCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FamilyTreeCell class]) forIndexPath:indexPath];
+    cell.backgroundView .backgroundColor =[UIColor clearColor];
+    cell.backgroundColor =[UIColor clearColor];
     FamilyTreeModel *model =self.dataAry[indexPath.row];
     [cell setCell:model.list index:indexPath.row];
     cell.delegate=self;
@@ -126,7 +131,7 @@
     UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",@"删除"]];
+    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",]];
     if (!member.parentId.length)
     {
         [arr addObject:@"添加上一代"];
@@ -134,6 +139,10 @@
     if (member.userPhone.length && ![member.userPhone isEqualToString:user.userPhone])
     {
           [arr addObject:@"发起聊天"];
+    }
+    if ([member.isDelete isEqualToString:@"1"])
+    {
+        [arr addObject:@"删除"];
     }
     SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:arr];
     actionSheet.itemTextFont =MKFont(13);
@@ -196,12 +205,8 @@
 }
 -(void)refreshPostData
 {
-    UserModel * model =[[UserManager shareInstance]getUser];
-    if (!model.jzId.length) {
-        ShowMessage(@"没有家族id");
-        return;
-    }
-        NSDictionary * param =@{@"jzId":@"1",@"spouseId":@"1",@"firstGeneration":@"1"};
+
+        NSDictionary * param =@{@"jzId":self.model.id,@"spouseId":@"1",@"firstGeneration":@"1"};
         [RequestHelp POST:JS_SELECT_ZPLIST_URL parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyTreeModel class] json:result]];

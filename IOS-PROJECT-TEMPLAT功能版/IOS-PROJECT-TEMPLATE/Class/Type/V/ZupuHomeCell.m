@@ -9,7 +9,8 @@
 #import "ZupuHomeCell.h"
 @interface ZupuHomeCell()
 @property(nonatomic,weak)IBOutlet UILabel * nameLabel;
-
+@property(nonatomic,weak)IBOutlet UILabel * familyCount;
+@property(nonatomic,weak)IBOutlet UILabel * nameIntro;
 @end
 @implementation ZupuHomeCell
 
@@ -22,6 +23,16 @@
 -(void)reloadCell:(FamilyListModel *)model
 {
     self.nameLabel.text =model.name;
+    self.nameIntro.text =model.name;
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"共修入%@人",model.jzNum]];
+    NSRange range1 = [[str string] rangeOfString:@"共修入"];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:range1];
+    NSRange range2 = [[str string] rangeOfString:[NSString stringWithFormat:@"%@",model.jzNum]];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range2];
+    NSRange range3 = [[str string] rangeOfString:@"人"];
+    [str addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:range3];
+    self.familyCount.attributedText = str;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

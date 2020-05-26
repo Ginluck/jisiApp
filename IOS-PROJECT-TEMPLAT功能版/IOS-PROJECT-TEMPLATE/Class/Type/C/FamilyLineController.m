@@ -22,6 +22,7 @@
 @property(nonatomic,strong)LineView * line4;
 @property(nonatomic,strong)LineView * line5;
 @property(nonatomic,strong)LineView * line6;
+@property(nonatomic,strong)UIImageView *backImage;
 @end
 
 @implementation FamilyLineController
@@ -29,8 +30,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.backImage];
     [self.view addSubview:self.scView];
     [self resolveData];
+}
+
+-(UIImageView *)backImage
+{
+    if (!_backImage) {
+        _backImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        _backImage.image =KImageNamed(@"通用背景");
+    }
+    return _backImage;
 }
 -(void)resolveData
 {
@@ -52,6 +63,7 @@
     if ((max *50+(max +1)*20)>Screen_Width)
     {
         self.scView.contentSize=CGSizeMake(max*50+(max+1)*20+30, 0);
+//          self.scView.contentSize=CGSizeMake(Screen_Width*5,0);
     }
     
     //第三步  匹配关系
@@ -113,7 +125,7 @@
                     member.bottom_y =CGRectGetMaxY(rec.frame);
                     
                     [self.scView addSubview:rec];
-                         [self drawLine:i parent:member.parentIndex endX:CGRectGetMidX(rec.frame) endY:CGRectGetMinY(rec.frame)];
+                    [self drawLine:i parent:member.parentIndex endX:CGRectGetMidX(rec.frame) endY:CGRectGetMinY(rec.frame)];
                 }
                 else
                 {
@@ -143,7 +155,7 @@
     CGPoint point1 =CGPointMake(member.bottom_x, member.bottom_y);
     CGPoint point2 =CGPointMake(endX, endY);
     
-    _line2 = [[LineView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height) point1:point1 point2:point2] ;
+    _line2 = [[LineView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width*10, Screen_Height) point1:point1 point2:point2] ;
     _line2.backgroundColor = [UIColor clearColor];
     
     [self.scView addSubview:_line2];
@@ -154,7 +166,8 @@
 {
     if (!_scView)
     {
-        _scView =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        _scView =[[UIScrollView alloc]initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height)];
+        _scView.backgroundColor =[UIColor clearColor];
     }
     return _scView;
 }

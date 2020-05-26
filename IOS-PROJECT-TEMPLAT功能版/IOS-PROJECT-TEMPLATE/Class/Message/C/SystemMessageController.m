@@ -49,6 +49,9 @@
         _tableView.dataSource = self;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;
+        UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+        imageV.image =KImageNamed(@"通用背景");
+        _tableView.backgroundView =imageV;
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorColor = [UIColor clearColor];
         if (@available(iOS 11, *)) {
@@ -85,6 +88,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    MessageListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MessageListTableViewCell class]) forIndexPath:indexPath];
+    cell.backgroundView .backgroundColor =[UIColor clearColor];
+    cell.backgroundColor =[UIColor clearColor];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
    [cell refreshSystem:self.dataAry[indexPath.section]];
    return cell;

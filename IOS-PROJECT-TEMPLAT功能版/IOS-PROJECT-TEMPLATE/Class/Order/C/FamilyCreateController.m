@@ -28,15 +28,24 @@
 @property(nonatomic,strong)NSString * lat;
 @property(nonatomic,strong)NSString * lon;
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
+@property(nonatomic,strong)UIImageView *backImage;
 @end
 
 @implementation FamilyCreateController
-
+-(UIImageView *)backImage
+{
+    if (!_backImage) {
+        _backImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        _backImage.image =KImageNamed(@"通用背景");
+    }
+    return _backImage;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"创建家族"];
     // Do any additional setup after loading the view from its nib.
-      [self.view addSubview:[self.addTitleAddressView initAddressView]];
+//    [self.view addSubview:self.backImage];
+    [self.view addSubview:[self.addTitleAddressView initAddressView]];
     self.contentTV.placeholdFont=MKFont(13);
 
 

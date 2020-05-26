@@ -124,21 +124,21 @@
 }
 -(void)refreshPostData
 {
-    
-    //    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"1",@"isApp":@"1"};
-    //    [RequestHelp POST:GET_HOUSESALE_URL parameters:param success:^(id result) {
-    //        DLog(@"%@",result);
-    //        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[HouseSaleInfo class] json:result[@"list"]]];
-    //        [self.tableView reloadData];
-    //        [self endRefresh];
-    //    } failure:^(NSError *error) {
-    //        [self endRefresh];
-    //    }];
+    NSDictionary * param =@{@"parentId":@"3"};
+    [RequestHelp POST:JS_JIPIN_LIST_URL parameters:param success:^(id result) {
+        DLog(@"%@",result);
+//        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[JipinModel class] json:result]];
+        [self.tableView reloadData];
+        [self endRefresh];
+    } failure:^(NSError *error) {
+        [self endRefresh];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
+    [self postDate];
     
 }
 

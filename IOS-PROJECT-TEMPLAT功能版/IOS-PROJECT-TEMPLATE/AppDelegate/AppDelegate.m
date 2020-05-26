@@ -15,6 +15,7 @@
 // iOS10 注册 APNs 所需头文件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
+#import "ViewController.h"
 #endif
 @interface AppDelegate ()
 @property (assign, nonatomic) BOOL isFirstLanuch;//检查是否是第一次登录
@@ -25,24 +26,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
-    [RequestHelp addReachabilityNetworkBackHandle:^{
-        
-    }];
-     [QMapServices sharedServices].APIKey = @"FLYBZ-C5O3W-IGARX-RNIYE-FFFTE-L2B33";
-    [[QMSSearchServices sharedServices] setApiKey:@"FLYBZ-C5O3W-IGARX-RNIYE-FFFTE-L2B33"];
-    
-    EMOptions *options = [EMOptions optionsWithAppkey:@"1113200511107367#jz"];
+    [RequestHelp addReachabilityNetworkBackHandle:^{}];
+    //配置腾讯地图
+    [QMapServices sharedServices].APIKey = QQMAPKEY;
+    [[QMSSearchServices sharedServices] setApiKey:QQMAPKEY];
+    //配置环信通讯
+    EMOptions *options = [EMOptions optionsWithAppkey:HXKEY];
     // apnsCertName是证书名称，可以先传nil，等后期配置apns推送时在传入证书名称
     options.apnsCertName = nil;
     [[EMClient sharedClient] initializeSDKWithOptions:options];
+    //配置极光推送
     [self setJPush:launchOptions];
+    //展示首图
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    UIViewController *vc = [UIViewController new];
-    vc.view.backgroundColor = [UIColor whiteColor];
-    self.window.backgroundColor = [UIColor whiteColor];
+    ViewController *vc = [ViewController new];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
+    [NSThread sleepForTimeInterval:3];
+    //展示登录
     [self showViewController];
     return YES;
 }

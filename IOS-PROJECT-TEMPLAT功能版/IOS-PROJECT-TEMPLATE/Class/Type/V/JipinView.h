@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class JPButton;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JipinView : UIView
 @property(nonatomic,strong) UILabel * topLab;
 @property(nonatomic,strong) UILabel * bottomLab;
 @property(nonatomic,strong) UIImageView * proImage;
+@property(nonatomic,strong) JPButton * clickBtn;
 @end
+@interface JPButton : UIButton
+@property(nonatomic,assign)NSInteger row;
+@end
+
 
 NS_ASSUME_NONNULL_END

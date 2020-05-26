@@ -7,11 +7,11 @@
 //
 
 #import "TPBaseViewController.h"
-
+#import "FamilyListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FamilyTreeController : TPBaseViewController
-
+@property(nonatomic,strong)FamilyListModel * model;
 @end
 
 NS_ASSUME_NONNULL_END

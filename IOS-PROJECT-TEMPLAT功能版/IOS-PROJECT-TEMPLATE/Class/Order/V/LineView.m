@@ -25,16 +25,16 @@
     {
         self.startPoint=point1;
         self.endPoint =point2;
-        self.frame =frame;
+//        self.frame =frame;
 
     }
     return self;
 }
 - (void)drawRect:(CGRect)rect {
     //画实线方法1
-    [self firstDrawStraightLineWithRect:rect];
+//    [self firstDrawStraightLineWithRect:rect];
 //    //画实线方法2
-//    [self secondDrawStraightLineWithRect:rect];
+    [self secondDrawStraightLineWithRect:rect];
 //    //画虚线
 //    [self drawImaginaryLineWithRect:rect];
 }
@@ -61,16 +61,18 @@
 - (void)secondDrawStraightLineWithRect:(CGRect)rect {
     //获得处理的上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
+
     //线条宽
     CGContextSetLineWidth(context, 1.0);
     //线条颜色
-    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
     //起点坐标
-    CGContextMoveToPoint(context, K_PDD_WIDTH, K_HEIGHT*2);
+    CGContextMoveToPoint(context, self.startPoint.x, self.startPoint.y);
     //终点坐标
-    CGContextAddLineToPoint(context, (rect.size.width - K_PDD_WIDTH), K_HEIGHT*2);
+    CGContextAddLineToPoint(context, self.endPoint.x, self.endPoint.y);
     //绘制路径
     CGContextStrokePath(context);
+    
 }
 //画虚线
 - (void)drawImaginaryLineWithRect:(CGRect)rect {

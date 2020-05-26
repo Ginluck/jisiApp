@@ -7,11 +7,18 @@
 //
 
 #import "TPBaseTableViewCell.h"
-
+#import "JipinModel.h"
+#import "JipinChild.h"
+@class JPButton;
 NS_ASSUME_NONNULL_BEGIN
+@protocol JPCellClickDelegate <NSObject>
 
+-(void)JPCellClick:(JPButton*)button;
+
+@end
 @interface JipinCell : TPBaseTableViewCell
--(void)setCell:(NSInteger)count;
+@property(nonatomic,assign)id<JPCellClickDelegate>delegate;
+-(void)setCell:(NSArray*)list row:(NSInteger)row;
 @end
 
 NS_ASSUME_NONNULL_END

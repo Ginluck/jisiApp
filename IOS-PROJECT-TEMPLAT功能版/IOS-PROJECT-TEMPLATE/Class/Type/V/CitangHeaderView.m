@@ -20,6 +20,6 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.height.constant =Screen_Width * 256/1027;
+    self.height.constant =Screen_Width * 256/1034;
 }
 @end

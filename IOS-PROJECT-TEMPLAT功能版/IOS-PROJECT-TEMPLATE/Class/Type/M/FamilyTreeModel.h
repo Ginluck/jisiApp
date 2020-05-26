@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FamilyTreeModel : NSObject
 @property(nonatomic,strong)NSString *count;
-@property(nonatomic,strong)NSArray <FamilyTreeModel *>*list;
+@property(nonatomic,strong)NSArray <FamilyTreeMember *>*list;
 @property(nonatomic,strong)NSString * lisCount;
 @end
 

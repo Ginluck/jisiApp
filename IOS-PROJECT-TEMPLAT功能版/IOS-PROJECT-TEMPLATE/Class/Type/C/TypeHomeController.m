@@ -35,6 +35,8 @@
         [self refreshPostData];
 
     }];
+    
+
 //     Do any additional setup after loading the view from its nib.
 }
 
@@ -42,6 +44,7 @@
 {
     if (!_headerView) {
         _headerView =[[[NSBundle mainBundle] loadNibNamed:@"CitangHeaderView" owner:self options:nil] firstObject];
+        _headerView.frame =CGRectMake(0, 0, Screen_Width,Screen_Width*256/1034+20);
     }
     return _headerView;
 }
@@ -160,7 +163,7 @@
         ShowMessage(@"您暂时还没有加入家族");
         return;
     }
-    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"id":@"1"};
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"id":model.jzId};
     [RequestHelp POST:JS_FAMILY_LIST_URL parameters:param success:^(id result) {
         DLog(@"%@",result);
         [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyListModel class] json:result[@"list"]]];
