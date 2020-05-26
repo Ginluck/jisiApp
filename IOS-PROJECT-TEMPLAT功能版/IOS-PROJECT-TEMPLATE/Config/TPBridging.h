@@ -20,8 +20,8 @@
 //normal image
 #define K_placeholder_Image_HomeRecommendImage  KImageNamed(@"")
 #define K_placeholder_Image  KImageNamed(@"")
-
-
+#define QQMAPKEY @"FLYBZ-C5O3W-IGARX-RNIYE-FFFTE-L2B33"
+#define HXKEY @"1113200511107367#jz"
 //打印
 #ifdef DEBUG
 #define MKLog( s, ... ) NSLog( @"<%@:(%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )//分别是文件名，在文件的第几行，自定义输出内容

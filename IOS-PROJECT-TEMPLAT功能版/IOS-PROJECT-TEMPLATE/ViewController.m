@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+    imageV.image =KImageNamed(@"通用背景");
+    [self.view addSubview:imageV];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

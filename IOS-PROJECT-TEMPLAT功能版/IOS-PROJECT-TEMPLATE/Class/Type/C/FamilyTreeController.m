@@ -131,7 +131,7 @@
     UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",@"删除"]];
+    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",]];
     if (!member.parentId.length)
     {
         [arr addObject:@"添加上一代"];
@@ -139,6 +139,10 @@
     if (member.userPhone.length && ![member.userPhone isEqualToString:user.userPhone])
     {
           [arr addObject:@"发起聊天"];
+    }
+    if ([member.isDelete isEqualToString:@"1"])
+    {
+        [arr addObject:@"删除"];
     }
     SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:arr];
     actionSheet.itemTextFont =MKFont(13);
@@ -201,12 +205,8 @@
 }
 -(void)refreshPostData
 {
-    UserModel * model =[[UserManager shareInstance]getUser];
-    if (!model.jzId.length) {
-        ShowMessage(@"没有家族id");
-        return;
-    }
-        NSDictionary * param =@{@"jzId":@"1",@"spouseId":@"1",@"firstGeneration":@"1"};
+
+        NSDictionary * param =@{@"jzId":self.model.id,@"spouseId":@"1",@"firstGeneration":@"1"};
         [RequestHelp POST:JS_SELECT_ZPLIST_URL parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyTreeModel class] json:result]];

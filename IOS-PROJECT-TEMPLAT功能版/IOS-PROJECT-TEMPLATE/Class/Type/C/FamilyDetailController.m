@@ -48,6 +48,7 @@
     if (button.tag ==10)
     {
         FamilyTreeController * fvc =[FamilyTreeController new];
+        fvc.model=self.model;
         [self.navigationController pushViewController:fvc animated:YES];
     }
     else
