@@ -19,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="YzZ-eL-n4n">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123232324432" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9Y-XP-aXF">
                     <rect key="frame" x="133" y="144" width="148" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -61,11 +64,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="YzZ-eL-n4n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2gI-V9-f3d"/>
                 <constraint firstItem="nxU-fw-Gx5" firstAttribute="top" secondItem="w9Y-XP-aXF" secondAttribute="bottom" constant="8" id="2p7-Ib-a9d"/>
                 <constraint firstItem="w9Y-XP-aXF" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="4lT-eh-PA7"/>
                 <constraint firstItem="nxU-fw-Gx5" firstAttribute="centerX" secondItem="w9Y-XP-aXF" secondAttribute="centerX" id="5sS-K8-3TB"/>
                 <constraint firstItem="yNl-ZN-Gqq" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="24" id="6eI-eM-3UF"/>
                 <constraint firstItem="pZ6-Yr-n8X" firstAttribute="top" secondItem="nxU-fw-Gx5" secondAttribute="bottom" constant="110" id="7hW-zo-NdA"/>
+                <constraint firstAttribute="trailing" secondItem="YzZ-eL-n4n" secondAttribute="trailing" id="CGo-M0-dlb"/>
+                <constraint firstAttribute="bottom" secondItem="YzZ-eL-n4n" secondAttribute="bottom" id="JBt-XU-Ohy"/>
+                <constraint firstItem="YzZ-eL-n4n" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="M8H-dl-MWA"/>
                 <constraint firstItem="yNl-ZN-Gqq" firstAttribute="top" secondItem="pZ6-Yr-n8X" secondAttribute="bottom" constant="30" id="anm-1L-Zkw"/>
                 <constraint firstItem="pZ6-Yr-n8X" firstAttribute="centerX" secondItem="nxU-fw-Gx5" secondAttribute="centerX" id="cG6-2l-et4"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yNl-ZN-Gqq" secondAttribute="trailing" constant="24" id="gPr-Wj-1wh"/>
@@ -75,4 +82,7 @@
             <point key="canvasLocation" x="139" y="91"/>
         </view>
     </objects>
+    <resources>
+        <image name="通用背景" width="1080" height="1557"/>
+    </resources>
 </document>

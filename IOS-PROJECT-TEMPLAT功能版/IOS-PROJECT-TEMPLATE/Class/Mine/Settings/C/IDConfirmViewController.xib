@@ -19,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="NGo-f2-PwB">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDh-g4-jOo">
                     <rect key="frame" x="0.0" y="54" width="414" height="50"/>
                     <subviews>
@@ -70,13 +73,20 @@
             <constraints>
                 <constraint firstItem="vtg-8Q-UEN" firstAttribute="top" secondItem="bDh-g4-jOo" secondAttribute="bottom" constant="100" id="7LY-gp-76I"/>
                 <constraint firstItem="bDh-g4-jOo" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="JoP-6e-NgV"/>
+                <constraint firstItem="NGo-f2-PwB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LLc-Dp-46v"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="vtg-8Q-UEN" secondAttribute="trailing" constant="24" id="LXJ-ay-Dne"/>
                 <constraint firstItem="vtg-8Q-UEN" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="24" id="Rsa-28-rD8"/>
+                <constraint firstAttribute="bottom" secondItem="NGo-f2-PwB" secondAttribute="bottom" id="V0D-ud-bgT"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bDh-g4-jOo" secondAttribute="trailing" id="Yqn-1I-gQk"/>
+                <constraint firstItem="NGo-f2-PwB" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="dKc-Bn-FLS"/>
+                <constraint firstItem="NGo-f2-PwB" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="dV5-mv-hm0"/>
                 <constraint firstItem="bDh-g4-jOo" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="rFe-qy-6vV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="91"/>
         </view>
     </objects>
+    <resources>
+        <image name="通用背景" width="1080" height="1557"/>
+    </resources>
 </document>
