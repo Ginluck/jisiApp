@@ -25,6 +25,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="bts-ty-lTg">
+                    <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sux-Vd-Da7">
                     <rect key="frame" x="0.0" y="20" width="375" height="450"/>
                     <subviews>
@@ -135,7 +138,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="e1l-Lf-flC" firstAttribute="top" secondItem="wS2-Ye-cMk" secondAttribute="bottom" constant="9" id="3ed-T4-sWI"/>
                         <constraint firstItem="OwF-Gf-Wjy" firstAttribute="centerY" secondItem="gAE-W3-I85" secondAttribute="centerY" id="88d-wp-uP1"/>
@@ -175,7 +178,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-p9-krb">
                     <rect key="frame" x="10" y="617" width="355" height="40"/>
-                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.61568627450000002" green="0.094117647060000004" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6fK-OU-NAj"/>
                     </constraints>
@@ -195,12 +198,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="rSw-p9-krb" firstAttribute="top" secondItem="bts-ty-lTg" secondAttribute="bottom" id="Ccz-4r-b9M"/>
                 <constraint firstItem="Sux-Vd-Da7" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="EgD-gl-AE8"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rSw-p9-krb" secondAttribute="trailing" constant="10" id="J2r-Mk-dWz"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Sux-Vd-Da7" secondAttribute="trailing" id="OjV-ht-XOR"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="rSw-p9-krb" secondAttribute="bottom" constant="10" id="R86-s6-qHA"/>
                 <constraint firstItem="rSw-p9-krb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="XFl-Ze-kpj"/>
+                <constraint firstItem="bts-ty-lTg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="bdn-DH-JhA"/>
+                <constraint firstItem="bts-ty-lTg" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="hUw-ha-OZb"/>
                 <constraint firstItem="Sux-Vd-Da7" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="krs-Lf-LAY"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bts-ty-lTg" secondAttribute="trailing" id="pFF-zj-SZK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.40000000000001" y="138.98050974512745"/>
@@ -208,5 +215,6 @@
     </objects>
     <resources>
         <image name="加号" width="150" height="150"/>
+        <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>

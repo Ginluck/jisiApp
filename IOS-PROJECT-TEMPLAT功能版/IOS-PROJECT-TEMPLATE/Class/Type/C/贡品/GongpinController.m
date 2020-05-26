@@ -8,6 +8,7 @@
 
 #import "GongpinController.h"
 #import "JipinCell.h"
+#import "JipinModel.h"
 @interface GongpinController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -57,7 +58,7 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return self.dataAry.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -72,7 +73,8 @@
     
     JipinCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([JipinCell class]) forIndexPath:indexPath];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
-    [cell setCell:6];
+    JipinModel * model =self.dataAry[indexPath.section];
+    [cell setCell:model.sacrificeList row:indexPath.section];
     return cell;
 }
 
@@ -83,7 +85,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40.f;
+    return 30.f;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -91,13 +93,14 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
+    UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
     
-    UILabel * lab =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
+    UILabel * lab =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
     lab.textAlignment =NSTextAlignmentCenter;
     [lab setFont:MKFont(15)];
     lab.textColor =K_Prokect_MainColor;
-    lab.text =[NSString stringWithFormat:@"分类%d",section];
+    JipinModel * model =self.dataAry[section];
+    lab.text =model.name;
     [view addSubview:lab];
     
     return view;
@@ -134,22 +137,21 @@
 }
 -(void)refreshPostData
 {
-    
-    //    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"1",@"isApp":@"1"};
-    //    [RequestHelp POST:GET_HOUSESALE_URL parameters:param success:^(id result) {
-    //        DLog(@"%@",result);
-    //        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[HouseSaleInfo class] json:result[@"list"]]];
-    //        [self.tableView reloadData];
-    //        [self endRefresh];
-    //    } failure:^(NSError *error) {
-    //        [self endRefresh];
-    //    }];
+    NSDictionary * param =@{@"parentId":@"2"};
+    [RequestHelp POST:JS_JIPIN_LIST_URL parameters:param success:^(id result) {
+        DLog(@"%@",result);
+        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[JipinModel class] json:result]];
+        [self.tableView reloadData];
+        [self endRefresh];
+    } failure:^(NSError *error) {
+        [self endRefresh];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
-    
+    [self postDate];
 }
 
 @end

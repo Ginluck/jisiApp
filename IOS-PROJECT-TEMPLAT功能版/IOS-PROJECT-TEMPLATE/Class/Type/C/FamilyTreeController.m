@@ -31,14 +31,14 @@
     [self.view addSubview:self.tableView];
     [self regisNib];
     [self postDate];
-    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self postDate];
-    }];
-    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        self.page = self.page + 1;
-        [self refreshPostData];
-        
-    }];
+//    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [self postDate];
+//    }];
+//    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        self.page = self.page + 1;
+//        [self refreshPostData];
+//
+//    }];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)llook
@@ -54,6 +54,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-K_NaviHeight) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+        imageV.image =KImageNamed(@"通用背景");
+        _tableView.backgroundView =imageV;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;
         _tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
@@ -86,6 +89,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FamilyTreeCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FamilyTreeCell class]) forIndexPath:indexPath];
+    cell.backgroundView .backgroundColor =[UIColor clearColor];
+    cell.backgroundColor =[UIColor clearColor];
     FamilyTreeModel *model =self.dataAry[indexPath.row];
     [cell setCell:model.list index:indexPath.row];
     cell.delegate=self;

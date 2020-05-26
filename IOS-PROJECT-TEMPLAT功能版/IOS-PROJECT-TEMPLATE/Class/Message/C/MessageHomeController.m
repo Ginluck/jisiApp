@@ -37,6 +37,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-kNavagationBarH ) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+        imageV.image =KImageNamed(@"通用背景");
+        _tableView.backgroundView =imageV;
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorColor = [UIColor clearColor];
         if (@available(iOS 11, *)) {
@@ -71,6 +74,8 @@
     if (indexPath.section ==0)
     {
         MessageListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MessageListTableViewCell class]) forIndexPath:indexPath];
+        cell.backgroundView .backgroundColor =[UIColor clearColor];
+        cell.backgroundColor =[UIColor clearColor];
         cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
         cell.timeLabel.text =@"";
         cell.isRead.hidden=YES;
@@ -90,6 +95,8 @@
     else
     {
         MessageListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MessageListTableViewCell class]) forIndexPath:indexPath];
+        cell.backgroundView .backgroundColor =[UIColor clearColor];
+        cell.backgroundColor =[UIColor clearColor];
         cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
         [cell refreshMessage:self.dataSource[indexPath.row]];
         return cell;
@@ -105,7 +112,7 @@
         [ary replaceObjectAtIndex:indexPath.row withObject:model];
         self.dataSource =[NSArray arrayWithArray:ary];
         EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:model.userPhone type:EMConversationTypeChat createIfNotExist:YES];
-        chatController.userName =model.userName;
+        chatController.userName =model.realName;
         chatController.sendUrl =model.headAddress;
         chatController.hidesBottomBarWhenPushed=YES;
         [self.navigationController pushViewController:chatController animated:YES];
@@ -139,6 +146,9 @@
     }
     else
     {
+        if (!self.dataArr.count) {
+            return;
+        }
         [self requestData];
     }
 //

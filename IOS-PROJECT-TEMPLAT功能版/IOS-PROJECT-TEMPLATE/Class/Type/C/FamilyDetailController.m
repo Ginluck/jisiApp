@@ -21,6 +21,7 @@
 @property(nonatomic,strong)HomeHeaderView *HHView;
 @property(nonatomic,strong)UIView *bottomView;
 @property(nonatomic,strong)UILabel *introduceLab;
+@property(nonatomic,strong)UIImageView *backImage;
 @end
 
 @implementation FamilyDetailController
@@ -28,9 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"族谱详情"];
+    [self.view addSubview:self.backImage];
     [self.view addSubview:self.HHView];
     [self.view addSubview:self.bottomView];
-  
+    
+}
+
+-(UIImageView *)backImage
+{
+    if (!_backImage) {
+        _backImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        _backImage.image =KImageNamed(@"通用背景");
+    }
+    return _backImage;
 }
 -(void)headerViewClick:(UIButton *)button
 {

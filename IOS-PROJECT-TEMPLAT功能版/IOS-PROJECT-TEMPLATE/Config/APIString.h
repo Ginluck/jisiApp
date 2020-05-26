@@ -74,6 +74,8 @@
 #define JS_APPLYZP_URL @"apply/insert"
 //获取回话列表
 #define JS_GETCONVERSATION_URL @"userApp/BASE_PHONE_GAIN_MESSAGE"
+//祭品列表
+#define JS_JIPIN_LIST_URL @"appSacrifice/list"
 
 
 

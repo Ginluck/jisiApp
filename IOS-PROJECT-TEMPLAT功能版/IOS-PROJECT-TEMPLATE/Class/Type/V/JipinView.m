@@ -30,6 +30,7 @@
         [self addSubview:self.proImage];
         [self addSubview:self.topLab];
         [self addSubview:self.bottomLab];
+        [self addSubview:self.clickBtn];
         self.backgroundColor =[UIColor clearColor];
     }
     return self;
@@ -60,6 +61,16 @@
     return _topLab;
 }
 
+-(JPButton *)clickBtn
+{
+    if (!_clickBtn) {
+        _clickBtn =[JPButton buttonWithType:UIButtonTypeCustom];
+        _clickBtn.frame =self.bounds;
+        _clickBtn.backgroundColor =[UIColor clearColor];
+    }
+    return _clickBtn;
+    
+}
 -(UILabel *)bottomLab
 {
     if (!_bottomLab)
@@ -72,4 +83,9 @@
     }
     return _bottomLab;
 }
+@end
+@implementation JPButton
+
+@synthesize row;
+
 @end

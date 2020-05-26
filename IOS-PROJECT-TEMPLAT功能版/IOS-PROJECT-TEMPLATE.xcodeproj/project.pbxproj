@@ -630,6 +630,10 @@
 		71E55BE6246E7CDB00255230 /* ZupuHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55BE4246E7CDB00255230 /* ZupuHomeCell.xib */; };
 		71E55BEB24723F6700255230 /* CitangListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55BEA24723F6700255230 /* CitangListModel.m */; };
 		71EC5F96247771DF00407D7F /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC5F95247771DE00407D7F /* MineDataModel.m */; };
+		71EC5F99247B5DF900407D7F /* JipinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC5F98247B5DF900407D7F /* JipinModel.m */; };
+		71EC5F9C247B5E7200407D7F /* JipinChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC5F9B247B5E7200407D7F /* JipinChild.m */; };
+		71EC5F9F247B9EE000407D7F /* BuyJPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC5F9E247B9EDF00407D7F /* BuyJPView.m */; };
+		71EC5FA1247BA23E00407D7F /* BuyJPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EC5FA0247BA23E00407D7F /* BuyJPView.xib */; };
 		8B7904F6CB736013CCA7923B /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21506B8CD3DCE940FF05FA63 /* libPods-IOS-PROJECT-TEMPLATETests.a */; };
 		8C0F704AC3E8DD30114C5F5A /* libPods-IOS-PROJECT-TEMPLATE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192026675E89DE0F104F7AA6 /* libPods-IOS-PROJECT-TEMPLATE.a */; };
 		B58C5CFA15C764C29F37CCC6 /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006022DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a */; };
@@ -1593,6 +1597,13 @@
 		71E55BEA24723F6700255230 /* CitangListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitangListModel.m; sourceTree = "<group>"; };
 		71EC5F94247771DE00407D7F /* MineDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
 		71EC5F95247771DE00407D7F /* MineDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
+		71EC5F97247B5DF900407D7F /* JipinModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JipinModel.h; sourceTree = "<group>"; };
+		71EC5F98247B5DF900407D7F /* JipinModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JipinModel.m; sourceTree = "<group>"; };
+		71EC5F9A247B5E7200407D7F /* JipinChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JipinChild.h; sourceTree = "<group>"; };
+		71EC5F9B247B5E7200407D7F /* JipinChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JipinChild.m; sourceTree = "<group>"; };
+		71EC5F9D247B9EDF00407D7F /* BuyJPView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyJPView.h; sourceTree = "<group>"; };
+		71EC5F9E247B9EDF00407D7F /* BuyJPView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyJPView.m; sourceTree = "<group>"; };
+		71EC5FA0247BA23E00407D7F /* BuyJPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyJPView.xib; sourceTree = "<group>"; };
 		93F7777DC9FF2881B3C3946B /* Pods-IOS-PROJECT-TEMPLATETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATETests.debug.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATETests/Pods-IOS-PROJECT-TEMPLATETests.debug.xcconfig"; sourceTree = "<group>"; };
 		B549C0285FF86B05333F2611 /* Pods-IOS-PROJECT-TEMPLATEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATEUITests.release.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATEUITests/Pods-IOS-PROJECT-TEMPLATEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C11CF6FD2D9C7653F49807E0 /* Pods-IOS-PROJECT-TEMPLATE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATE.release.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE.release.xcconfig"; sourceTree = "<group>"; };
@@ -2932,6 +2943,9 @@
 				71E55BD5246E6DEE00255230 /* HomeTableHeaderView.h */,
 				71E55BD6246E6DEE00255230 /* HomeTableHeaderView.m */,
 				71E55BD8246E6E0B00255230 /* HomeTableHeaderView.xib */,
+				71EC5F9D247B9EDF00407D7F /* BuyJPView.h */,
+				71EC5F9E247B9EDF00407D7F /* BuyJPView.m */,
+				71EC5FA0247BA23E00407D7F /* BuyJPView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -3529,6 +3543,10 @@
 			children = (
 				71E55BE924723F6700255230 /* CitangListModel.h */,
 				71E55BEA24723F6700255230 /* CitangListModel.m */,
+				71EC5F97247B5DF900407D7F /* JipinModel.h */,
+				71EC5F98247B5DF900407D7F /* JipinModel.m */,
+				71EC5F9A247B5E7200407D7F /* JipinChild.h */,
+				71EC5F9B247B5E7200407D7F /* JipinChild.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3865,6 +3883,7 @@
 				715EEB4824750DDC009CF31A /* icon_012.gif in Resources */,
 				715EED0424750E02009CF31A /* animate_00032.png in Resources */,
 				715EED6124750E02009CF31A /* recorder_gray@2x.png in Resources */,
+				71EC5FA1247BA23E00407D7F /* BuyJPView.xib in Resources */,
 				715EEB9424750DDC009CF31A /* msg_send_audio02@3x.png in Resources */,
 				711B0BA924693FA8009C84DB /* GongFengRecordViewController.xib in Resources */,
 				715EED1024750E02009CF31A /* animate_00086.png in Resources */,
@@ -4163,6 +4182,7 @@
 				71BEE52422CB51EB00E1B9E3 /* ViewController.m in Sources */,
 				711B0B41246929E8009C84DB /* CityModel.m in Sources */,
 				711B0A9B24692962009C84DB /* JKCountDownButton.m in Sources */,
+				71EC5F9C247B5E7200407D7F /* JipinChild.m in Sources */,
 				711B0AF1246929AF009C84DB /* RectangleView.m in Sources */,
 				715EECF424750E02009CF31A /* DemoConfManager.m in Sources */,
 				715EE9DD24750D7A009CF31A /* EMRemindManager.m in Sources */,
@@ -4302,6 +4322,7 @@
 				711B0A7C2469294C009C84DB /* IDSafeViewController.m in Sources */,
 				715EE9BB24750D7A009CF31A /* PSTGridLayoutInfo.m in Sources */,
 				719D4B40239F7601003C6803 /* PersonCenterController.m in Sources */,
+				71EC5F9F247B9EE000407D7F /* BuyJPView.m in Sources */,
 				71BEE5A822CB61EF00E1B9E3 /* DLTabedSlideView.m in Sources */,
 				711B0B8324692B0C009C84DB /* NSString+Attributes.m in Sources */,
 				713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */,
@@ -4316,6 +4337,7 @@
 				182D7CC62477E2B90019DCD3 /* RZLookReasonViewController.m in Sources */,
 				711B0AE024692979009C84DB /* ValuePickerView.m in Sources */,
 				711B0B9224692B38009C84DB /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
+				71EC5F99247B5DF900407D7F /* JipinModel.m in Sources */,
 				715EECF124750E02009CF31A /* EM1v1CallViewController.m in Sources */,
 				719D4B46239F7621003C6803 /* OrderHomeController.m in Sources */,
 				715EE9D824750D7A009CF31A /* EMSearchViewController.m in Sources */,

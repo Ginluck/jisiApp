@@ -11,6 +11,7 @@
 #import "HomeTableHeaderView.h"
 #import "CitangListModel.h"
 #import <AVFoundation/AVFoundation.h> //音频视频框架
+#import "JisiProController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -24,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"祠堂"];
-    [self addNavigationItemWithImageName:@"音乐图标" itemType:kNavigationItemTypeRight action:@selector(soundClick)];
+    [self addNavigationItemWithImageName:@"音乐图标" itemType:kNavigationItemTypeLeft action:@selector(soundClick)];
     [self.view addSubview:self.tableView];
     [self regisNib];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -35,9 +36,44 @@
         [self refreshPostData];
         
     }];
+    UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);
+    [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];
+    button.backgroundColor =[UIColor whiteColor];
+    button.layer.cornerRadius =15.f;
+    button.layer.masksToBounds=YES;
+    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     //     Do any additional setup after loading the view from its nib.
 }
 
+-(void)click
+{
+    //显示弹出框列表选择
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"创建祠堂"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * action) {
+                                                             //响应事件
+                                                             NSLog(@"action = %@", action);
+                                                         }];
+    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"新增个人祠堂" style:UIAlertActionStyleDestructive
+                                                         handler:^(UIAlertAction * action) {
+                                                             //响应事件
+                                                             NSLog(@"action = %@", action);
+                                                         }];
+    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"新增家族祠堂" style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+                                                           //响应事件
+                                                           NSLog(@"action = %@", action);
+                                                       }];
+    [alert addAction:saveAction];
+    [alert addAction:cancelAction];
+    [alert addAction:deleteAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 -(AVAudioPlayer *)player
 {
     if (!_player) {
@@ -115,6 +151,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    JisiProController * jvc  =[JisiProController new];
+    jvc.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:jvc animated:YES];
     
 }
 

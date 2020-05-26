@@ -10,6 +10,7 @@
 #import "XingliProController.h"
 #import "GongpinController.h"
 #import "TaoCanViewController.h"
+#import "JipinModel.h"
 @interface JisiProController ()
 
 @end
