@@ -27,8 +27,7 @@
     [super viewDidLoad];
     self.NavHeight.constant =kNavagationBarH;
     [self.NavView setNeedsLayout];
-     UserModel * model =[[UserManager shareInstance]getUser];
-    self.nickNameField.text =model.userName;
+    self.nickNameField.text =self.NameStr;
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)Back:(UIButton *)sender {
@@ -40,19 +39,15 @@
         ShowMessage(@"请输入昵称");
         return;
     }
-    UserModel * model =[[UserManager shareInstance]getUser];
+  
+  
+NSDictionary* param_dic =@{@"realName":self.nickNameField.text,@"address":@"",@"headAddress":@""};
+[RequestHelp POST:SELECT_USERINFO_url parameters:param_dic success:^(id result) {
+    MKLog(@"%@",result);
+   ShowMessage(@"修改成功");
+} failure:^(NSError *error) {
     
-    NSDictionary * dic =@{@"userPhone":model.userPhone,@"userName":self.nickNameField.text,@"updateType":@"1"};
-//    [RequestHelp POST:UPDATE_USERINFO_URL parameters:dic success:^(id result) {
-//        DLog(@"%@",result);
-//        ShowMessage(@"修改成功");
-//        UserModel * model =[[UserManager shareInstance]getUser];
-//        model.userName =self.nickNameField.text;
-//        [[UserManager shareInstance]saveUser:model];
-//        [self.navigationController popViewControllerAnimated:YES];
-//    } failure:^(NSError *error) {
-//        
-//    }];
+}];
 }
 
 

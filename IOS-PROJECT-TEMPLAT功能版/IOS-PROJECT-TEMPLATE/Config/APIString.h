@@ -44,6 +44,11 @@
 //通过和驳回
 
 #define  update_url  @"apply/update"
+//修改个人资料
+
+#define  UPDATE_ZJ_url  @"userApp/UPDATE_ZJ"
+
+
 
 
 //2.4.1 查询省
