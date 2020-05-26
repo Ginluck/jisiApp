@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "NSDate+CommonDate.h"
 @interface ViewController ()
 
 @end
@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
-    imageV.image =KImageNamed(@"通用背景");
+    
+
+    
+   NSUInteger value= [[NSDate date]getMonth];
+    NSString * str =[NSString stringWithFormat:@"启动页面%lu",(unsigned long)value];
+    imageV.image =KImageNamed(str);
     [self.view addSubview:imageV];
     // Do any additional setup after loading the view, typically from a nib.
 }

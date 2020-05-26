@@ -44,7 +44,8 @@
     [self.window makeKeyAndVisible];
     [NSThread sleepForTimeInterval:3];
     //展示登录
-    [self showViewController];
+    [self performSelector:@selector(showViewController) withObject:nil afterDelay:3.0f];
+
     return YES;
 }
 /*
