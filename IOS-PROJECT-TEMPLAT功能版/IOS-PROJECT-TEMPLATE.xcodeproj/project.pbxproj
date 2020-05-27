@@ -14,6 +14,8 @@
 		182D7CC22477DFBD0019DCD3 /* RZMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D7CC12477DFBD0019DCD3 /* RZMessageModel.m */; };
 		182D7CC62477E2B90019DCD3 /* RZLookReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D7CC42477E2B90019DCD3 /* RZLookReasonViewController.m */; };
 		182D7CC72477E2B90019DCD3 /* RZLookReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D7CC52477E2B90019DCD3 /* RZLookReasonViewController.xib */; };
+		183015D1247E17AE00B43F64 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015D0247E17AE00B43F64 /* MineHeaderView.m */; };
+		183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015D2247E17C300B43F64 /* MineHeaderView.xib */; };
 		18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F40324768FEB00B16077 /* MineDataModel.m */; };
 		18F930632477D942007BA7FF /* TeasingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F930602477D941007BA7FF /* TeasingViewController.xib */; };
 		18F930642477D942007BA7FF /* TeasingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F930622477D942007BA7FF /* TeasingViewController.m */; };
@@ -670,6 +672,9 @@
 		182D7CC32477E2B90019DCD3 /* RZLookReasonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZLookReasonViewController.h; sourceTree = "<group>"; };
 		182D7CC42477E2B90019DCD3 /* RZLookReasonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZLookReasonViewController.m; sourceTree = "<group>"; };
 		182D7CC52477E2B90019DCD3 /* RZLookReasonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RZLookReasonViewController.xib; sourceTree = "<group>"; };
+		183015CF247E17AE00B43F64 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
+		183015D0247E17AE00B43F64 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		183015D2247E17C300B43F64 /* MineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
 		18C1F40224768FEB00B16077 /* MineDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
 		18C1F40324768FEB00B16077 /* MineDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		18F930602477D941007BA7FF /* TeasingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeasingViewController.xib; sourceTree = "<group>"; };
@@ -1671,6 +1676,9 @@
 		18C1F4052477CB4D00B16077 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				183015CF247E17AE00B43F64 /* MineHeaderView.h */,
+				183015D0247E17AE00B43F64 /* MineHeaderView.m */,
+				183015D2247E17C300B43F64 /* MineHeaderView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -3871,6 +3879,7 @@
 				715EED4524750E02009CF31A /* kbps_gray@3x.png in Resources */,
 				711B0B7E24692B0C009C84DB /* PYSearch.bundle in Resources */,
 				715EED2B24750E02009CF31A /* animate_00064.png in Resources */,
+				183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */,
 				711B0AE5246929A7009C84DB /* FamilyCreateController.xib in Resources */,
 				715EEB3624750DDB009CF31A /* pin-red.png in Resources */,
 				715EED0724750E02009CF31A /* animate_00025.png in Resources */,
@@ -4405,6 +4414,7 @@
 				715EE9C724750D7A009CF31A /* EMMulticastDelegate.m in Sources */,
 				71E55BB1246E65C500255230 /* TravelWebTableViewCell.m in Sources */,
 				71E55BB9246E65C500255230 /* AddOrderTableViewCell.m in Sources */,
+				183015D1247E17AE00B43F64 /* MineHeaderView.m in Sources */,
 				71BEE58222CB597000E1B9E3 /* UILabel+layout.m in Sources */,
 				715EEB8624750DDC009CF31A /* EMMessageTimeCell.m in Sources */,
 				715EE98B24750D7A009CF31A /* EMNotificationHelper.m in Sources */,
