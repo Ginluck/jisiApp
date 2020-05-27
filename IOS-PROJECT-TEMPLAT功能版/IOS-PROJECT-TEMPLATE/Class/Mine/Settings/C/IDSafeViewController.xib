@@ -19,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="adX-BH-Ixx">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyS-Fn-cqW">
                     <rect key="frame" x="0.0" y="54" width="414" height="50"/>
                     <subviews>
@@ -128,7 +131,11 @@
             </subviews>
             <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="adX-BH-Ixx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1cV-wE-euq"/>
                 <constraint firstItem="fyS-Fn-cqW" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="2Mn-pF-8Vn"/>
+                <constraint firstAttribute="bottom" secondItem="adX-BH-Ixx" secondAttribute="bottom" id="CY7-Hk-ZcH"/>
+                <constraint firstItem="adX-BH-Ixx" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="DE2-Ye-oGv"/>
+                <constraint firstItem="adX-BH-Ixx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="bDd-Zc-bo8"/>
                 <constraint firstAttribute="trailing" secondItem="f1G-j6-Xqm" secondAttribute="trailing" id="eci-2J-UQ4"/>
                 <constraint firstItem="fyS-Fn-cqW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="fNA-BJ-io3"/>
                 <constraint firstAttribute="trailing" secondItem="fyS-Fn-cqW" secondAttribute="trailing" id="qI1-Ai-UHO"/>
@@ -141,5 +148,6 @@
     </objects>
     <resources>
         <image name="下一步" width="7" height="14"/>
+        <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>

@@ -29,6 +29,12 @@
            
        }];
 }
+- (IBAction)BtnClick:(UIButton *)sender {
+    if (self.VCClick) {
+        self.VCClick(sender.tag-10);
+    }
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

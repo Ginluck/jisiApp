@@ -18,7 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="yni-AM-HKz">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="cNy-sm-PTW">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO图标" translatesAutoresizingMaskIntoConstraints="NO" id="yni-AM-HKz">
                     <rect key="frame" x="150" y="104" width="114" height="114"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="yni-AM-HKz" secondAttribute="height" multiplier="1:1" id="Cbj-Gu-ipo"/>
@@ -191,18 +194,23 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yni-AM-HKz" secondAttribute="trailing" constant="150" id="P1f-Vd-nst"/>
                 <constraint firstItem="g7V-c6-eAI" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="WHS-OC-KaS"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="saP-Lw-keX" secondAttribute="trailing" id="Wnj-BC-xBk"/>
+                <constraint firstItem="cNy-sm-PTW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="YdU-dx-EKa"/>
                 <constraint firstItem="4bI-XV-tUX" firstAttribute="top" secondItem="g7V-c6-eAI" secondAttribute="bottom" constant="1" id="dYn-Fc-fnR"/>
+                <constraint firstItem="cNy-sm-PTW" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="daj-Rp-O3z"/>
                 <constraint firstItem="yni-AM-HKz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="150" id="gUb-HF-9ng"/>
                 <constraint firstItem="yni-AM-HKz" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="60" id="hXo-5q-FMJ"/>
                 <constraint firstItem="g7V-c6-eAI" firstAttribute="top" secondItem="saP-Lw-keX" secondAttribute="bottom" constant="1" id="rsU-Mh-5op"/>
                 <constraint firstItem="4bI-XV-tUX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="yek-l9-NUk"/>
+                <constraint firstItem="cNy-sm-PTW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yfb-6R-vcG"/>
+                <constraint firstAttribute="bottom" secondItem="cNy-sm-PTW" secondAttribute="bottom" id="ymt-ki-4Iw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
         </view>
     </objects>
     <resources>
-        <image name="home" width="20" height="20.5"/>
+        <image name="LOGO图标" width="116" height="134"/>
         <image name="下一步" width="7" height="14"/>
+        <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>

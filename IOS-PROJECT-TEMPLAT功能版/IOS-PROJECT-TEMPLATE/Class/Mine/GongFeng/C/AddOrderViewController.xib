@@ -19,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="2vV-5B-RHC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STb-lc-Rx0">
                     <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                     <subviews>
@@ -54,10 +57,17 @@
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="STb-lc-Rx0" secondAttribute="bottom" id="2Fv-Ff-v0S"/>
                 <constraint firstItem="STb-lc-Rx0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3Fl-hl-LMh"/>
+                <constraint firstItem="2vV-5B-RHC" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="L9C-ny-F2A"/>
+                <constraint firstItem="2vV-5B-RHC" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="fTU-Jr-xCt"/>
+                <constraint firstItem="2vV-5B-RHC" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="gnY-4v-uha"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="STb-lc-Rx0" secondAttribute="trailing" id="iTO-Ux-Zqb"/>
+                <constraint firstItem="2vV-5B-RHC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mWL-nL-1eS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="108"/>
         </view>
     </objects>
+    <resources>
+        <image name="通用背景" width="1080" height="1557"/>
+    </resources>
 </document>

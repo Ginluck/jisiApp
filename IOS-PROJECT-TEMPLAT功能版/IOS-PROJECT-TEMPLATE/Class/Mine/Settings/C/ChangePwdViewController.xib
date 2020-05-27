@@ -21,6 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="Opu-9S-tB8">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvx-cK-THQ">
                     <rect key="frame" x="0.0" y="54" width="414" height="50"/>
                     <subviews>
@@ -126,9 +129,13 @@
             </subviews>
             <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Opu-9S-tB8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="0oR-dW-U32"/>
                 <constraint firstItem="yws-u5-R1X" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="24" id="2VL-Rp-zEc"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yws-u5-R1X" secondAttribute="trailing" constant="24" id="ABc-4m-17F"/>
+                <constraint firstItem="Opu-9S-tB8" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="BP1-9P-7WV"/>
+                <constraint firstAttribute="bottom" secondItem="Opu-9S-tB8" secondAttribute="bottom" id="FQF-DZ-SLc"/>
                 <constraint firstItem="IUq-2b-zKe" firstAttribute="top" secondItem="7b8-kg-Abg" secondAttribute="bottom" constant="1" id="OsT-6e-klz"/>
+                <constraint firstItem="Opu-9S-tB8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PJG-n4-3Qh"/>
                 <constraint firstItem="fvx-cK-THQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SY9-Um-3Zp"/>
                 <constraint firstItem="7b8-kg-Abg" firstAttribute="top" secondItem="fvx-cK-THQ" secondAttribute="bottom" constant="10" id="Zvq-OJ-dv6"/>
                 <constraint firstItem="7b8-kg-Abg" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="ZwS-HV-bFQ"/>
@@ -143,4 +150,7 @@
             <point key="canvasLocation" x="139" y="108"/>
         </view>
     </objects>
+    <resources>
+        <image name="通用背景" width="1080" height="1557"/>
+    </resources>
 </document>

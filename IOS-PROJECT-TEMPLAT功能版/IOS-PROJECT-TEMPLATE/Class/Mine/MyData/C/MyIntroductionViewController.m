@@ -28,6 +28,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.TxtView];
       [self addNavigationTitleView:@"个人简介"];
     // Do any additional setup after loading the view from its nib.
     self.TxtView.placeholder=@"请填写你的简介";

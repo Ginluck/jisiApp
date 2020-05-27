@@ -9,105 +9,167 @@
 
 #import "PersonCenterController.h"
 #import "MineTableViewCell.h"
-#import "SettingsViewController.h"
 #import "GongFengRecordViewController.h"
 #import "SetHeadViewController.h"
 #import "RZMessageViewController.h"
-@interface PersonCenterController ()<UITableViewDataSource,UITableViewDelegate>
-@property(nonatomic,strong)UITableView * tableView;
+#import "TeasingViewController.h"
+#import "AboutMeViewController.h"
+#import "IDSafeViewController.h"
+#import "SZKCleanCache.h"
+#import "MineHeaderView.h"
+@interface PersonCenterController ()
+@property(nonatomic,strong)MineHeaderView * MHView;
 
 @end
 
 @implementation PersonCenterController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self requestData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
+    UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+              imageV.image =KImageNamed(@"通用背景");
+    [self.view addSubview:imageV];
+    [self.view addSubview:self.MHView];
     [self addNavigationTitleView:@"我的"];
-    [self addNavigationItemWithImageName:@"home" itemType:kNavigationItemTypeRight action:@selector(rightClick)];
-    ////12345612321323
+   
     // Do any additional setup after loading the view.
 }
--(void)rightClick
+-(void)requestData
 {
-    SettingsViewController *SVC=[SettingsViewController new];
-    SVC.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:SVC animated:YES];
+    UserModel * model =[[UserManager shareInstance]getUser];
+       NSDictionary* param_dic =@{@"userPhone":model.userPhone};
+       [RequestHelp POST:SELECT_USERINFO_url parameters:param_dic success:^(id result) {
+           MKLog(@"%@",result);
+         MineDataModel *model =[MineDataModel yy_modelWithJSON:result];
+           [self.MHView setModel:model];
+       } failure:^(NSError *error) {
+           
+       }];
 }
--(UITableView*)tableView
+-(MineHeaderView *)MHView
 {
-    if (!_tableView)
-    {
-       _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-kNavagationBarH ) style:UITableViewStyleGrouped];
-               _tableView.delegate = self;
-               _tableView.dataSource = self;
-               UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
-               imageV.image =KImageNamed(@"通用背景");
-               _tableView.backgroundView =imageV;
-               _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.backgroundColor =kBGViewCOLOR;
-        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MineTableViewCell class])];
-        _tableView.separatorStyle = UITableViewCellEditingStyleNone;
-        if (@available(iOS 11, *)) {
-            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
+    WS(weakSelf);
+    if (!_MHView) {
+        _MHView=[[NSBundle mainBundle]loadNibNamed:@"MineHeaderView" owner:nil options:nil][0];
+        _MHView.frame =CGRectMake(0, kNavagationBarH, Screen_Width, 500);
+        [_MHView.HeaderBtn addTarget:self action:@selector(HeaderClick) forControlEvents:UIControlEventTouchUpInside];
+           [_MHView.LoginOutBtn addTarget:self action:@selector(logOut) forControlEvents:UIControlEventTouchUpInside];
+          _MHView.VCClick = ^(NSInteger index) {
+              [weakSelf BtnViewClick:index];
+          };
     }
-    return _tableView;
+    return _MHView;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 0.01f;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.01f;
-}
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return nil;
-}
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return nil;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 260;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MineTableViewCell class]) forIndexPath:indexPath];
-    [cell.GongFeng addTarget:self action:@selector(GongFengClick) forControlEvents:UIControlEventTouchUpInside];
-    [cell.HeaderBtn addTarget:self action:@selector(HeaderClick) forControlEvents:UIControlEventTouchUpInside];
-    [cell.RZBtn addTarget:self action:@selector(RZClick) forControlEvents:UIControlEventTouchUpInside];
-    cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
-    return cell;
-    
-    
-}
--(void)GongFengClick
-{
-    GongFengRecordViewController *GFRVC=[GongFengRecordViewController new];
-    GFRVC.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:GFRVC animated:YES];
-}
+
 -(void)HeaderClick
 {
     SetHeadViewController *GFRVC=[SetHeadViewController new];
     GFRVC.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:GFRVC animated:YES];
 }
--(void)RZClick
+-(void)BtnViewClick:(NSInteger )index
 {
-    RZMessageViewController *GFRVC=[RZMessageViewController new];
-    GFRVC.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:GFRVC animated:YES];
+    switch (index) {
+        case 0:
+        {
+        }
+            break;
+            case 1:
+            {
+                GongFengRecordViewController *GFRVC=[GongFengRecordViewController new];
+                GFRVC.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:GFRVC animated:YES];
+            }
+                break;
+            case 2:
+            {
+                RZMessageViewController *GFRVC=[RZMessageViewController new];
+                GFRVC.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:GFRVC animated:YES];
+            }
+                break;
+            case 3:
+            {
+                IDSafeViewController*TVC=[IDSafeViewController new];
+                TVC.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:TVC animated:YES];
+            }
+                break;
+            case 4:
+            {
+                TeasingViewController *TVC=[TeasingViewController new];
+                TVC.hidesBottomBarWhenPushed=YES;
+                [self.navigationController pushViewController:TVC animated:YES];
+            }
+                break;
+            case 5:
+            {
+                AboutMeViewController*TVC=[AboutMeViewController new];
+                TVC.hidesBottomBarWhenPushed=YES;
+                           [self.navigationController pushViewController:TVC animated:YES];
+            }
+                break;
+            case 6:
+            {
+                [SZKCleanCache cleanCache:^{
+                           ShowMessage(@"清理成功");
+                           
+                       }];
+            }
+                break;
+            
+        default:
+            break;
+    }
 }
+-( float )readCacheSize
+{
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains (NSCachesDirectory , NSUserDomainMask , YES) firstObject];
+    return [ self folderSizeAtPath :cachePath];
+}
+- ( float ) folderSizeAtPath:( NSString *) folderPath{
+    
+    NSFileManager * manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath :folderPath]) return 0 ;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath :folderPath] objectEnumerator];
+    NSString * fileName;
+    long long folderSize = 0 ;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil ){
+        //获取文件全路径
+        NSString * fileAbsolutePath = [folderPath stringByAppendingPathComponent :fileName];
+        folderSize += [ self fileSizeAtPath :fileAbsolutePath];
+    }
+    
+    return folderSize/( 1024.0 * 1024.0);
+    
+}
+// 计算 单个文件的大小
+- ( long long ) fileSizeAtPath:( NSString *) filePath{
+    NSFileManager * manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath :filePath]){
+        return [[manager attributesOfItemAtPath :filePath error : nil] fileSize];
+    }
+    return 0;
+}
+-(void)logOut
+{
 
+
+    UserModel * model =[[UserManager shareInstance]getUser];
+    [RequestHelp POST:exit_url parameters:@{@"userPhone":model.userPhone} success:^(id result){
+       DLog(@"%@",result);
+        [[UserManager shareInstance]removeUserId];
+        [[UserManager shareInstance]removeToken];
+        [[UserManager shareInstance]removeUser];
+        [ViewControllerManager showLoginViewController];
+    } failure:^(NSError *error) {
+
+   }];
+}
 /*
 #pragma mark - Navigation
 

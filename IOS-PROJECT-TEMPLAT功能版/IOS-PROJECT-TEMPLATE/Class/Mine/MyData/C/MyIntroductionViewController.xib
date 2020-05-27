@@ -26,15 +26,25 @@
                         <constraint firstAttribute="height" constant="240" id="qyv-CL-5sD"/>
                     </constraints>
                 </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="pgs-mY-Lgd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="pgs-mY-Lgd" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="5oW-vq-Bze"/>
+                <constraint firstItem="pgs-mY-Lgd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cp1-AR-jyA"/>
                 <constraint firstItem="OY7-ex-YT0" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="HUK-VP-CND"/>
+                <constraint firstAttribute="bottom" secondItem="pgs-mY-Lgd" secondAttribute="bottom" id="SxI-9B-uUY"/>
                 <constraint firstItem="OY7-ex-YT0" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="hiU-2g-TJQ"/>
+                <constraint firstItem="pgs-mY-Lgd" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="uRl-IF-Kbd"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="OY7-ex-YT0" secondAttribute="trailing" constant="16" id="yqA-RC-q31"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="108"/>
         </view>
     </objects>
+    <resources>
+        <image name="通用背景" width="1080" height="1557"/>
+    </resources>
 </document>

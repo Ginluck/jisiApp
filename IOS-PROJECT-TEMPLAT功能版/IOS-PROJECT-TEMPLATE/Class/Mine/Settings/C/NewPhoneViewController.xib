@@ -131,12 +131,19 @@
                         <action selector="Submit:" destination="-1" eventType="touchUpInside" id="5on-xP-jLf"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="C61-4s-XBB">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IS0-7D-IpV" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="51d-Rg-fcj"/>
                 <constraint firstItem="FEi-JA-Kc4" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="BBN-jz-LQG"/>
+                <constraint firstItem="C61-4s-XBB" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Bbc-Kk-pq3"/>
                 <constraint firstItem="FEi-JA-Kc4" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="JVO-BV-N8F"/>
+                <constraint firstAttribute="bottom" secondItem="C61-4s-XBB" secondAttribute="bottom" id="OC7-hu-sNK"/>
+                <constraint firstItem="C61-4s-XBB" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="QeL-zb-zrX"/>
+                <constraint firstItem="C61-4s-XBB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TPX-Uw-8gA"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="FEi-JA-Kc4" secondAttribute="trailing" id="Zp5-vb-7Qp"/>
                 <constraint firstItem="wcc-BI-E72" firstAttribute="top" secondItem="IS0-7D-IpV" secondAttribute="bottom" constant="200" id="b3o-eb-GYv"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wcc-BI-E72" secondAttribute="trailing" constant="24" id="dXe-kS-l9E"/>
@@ -150,5 +157,6 @@
     </objects>
     <resources>
         <image name="home" width="20" height="20.5"/>
+        <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>

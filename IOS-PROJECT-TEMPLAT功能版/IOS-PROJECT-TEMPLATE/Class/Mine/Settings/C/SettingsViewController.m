@@ -33,9 +33,13 @@
 {
     if (!_tableView)
     {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavagationBarH, Screen_Width, Screen_Height-50-kNavagationBarH )];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
+         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-kNavagationBarH ) style:UITableViewStyleGrouped];
+                     _tableView.delegate = self;
+                     _tableView.dataSource = self;
+                     UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+                     imageV.image =KImageNamed(@"通用背景");
+                     _tableView.backgroundView =imageV;
+                  
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorColor = [UIColor clearColor];
         if (@available(iOS 11, *)) {

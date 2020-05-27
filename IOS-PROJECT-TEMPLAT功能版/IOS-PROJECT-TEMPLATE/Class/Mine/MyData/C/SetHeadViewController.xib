@@ -22,6 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="ujB-Ct-H1g">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-rk-rDg">
                     <rect key="frame" x="0.0" y="10" width="414" height="290"/>
                     <subviews>
@@ -241,8 +244,12 @@
             </subviews>
             <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="ujB-Ct-H1g" secondAttribute="bottom" id="8rA-V1-j0E"/>
+                <constraint firstItem="ujB-Ct-H1g" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="GYm-yL-gfF"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Ja5-rk-rDg" secondAttribute="trailing" id="ZGQ-ED-I3v"/>
+                <constraint firstItem="ujB-Ct-H1g" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="aUY-Ii-BhQ"/>
                 <constraint firstItem="Ja5-rk-rDg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="adV-n2-XQe"/>
+                <constraint firstItem="ujB-Ct-H1g" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="hmg-yX-9KX"/>
                 <constraint firstItem="Ja5-rk-rDg" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="jqq-VL-XgL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
@@ -252,5 +259,6 @@
     <resources>
         <image name="下一步" width="7" height="14"/>
         <image name="临时占位图" width="83" height="87.666664123535156"/>
+        <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>
