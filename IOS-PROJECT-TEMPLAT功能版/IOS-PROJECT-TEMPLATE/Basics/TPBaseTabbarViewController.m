@@ -43,7 +43,7 @@
 {
     NSArray *titleArr = @[@"祠堂",@"族谱",@"寻祖",@"消息",@"我的"];
     NSArray *normalIconArr = @[@"祠堂图标",@"族谱图标",@"寻祖图标",@"消息图标",@"我的图标"];
-    NSArray *selectedIconArr = @[@"祠堂图标",@"族谱图标",@"寻祖图标",@"消息图标",@"我的图标"];
+    NSArray *selectedIconArr = @[@"祠堂图标选中",@"族谱图标选中",@"寻祖图标选中",@"消息图标选中",@"我的图标选中"];
    self.VCArr = @[[HomeViewController new],[TypeHomeController new],[OrderHomeController new],[MessageHomeController new],[PersonCenterController new]];
     NSMutableArray *navs = [NSMutableArray arrayWithCapacity:5];
     for (int i=0; i<titleArr.count; i++) {

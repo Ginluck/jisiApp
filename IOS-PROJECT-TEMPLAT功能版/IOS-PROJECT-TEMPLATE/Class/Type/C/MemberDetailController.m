@@ -11,6 +11,9 @@
 #import "JYEqualCellSpaceFlowLayout.h"
 #import "MemberDetailGuanxiCell.h"
 #import "CollectionHeaderView.h"
+#import "MemberDetailModel.h"
+#import "MemberDetailChild.h"
+
 @interface MemberDetailController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,weak)IBOutlet UIImageView * memberImage;
 @property(nonatomic,weak)IBOutlet UILabel * memberName;
@@ -18,7 +21,7 @@
 
 @property(nonatomic,weak)IBOutlet UIButton * infoBtn;
 @property(nonatomic,weak)IBOutlet UIButton * guanxiBtn;
-
+@property(nonatomic,strong)MemberDetailModel * model;
 @property(nonatomic,weak)IBOutlet UIView * midView;
 @property(nonatomic,weak)IBOutlet UIView * bottomView;
 @property(nonatomic,strong) UIView * redView;
@@ -33,6 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setUICompoents];
+    [self refreshPostData];
 
 }
 -(void)setUICompoents
@@ -65,6 +69,7 @@
 {
     MemberDetailInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MemberDetailInfoCell class]) forIndexPath:indexPath];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
+    [cell refresh:self.model];
     return cell;
 }
 
@@ -157,7 +162,9 @@
     }return _collectionView;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 2;
+    
+    NSArray * arr =self.model.homeList [section];
+    return arr.count;
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -179,30 +186,43 @@
     
     UICollectionReusableView *reusableView = nil;
     
+    
     if (kind == UICollectionElementKindSectionHeader) {
         
         CollectionHeaderView *headerView = (CollectionHeaderView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CollectionHeaderView" forIndexPath:indexPath];
         
-        if (indexPath.section == 0) {
-            headerView.textTitleLab.text = @"父母";
-        }else  if(indexPath.section ==1){
-            headerView.textTitleLab.text = @"配偶";
-        }else{
-             headerView.textTitleLab.text = @"子女";
+         NSArray * arr =self.model.homeList [indexPath.section];
+        MemberDetailChild * member;
+        if (arr.count) {
+            member =arr[0];
+            if ([member.type isEqualToString:@"0"]) {
+                headerView.textTitleLab.text = @"父母";
+            }else  if ([member.type isEqualToString:@"1"]){
+                headerView.textTitleLab.text = @"配偶";
+            }else{
+                headerView.textTitleLab.text = @"子女";
+            }
         }
+        
+     
         reusableView = headerView;
     }
     return reusableView;
 }
 // 设置集合视图有多少个分区
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 3;
+    return self.model.homeList.count;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MemberDetailGuanxiCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MemberDetailGuanxiCell" forIndexPath:indexPath];
+    NSArray * arr =self.model.homeList[indexPath.section];
+    [cell refreshCell:arr[indexPath.item]];
     return cell;
     
+}
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -216,6 +236,45 @@
 {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+
+
+-(void)refreshPostData
+{
+    
+    NSDictionary * param =@{@"id":self.member.id};
+    [RequestHelp POST:JS_MEMBER_DETAIL_URL parameters:param success:^(id result) {
+        DLog(@"%@",result);
+        self.model =[MemberDetailModel yy_modelWithJSON:result];
+//        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyTreeModel class] json:result]];
+     
+        [self resolveData];
+    } failure:^(NSError *error) {
+    }];
+}
+-(void)resolveData
+{
+    NSMutableArray * ary =[NSMutableArray array];
+    for (int i=0; i<self.model.homeList.count; i++)
+    {
+        NSArray * arr =[NSArray yy_modelArrayWithClass:[MemberDetailChild class] json:self.model.homeList[i]];
+        [ary addObject:arr];
+    }
+    self.model.homeList =[NSArray arrayWithArray:ary];
+    MKLog(@"%@",self.model);
+    [self refreshUI];
+}
+
+
+
+-(void)refreshUI
+{
+    [self.memberImage sd_setImageWithURL:[NSURL URLWithString:self.model.headAddress] placeholderImage:KImageNamed(@"临时占位图")];
+    self.memberName.text =self.model.name;
+    if (self.model.homeList.count) {
+        [self.tableView reloadData];
+    }
 }
 /*
 #pragma mark - Navigation

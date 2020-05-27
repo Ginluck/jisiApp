@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="5sx-gE-CQb" customClass="HomeTableHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="祠堂大图标" translatesAutoresizingMaskIntoConstraints="NO" id="gMz-p3-wBk">
@@ -29,74 +29,22 @@
                         <constraint firstAttribute="height" constant="20" id="2pT-SW-mK5"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpK-cH-pQ3">
-                    <rect key="frame" x="206.5" y="108" width="1" height="43"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="1" id="OeC-ZA-gMX"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHy-rO-lby">
-                    <rect key="frame" x="4" y="105" width="200.5" height="42"/>
-                    <state key="normal" title="新增家族祠堂">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.7843137255" green="0.7843137255" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68j-fl-OxX">
-                    <rect key="frame" x="209.5" y="105" width="200.5" height="42"/>
-                    <state key="normal" title="新增家族祠堂">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.7843137255" green="0.7843137255" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="R8r-gr-FQt" firstAttribute="bottom" secondItem="68j-fl-OxX" secondAttribute="bottom" constant="5" id="1T2-RY-7Jg"/>
-                <constraint firstItem="HpK-cH-pQ3" firstAttribute="centerX" secondItem="5sx-gE-CQb" secondAttribute="centerX" id="2mK-QA-ak0"/>
                 <constraint firstItem="R8r-gr-FQt" firstAttribute="trailing" secondItem="yD1-DA-Nk4" secondAttribute="trailing" id="3w8-YI-42H"/>
-                <constraint firstItem="HpK-cH-pQ3" firstAttribute="leading" secondItem="tHy-rO-lby" secondAttribute="trailing" constant="2" id="8Sg-Dt-Nd6"/>
-                <constraint firstItem="HpK-cH-pQ3" firstAttribute="top" secondItem="yD1-DA-Nk4" secondAttribute="bottom" constant="8" id="GfP-Gg-Vsf"/>
-                <constraint firstItem="68j-fl-OxX" firstAttribute="top" secondItem="yD1-DA-Nk4" secondAttribute="bottom" constant="5" id="RyE-uT-EpI"/>
                 <constraint firstItem="gMz-p3-wBk" firstAttribute="trailing" secondItem="R8r-gr-FQt" secondAttribute="trailing" id="W8r-fp-8RL"/>
-                <constraint firstItem="tHy-rO-lby" firstAttribute="leading" secondItem="R8r-gr-FQt" secondAttribute="leading" constant="4" id="Xb3-JP-dgU"/>
                 <constraint firstItem="gMz-p3-wBk" firstAttribute="leading" secondItem="R8r-gr-FQt" secondAttribute="leading" id="YTa-hd-URq"/>
                 <constraint firstItem="gMz-p3-wBk" firstAttribute="top" secondItem="R8r-gr-FQt" secondAttribute="top" id="dEf-3G-RRi"/>
-                <constraint firstItem="R8r-gr-FQt" firstAttribute="bottom" secondItem="HpK-cH-pQ3" secondAttribute="bottom" constant="1" id="faL-0f-js2"/>
                 <constraint firstItem="yD1-DA-Nk4" firstAttribute="leading" secondItem="R8r-gr-FQt" secondAttribute="leading" id="iPE-eh-1D1"/>
                 <constraint firstItem="yD1-DA-Nk4" firstAttribute="top" secondItem="gMz-p3-wBk" secondAttribute="bottom" id="kzW-h5-eUH"/>
-                <constraint firstItem="68j-fl-OxX" firstAttribute="leading" secondItem="HpK-cH-pQ3" secondAttribute="trailing" constant="2" id="lwI-QC-QoP"/>
-                <constraint firstItem="R8r-gr-FQt" firstAttribute="trailing" secondItem="68j-fl-OxX" secondAttribute="trailing" constant="4" id="psS-Yh-Ixl"/>
-                <constraint firstItem="tHy-rO-lby" firstAttribute="top" secondItem="yD1-DA-Nk4" secondAttribute="bottom" constant="5" id="tua-HX-mQ7"/>
-                <constraint firstItem="R8r-gr-FQt" firstAttribute="bottom" secondItem="tHy-rO-lby" secondAttribute="bottom" constant="5" id="vUP-jn-xml"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="R8r-gr-FQt"/>
             <connections>
                 <outlet property="height" destination="zzA-20-fNX" id="yrO-Ah-bZk"/>
             </connections>
-            <point key="canvasLocation" x="377.60000000000002" y="-74.662668665667169"/>
+            <point key="canvasLocation" x="377.60000000000002" y="-98.050974512743636"/>
         </view>
     </objects>
     <resources>

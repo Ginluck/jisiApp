@@ -160,13 +160,14 @@
 -(void)refreshPostData
 {
     WS(weakSelf);
-    NSDictionary * param =@{@"pageRow":@"99",@"pageNum":[NSString stringWithFormat:@"%ld",(long)self.page]};
+    NSDictionary * param =@{@"pageRow":@"10",@"pageNum":[NSString stringWithFormat:@"%ld",(long)self.page]};
     [RequestHelp POST:JS_SYSMESSAGE_LILST_URL parameters:param success:^(id result) {
         DLog(@"%@",result);
         [weakSelf.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[MessageListModel class] json:result[@"list"]]];
         [self.tableView reloadData];
+        [self endRefresh];
     } failure:^(NSError *error) {
-        
+         [self endRefresh];
     }];
 }
 

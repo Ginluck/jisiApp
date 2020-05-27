@@ -104,7 +104,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="阿市领导看见啊设计大赛空间大噶时间点噶快结束打卡结束打卡还是肯定会卡上的卡还是恐惧的哈萨克简单" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-3i-gx6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="阿市领导看见啊设计大赛空间大噶时间点噶快结束打卡结束打卡还是肯定会卡上的卡还是恐惧的哈萨克简单" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-3i-gx6">
                                 <rect key="frame" x="10" y="264.5" width="424" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,6 +212,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="birthLab" destination="csY-2n-P6k" id="bJl-c4-Vef"/>
+                <outlet property="deathLab" destination="bLc-nV-QWq" id="PkP-4t-K9j"/>
+                <outlet property="introTV" destination="e9n-3i-gx6" id="Jfp-lL-B7n"/>
+                <outlet property="nameLab" destination="LcD-fQ-PWZ" id="YJc-OZ-nR1"/>
+                <outlet property="sexLab" destination="0qJ-5J-IHF" id="IIs-Hu-NHT"/>
+                <outlet property="stateLab" destination="ToQ-CF-7Pc" id="bS7-hU-Wp0"/>
+            </connections>
             <point key="canvasLocation" x="153.59999999999999" y="154.27286356821591"/>
         </tableViewCell>
     </objects>

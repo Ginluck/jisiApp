@@ -95,7 +95,7 @@
 - (NSUInteger)getYear;
 
 //获取月
-- (NSUInteger)getMonth;
+-(NSUInteger)getMonth;
 
 //获取日
 - (NSUInteger)getDay;

@@ -15,6 +15,7 @@
 #import "MemberDetailController.h"
 #import "FamilyTreeModel.h"
 #import "EMChatViewController.h"
+
 @interface FamilyTreeController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,FamilyCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -27,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"族谱"];
-    [self addNavigationItemWithTitle:@"look" itemType:kNavigationItemTypeRight action:@selector(llook)];
+    [self addNavigationItemWithTitle:@"关系图" itemType:kNavigationItemTypeRight action:@selector(llook)];
     [self.view addSubview:self.tableView];
     [self regisNib];
     [self postDate];
@@ -151,6 +152,7 @@
     [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
         if ([title isEqualToString:@"查看成员信息"]) {
             MemberDetailController * dc =[[MemberDetailController alloc]init];
+            dc.member =member;
             [self.navigationController pushViewController:dc animated:YES];
         }
         if ([title isEqualToString:@"编辑成员信息"]) {
@@ -179,7 +181,32 @@
             [self.navigationController pushViewController:chatController animated:YES];
         }
         if ([title isEqualToString:@"删除"]) {
-
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                           message:@"确定要删除该成员吗."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {
+                                                                      //响应事件
+                                                                      NSDictionary * param =@{@"id":member.id,@"deleteStatus":@"2"};
+                                                                      [RequestHelp POST:JS_UPDATE_MEMBER_URL parameters:param success:^(id result) {
+                                                                          ShowMessage(@"删除成功");
+                                                                          [self postDate];
+                                                                      } failure:^(NSError *error) {
+                                                                          
+                                                                      }];
+                                                                      
+                                                                      
+                                                                  }];
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * action) {
+                                                                     //响应事件
+                                                                   
+                                                                 }];
+            
+            [alert addAction:defaultAction];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }

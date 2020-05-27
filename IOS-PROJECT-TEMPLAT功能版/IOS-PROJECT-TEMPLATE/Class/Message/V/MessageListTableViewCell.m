@@ -21,7 +21,7 @@
     self.nameLabel.text =model.title;
     self.messageLabel.text =model.content;
     self.timeLabel.text =model.create_time;
-    [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:KImageNamed(@"header")];
+    [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:KImageNamed(@"系统消息")];
 //    if ([model.isRead isEqualToString:@"1"])
 //    {
         self.isRead.hidden =YES;

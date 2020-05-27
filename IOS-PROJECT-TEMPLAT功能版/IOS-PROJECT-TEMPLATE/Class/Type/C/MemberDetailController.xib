@@ -32,7 +32,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxP-lL-Zny">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="返回" translatesAutoresizingMaskIntoConstraints="NO" id="qU0-uj-5Zz">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_white" translatesAutoresizingMaskIntoConstraints="NO" id="qU0-uj-5Zz">
                             <rect key="frame" x="8" y="29" width="30" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="UCk-pn-LY7"/>
@@ -52,8 +52,11 @@
                                 <constraint firstAttribute="width" constant="40" id="GKD-Wb-qzG"/>
                                 <constraint firstAttribute="height" constant="30" id="lqE-ia-G8a"/>
                             </constraints>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="HNE-G3-w00"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx5-KZ-QPX">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nx5-KZ-QPX">
                             <rect key="frame" x="325" y="24" width="50" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="EqW-b2-BM5"/>
@@ -70,7 +73,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.61568627450000002" green="0.094117647060000004" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="2CL-cE-gBe" firstAttribute="centerY" secondItem="qU0-uj-5Zz" secondAttribute="centerY" id="OQC-if-b8h"/>
                         <constraint firstItem="qU0-uj-5Zz" firstAttribute="leading" secondItem="DxP-lL-Zny" secondAttribute="leading" constant="8" id="WlM-ZL-xx0"/>
@@ -91,7 +94,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="纪念图" translatesAutoresizingMaskIntoConstraints="NO" id="6zq-HK-si5">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 第一代 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187-aW-i54">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 第一代 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187-aW-i54">
                             <rect key="frame" x="26.5" y="110" width="47" height="16"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -106,13 +109,13 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="闫圆峰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMh-gM-Ydr">
-                            <rect key="frame" x="90" y="66" width="46" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <rect key="frame" x="90" y="64.5" width="55.5" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="临时占位图" translatesAutoresizingMaskIntoConstraints="NO" id="x8d-vD-KNl">
-                            <rect key="frame" x="144" y="67.5" width="15" height="15"/>
+                            <rect key="frame" x="153.5" y="67.5" width="15" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="15" id="Ilq-g8-l8n"/>
                                 <constraint firstAttribute="height" constant="15" id="yUC-yP-sNT"/>
@@ -227,8 +230,8 @@
         </view>
     </objects>
     <resources>
+        <image name="back_white" width="9" height="17"/>
         <image name="临时占位图" width="83" height="87"/>
         <image name="纪念图" width="533" height="300"/>
-        <image name="返回" width="12" height="20"/>
     </resources>
 </document>
