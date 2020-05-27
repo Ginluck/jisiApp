@@ -22,6 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="通用背景" translatesAutoresizingMaskIntoConstraints="NO" id="fyU-OP-LgE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLo-K5-RcQ">
                     <rect key="frame" x="16" y="60" width="382" height="150"/>
                     <subviews>
@@ -89,15 +92,22 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="gEV-Hz-FI5" secondAttribute="trailing" constant="16" id="0Je-dg-VNu"/>
+                <constraint firstItem="fyU-OP-LgE" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="2db-HM-mwY"/>
                 <constraint firstItem="gEV-Hz-FI5" firstAttribute="top" secondItem="KLo-K5-RcQ" secondAttribute="bottom" constant="16" id="38e-XO-QGx"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="KLo-K5-RcQ" secondAttribute="trailing" constant="16" id="403-3R-TDl"/>
                 <constraint firstItem="dG0-5n-BwG" firstAttribute="top" secondItem="KLo-K5-RcQ" secondAttribute="bottom" constant="16" id="46s-9E-7n9"/>
+                <constraint firstItem="fyU-OP-LgE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FsX-0D-Qja"/>
                 <constraint firstItem="dG0-5n-BwG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="GeY-oC-wJb"/>
                 <constraint firstItem="KLo-K5-RcQ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="16" id="M5z-cb-uSH"/>
                 <constraint firstItem="KLo-K5-RcQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="jQZ-gI-pTa"/>
+                <constraint firstItem="fyU-OP-LgE" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="kx8-GG-VsX"/>
+                <constraint firstAttribute="bottom" secondItem="fyU-OP-LgE" secondAttribute="bottom" id="qDe-C9-cqE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="139" y="82"/>
         </view>
     </objects>
+    <resources>
+        <image name="通用背景" width="1080" height="1557"/>
+    </resources>
 </document>

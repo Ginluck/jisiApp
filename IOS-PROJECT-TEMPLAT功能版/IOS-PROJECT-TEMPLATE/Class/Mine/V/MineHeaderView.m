@@ -1,15 +1,14 @@
 //
-//  MineTableViewCell.m
+//  MineHeaderView.m
 //  IOS-PROJECT-TEMPLATE
 //
-//  Created by Apple on 2020/5/8.
+//  Created by Apple on 2020/5/27.
 //  Copyright © 2020 梦境网络. All rights reserved.
 //
 
-#import "MineTableViewCell.h"
+#import "MineHeaderView.h"
 #import "MineDataModel.h"
-@implementation MineTableViewCell
-
+@implementation MineHeaderView
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self requsetData];
@@ -35,10 +34,4 @@
     }
     
 }
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 @end
