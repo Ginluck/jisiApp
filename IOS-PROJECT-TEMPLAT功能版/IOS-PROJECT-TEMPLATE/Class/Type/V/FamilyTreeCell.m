@@ -16,7 +16,9 @@
 }
 -(void)setCell:(NSArray *)ary index:(NSInteger)row
 {
-    
+    for (UIView *view in self.contentView.subviews) {
+        [view removeFromSuperview];
+    }
     
     CGFloat width =70;
     CGFloat height=40;
@@ -26,7 +28,7 @@
         FamliyTreeButton * button =[FamliyTreeButton buttonWithType:UIButtonTypeCustom];
         button.frame =CGRectMake(0, 0, width+40, height);
         button.center =CGPointMake(Screen_Width/2, 40);
-        [button setNormalTitle:model.name font:MKFont(12) titleColor:K_PROJECT_GARYTEXTCOLOR];
+        [button setNormalTitle:model.name font:MKFont(12) titleColor:K_Prokect_MainColor];
         button.layer.borderColor  =K_Prokect_MainColor.CGColor;
         button.layer.borderWidth=1.f;
         button.layer.cornerRadius=5.f;
@@ -45,7 +47,7 @@
             FamilyTreeMember * model =ary[i];
             FamliyTreeButton * button =[FamliyTreeButton buttonWithType:UIButtonTypeCustom];
             button.frame =CGRectMake(margin+(margin +width)*i, 20, width, height);
-            [button setNormalTitle:model.name font:MKFont(12) titleColor:K_PROJECT_GARYTEXTCOLOR];
+            [button setNormalTitle:model.name font:MKFont(12) titleColor:K_Prokect_MainColor];
             button.layer.borderColor  =K_Prokect_MainColor.CGColor;
             button.layer.borderWidth=1.f;
             button.layer.cornerRadius=5.f;
@@ -71,7 +73,7 @@
              FamilyTreeMember * model =ary[i];
             FamliyTreeButton * button =[FamliyTreeButton buttonWithType:UIButtonTypeCustom];
             button.frame =CGRectMake(margin+(margin +width)*i, 20, width, height);
-            [button setNormalTitle:model.name font:MKFont(12) titleColor:K_PROJECT_GARYTEXTCOLOR];
+            [button setNormalTitle:model.name font:MKFont(12) titleColor:K_Prokect_MainColor];
             button.layer.borderColor  =K_Prokect_MainColor.CGColor;
             button.layer.borderWidth=1.f;
             button.layer.cornerRadius=5.f;

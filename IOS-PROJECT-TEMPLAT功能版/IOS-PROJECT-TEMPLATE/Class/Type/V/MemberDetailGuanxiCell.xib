@@ -33,9 +33,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓氏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PR-6u-euM">
-                        <rect key="frame" x="81" y="50" width="31" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="81" y="53" width="198" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -43,6 +43,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Vsx-to-RtP" firstAttribute="leading" secondItem="eiY-1A-nRq" secondAttribute="trailing" constant="9" id="4Qk-tH-u47"/>
+                <constraint firstAttribute="trailing" secondItem="7PR-6u-euM" secondAttribute="trailing" constant="8" id="DAG-eo-2eI"/>
                 <constraint firstItem="eiY-1A-nRq" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Tfm-90-0rT"/>
                 <constraint firstItem="eiY-1A-nRq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="f1l-EY-7Fz"/>
                 <constraint firstItem="7PR-6u-euM" firstAttribute="leading" secondItem="eiY-1A-nRq" secondAttribute="trailing" constant="9" id="q5x-ht-dmH"/>
@@ -51,6 +52,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="287" height="135"/>
+            <connections>
+                <outlet property="desc" destination="7PR-6u-euM" id="R48-YF-Qx7"/>
+                <outlet property="headImage" destination="eiY-1A-nRq" id="7FU-GT-6zd"/>
+                <outlet property="name" destination="Vsx-to-RtP" id="g15-9W-kLF"/>
+            </connections>
             <point key="canvasLocation" x="18.399999999999999" y="169.11544227886057"/>
         </collectionViewCell>
     </objects>

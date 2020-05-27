@@ -81,6 +81,10 @@
 #define JS_GETCONVERSATION_URL @"userApp/BASE_PHONE_GAIN_MESSAGE"
 //祭品列表
 #define JS_JIPIN_LIST_URL @"appSacrifice/list"
+//族谱成员详情
+#define JS_MEMBER_DETAIL_URL @"appZp/selectByDetailsApp"
+//修改族谱成员&删除成员
+#define JS_UPDATE_MEMBER_URL @"appZp/updateAppZuPu"
 
 
 

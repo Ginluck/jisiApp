@@ -7,12 +7,22 @@
 //
 
 #import "MemberDetailGuanxiCell.h"
-
+@interface MemberDetailGuanxiCell()
+@property(nonatomic,weak)IBOutlet UILabel * name;
+@property(nonatomic,weak)IBOutlet UIImageView * headImage;
+@property(nonatomic,weak)IBOutlet UILabel * desc;
+@end
 @implementation MemberDetailGuanxiCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+-(void)refreshCell:(MemberDetailChild*)model
+{
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:model.headAddress] placeholderImage:KImageNamed(@"临时占位图")];
+    self.name.text =model.name;
+    self.desc.text =model.introduce;
 }
 
 @end

@@ -7,11 +7,11 @@
 //
 
 #import "TPBaseTableViewCell.h"
-
+#import "MemberDetailModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MemberDetailInfoCell : TPBaseTableViewCell
-
+-(void)refresh:(MemberDetailModel*)model;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -178,7 +178,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-p9-krb">
                     <rect key="frame" x="10" y="617" width="355" height="40"/>
-                    <color key="backgroundColor" red="0.61568627450000002" green="0.094117647060000004" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.36862745098039218" green="0.066666666666666666" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6fK-OU-NAj"/>
                     </constraints>

@@ -172,6 +172,7 @@
 		7125006F22DC68120053B3EA /* libYYModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006E22DC68120053B3EA /* libYYModel.a */; };
 		7125882B2477677100E7E50A /* FamilyDescController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712588292477677100E7E50A /* FamilyDescController.m */; };
 		7125882C2477677100E7E50A /* FamilyDescController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7125882A2477677100E7E50A /* FamilyDescController.xib */; };
+		7125FC7E247DFA53006F4B54 /* MemberDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7125FC7D247DFA53006F4B54 /* MemberDetailModel.m */; };
 		713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CB247252D400A00867 /* FamilyTreeModel.m */; };
 		713F31CF2472534200A00867 /* FamilyTreeMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CE2472534200A00867 /* FamilyTreeMember.m */; };
 		713F31D32473888800A00867 /* AddrChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31D12473888800A00867 /* AddrChooseController.m */; };
@@ -559,6 +560,7 @@
 		719D4B50239F7A20003C6803 /* TypeHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719D4B4F239F7A20003C6803 /* TypeHomeController.m */; };
 		719D4B54239F7CB8003C6803 /* HomeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 719D4B52239F7CB8003C6803 /* HomeHeaderCell.m */; };
 		719D4B55239F7CB8003C6803 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719D4B53239F7CB8003C6803 /* HomeHeaderCell.xib */; };
+		71BD2FAD247DFBA800094293 /* MemberDetailChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD2FAC247DFBA800094293 /* MemberDetailChild.m */; };
 		71BEE52122CB51EB00E1B9E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE52022CB51EB00E1B9E3 /* AppDelegate.m */; };
 		71BEE52422CB51EB00E1B9E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE52322CB51EB00E1B9E3 /* ViewController.m */; };
 		71BEE52722CB51EB00E1B9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71BEE52522CB51EB00E1B9E3 /* Main.storyboard */; };
@@ -938,6 +940,8 @@
 		712588282477677100E7E50A /* FamilyDescController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyDescController.h; sourceTree = "<group>"; };
 		712588292477677100E7E50A /* FamilyDescController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyDescController.m; sourceTree = "<group>"; };
 		7125882A2477677100E7E50A /* FamilyDescController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDescController.xib; sourceTree = "<group>"; };
+		7125FC7C247DFA53006F4B54 /* MemberDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberDetailModel.h; sourceTree = "<group>"; };
+		7125FC7D247DFA53006F4B54 /* MemberDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberDetailModel.m; sourceTree = "<group>"; };
 		713F31CA247252D400A00867 /* FamilyTreeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeModel.h; sourceTree = "<group>"; };
 		713F31CB247252D400A00867 /* FamilyTreeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyTreeModel.m; sourceTree = "<group>"; };
 		713F31CD2472534200A00867 /* FamilyTreeMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeMember.h; sourceTree = "<group>"; };
@@ -1464,6 +1468,8 @@
 		719D4B51239F7CB8003C6803 /* HomeHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderCell.h; sourceTree = "<group>"; };
 		719D4B52239F7CB8003C6803 /* HomeHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderCell.m; sourceTree = "<group>"; };
 		719D4B53239F7CB8003C6803 /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
+		71BD2FAB247DFBA800094293 /* MemberDetailChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberDetailChild.h; sourceTree = "<group>"; };
+		71BD2FAC247DFBA800094293 /* MemberDetailChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberDetailChild.m; sourceTree = "<group>"; };
 		71BEE51C22CB51EB00E1B9E3 /* IOS-PROJECT-TEMPLATE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-PROJECT-TEMPLATE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEE51F22CB51EB00E1B9E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		71BEE52022CB51EB00E1B9E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1731,6 +1737,10 @@
 				713F31CB247252D400A00867 /* FamilyTreeModel.m */,
 				713F31CD2472534200A00867 /* FamilyTreeMember.h */,
 				713F31CE2472534200A00867 /* FamilyTreeMember.m */,
+				7125FC7C247DFA53006F4B54 /* MemberDetailModel.h */,
+				7125FC7D247DFA53006F4B54 /* MemberDetailModel.m */,
+				71BD2FAB247DFBA800094293 /* MemberDetailChild.h */,
+				71BD2FAC247DFBA800094293 /* MemberDetailChild.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -4168,6 +4178,7 @@
 				71E55BAC246E65C500255230 /* GongFengOneTableViewCell.m in Sources */,
 				719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */,
 				182D7CC22477DFBD0019DCD3 /* RZMessageModel.m in Sources */,
+				7125FC7E247DFA53006F4B54 /* MemberDetailModel.m in Sources */,
 				715EE9DA24750D7A009CF31A /* EMRealtimeSearch.m in Sources */,
 				715EEB8D24750DDC009CF31A /* EMMsgTextBubbleView.m in Sources */,
 				715EE98F24750D7A009CF31A /* UIViewController+Util.m in Sources */,
@@ -4285,6 +4296,7 @@
 				71BEE57A22CB597000E1B9E3 /* UITextView+WJPlaceholder.m in Sources */,
 				715EE98D24750D7A009CF31A /* EMConversationHelper.m in Sources */,
 				715EE9B924750D7A009CF31A /* PSTCollectionViewFlowLayout.m in Sources */,
+				71BD2FAD247DFBA800094293 /* MemberDetailChild.m in Sources */,
 				711B0B4D246929E8009C84DB /* LYSDatePickerLabel.m in Sources */,
 				711B0AE6246929A7009C84DB /* FamilyCreateController.m in Sources */,
 				715EEB8324750DDC009CF31A /* EMChatBar.m in Sources */,

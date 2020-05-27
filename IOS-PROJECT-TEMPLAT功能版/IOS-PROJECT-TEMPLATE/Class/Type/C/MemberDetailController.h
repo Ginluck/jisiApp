@@ -7,12 +7,13 @@
 //
 
 #import "TPBaseViewController.h"
-
+#import "FamilyTreeMember.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MemberDetailController : TPBaseViewController
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *KNavHeight;
 @property (weak, nonatomic) IBOutlet UIView *KNavView;
+@property(nonatomic,strong)FamilyTreeMember * member;
 @end
 
 NS_ASSUME_NONNULL_END

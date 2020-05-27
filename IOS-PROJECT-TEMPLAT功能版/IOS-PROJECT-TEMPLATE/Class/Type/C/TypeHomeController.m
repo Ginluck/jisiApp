@@ -110,7 +110,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    FamilyListModel * model =self.dataAry[indexPath.row];
+    FamilyDetailController * fvc =[FamilyDetailController new];
+    fvc.hidesBottomBarWhenPushed =YES;
+    fvc.model =model;
+    [self.navigationController pushViewController:fvc animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
