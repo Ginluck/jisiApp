@@ -18,11 +18,15 @@
 @end
 
 @implementation SetHeadViewController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self requsetData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"个人资料"];
-    [self requsetData];
+    
     // Do any additional setup after loading the view from its nib.
 }
 -(void)requsetData
@@ -197,8 +201,8 @@
 }
 -(void)UpdateMyData
 {
-    
-    NSDictionary* param_dic =@{@"realName":self.Namelab.text,@"address":self.AddressLab.text,@"headAddress":self.HeadImgStr};
+     UserModel * model =[[UserManager shareInstance]getUser];
+    NSDictionary* param_dic =@{@"userPhone":model.userPhone,@"realName":self.Namelab.text,@"address":self.AddressLab.text,@"headAddress":self.HeadImgStr};
           [RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
               MKLog(@"%@",result);
               ShowMessage(@"修改成功");

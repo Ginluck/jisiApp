@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MineDataModel.h"
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ViewClickBlock)(NSInteger index);
 @interface MineHeaderView : UIView
@@ -17,6 +17,7 @@ typedef void(^ViewClickBlock)(NSInteger index);
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImg;
 @property (weak, nonatomic) IBOutlet UIButton *LoginOutBtn;
 @property(nonatomic,strong)ViewClickBlock VCClick;
+@property(nonatomic,strong)MineDataModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

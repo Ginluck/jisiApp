@@ -40,11 +40,12 @@
         return;
     }
   
-  
-NSDictionary* param_dic =@{@"realName":self.nickNameField.text,@"address":@"",@"headAddress":@""};
-[RequestHelp POST:SELECT_USERINFO_url parameters:param_dic success:^(id result) {
+  UserModel * model =[[UserManager shareInstance]getUser];
+NSDictionary* param_dic =@{@"userPhone":model.userPhone,@"realName":self.nickNameField.text,@"address":@"",@"headAddress":@""};
+[RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
     MKLog(@"%@",result);
    ShowMessage(@"修改成功");
+    [self.navigationController popViewControllerAnimated:YES];
 } failure:^(NSError *error) {
     
 }];

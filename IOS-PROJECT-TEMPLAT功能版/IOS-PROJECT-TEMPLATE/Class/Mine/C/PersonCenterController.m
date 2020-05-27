@@ -23,7 +23,11 @@
 @end
 
 @implementation PersonCenterController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self requestData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
@@ -34,7 +38,18 @@
    
     // Do any additional setup after loading the view.
 }
-
+-(void)requestData
+{
+    UserModel * model =[[UserManager shareInstance]getUser];
+       NSDictionary* param_dic =@{@"userPhone":model.userPhone};
+       [RequestHelp POST:SELECT_USERINFO_url parameters:param_dic success:^(id result) {
+           MKLog(@"%@",result);
+         MineDataModel *model =[MineDataModel yy_modelWithJSON:result];
+           [self.MHView setModel:model];
+       } failure:^(NSError *error) {
+           
+       }];
+}
 -(MineHeaderView *)MHView
 {
     WS(weakSelf);
