@@ -173,25 +173,36 @@
     {
         [param setValue:self.member.id forKey:@"id"];
         [param setValue:self.member.jzId forKey:@"jzId"];
+        [RequestHelp POST:JS_UPDATE_MEMBER_URL parameters:param success:^(id result) {
+            MKLog(@"%@",result);
+            ShowMessage(@"操作成功");
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {}];
     }
     else if ([self.type isEqualToString:@"2"])
     {
         [param setValue:@"0" forKey:@"type"];
         [param setValue:self.member.id forKey:@"coverId"];
         [param setValue:self.member.jzId forKey:@"jzId"];
+        [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
+            MKLog(@"%@",result);
+            ShowMessage(@"操作成功");
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {}];
     }
     else if ([self.type isEqualToString:@"3"])
     {
         [param setValue:@"1" forKey:@"type"];
         [param setValue:self.member.id forKey:@"coverId"];
         [param setValue:self.member.jzId forKey:@"jzId"];
+        [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
+            MKLog(@"%@",result);
+            ShowMessage(@"操作成功");
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {}];
     }
     
-    [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
-        MKLog(@"%@",result);
-    } failure:^(NSError *error) {
-        
-    }];
+
 }
 /*
 #pragma mark - Navigation

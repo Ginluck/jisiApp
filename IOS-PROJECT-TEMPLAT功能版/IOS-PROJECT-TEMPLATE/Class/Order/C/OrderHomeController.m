@@ -31,8 +31,17 @@
     // Do any additional setup after loading the view.
     [self addNavigationTitleView:@"寻祖"];
     self.dataAry =[NSMutableArray array];
-    [self addNavigationItemWithTitle:@"创建家族" itemType:kNavigationItemTypeRight action:@selector(createFamily)];
+//    [self addNavigationItemWithTitle:@"创建家族" itemType:kNavigationItemTypeRight action:@selector(createFamily)];
     [self setUICompoents];
+    
+    UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);
+    [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];
+    button.backgroundColor =[UIColor whiteColor];
+    button.layer.cornerRadius =15.f;
+    button.layer.masksToBounds=YES;
+    [button addTarget:self action:@selector(createFamily) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 -(void)createFamily
 {

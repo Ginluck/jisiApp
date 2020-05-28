@@ -12,6 +12,8 @@
 #import "CitangListModel.h"
 #import <AVFoundation/AVFoundation.h> //音频视频框架
 #import "JisiProController.h"
+#import "AddPersonCitangController.h"
+#import "AddFamilyCitangController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -62,12 +64,17 @@
     UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"新增个人祠堂" style:UIAlertActionStyleDestructive
                                                          handler:^(UIAlertAction * action) {
                                                              //响应事件
-                                                             NSLog(@"action = %@", action);
+                                                             AddPersonCitangController * avc =[AddPersonCitangController new];
+                                                             avc.hidesBottomBarWhenPushed =YES;
+                                                             [self.navigationController pushViewController:avc animated:YES];
+                                                             
                                                          }];
     UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"新增家族祠堂" style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction * action) {
                                                            //响应事件
-                                                           NSLog(@"action = %@", action);
+                                                           AddFamilyCitangController * avc =[AddFamilyCitangController new];
+                                                           avc.hidesBottomBarWhenPushed =YES;
+                                                           [self.navigationController pushViewController:avc animated:YES];
                                                        }];
     [alert addAction:saveAction];
     [alert addAction:cancelAction];

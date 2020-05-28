@@ -229,15 +229,14 @@
         ShowMessage(@"请输入家族简介");
         return;
     }
-    if (!self.imgUrl.length)
+    UserModel * model =[[UserManager shareInstance]getUser];
+    NSMutableDictionary * paramDic =[NSMutableDictionary dictionaryWithDictionary:@{@"provinceId":self.provinceId,@"cityId":self.cityId,@"areaId":self.areaId,@"address":self.addr,@"introduce":self.contentTV.text,@"name":self.nameTF.text,@"userUserId":model.id,@"lat":self.lat,@"lon":self.lon,@"pcaName":self.areaAddr}];
+    if (self.imgUrl.length)
     {
-        ShowMessage(@"请选择家族logo");
-        return;
+        [paramDic setValue:@"img" forKey:self.imgUrl];
     }
 
-    UserModel * model =[[UserManager shareInstance]getUser];
-    NSDictionary* param_dic =@{@"provinceId":self.provinceId,@"cityId":self.cityId,@"areaId":self.areaId,@"address":self.addr,@"img":self.imgUrl,@"introduce":self.contentTV.text,@"name":self.nameTF.text,@"userUserId":model.id,@"lat":self.lat,@"lon":self.lon,@"pcaName":self.areaAddr};
-    [RequestHelp POST:JS_CREATE_FAMILY_URL parameters:param_dic success:^(id result) {
+    [RequestHelp POST:JS_CREATE_FAMILY_URL parameters:paramDic success:^(id result) {
         MKLog(@"%@",result);
         ShowMessage(@"创建成功");
         UserModel * model =[[UserManager shareInstance]getUser];
