@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录页面底图" translatesAutoresizingMaskIntoConstraints="NO" id="25I-qA-dE7">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO图标" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-6N-U6Z">
                     <rect key="frame" x="162" y="80" width="90" height="90"/>
@@ -46,8 +46,8 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="8EN-ns-kMc"/>
                         <constraint firstAttribute="trailing" secondItem="ucH-ii-wjl" secondAttribute="trailing" constant="24" id="9PA-go-vpC"/>
+                        <constraint firstAttribute="width" secondItem="4LA-QS-YhG" secondAttribute="height" multiplier="57:10" id="AhP-QX-hQ3"/>
                         <constraint firstAttribute="bottom" secondItem="ucH-ii-wjl" secondAttribute="bottom" id="WmI-SI-AK8"/>
                         <constraint firstItem="ucH-ii-wjl" firstAttribute="top" secondItem="4LA-QS-YhG" secondAttribute="top" id="baI-XZ-v5C"/>
                         <constraint firstItem="ucH-ii-wjl" firstAttribute="leading" secondItem="4LA-QS-YhG" secondAttribute="leading" constant="24" id="feD-eK-lnH"/>
@@ -68,7 +68,7 @@
                         <constraint firstAttribute="trailing" secondItem="ypA-17-IiI" secondAttribute="trailing" constant="24" id="G1X-e2-I7n"/>
                         <constraint firstItem="ypA-17-IiI" firstAttribute="leading" secondItem="QZl-xZ-cyT" secondAttribute="leading" constant="24" id="Poz-S9-uEV"/>
                         <constraint firstAttribute="bottom" secondItem="ypA-17-IiI" secondAttribute="bottom" id="Rx3-OF-5Jj"/>
-                        <constraint firstAttribute="height" constant="60" id="Yye-KD-Ls1"/>
+                        <constraint firstAttribute="width" secondItem="QZl-xZ-cyT" secondAttribute="height" multiplier="57:10" id="qlA-We-VQ1"/>
                         <constraint firstItem="ypA-17-IiI" firstAttribute="top" secondItem="QZl-xZ-cyT" secondAttribute="top" id="wae-eL-XS6"/>
                     </constraints>
                 </view>
@@ -76,7 +76,7 @@
                     <rect key="frame" x="36" y="434" width="342" height="60"/>
                     <color key="backgroundColor" red="0.36862745098039218" green="0.066666666666666666" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Ngt-25-Z58"/>
+                        <constraint firstAttribute="width" secondItem="G8d-oB-anT" secondAttribute="height" multiplier="57:10" id="USv-d9-nJ3"/>
                     </constraints>
                     <state key="normal" title="登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

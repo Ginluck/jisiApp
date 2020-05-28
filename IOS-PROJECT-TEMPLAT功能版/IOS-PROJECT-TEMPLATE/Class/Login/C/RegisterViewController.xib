@@ -52,7 +52,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="4P6-lc-xjT"/>
+                        <constraint firstAttribute="width" secondItem="rHh-C8-VUg" secondAttribute="height" multiplier="57:10" id="CZW-rR-4ao"/>
                         <constraint firstAttribute="trailing" secondItem="c4v-kX-U6s" secondAttribute="trailing" constant="24" id="Ikq-gN-f05"/>
                         <constraint firstItem="c4v-kX-U6s" firstAttribute="top" secondItem="rHh-C8-VUg" secondAttribute="top" id="blN-iR-rFV"/>
                         <constraint firstAttribute="bottom" secondItem="c4v-kX-U6s" secondAttribute="bottom" id="hMu-Ac-qqa"/>
@@ -91,17 +91,17 @@
                         <constraint firstItem="HND-Nu-15r" firstAttribute="centerY" secondItem="RbZ-ND-kzd" secondAttribute="centerY" id="IAS-N2-TxC"/>
                         <constraint firstAttribute="bottom" secondItem="LQe-Zl-rKn" secondAttribute="bottom" id="P7Y-Kt-eEL"/>
                         <constraint firstItem="LQe-Zl-rKn" firstAttribute="leading" secondItem="RbZ-ND-kzd" secondAttribute="leading" constant="24" id="a0g-Je-Pvi"/>
-                        <constraint firstAttribute="height" constant="60" id="cyA-HW-GCS"/>
                         <constraint firstAttribute="trailing" secondItem="HND-Nu-15r" secondAttribute="trailing" constant="16" id="f0M-yB-V0P"/>
                         <constraint firstItem="HND-Nu-15r" firstAttribute="leading" secondItem="LQe-Zl-rKn" secondAttribute="trailing" constant="16" id="vKK-Lo-aei"/>
                         <constraint firstItem="LQe-Zl-rKn" firstAttribute="top" secondItem="RbZ-ND-kzd" secondAttribute="top" id="wZu-Hm-8Sw"/>
+                        <constraint firstAttribute="width" secondItem="RbZ-ND-kzd" secondAttribute="height" multiplier="57:10" id="yzR-66-JEh"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6E-Fg-3ty">
                     <rect key="frame" x="36" y="476" width="342" height="60"/>
                     <color key="backgroundColor" red="0.36862745099999999" green="0.066666666669999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="ZIe-35-Of3"/>
+                        <constraint firstAttribute="width" secondItem="a6E-Fg-3ty" secondAttribute="height" multiplier="57:10" id="0Pt-bU-HM2"/>
                     </constraints>
                     <state key="normal" title="注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,7 +139,7 @@
                         <constraint firstAttribute="bottom" secondItem="Dqq-93-O1x" secondAttribute="bottom" id="0dx-YQ-1uH"/>
                         <constraint firstItem="Dqq-93-O1x" firstAttribute="top" secondItem="qLC-FU-Bbw" secondAttribute="top" id="JqA-Tq-46Z"/>
                         <constraint firstItem="4Fs-44-wRO" firstAttribute="leading" secondItem="Dqq-93-O1x" secondAttribute="trailing" constant="16" id="Q6Q-Ks-Dof"/>
-                        <constraint firstAttribute="height" constant="60" id="WfH-Rr-dKU"/>
+                        <constraint firstAttribute="width" secondItem="qLC-FU-Bbw" secondAttribute="height" multiplier="57:10" id="YKP-yH-gdY"/>
                         <constraint firstItem="Dqq-93-O1x" firstAttribute="leading" secondItem="qLC-FU-Bbw" secondAttribute="leading" constant="24" id="ooW-iy-d34"/>
                         <constraint firstItem="4Fs-44-wRO" firstAttribute="centerY" secondItem="qLC-FU-Bbw" secondAttribute="centerY" id="pPF-41-aBK"/>
                         <constraint firstAttribute="trailing" secondItem="4Fs-44-wRO" secondAttribute="trailing" constant="24" id="ril-Ab-GBE"/>
