@@ -85,6 +85,8 @@
 #define JS_MEMBER_DETAIL_URL @"appZp/selectByDetailsApp"
 //修改族谱成员&删除成员
 #define JS_UPDATE_MEMBER_URL @"appZp/updateAppZuPu"
+//创建祠堂
+#define JS_CREATE_CITANG_URL @"appCt/appAddCiTang"
 
 
 

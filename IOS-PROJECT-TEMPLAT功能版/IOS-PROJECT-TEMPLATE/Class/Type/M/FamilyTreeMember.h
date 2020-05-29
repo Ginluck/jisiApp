@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * headAddress;
 @property(nonatomic,strong)NSString * userPhone;
 @property(nonatomic,strong)NSString * isDelete;
+@property(nonatomic,strong)NSString * isSelected;
 
 @property(nonatomic,assign)NSInteger  parentIndex;
 @property(nonatomic,assign)NSInteger  parentSize;

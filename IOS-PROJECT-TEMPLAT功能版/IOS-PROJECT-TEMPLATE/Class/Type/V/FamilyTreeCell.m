@@ -29,7 +29,13 @@
         button.frame =CGRectMake(0, 0, width+40, height);
         button.center =CGPointMake(Screen_Width/2, 40);
         [button setNormalTitle:model.name font:MKFont(12) titleColor:K_Prokect_MainColor];
-        button.layer.borderColor  =K_Prokect_MainColor.CGColor;
+        if ([model.isSelected isEqualToString:@"1"]) {
+               button.layer.borderColor  =[UIColor blueColor].CGColor;
+        }
+        else
+        {
+            button.layer.borderColor  =K_Prokect_MainColor.CGColor;
+        }
         button.layer.borderWidth=1.f;
         button.layer.cornerRadius=5.f;
         button.titleLabel.textAlignment=NSTextAlignmentCenter;
@@ -48,7 +54,13 @@
             FamliyTreeButton * button =[FamliyTreeButton buttonWithType:UIButtonTypeCustom];
             button.frame =CGRectMake(margin+(margin +width)*i, 20, width, height);
             [button setNormalTitle:model.name font:MKFont(12) titleColor:K_Prokect_MainColor];
-            button.layer.borderColor  =K_Prokect_MainColor.CGColor;
+            if ([model.isSelected isEqualToString:@"1"]) {
+                button.layer.borderColor  =[UIColor blueColor].CGColor;
+            }
+            else
+            {
+                button.layer.borderColor  =K_Prokect_MainColor.CGColor;
+            }
             button.layer.borderWidth=1.f;
             button.layer.cornerRadius=5.f;
             button.tag=i;
@@ -74,7 +86,13 @@
             FamliyTreeButton * button =[FamliyTreeButton buttonWithType:UIButtonTypeCustom];
             button.frame =CGRectMake(margin+(margin +width)*i, 20, width, height);
             [button setNormalTitle:model.name font:MKFont(12) titleColor:K_Prokect_MainColor];
-            button.layer.borderColor  =K_Prokect_MainColor.CGColor;
+            if ([model.isSelected isEqualToString:@"1"]) {
+                button.layer.borderColor  =[UIColor blueColor].CGColor;
+            }
+            else
+            {
+                button.layer.borderColor  =K_Prokect_MainColor.CGColor;
+            }
             button.layer.borderWidth=1.f;
             button.layer.cornerRadius=5.f;
             button.layer.masksToBounds=YES;

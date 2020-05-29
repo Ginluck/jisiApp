@@ -553,6 +553,14 @@
 		715EED7724750E02009CF31A /* EMStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECEB24750E02009CF31A /* EMStreamView.m */; };
 		715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */; };
 		715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EED7C24765FFA009CF31A /* MessageListModel.m */; };
+		7185BCF5247E48170028AA75 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF3247E48170028AA75 /* MineHeaderView.m */; };
+		7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCF4247E48170028AA75 /* MineHeaderView.xib */; };
+		7185BCFA247F5C410028AA75 /* AddPersonCitangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */; };
+		7185BCFB247F5C410028AA75 /* AddPersonCitangController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCF9247F5C410028AA75 /* AddPersonCitangController.xib */; };
+		7185BCFF247F62820028AA75 /* AddFamilyCitangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCFD247F62820028AA75 /* AddFamilyCitangController.m */; };
+		7185BD00247F62820028AA75 /* AddFamilyCitangController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCFE247F62820028AA75 /* AddFamilyCitangController.xib */; };
+		7185BD03247F854B0028AA75 /* ChooseFamilyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD02247F854B0028AA75 /* ChooseFamilyController.m */; };
+		7185BD06247F89360028AA75 /* ChooseMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD05247F89360028AA75 /* ChooseMemberController.m */; };
 		719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */; };
 		719CEBC12474FEFF00E29E8C /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */; };
 		719CEBC22474FEFF00E29E8C /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 719CEBBC2474FEFF00E29E8C /* Loading.gif */; };
@@ -1461,6 +1469,19 @@
 		715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "洪真英-活着 (Cheer Up).mp3"; sourceTree = "<group>"; };
 		715EED7B24765FFA009CF31A /* MessageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
 		715EED7C24765FFA009CF31A /* MessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
+		7185BCF2247E48160028AA75 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
+		7185BCF3247E48170028AA75 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		7185BCF4247E48170028AA75 /* MineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
+		7185BCF7247F5C410028AA75 /* AddPersonCitangController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPersonCitangController.h; sourceTree = "<group>"; };
+		7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPersonCitangController.m; sourceTree = "<group>"; };
+		7185BCF9247F5C410028AA75 /* AddPersonCitangController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPersonCitangController.xib; sourceTree = "<group>"; };
+		7185BCFC247F62820028AA75 /* AddFamilyCitangController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddFamilyCitangController.h; sourceTree = "<group>"; };
+		7185BCFD247F62820028AA75 /* AddFamilyCitangController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFamilyCitangController.m; sourceTree = "<group>"; };
+		7185BCFE247F62820028AA75 /* AddFamilyCitangController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFamilyCitangController.xib; sourceTree = "<group>"; };
+		7185BD01247F854B0028AA75 /* ChooseFamilyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseFamilyController.h; sourceTree = "<group>"; };
+		7185BD02247F854B0028AA75 /* ChooseFamilyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseFamilyController.m; sourceTree = "<group>"; };
+		7185BD04247F89360028AA75 /* ChooseMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseMemberController.h; sourceTree = "<group>"; };
+		7185BD05247F89360028AA75 /* ChooseMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMemberController.m; sourceTree = "<group>"; };
 		719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
 		719CEBBC2474FEFF00E29E8C /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
@@ -1692,9 +1713,15 @@
 		18C1F4052477CB4D00B16077 /* V */ = {
 			isa = PBXGroup;
 			children = (
+
+				7185BCF2247E48160028AA75 /* MineHeaderView.h */,
+				7185BCF3247E48170028AA75 /* MineHeaderView.m */,
+				7185BCF4247E48170028AA75 /* MineHeaderView.xib */,
+
 				183015CF247E17AE00B43F64 /* MineHeaderView.h */,
 				183015D0247E17AE00B43F64 /* MineHeaderView.m */,
 				183015D2247E17C300B43F64 /* MineHeaderView.xib */,
+
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -2983,6 +3010,16 @@
 			children = (
 				719D4B47239F762B003C6803 /* HomeViewController.h */,
 				719D4B48239F762B003C6803 /* HomeViewController.m */,
+				7185BCF7247F5C410028AA75 /* AddPersonCitangController.h */,
+				7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */,
+				7185BCF9247F5C410028AA75 /* AddPersonCitangController.xib */,
+				7185BCFC247F62820028AA75 /* AddFamilyCitangController.h */,
+				7185BCFD247F62820028AA75 /* AddFamilyCitangController.m */,
+				7185BCFE247F62820028AA75 /* AddFamilyCitangController.xib */,
+				7185BD01247F854B0028AA75 /* ChooseFamilyController.h */,
+				7185BD02247F854B0028AA75 /* ChooseFamilyController.m */,
+				7185BD04247F89360028AA75 /* ChooseMemberController.h */,
+				7185BD05247F89360028AA75 /* ChooseMemberController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3710,6 +3747,7 @@
 				715EEB4B24750DDC009CF31A /* icon_007.gif in Resources */,
 				715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */,
 				71E55BE1246E7C3F00255230 /* CitangHeaderView.xib in Resources */,
+				7185BD00247F62820028AA75 /* AddFamilyCitangController.xib in Resources */,
 				715EED6824750E02009CF31A /* mute_red@2x.png in Resources */,
 				715EEB4C24750DDC009CF31A /* icon_022.gif in Resources */,
 				711B0B00246929CE009C84DB /* MineTableViewCell.xib in Resources */,
@@ -3847,6 +3885,7 @@
 				715EED2624750E02009CF31A /* animate_00040.png in Resources */,
 				715EEB4324750DDC009CF31A /* icon_002.gif in Resources */,
 				715EE99424750D7A009CF31A /* uncheck@3x.png in Resources */,
+				7185BCFB247F5C410028AA75 /* AddPersonCitangController.xib in Resources */,
 				715EED3D24750E02009CF31A /* animate_00039.png in Resources */,
 				715EE9CC24750D7A009CF31A /* alert_error@2x.png in Resources */,
 				711B0A7E2469294C009C84DB /* PhoneChangeViewController.xib in Resources */,
@@ -3906,7 +3945,11 @@
 				715EED4524750E02009CF31A /* kbps_gray@3x.png in Resources */,
 				711B0B7E24692B0C009C84DB /* PYSearch.bundle in Resources */,
 				715EED2B24750E02009CF31A /* animate_00064.png in Resources */,
+
+				7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */,
+
 				183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */,
+
 				711B0AE5246929A7009C84DB /* FamilyCreateController.xib in Resources */,
 				715EEB3624750DDB009CF31A /* pin-red.png in Resources */,
 				715EED0724750E02009CF31A /* animate_00025.png in Resources */,
@@ -4228,6 +4271,7 @@
 				711B0B40246929E8009C84DB /* TownModel.m in Sources */,
 				71005ED2246A4AAE002F0BF1 /* JipinView.m in Sources */,
 				715EED7524750E02009CF31A /* CallSettingViewController.m in Sources */,
+				7185BD03247F854B0028AA75 /* ChooseFamilyController.m in Sources */,
 				715EEB5F24750DDC009CF31A /* EaseEmotionEscape.m in Sources */,
 				71534B00239F6515009AF361 /* UserModel.m in Sources */,
 				715EEBB524750DDC009CF31A /* EMMessageModel.m in Sources */,
@@ -4281,6 +4325,7 @@
 				71005ECE246A4A43002F0BF1 /* JipinCell.m in Sources */,
 				715EE9A924750D7A009CF31A /* EMAvatarNameCell.m in Sources */,
 				711B0B8924692B0C009C84DB /* UIView+CornerRdius.m in Sources */,
+				7185BCFF247F62820028AA75 /* AddFamilyCitangController.m in Sources */,
 				719D4B43239F7614003C6803 /* MessageHomeController.m in Sources */,
 				71E55BBE246E660A00255230 /* GongPinDetialViewController.m in Sources */,
 				71BEE5AB22CB61EF00E1B9E3 /* DLUtility.m in Sources */,
@@ -4313,6 +4358,7 @@
 				711B0B8124692B0C009C84DB /* UIImage+GradiusColor.m in Sources */,
 				71BEE5AA22CB61EF00E1B9E3 /* DLFixedTabbarView.m in Sources */,
 				715EEBB724750DDC009CF31A /* EMImageBrowser.m in Sources */,
+				7185BCFA247F5C410028AA75 /* AddPersonCitangController.m in Sources */,
 				715EE9AF24750D7A009CF31A /* MWCaptionView.m in Sources */,
 				715EECF724750E02009CF31A /* ConfInviteUsersViewController.m in Sources */,
 				71005EC7246A473F002F0BF1 /* GongpinController.m in Sources */,
@@ -4371,6 +4417,7 @@
 				71005EDB246CDF95002F0BF1 /* FamilyListModel.m in Sources */,
 				715EECF624750E02009CF31A /* EMConferenceViewController.m in Sources */,
 				71BEE52122CB51EB00E1B9E3 /* AppDelegate.m in Sources */,
+				7185BD06247F89360028AA75 /* ChooseMemberController.m in Sources */,
 				715EEBB424750DDC009CF31A /* EMChatViewController.m in Sources */,
 				711B0AAE2469296E009C84DB /* FamilyLineController.m in Sources */,
 				711B0BB524694764009C84DB /* SystemMessageController.m in Sources */,
@@ -4417,6 +4464,7 @@
 				71005ED6246A5408002F0BF1 /* TaoCanCell.m in Sources */,
 				71534AFF239F6515009AF361 /* RequestHelp.m in Sources */,
 				71E55BAF246E65C500255230 /* NJKWebViewProgressView.m in Sources */,
+				7185BCF5247E48170028AA75 /* MineHeaderView.m in Sources */,
 				715EEB8824750DDC009CF31A /* EMMsgExtGifBubbleView.m in Sources */,
 				713F31D32473888800A00867 /* AddrChooseController.m in Sources */,
 				711B0B4B246929E8009C84DB /* LYSDatePickerViewController.m in Sources */,
