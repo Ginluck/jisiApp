@@ -10,6 +10,7 @@
 #import "RZMessageTableViewCell.h"
 #import "RZMessageModel.h"
 #import "RZLookReasonViewController.h"
+#import "JZMessageViewController.h"
 @interface RZMessageViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -25,7 +26,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addNavigationTitleView:@"认祖信息"];
+       if ([self.TypeStr isEqualToString:@"1"]) {
+            [self addNavigationTitleView:@"认祖审核"];
+       }else
+       {
+           [self addNavigationTitleView:@"认祖申请"];
+       }
+   
     // Do any additional setup after loading the view from its nib.
 
       [self.view addSubview:self.tableView];
@@ -141,8 +148,16 @@
 }
 -(void)refreshPostData
 {
+    UserModel * model =[[UserManager shareInstance]getUser];
+    NSDictionary * param ;
+    if ([model.patriarch isEqualToString:@"1"]) {
+        param =@{@"jzId":model.jzId,@"pageNum":@(self.page),@"pageRow":@"10"};
+    }else
+    {
+        param =@{@"id":model.id,@"pageNum":@(self.page),@"pageRow":@"10"};
+    }
     
-        NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10"};
+       
         [RequestHelp POST:selectByApply_url parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[RZMessageModel class] json:result[@"list"]]];
@@ -156,10 +171,13 @@
 {
     RZMessageModel *model=self.dataAry[btn.tag-100];
     if ([model.state isEqualToString:@"1"]) {
-        ShowMessage(@"功能开发中");
+               JZMessageViewController * fvc =[JZMessageViewController new];
+                fvc.JzId=model.jzId;
+                [self.navigationController pushViewController:fvc animated:YES];
     }else
     {
         RZLookReasonViewController *CPVC=[RZLookReasonViewController new];
+        CPVC.TypeStr=self.TypeStr;
           CPVC.model=model;
           [self.navigationController pushViewController:CPVC animated:YES];
     }

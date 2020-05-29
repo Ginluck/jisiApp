@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "NSString+Encryption.h"
 #import "RegisterViewController.h"
+#import "YourNameAdressViewController.h"
+#import "TPNavigationController.h"
 @interface LoginViewController ()
 
 @end
@@ -36,7 +38,7 @@
        
        NumberView.layer.shadowRadius = 3.0;
        
-       NumberView.layer.cornerRadius = 30.0;
+       NumberView.layer.cornerRadius = 30.0*Kscale;
        
        NumberView.clipsToBounds = NO;
 }
@@ -52,7 +54,7 @@
        
        PwdView.layer.shadowRadius = 3.0;
        
-       PwdView.layer.cornerRadius = 30.0;
+       PwdView.layer.cornerRadius = 30.0*Kscale;
        
        PwdView.clipsToBounds = NO;
 }
@@ -67,7 +69,6 @@
          
 }
 - (IBAction)LoginClick:(id)sender {
-//    [ViewControllerManager showMainViewController];
     NSDictionary * dic = @{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]]};
     [RequestHelp POST:login_url parameters:dic success:^(id result) {
 //        DLog(@"%@",result);
@@ -75,7 +76,16 @@
         UserModel * modal  = [UserModel yy_modelWithJSON:result];
         [[UserManager shareInstance]saveUser:modal];
         [[UserManager shareInstance]saveToken:result[@"token"]];
-        [ViewControllerManager showMainViewController];
+       
+        if (modal.userName ==nil ||modal.userName ==NULL||modal.userName.length==0 ) {
+            YourNameAdressViewController *YNAVC=[YourNameAdressViewController new];
+            TPNavigationController *navC = [[TPNavigationController alloc]initWithRootViewController:YNAVC];
+                       navC.modalPresentationStyle=UIModalPresentationFullScreen;
+                   [self presentViewController: navC animated:NO completion:nil];
+        }else
+        {
+            [ViewControllerManager showMainViewController];
+        }
 //        [JPUSHService setAlias:modal.id completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
 //
 //        } seq:5];
@@ -89,6 +99,8 @@
     } failure:^(NSError *error) {
 
     }];
+    
+    
 }
 - (IBAction)ForgetClick:(id)sender {
 }

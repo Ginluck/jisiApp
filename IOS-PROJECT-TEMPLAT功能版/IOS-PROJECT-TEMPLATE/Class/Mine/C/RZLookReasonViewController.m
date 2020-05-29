@@ -7,7 +7,6 @@
 //
 
 #import "RZLookReasonViewController.h"
-
 @interface RZLookReasonViewController ()
 
 @end
@@ -22,8 +21,16 @@
                  {
                      self.Lab1.text=@"申请原因:";
                      self.Reason.text=self.model.reason;
-                     self.TGBtn.alpha=1;
-                     self.BHBtn.alpha=1;
+                     UserModel * model =[[UserManager shareInstance]getUser];
+                     if ([model.patriarch isEqualToString:@"1"]&&[self.TypeStr isEqualToString:@"1"]) {
+                         self.TGBtn.alpha=1;
+                         self.BHBtn.alpha=1;
+                     }else
+                     {
+                         self.TGBtn.alpha=0;
+                         self.BHBtn.alpha=0;
+                     }
+                    
                  }
                      break;
                      case 1:

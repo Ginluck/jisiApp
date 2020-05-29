@@ -34,8 +34,8 @@
 #define NavigationBar_BGCOLOR COLOR(227, 53, 52, 1)
 //分割线颜色
 #define DIVIDELINECOLOR COLOR_HEX(0xebf0f2)
-//自适应屏幕宽高 比例
-#define Kscale            [UIScreen mainScreen].bounds.size.width / 750
+//缩放比例
+#define Kscale            [UIScreen mainScreen].bounds.size.width / 414
 
 //category 扩展
 #import "UIView+Layout.h"
