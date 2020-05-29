@@ -16,6 +16,10 @@
 		182D7CC72477E2B90019DCD3 /* RZLookReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D7CC52477E2B90019DCD3 /* RZLookReasonViewController.xib */; };
 		183015D1247E17AE00B43F64 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015D0247E17AE00B43F64 /* MineHeaderView.m */; };
 		183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015D2247E17C300B43F64 /* MineHeaderView.xib */; };
+		183015D72480F75700B43F64 /* JZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015D52480F75700B43F64 /* JZMessageViewController.m */; };
+		183015D82480F75700B43F64 /* JZMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015D62480F75700B43F64 /* JZMessageViewController.xib */; };
+		183015DC2481030C00B43F64 /* YourNameAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015DA2481030C00B43F64 /* YourNameAdressViewController.m */; };
+		183015DD2481030C00B43F64 /* YourNameAdressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */; };
 		18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F40324768FEB00B16077 /* MineDataModel.m */; };
 		18F930632477D942007BA7FF /* TeasingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F930602477D941007BA7FF /* TeasingViewController.xib */; };
 		18F930642477D942007BA7FF /* TeasingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F930622477D942007BA7FF /* TeasingViewController.m */; };
@@ -677,6 +681,12 @@
 		183015CF247E17AE00B43F64 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		183015D0247E17AE00B43F64 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
 		183015D2247E17C300B43F64 /* MineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
+		183015D42480F75700B43F64 /* JZMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZMessageViewController.h; sourceTree = "<group>"; };
+		183015D52480F75700B43F64 /* JZMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZMessageViewController.m; sourceTree = "<group>"; };
+		183015D62480F75700B43F64 /* JZMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JZMessageViewController.xib; sourceTree = "<group>"; };
+		183015D92481030C00B43F64 /* YourNameAdressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourNameAdressViewController.h; sourceTree = "<group>"; };
+		183015DA2481030C00B43F64 /* YourNameAdressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourNameAdressViewController.m; sourceTree = "<group>"; };
+		183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourNameAdressViewController.xib; sourceTree = "<group>"; };
 		18C1F40224768FEB00B16077 /* MineDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
 		18C1F40324768FEB00B16077 /* MineDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		18F930602477D941007BA7FF /* TeasingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeasingViewController.xib; sourceTree = "<group>"; };
@@ -3041,6 +3051,12 @@
 				182D7CC32477E2B90019DCD3 /* RZLookReasonViewController.h */,
 				182D7CC42477E2B90019DCD3 /* RZLookReasonViewController.m */,
 				182D7CC52477E2B90019DCD3 /* RZLookReasonViewController.xib */,
+				183015D42480F75700B43F64 /* JZMessageViewController.h */,
+				183015D52480F75700B43F64 /* JZMessageViewController.m */,
+				183015D62480F75700B43F64 /* JZMessageViewController.xib */,
+				183015D92481030C00B43F64 /* YourNameAdressViewController.h */,
+				183015DA2481030C00B43F64 /* YourNameAdressViewController.m */,
+				183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3757,6 +3773,7 @@
 				71BEE52C22CB51ED00E1B9E3 /* LaunchScreen.storyboard in Resources */,
 				715EED6324750E02009CF31A /* minimize_white@2x.png in Resources */,
 				715EED3124750E02009CF31A /* animate_00067.png in Resources */,
+				183015D82480F75700B43F64 /* JZMessageViewController.xib in Resources */,
 				715EEB4224750DDC009CF31A /* icon_029_cover.png in Resources */,
 				715EECFF24750E02009CF31A /* video_gray@3x.png in Resources */,
 				715EE9C624750D7A009CF31A /* MWPhotoBrowser.bundle in Resources */,
@@ -3904,6 +3921,7 @@
 				715EED6124750E02009CF31A /* recorder_gray@2x.png in Resources */,
 				71EC5FA1247BA23E00407D7F /* BuyJPView.xib in Resources */,
 				715EEB9424750DDC009CF31A /* msg_send_audio02@3x.png in Resources */,
+				183015DD2481030C00B43F64 /* YourNameAdressViewController.xib in Resources */,
 				711B0BA924693FA8009C84DB /* GongFengRecordViewController.xib in Resources */,
 				715EED1024750E02009CF31A /* animate_00086.png in Resources */,
 				715EED1824750E02009CF31A /* animate_00052.png in Resources */,
@@ -4220,6 +4238,7 @@
 				71E55BDC246E7A2400255230 /* CitangHeaderView.m in Sources */,
 				182D7CB82477DCF50019DCD3 /* RZMessageViewController.m in Sources */,
 				711B0A892469294C009C84DB /* PhoneChangeViewController.m in Sources */,
+				183015D72480F75700B43F64 /* JZMessageViewController.m in Sources */,
 				711B0B9324692B38009C84DB /* UILabel+WY_Extension.m in Sources */,
 				715EE9BC24750D7A009CF31A /* PSTCollectionViewData.m in Sources */,
 				715EEB8A24750DDC009CF31A /* EMMsgVideoBubbleView.m in Sources */,
@@ -4372,6 +4391,7 @@
 				715EE9A724750D7A009CF31A /* EMGlobalVariables.m in Sources */,
 				711B0B8024692B0C009C84DB /* UIView+PYSearchExtension.m in Sources */,
 				715EECFA24750E02009CF31A /* AudioRecord.m in Sources */,
+				183015DC2481030C00B43F64 /* YourNameAdressViewController.m in Sources */,
 				715EECEE24750E02009CF31A /* DemoCallManager.m in Sources */,
 				715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */,
 				71071DEE24776D04003CAAB7 /* ApplyController.m in Sources */,
