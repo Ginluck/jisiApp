@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon_lineage.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "牌位1.png",
       "scale" : "2x"
     },
     {

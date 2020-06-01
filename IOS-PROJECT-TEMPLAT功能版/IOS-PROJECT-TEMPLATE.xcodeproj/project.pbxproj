@@ -182,6 +182,10 @@
 		7125882B2477677100E7E50A /* FamilyDescController.m in Sources */ = {isa = PBXBuildFile; fileRef = 712588292477677100E7E50A /* FamilyDescController.m */; };
 		7125882C2477677100E7E50A /* FamilyDescController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7125882A2477677100E7E50A /* FamilyDescController.xib */; };
 		7125FC7E247DFA53006F4B54 /* MemberDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7125FC7D247DFA53006F4B54 /* MemberDetailModel.m */; };
+		71388AFA2480A28D0011E7A8 /* CitangDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388AF92480A28D0011E7A8 /* CitangDetailModel.m */; };
+		71388AFC2480BB710011E7A8 /* 发光gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71388AFB2480BB710011E7A8 /* 发光gif.gif */; };
+		71388AFF2484DF6C0011E7A8 /* ImageBigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388AFE2484DF6C0011E7A8 /* ImageBigger.m */; };
+		71388B022484F1A10011E7A8 /* GongfengRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388B012484F1A10011E7A8 /* GongfengRecordController.m */; };
 		713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CB247252D400A00867 /* FamilyTreeModel.m */; };
 		713F31CF2472534200A00867 /* FamilyTreeMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CE2472534200A00867 /* FamilyTreeMember.m */; };
 		713F31D32473888800A00867 /* AddrChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31D12473888800A00867 /* AddrChooseController.m */; };
@@ -564,6 +568,7 @@
 		7185BD00247F62820028AA75 /* AddFamilyCitangController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCFE247F62820028AA75 /* AddFamilyCitangController.xib */; };
 		7185BD03247F854B0028AA75 /* ChooseFamilyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD02247F854B0028AA75 /* ChooseFamilyController.m */; };
 		7185BD06247F89360028AA75 /* ChooseMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD05247F89360028AA75 /* ChooseMemberController.m */; };
+		7185BD09248099C60028AA75 /* WorshipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD08248099C60028AA75 /* WorshipController.m */; };
 		719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */; };
 		719CEBC12474FEFF00E29E8C /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */; };
 		719CEBC22474FEFF00E29E8C /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 719CEBBC2474FEFF00E29E8C /* Loading.gif */; };
@@ -973,6 +978,13 @@
 		7125882A2477677100E7E50A /* FamilyDescController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyDescController.xib; sourceTree = "<group>"; };
 		7125FC7C247DFA53006F4B54 /* MemberDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemberDetailModel.h; sourceTree = "<group>"; };
 		7125FC7D247DFA53006F4B54 /* MemberDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemberDetailModel.m; sourceTree = "<group>"; };
+		71388AF82480A28D0011E7A8 /* CitangDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitangDetailModel.h; sourceTree = "<group>"; };
+		71388AF92480A28D0011E7A8 /* CitangDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitangDetailModel.m; sourceTree = "<group>"; };
+		71388AFB2480BB710011E7A8 /* 发光gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "发光gif.gif"; sourceTree = "<group>"; };
+		71388AFD2484DF6C0011E7A8 /* ImageBigger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageBigger.h; sourceTree = "<group>"; };
+		71388AFE2484DF6C0011E7A8 /* ImageBigger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageBigger.m; sourceTree = "<group>"; };
+		71388B002484F1A10011E7A8 /* GongfengRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GongfengRecordController.h; sourceTree = "<group>"; };
+		71388B012484F1A10011E7A8 /* GongfengRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GongfengRecordController.m; sourceTree = "<group>"; };
 		713F31CA247252D400A00867 /* FamilyTreeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeModel.h; sourceTree = "<group>"; };
 		713F31CB247252D400A00867 /* FamilyTreeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyTreeModel.m; sourceTree = "<group>"; };
 		713F31CD2472534200A00867 /* FamilyTreeMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeMember.h; sourceTree = "<group>"; };
@@ -1490,6 +1502,8 @@
 		7185BD02247F854B0028AA75 /* ChooseFamilyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseFamilyController.m; sourceTree = "<group>"; };
 		7185BD04247F89360028AA75 /* ChooseMemberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseMemberController.h; sourceTree = "<group>"; };
 		7185BD05247F89360028AA75 /* ChooseMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMemberController.m; sourceTree = "<group>"; };
+		7185BD07248099C60028AA75 /* WorshipController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorshipController.h; sourceTree = "<group>"; };
+		7185BD08248099C60028AA75 /* WorshipController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorshipController.m; sourceTree = "<group>"; };
 		719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
 		719CEBBC2474FEFF00E29E8C /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
@@ -3035,6 +3049,11 @@
 				7185BD02247F854B0028AA75 /* ChooseFamilyController.m */,
 				7185BD04247F89360028AA75 /* ChooseMemberController.h */,
 				7185BD05247F89360028AA75 /* ChooseMemberController.m */,
+				7185BD07248099C60028AA75 /* WorshipController.h */,
+				7185BD08248099C60028AA75 /* WorshipController.m */,
+				71388B002484F1A10011E7A8 /* GongfengRecordController.h */,
+				71388B012484F1A10011E7A8 /* GongfengRecordController.m */,
+				71388AFB2480BB710011E7A8 /* 发光gif.gif */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3636,6 +3655,10 @@
 				71EC5F98247B5DF900407D7F /* JipinModel.m */,
 				71EC5F9A247B5E7200407D7F /* JipinChild.h */,
 				71EC5F9B247B5E7200407D7F /* JipinChild.m */,
+				71388AF82480A28D0011E7A8 /* CitangDetailModel.h */,
+				71388AF92480A28D0011E7A8 /* CitangDetailModel.m */,
+				71388AFD2484DF6C0011E7A8 /* ImageBigger.h */,
+				71388AFE2484DF6C0011E7A8 /* ImageBigger.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -3987,6 +4010,7 @@
 				715EED3924750E02009CF31A /* animate_00048.png in Resources */,
 				711B0BAA24693FA8009C84DB /* GongFengThreeViewController.xib in Resources */,
 				715EEB4D24750DDC009CF31A /* icon_027_cover.png in Resources */,
+				71388AFC2480BB710011E7A8 /* 发光gif.gif in Resources */,
 				71E55BE6246E7CDB00255230 /* ZupuHomeCell.xib in Resources */,
 				711B0AD524692979009C84DB /* CitangCell.xib in Resources */,
 				713F31D42473888800A00867 /* AddrChooseController.xib in Resources */,
@@ -4262,6 +4286,7 @@
 				71534B0F239F66D1009AF361 /* NSObject+Swizzle.m in Sources */,
 				711B0B50246929E8009C84DB /* LYSDateIndicatorViewController.m in Sources */,
 				711B0B43246929E8009C84DB /* AddressCell.m in Sources */,
+				71388AFA2480A28D0011E7A8 /* CitangDetailModel.m in Sources */,
 				71E55BAC246E65C500255230 /* GongFengOneTableViewCell.m in Sources */,
 				719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */,
 				182D7CC22477DFBD0019DCD3 /* RZMessageModel.m in Sources */,
@@ -4334,7 +4359,9 @@
 				711B0B4E246929E8009C84DB /* LYSDatePickerTypeDayAndTimeDelegate.m in Sources */,
 				715EEB6424750DDC009CF31A /* EMChatBarRecordAudioView.m in Sources */,
 				715EE9D024750D7A009CF31A /* EMAlertController.m in Sources */,
+				71388AFF2484DF6C0011E7A8 /* ImageBigger.m in Sources */,
 				715EE9AE24750D7A009CF31A /* MWPhotoBrowser.m in Sources */,
+				71388B022484F1A10011E7A8 /* GongfengRecordController.m in Sources */,
 				715EE9B324750D7A009CF31A /* MWPhoto.m in Sources */,
 				71BEE5AD22CB61EF00E1B9E3 /* DLSlideView.m in Sources */,
 				715EE9BA24750D7A009CF31A /* PSTCollectionViewCell.m in Sources */,
@@ -4348,6 +4375,7 @@
 				71BEE5AB22CB61EF00E1B9E3 /* DLUtility.m in Sources */,
 				71E55BB0246E65C500255230 /* GongFengThreeTableViewCell.m in Sources */,
 				711B0BA524693FA8009C84DB /* GongFengRecordViewController.m in Sources */,
+				7185BD09248099C60028AA75 /* WorshipController.m in Sources */,
 				711B0B9524692B38009C84DB /* NSMutableAttributedString+WY_Extension.m in Sources */,
 				715EE9B124750D7A009CF31A /* UIImage+MWPhotoBrowser.m in Sources */,
 				711B0BA724693FA8009C84DB /* GongFengThreeViewController.m in Sources */,
@@ -4694,6 +4722,7 @@
 			baseConfigurationReference = 0F71A6506E07F2BD7DAE6187 /* Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "IOS-PROJECT-TEMPLATE/IOS-PROJECT-TEMPLATE.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -4724,6 +4753,7 @@
 			baseConfigurationReference = C11CF6FD2D9C7653F49807E0 /* Pods-IOS-PROJECT-TEMPLATE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "IOS-PROJECT-TEMPLATE/IOS-PROJECT-TEMPLATE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V6A6G58G8G;

@@ -8,11 +8,13 @@
 
 #import "TPBaseViewController.h"
 #import "DLTabedSlideView.h"
+#import "CitangListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JisiProController : TPBaseViewController
 @property (weak, nonatomic) IBOutlet DLTabedSlideView *tabedSlideView;
 @property(assign,nonatomic)NSInteger selectedIndex;
+@property(strong,nonatomic)CitangListModel* model;
 @end
 
 NS_ASSUME_NONNULL_END

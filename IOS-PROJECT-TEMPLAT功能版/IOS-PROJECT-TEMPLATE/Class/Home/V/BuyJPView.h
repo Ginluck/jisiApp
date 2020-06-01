@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol BuyViewDelegate <NSObject>
 
--(void)buyViewDelegate:(UIButton *)sender value:(NSString *)count;
+-(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(NSString * )count;
 
 @end
 @interface BuyJPView : UIView

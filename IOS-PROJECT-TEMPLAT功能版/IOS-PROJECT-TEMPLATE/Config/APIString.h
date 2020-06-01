@@ -90,7 +90,14 @@
 #define JS_UPDATE_MEMBER_URL @"appZp/updateAppZuPu"
 //创建祠堂
 #define JS_CREATE_CITANG_URL @"appCt/appAddCiTang"
-
+//祠堂详情
+#define JS_CITANG_DETAIL_URL @"appCt/selectByAppCtDetail"
+//祠堂修改
+#define JS_CITANG_UPDATE_URL @"appCt/updateAppCiTang"
+//购买祭品
+#define JS_BUY_PRO_URL @"appRechargeRecord/addAppRechargeRecord"
+//供奉记录
+#define JS_GONFENG_RECORD_LIST @"appRechargeRecord/selectAppRechargeRecord"
 
 
 #endif /* APIString_h */

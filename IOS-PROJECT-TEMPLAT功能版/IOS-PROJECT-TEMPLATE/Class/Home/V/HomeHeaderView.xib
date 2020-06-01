@@ -21,9 +21,11 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="总成员" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-ls-0Gm">
                             <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总人口：100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-K8-0Lq">
                             <rect key="frame" x="0.0" y="50" width="138" height="21"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="8pI-BZ-SMq"/>
                             </constraints>
@@ -35,7 +37,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="138" height="74"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="74" id="3WK-Vp-lCY"/>
                         <constraint firstItem="hJO-z3-cCo" firstAttribute="top" secondItem="Lzg-zk-e5f" secondAttribute="top" id="4AY-m2-59t"/>
@@ -70,7 +72,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="138" height="74"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="em5-ss-St5" firstAttribute="leading" secondItem="a2s-ak-OWb" secondAttribute="leading" id="42e-Uk-Tth"/>
                         <constraint firstAttribute="trailing" secondItem="kFm-Hj-Na8" secondAttribute="trailing" id="6am-es-PSu"/>
@@ -105,7 +107,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="138" height="74"/>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="cG2-s2-YiI" firstAttribute="top" secondItem="Kam-7R-5mN" secondAttribute="top" id="CRT-ph-cwr"/>
                         <constraint firstItem="Qdn-dU-Yt6" firstAttribute="top" secondItem="Kam-7R-5mN" secondAttribute="top" id="FP9-Wm-hsG"/>
@@ -152,6 +154,7 @@
                     <subviews>
                         <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlJ-kt-8jD">
                             <rect key="frame" x="86.5" y="40" width="80" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="fWg-WB-3by"/>
                                 <constraint firstAttribute="height" constant="80" id="jDK-8H-yYy"/>
@@ -163,6 +166,7 @@
                         </button>
                         <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-tu-oIV">
                             <rect key="frame" x="247.5" y="40" width="80" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="49a-OU-3bB"/>
                                 <constraint firstAttribute="width" constant="80" id="x4S-K4-Efi"/>
@@ -179,13 +183,13 @@
                                 <constraint firstAttribute="width" constant="1" id="kSA-Ud-oaC"/>
                             </constraints>
                         </view>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="世系图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T51-eN-RZG">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="世系图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T51-eN-RZG">
                             <rect key="frame" x="100.5" y="131" width="52" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宗族祠堂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-mQ-tWi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宗族祠堂" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-mQ-tWi">
                             <rect key="frame" x="253" y="131" width="69.5" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>

@@ -12,6 +12,7 @@
 #import "FamilyListModel.h"
 #import "ChooseMemberController.h"
 #import "FamilyTreeMember.h"
+#import "CitangDetailModel.h"
 @interface AddFamilyCitangController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,weak)IBOutlet UITextField * nameTF;
 @property(nonatomic,weak)IBOutlet UITextView * introTV;
@@ -20,7 +21,9 @@
 @property(nonatomic,weak)IBOutlet UIButton * citangImage;
 @property(nonatomic,strong) FamilyListModel * family;
 @property(nonatomic,strong) NSString * IdStr;
+@property(nonatomic,strong) NSString * countStr;
 @property(nonatomic,strong)NSString * imgUrl;
+@property(nonatomic,strong)CitangDetailModel * DetailModel;
 @property(nonatomic,strong)NSArray * selectedArr;
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
 @end
@@ -32,9 +35,43 @@
     // Do any additional setup after loading the view from its nib.
     [self addNavigationTitleView:@"新建家庭祠堂"];
     self.introTV.placeholdFont =MKFont(14);
+    if (self.model !=nil) {
+        [self requestData];
+    }
 }
 
-
+-(void)requestData
+{
+    [RequestHelp POST:JS_CITANG_DETAIL_URL parameters:@{@"id":self.model.id} success:^(id result) {
+        MKLog(@"%@",result);
+       self.DetailModel =[CitangDetailModel yy_modelWithJSON:result];
+       [self refreshUI];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+-(void)refreshUI
+{
+    self.nameTF.text =self.DetailModel.name;
+    self.introTV.text =self.DetailModel.ctJs;
+    self.imgUrl =self.DetailModel.img2;
+    [self.citangImage sd_setImageWithURL:[NSURL URLWithString:self.DetailModel.img2] forState:UIControlStateNormal];
+    
+    self.family =[FamilyListModel new];
+    self.family.id =self.DetailModel.jzId;
+    [self.familyBtn setTitle:self.DetailModel.name2 forState:UIControlStateNormal];
+    
+    NSMutableArray * nameArr =[NSMutableArray array];
+     NSMutableArray * idArr =[NSMutableArray array];
+    for (FamilyTreeMember * member in self.DetailModel.zpList)
+    {
+        [nameArr addObject:member.name];
+        [idArr addObject:member.id];
+    }
+    [self.memberBtn setTitle:[nameArr componentsJoinedByString:@","] forState:UIControlStateNormal];
+    self.IdStr =[idArr componentsJoinedByString:@","];
+    self.selectedArr=self.DetailModel.zpList;
+}
 
 -(IBAction)chooseClick:(UIButton *)sender
 {
@@ -61,13 +98,16 @@
         cc.block = ^(NSArray * _Nonnull arr) {
             NSMutableArray * nameArr =[NSMutableArray array];
             NSMutableArray * idArr =[NSMutableArray array];
+           NSMutableArray * countArr =[NSMutableArray array];
             for (FamilyTreeMember * member in arr)
             {
                 [nameArr addObject:member.name];
                [ idArr addObject:member.id];
+                [countArr addObject:member.count];
             }
             self.selectedArr =arr;
             [self.memberBtn setTitle:[nameArr componentsJoinedByString:@","] forState:UIControlStateNormal];
+            self.countStr =[countArr componentsJoinedByString:@","];
             self.IdStr =[idArr componentsJoinedByString:@","];
         };
         [self.navigationController pushViewController:cc animated:YES];
@@ -105,7 +145,7 @@
         {
             ShowMessage(@"请选择祠堂图片 ");return;
         }
-        if (self.family==nil)
+        if (!self.family.id.length)
         {
             ShowMessage(@"请选择祭祀家族 ");return;
         }
@@ -113,13 +153,26 @@
         {
             ShowMessage(@"请选择祭祀成员 ");return;
         }
-        NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr};
-        [RequestHelp POST:JS_CREATE_CITANG_URL parameters:dic success:^(id result) {
-            MKLog(@"%@",result);
-            [self.navigationController popViewControllerAnimated:YES];
-        } failure:^(NSError *error) {
-            
-        }];
+        if (self.model ==nil) {
+            NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr,@"count":self.countStr};
+            [RequestHelp POST:JS_CREATE_CITANG_URL parameters:dic success:^(id result) {
+                MKLog(@"%@",result);
+                [self.navigationController popViewControllerAnimated:YES];
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+        else
+        {
+            NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr,@"id":self.model.id};
+            [RequestHelp POST:JS_CITANG_UPDATE_URL parameters:dic success:^(id result) {
+                MKLog(@"%@",result);
+                [self.navigationController popViewControllerAnimated:YES];
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+
     }
 
 }

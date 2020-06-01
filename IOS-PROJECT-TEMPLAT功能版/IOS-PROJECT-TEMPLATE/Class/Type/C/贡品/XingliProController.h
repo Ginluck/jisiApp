@@ -7,11 +7,11 @@
 //
 
 #import "TPBaseViewController.h"
-
+#import "CitangListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XingliProController : TPBaseViewController
-
+@property(strong,nonatomic)CitangListModel* model;
 @end
 
 NS_ASSUME_NONNULL_END

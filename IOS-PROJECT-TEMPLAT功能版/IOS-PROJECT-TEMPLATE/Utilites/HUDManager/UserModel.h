@@ -56,5 +56,6 @@
 
 @property (nonatomic, copy) NSString *isRead;
 
-@property (nonatomic, copy) NSString *patriarch;
+@property(nonatomic,copy)NSString *patriarch;
+
 @end

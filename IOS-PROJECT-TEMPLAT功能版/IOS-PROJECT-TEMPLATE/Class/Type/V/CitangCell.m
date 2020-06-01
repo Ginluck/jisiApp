@@ -39,8 +39,8 @@
     else
     {
         [self.familyImage sd_setImageWithURL:[NSURL URLWithString:model.img2]];
-        self.familyName.text =model.name2;
-        self.familyDesc.text =model.ctJs2;
+        self.familyName.text =model.name;
+        self.familyDesc.text =model.ctJs;
     }
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

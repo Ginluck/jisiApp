@@ -12,7 +12,7 @@
 #import "BuyJPView.h"
 #import "JipinView.h"
 @class JPButton;
-@interface XingliProController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,JPCellClickDelegate>
+@interface XingliProController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,BuyViewDelegate,JPCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
 @property(nonatomic,assign)NSInteger  page;
@@ -44,12 +44,21 @@
     
 }
 
-
+-(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(nonnull NSString *)count
+{
+    NSDictionary * param =@{@"type":@"1",@"useLength":time,@"jpId":proId,@"ctId":self.model.id,@"amountOfMoney":money,@"count":count};
+    [RequestHelp POST:JS_BUY_PRO_URL parameters:param success:^(id result) {
+        MKLog(@"%@",result);
+    } failure:^(NSError *error) {
+        
+    }];
+}
 -(BuyJPView *)buyView
 {
     if (!_buyView) {
         _buyView =[[[NSBundle mainBundle] loadNibNamed:@"BuyJPView" owner:self options:nil] firstObject];
         _buyView.frame =CGRectMake(0, 0, 200,250);
+        _buyView.delegate =self;
         _buyView.center =CGPointMake(Screen_Width/2, Screen_Height/2-50);
     }
     return _buyView;
