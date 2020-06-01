@@ -32,7 +32,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffD-im-cnh">
+                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffD-im-cnh">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                     <connections>
                                         <action selector="BtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="8in-zs-Sis"/>

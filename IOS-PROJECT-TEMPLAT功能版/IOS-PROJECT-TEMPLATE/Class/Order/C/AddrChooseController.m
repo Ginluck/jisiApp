@@ -54,7 +54,7 @@
 
     self.KNavHeight.constant=kNavagationBarH;
     [self.KNavView setNeedsLayout];
-    self.mapView = [[QMapView alloc] initWithFrame:self.midView.bounds];
+    self.mapView = [[QMapView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-kNavagationBarH-200-kBottomLayout)];
     //接受地图的delegate回调
     self.mapView.delegate = self;
     //把mapView添加到view中进行显示
@@ -62,6 +62,7 @@
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setUserTrackingMode:QUserTrackingModeFollow];
     [self.midView addSubview:self.mapView];
+
     
   
     [self.searchTF addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:(UIControlEventEditingChanged)];

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1805FA032484AAE2009B5652 /* ContactCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805FA012484AAE2009B5652 /* ContactCustomerViewController.m */; };
+		1805FA042484AAE2009B5652 /* ContactCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1805FA022484AAE2009B5652 /* ContactCustomerViewController.xib */; };
+		1805FA082484D0AF009B5652 /* GongFengListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805FA072484D0AF009B5652 /* GongFengListModel.m */; };
 		182D7CB82477DCF50019DCD3 /* RZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D7CB62477DCF50019DCD3 /* RZMessageViewController.m */; };
 		182D7CB92477DCF50019DCD3 /* RZMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D7CB72477DCF50019DCD3 /* RZMessageViewController.xib */; };
 		182D7CBD2477DD200019DCD3 /* RZMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D7CBB2477DD200019DCD3 /* RZMessageTableViewCell.m */; };
@@ -675,6 +678,11 @@
 
 /* Begin PBXFileReference section */
 		0F71A6506E07F2BD7DAE6187 /* Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig"; path = "Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE.debug.xcconfig"; sourceTree = "<group>"; };
+		1805FA002484AAE2009B5652 /* ContactCustomerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactCustomerViewController.h; sourceTree = "<group>"; };
+		1805FA012484AAE2009B5652 /* ContactCustomerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactCustomerViewController.m; sourceTree = "<group>"; };
+		1805FA022484AAE2009B5652 /* ContactCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCustomerViewController.xib; sourceTree = "<group>"; };
+		1805FA062484D0AF009B5652 /* GongFengListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GongFengListModel.h; sourceTree = "<group>"; };
+		1805FA072484D0AF009B5652 /* GongFengListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GongFengListModel.m; sourceTree = "<group>"; };
 		182D7CB52477DCF50019DCD3 /* RZMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZMessageViewController.h; sourceTree = "<group>"; };
 		182D7CB62477DCF50019DCD3 /* RZMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZMessageViewController.m; sourceTree = "<group>"; };
 		182D7CB72477DCF50019DCD3 /* RZMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RZMessageViewController.xib; sourceTree = "<group>"; };
@@ -1701,6 +1709,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1805FA052484D056009B5652 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				1805FA062484D0AF009B5652 /* GongFengListModel.h */,
+				1805FA072484D0AF009B5652 /* GongFengListModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
 		182D7CBF2477DFAB0019DCD3 /* M */ = {
 			isa = PBXGroup;
 			children = (
@@ -1713,15 +1730,12 @@
 		18C1F4052477CB4D00B16077 /* V */ = {
 			isa = PBXGroup;
 			children = (
-
 				7185BCF2247E48160028AA75 /* MineHeaderView.h */,
 				7185BCF3247E48170028AA75 /* MineHeaderView.m */,
 				7185BCF4247E48170028AA75 /* MineHeaderView.xib */,
-
 				183015CF247E17AE00B43F64 /* MineHeaderView.h */,
 				183015D0247E17AE00B43F64 /* MineHeaderView.m */,
 				183015D2247E17C300B43F64 /* MineHeaderView.xib */,
-
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1993,6 +2007,7 @@
 		711B0B9624693FA8009C84DB /* GongFeng */ = {
 			isa = PBXGroup;
 			children = (
+				1805FA052484D056009B5652 /* M */,
 				71E55B8C246E65C500255230 /* V */,
 				711B0B9724693FA8009C84DB /* C */,
 			);
@@ -3094,6 +3109,9 @@
 				183015D92481030C00B43F64 /* YourNameAdressViewController.h */,
 				183015DA2481030C00B43F64 /* YourNameAdressViewController.m */,
 				183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */,
+				1805FA002484AAE2009B5652 /* ContactCustomerViewController.h */,
+				1805FA012484AAE2009B5652 /* ContactCustomerViewController.m */,
+				1805FA022484AAE2009B5652 /* ContactCustomerViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3945,11 +3963,8 @@
 				715EED4524750E02009CF31A /* kbps_gray@3x.png in Resources */,
 				711B0B7E24692B0C009C84DB /* PYSearch.bundle in Resources */,
 				715EED2B24750E02009CF31A /* animate_00064.png in Resources */,
-
 				7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */,
-
 				183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */,
-
 				711B0AE5246929A7009C84DB /* FamilyCreateController.xib in Resources */,
 				715EEB3624750DDB009CF31A /* pin-red.png in Resources */,
 				715EED0724750E02009CF31A /* animate_00025.png in Resources */,
@@ -4058,6 +4073,7 @@
 				715EED6624750E02009CF31A /* switchCamera_gray@2x.png in Resources */,
 				715EEBAD24750DDC009CF31A /* msg_recv_audio@2x.png in Resources */,
 				715EEB6C24750DDC009CF31A /* chatbar_map_blue@3x.png in Resources */,
+				1805FA042484AAE2009B5652 /* ContactCustomerViewController.xib in Resources */,
 				715EED2124750E02009CF31A /* animate_00041.png in Resources */,
 				711B0AAC2469296E009C84DB /* AddNewMemberController.xib in Resources */,
 				715EEB9324750DDC009CF31A /* msg_bg_send@3x.png in Resources */,
@@ -4230,6 +4246,7 @@
 				711B0B3F246929E8009C84DB /* ZHFAddTitleAddressView.m in Sources */,
 				71E55B83246E658000255230 /* MyIntroductionViewController.m in Sources */,
 				71E55B84246E658000255230 /* SheZhiNameViewController.m in Sources */,
+				1805FA032484AAE2009B5652 /* ContactCustomerViewController.m in Sources */,
 				711B0A8C2469294C009C84DB /* UserAgreementViewController.m in Sources */,
 				715EEB8C24750DDC009CF31A /* EMMsgImageBubbleView.m in Sources */,
 				711B0ADB24692979009C84DB /* SJSheetFoot.m in Sources */,
@@ -4486,6 +4503,7 @@
 				71BEE58A22CB5D3900E1B9E3 /* TPNavigationController.m in Sources */,
 				18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */,
 				71E55BB3246E65C500255230 /* AddOrderHeaderView.m in Sources */,
+				1805FA082484D0AF009B5652 /* GongFengListModel.m in Sources */,
 				71E55B87246E658000255230 /* SetHeadViewController.m in Sources */,
 				715EEB3B24750DDB009CF31A /* EMMoreFunctionView.m in Sources */,
 				711B0B7A24692B0C009C84DB /* UIColor+PYSearchExtension.m in Sources */,

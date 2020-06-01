@@ -17,6 +17,7 @@
 #import "IDSafeViewController.h"
 #import "SZKCleanCache.h"
 #import "MineHeaderView.h"
+#import "ContactCustomerViewController.h"
 @interface PersonCenterController ()
 @property(nonatomic,strong)MineHeaderView * MHView;
 
@@ -73,21 +74,30 @@
 }
 -(void)BtnViewClick:(NSInteger )index
 {
+    UserModel * model =[[UserManager shareInstance]getUser];
     switch (index) {
         case 0:
         {
+            ContactCustomerViewController *GFRVC=[ContactCustomerViewController new];
+            GFRVC.hidesBottomBarWhenPushed=YES;
+            [self.navigationController pushViewController:GFRVC animated:YES];
         }
             break;
             case 1:
             {
-                GongFengRecordViewController *GFRVC=[GongFengRecordViewController new];
-                GFRVC.hidesBottomBarWhenPushed=YES;
-                [self.navigationController pushViewController:GFRVC animated:YES];
+                               if (model.jzId==nil) {
+                                   ShowMessage(@"您还没有家族");
+                               }else
+                               {
+                                   GongFengRecordViewController *GFRVC=[GongFengRecordViewController new];
+                                                  GFRVC.hidesBottomBarWhenPushed=YES;
+                                                  [self.navigationController pushViewController:GFRVC animated:YES];
+                               }
+               
             }
                 break;
             case 2:
             {
-                UserModel * model =[[UserManager shareInstance]getUser];
                 if ([model.patriarch isEqualToString:@"1"]) {
                     RZMessageViewController *GFRVC=[RZMessageViewController new];
                     GFRVC.TypeStr=@"1";

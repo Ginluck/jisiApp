@@ -9,6 +9,7 @@
 #import "GongFengOnewViewController.h"
 #import "GongFengOneTableViewCell.h"
 #import "GongPinDetialViewController.h"
+#import "GongFengListModel.h"
 @interface GongFengOnewViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -17,9 +18,14 @@
 @end
 
 @implementation GongFengOnewViewController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+     [self postDate];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     [self.view addSubview:self.tableView];
        [self regisNib];
        self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -127,16 +133,16 @@
 }
 -(void)refreshPostData
 {
-    
-    //    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"1",@"isApp":@"1"};
-    //    [RequestHelp POST:GET_HOUSESALE_URL parameters:param success:^(id result) {
-    //        DLog(@"%@",result);
-    //        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[HouseSaleInfo class] json:result[@"list"]]];
-    //        [self.tableView reloadData];
-    //        [self endRefresh];
-    //    } failure:^(NSError *error) {
-    //        [self endRefresh];
-    //    }];
+    UserModel * model =[[UserManager shareInstance]getUser];
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"jzId":model.jzId,@"ctId":@""};
+        [RequestHelp POST:selectByAppCiTang parameters:param success:^(id result) {
+            DLog(@"%@",result);
+            [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[GongFengListModel class] json:result[@"list"]]];
+            [self.tableView reloadData];
+            [self endRefresh];
+        } failure:^(NSError *error) {
+            [self endRefresh];
+        }];
 }
 /*
 #pragma mark - Navigation
