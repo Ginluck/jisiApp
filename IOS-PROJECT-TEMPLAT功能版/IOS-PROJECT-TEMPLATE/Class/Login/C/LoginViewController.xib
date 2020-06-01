@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录页面底图" translatesAutoresizingMaskIntoConstraints="NO" id="25I-qA-dE7">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000011"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO图标" translatesAutoresizingMaskIntoConstraints="NO" id="h7C-6N-U6Z">
                     <rect key="frame" x="162" y="80" width="90" height="90"/>
@@ -86,7 +86,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXc-sN-gas">
-                    <rect key="frame" x="206.5" y="524" width="1" height="18"/>
+                    <rect key="frame" x="206.66666666666666" y="524" width="1" height="18"/>
                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="ehE-Y7-qnl"/>
@@ -97,7 +97,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQk-i5-fWG">
-                    <rect key="frame" x="135.5" y="520.5" width="63" height="25"/>
+                    <rect key="frame" x="135.66666666666666" y="520.66666666666663" width="63" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="G2A-x5-lvE"/>
                         <constraint firstAttribute="width" constant="63" id="msb-l0-dVS"/>
@@ -111,7 +111,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmw-qK-6wf">
-                    <rect key="frame" x="215.5" y="520.5" width="63" height="25"/>
+                    <rect key="frame" x="215.66666666666666" y="520.66666666666663" width="62.999999999999972" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="CMw-Ju-auc"/>
                         <constraint firstAttribute="width" constant="63" id="tmB-4f-orJ"/>

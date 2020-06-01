@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *TGBtn;
 @property (weak, nonatomic) IBOutlet UIButton *BHBtn;
 @property (strong, nonatomic)RZMessageModel *model;
+@property (strong, nonatomic)NSString *TypeStr;
 @end
 
 NS_ASSUME_NONNULL_END

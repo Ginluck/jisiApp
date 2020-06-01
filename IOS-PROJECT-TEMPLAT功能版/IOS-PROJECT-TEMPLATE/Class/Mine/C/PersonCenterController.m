@@ -55,7 +55,7 @@
     WS(weakSelf);
     if (!_MHView) {
         _MHView=[[NSBundle mainBundle]loadNibNamed:@"MineHeaderView" owner:nil options:nil][0];
-        _MHView.frame =CGRectMake(0, kNavagationBarH, Screen_Width, 500);
+        _MHView.frame =CGRectMake(0, kNavagationBarH, Screen_Width, 550);
         [_MHView.HeaderBtn addTarget:self action:@selector(HeaderClick) forControlEvents:UIControlEventTouchUpInside];
            [_MHView.LoginOutBtn addTarget:self action:@selector(logOut) forControlEvents:UIControlEventTouchUpInside];
           _MHView.VCClick = ^(NSInteger index) {
@@ -87,9 +87,17 @@
                 break;
             case 2:
             {
-                RZMessageViewController *GFRVC=[RZMessageViewController new];
-                GFRVC.hidesBottomBarWhenPushed=YES;
-                [self.navigationController pushViewController:GFRVC animated:YES];
+                UserModel * model =[[UserManager shareInstance]getUser];
+                if ([model.patriarch isEqualToString:@"1"]) {
+                    RZMessageViewController *GFRVC=[RZMessageViewController new];
+                    GFRVC.TypeStr=@"1";
+                    GFRVC.hidesBottomBarWhenPushed=YES;
+                    [self.navigationController pushViewController:GFRVC animated:YES];
+                }else
+                {
+                    ShowMessage(@"没有权限");
+                }
+                
             }
                 break;
             case 3:
@@ -121,6 +129,14 @@
                        }];
             }
                 break;
+        case 7:
+                   {
+                      RZMessageViewController *GFRVC=[RZMessageViewController new];
+                       GFRVC.TypeStr=@"2";
+                       GFRVC.hidesBottomBarWhenPushed=YES;
+                       [self.navigationController pushViewController:GFRVC animated:YES];
+                   }
+                       break;
             
         default:
             break;
