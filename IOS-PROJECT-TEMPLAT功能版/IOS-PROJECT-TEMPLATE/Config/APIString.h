@@ -47,6 +47,9 @@
 //修改个人资料
 
 #define  UPDATE_ZJ_url  @"userApp/UPDATE_ZJ"
+//供奉记录
+
+#define  selectByAppCiTang  @"appCt/selectByAppCiTang"
 
 
 
