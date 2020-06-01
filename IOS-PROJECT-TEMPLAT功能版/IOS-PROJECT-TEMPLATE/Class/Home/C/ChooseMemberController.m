@@ -184,7 +184,7 @@
 -(void)refreshPostData
 {
     
-    NSDictionary * param =@{@"jzId":self.model.id,@"spouseId":@"1",@"firstGeneration":@"1",@"state":@"1"};
+    NSDictionary * param =@{@"jzId":self.model.id,@"firstGeneration":@"1",@"state":@"1"};
     [RequestHelp POST:JS_SELECT_ZPLIST_URL parameters:param success:^(id result) {
         DLog(@"%@",result);
         [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyTreeModel class] json:result]];

@@ -14,6 +14,7 @@
 #import "JisiProController.h"
 #import "AddPersonCitangController.h"
 #import "AddFamilyCitangController.h"
+#import "WorshipController.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -158,7 +159,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    JisiProController * jvc  =[JisiProController new];
+    CitangListModel * model =self.dataAry[indexPath.row];
+    WorshipController * jvc  =[WorshipController new];
+    jvc.model =model;
     jvc.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:jvc animated:YES];
     

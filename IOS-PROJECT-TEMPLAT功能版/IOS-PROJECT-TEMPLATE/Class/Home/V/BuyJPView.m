@@ -13,8 +13,9 @@
 @property(nonatomic,weak)IBOutlet UILabel *JPPrice;
 @property(nonatomic,weak)IBOutlet UILabel *JPYuYi;
 @property(nonatomic,weak)IBOutlet UILabel *JPTime;
+@property(nonatomic,strong)NSString *JPTimeStr;
 @property(nonatomic,weak)IBOutlet UITextField *JPCount;
-
+@property(nonatomic,strong) JipinChild *model;
 @end
 @implementation BuyJPView
 
@@ -35,23 +36,37 @@
         value =value+1;
     }
     self.JPCount.text =[NSString stringWithFormat:@"%ld",(long)value];
+    self.JPPrice.text =[NSString stringWithFormat:@"%ld",[_model.price integerValue]*value];
+    self.JPTime.text =[NSString stringWithFormat:@"时间:%ld小时",[_model.useLength integerValue] * value];
+    self.JPTimeStr=[NSString stringWithFormat:@"%ld",[_model.useLength integerValue] * value];
 }
 
 
 -(IBAction)actionClick:(UIButton *)sender
 {
-    if (self.delegate) {
-        [self.delegate buyViewDelegate:sender value:self.JPCount.text];
+    if (sender.tag ==11)
+    {
+        if (self.delegate) {
+          
+            [self.delegate buyViewDelegate:sender time:self.JPTimeStr amount:self.JPPrice.text pro:_model.id];
+        }
     }
+    else
+    {
+        [self removeFromSuperview];
+    }
+ 
 }
 
 -(void)refreshUI:(JipinChild *)model
 {
-    [self.JPImage sd_setImageWithURL:[NSURL URLWithString:model.imgUrl]];
-    self.JPName.text =model.name;
-    self.JPPrice.text =model.price;
-    self.JPTime.text =[NSString stringWithFormat:@"时间:%@小时",model.useLength];
-    self.JPYuYi.text =[NSString stringWithFormat:@"寓意:%@",model.moral];
+    _model =model;
+    [self.JPImage sd_setImageWithURL:[NSURL URLWithString:_model.imgUrl]];
+    self.JPName.text =_model.name;
+    self.JPPrice.text =_model.price;
+    self.JPTime.text =[NSString stringWithFormat:@"时间:%@小时",_model.useLength];
+    self.JPYuYi.text =[NSString stringWithFormat:@"寓意:%@",_model.moral];
+    self.JPTimeStr =_model.useLength;
     
 }
 @end

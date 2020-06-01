@@ -8,12 +8,14 @@
 
 #import "AddPersonCitangController.h"
 #import "UITextView+WJPlaceholder.h"
+#import "CitangDetailModel.h"
 @interface AddPersonCitangController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,weak)IBOutlet UITextField * nameTF;
 @property(nonatomic,weak)IBOutlet UITextView * introTV;
 @property(nonatomic,weak)IBOutlet UIButton * citangImage;
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
 @property(nonatomic,strong)NSString * imgUrl;
+@property(nonatomic,strong)CitangDetailModel * DetailModel;
 @end
 
 @implementation AddPersonCitangController
@@ -32,8 +34,29 @@
     // Do any additional setup after loading the view from its nib.
     [self addNavigationTitleView:@"新建个人祠堂"];
     self.introTV.placeholdFont =MKFont(14);
+    if (self.model !=nil) {
+        [self requestData];
+    }
 }
 
+
+-(void)requestData
+{
+    [RequestHelp POST:JS_CITANG_DETAIL_URL parameters:@{@"id":self.model.id} success:^(id result) {
+        self.DetailModel =[CitangDetailModel yy_modelWithJSON:result];
+        [self refreshUI];
+    } failure:^(NSError *error) {
+        
+    }];
+}
+-(void)refreshUI
+{
+    self.nameTF.text =self.DetailModel.name;
+    self.introTV.text =self.DetailModel.ctJs;
+    self.introTV.placeholder =@"";
+    self.imgUrl =self.DetailModel.img;
+    [self.citangImage sd_setImageWithURL:[NSURL URLWithString:self.DetailModel.img] forState:UIControlStateNormal];
+}
 -(IBAction)chooseLogo:(UIButton *)sender
 {
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -154,13 +177,26 @@
     {
         ShowMessage(@"请选择祠堂图片 ");return;
     }
-    NSDictionary *dic =@{@"type":@"1",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl};
-    [RequestHelp POST:JS_CREATE_CITANG_URL parameters:dic success:^(id result) {
-        MKLog(@"%@",result);
-        [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSError *error) {
-        
-    }];
+    if (self.model ==nil) {
+        NSDictionary *dic =@{@"type":@"1",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl};
+        [RequestHelp POST:JS_CREATE_CITANG_URL parameters:dic success:^(id result) {
+            MKLog(@"%@",result);
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+    else
+    {
+        NSDictionary *dic =@{@"type":@"1",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"id":self.model.id};
+        [RequestHelp POST:JS_CITANG_UPDATE_URL parameters:dic success:^(id result) {
+            MKLog(@"%@",result);
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+    
 }
 
 

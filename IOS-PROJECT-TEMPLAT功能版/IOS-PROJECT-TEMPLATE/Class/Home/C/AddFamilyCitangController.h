@@ -7,11 +7,11 @@
 //
 
 #import "TPBaseViewController.h"
-
+#import "CitangListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AddFamilyCitangController : TPBaseViewController
-
+@property(nonatomic,strong)CitangListModel* model;
 @end
 
 NS_ASSUME_NONNULL_END

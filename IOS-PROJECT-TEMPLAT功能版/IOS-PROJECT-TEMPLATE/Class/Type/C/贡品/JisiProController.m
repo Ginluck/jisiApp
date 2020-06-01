@@ -55,6 +55,7 @@
         case 0:
         {
             XingliProController *ctrl = [[XingliProController alloc] init];
+            ctrl.model =self.model;
             return ctrl;
         }
         case 1:
