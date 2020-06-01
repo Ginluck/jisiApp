@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FamilyTreeMember.h"
+#import "FamilyTreeModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CitangDetailModel : NSObject
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * name;
 
 @property(nonatomic,strong)NSArray <FamilyTreeMember *> * zpList;
+@property(nonatomic,strong)NSArray <FamilyTreeModel*>*zpList2;
 
 @end
 

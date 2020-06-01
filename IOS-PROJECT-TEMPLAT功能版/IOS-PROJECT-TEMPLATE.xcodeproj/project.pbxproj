@@ -181,6 +181,7 @@
 		7125FC7E247DFA53006F4B54 /* MemberDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7125FC7D247DFA53006F4B54 /* MemberDetailModel.m */; };
 		71388AFA2480A28D0011E7A8 /* CitangDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388AF92480A28D0011E7A8 /* CitangDetailModel.m */; };
 		71388AFC2480BB710011E7A8 /* 发光gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71388AFB2480BB710011E7A8 /* 发光gif.gif */; };
+		71388AFF2484DF6C0011E7A8 /* ImageBigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388AFE2484DF6C0011E7A8 /* ImageBigger.m */; };
 		713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CB247252D400A00867 /* FamilyTreeModel.m */; };
 		713F31CF2472534200A00867 /* FamilyTreeMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CE2472534200A00867 /* FamilyTreeMember.m */; };
 		713F31D32473888800A00867 /* AddrChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31D12473888800A00867 /* AddrChooseController.m */; };
@@ -971,6 +972,8 @@
 		71388AF82480A28D0011E7A8 /* CitangDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitangDetailModel.h; sourceTree = "<group>"; };
 		71388AF92480A28D0011E7A8 /* CitangDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitangDetailModel.m; sourceTree = "<group>"; };
 		71388AFB2480BB710011E7A8 /* 发光gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "发光gif.gif"; sourceTree = "<group>"; };
+		71388AFD2484DF6C0011E7A8 /* ImageBigger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageBigger.h; sourceTree = "<group>"; };
+		71388AFE2484DF6C0011E7A8 /* ImageBigger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageBigger.m; sourceTree = "<group>"; };
 		713F31CA247252D400A00867 /* FamilyTreeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeModel.h; sourceTree = "<group>"; };
 		713F31CB247252D400A00867 /* FamilyTreeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyTreeModel.m; sourceTree = "<group>"; };
 		713F31CD2472534200A00867 /* FamilyTreeMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeMember.h; sourceTree = "<group>"; };
@@ -3628,6 +3631,8 @@
 				71EC5F9B247B5E7200407D7F /* JipinChild.m */,
 				71388AF82480A28D0011E7A8 /* CitangDetailModel.h */,
 				71388AF92480A28D0011E7A8 /* CitangDetailModel.m */,
+				71388AFD2484DF6C0011E7A8 /* ImageBigger.h */,
+				71388AFE2484DF6C0011E7A8 /* ImageBigger.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -4326,6 +4331,7 @@
 				711B0B4E246929E8009C84DB /* LYSDatePickerTypeDayAndTimeDelegate.m in Sources */,
 				715EEB6424750DDC009CF31A /* EMChatBarRecordAudioView.m in Sources */,
 				715EE9D024750D7A009CF31A /* EMAlertController.m in Sources */,
+				71388AFF2484DF6C0011E7A8 /* ImageBigger.m in Sources */,
 				715EE9AE24750D7A009CF31A /* MWPhotoBrowser.m in Sources */,
 				715EE9B324750D7A009CF31A /* MWPhoto.m in Sources */,
 				71BEE5AD22CB61EF00E1B9E3 /* DLSlideView.m in Sources */,

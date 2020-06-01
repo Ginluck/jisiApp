@@ -51,6 +51,7 @@
         {
             if ([member.isSelected isEqualToString:@"1"])
             {
+                member.count =model.count;
                 [ar addObject:member];
             }
         }

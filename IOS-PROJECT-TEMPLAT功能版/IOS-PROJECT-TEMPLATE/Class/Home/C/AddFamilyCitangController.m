@@ -21,6 +21,7 @@
 @property(nonatomic,weak)IBOutlet UIButton * citangImage;
 @property(nonatomic,strong) FamilyListModel * family;
 @property(nonatomic,strong) NSString * IdStr;
+@property(nonatomic,strong) NSString * countStr;
 @property(nonatomic,strong)NSString * imgUrl;
 @property(nonatomic,strong)CitangDetailModel * DetailModel;
 @property(nonatomic,strong)NSArray * selectedArr;
@@ -97,13 +98,16 @@
         cc.block = ^(NSArray * _Nonnull arr) {
             NSMutableArray * nameArr =[NSMutableArray array];
             NSMutableArray * idArr =[NSMutableArray array];
+           NSMutableArray * countArr =[NSMutableArray array];
             for (FamilyTreeMember * member in arr)
             {
                 [nameArr addObject:member.name];
                [ idArr addObject:member.id];
+                [countArr addObject:member.count];
             }
             self.selectedArr =arr;
             [self.memberBtn setTitle:[nameArr componentsJoinedByString:@","] forState:UIControlStateNormal];
+            self.countStr =[countArr componentsJoinedByString:@","];
             self.IdStr =[idArr componentsJoinedByString:@","];
         };
         [self.navigationController pushViewController:cc animated:YES];
@@ -150,7 +154,7 @@
             ShowMessage(@"请选择祭祀成员 ");return;
         }
         if (self.model ==nil) {
-            NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr};
+            NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr,@"count":self.countStr};
             [RequestHelp POST:JS_CREATE_CITANG_URL parameters:dic success:^(id result) {
                 MKLog(@"%@",result);
                 [self.navigationController popViewControllerAnimated:YES];

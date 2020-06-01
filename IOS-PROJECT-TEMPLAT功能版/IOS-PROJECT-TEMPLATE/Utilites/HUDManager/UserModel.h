@@ -55,4 +55,6 @@
 @property (nonatomic, copy) NSString *lastMessage;
 
 @property (nonatomic, copy) NSString *isRead;
+
+@property(nonatomic,copy)NSString *patriarch;
 @end

@@ -11,9 +11,12 @@
 #import "AddFamilyCitangController.h"
 #import "JisiProController.h"
 #import "CitangDetailModel.h"
+#import "NSString+Fit.h"
+#import "ImageBigger.h"
 @interface WorshipController ()
 @property(nonatomic,strong)UIImageView * backImage;
 @property(nonatomic,strong)CitangDetailModel * DetailModel;
+@property(nonatomic,strong)UIImageView * jisiImage;
 @end
 
 @implementation WorshipController
@@ -23,6 +26,7 @@
     // Do any additional setup after loading the view.
     
     [self reloadUICompoents];
+    [self requestData];
 }
 
 
@@ -99,6 +103,22 @@
     }
     return _backImage;
 }
+
+-(void)requestData
+{
+    [RequestHelp POST:JS_CITANG_DETAIL_URL parameters:@{@"id":self.model.id} success:^(id result) {
+        MKLog(@"%@",result);
+        self.DetailModel =[CitangDetailModel yy_modelWithJSON:result];
+        for (int i=0; i<self.DetailModel.zpList2.count; i++)
+        {
+            FamilyTreeModel * model=self.DetailModel.zpList2[i];
+            model.lisCount= [NSString stringWithFormat:@"%ld",model.list.count];
+        }
+        [self refreshPaiWei];
+    } failure:^(NSError *error) {
+        
+    }];
+}
 -(void)updateClick
 {
     if ([self.model.type isEqualToString:@"1"])
@@ -123,21 +143,117 @@
     [self.navigationController pushViewController:jvc animated:YES];
 }
 
--(void)requestData
-{
-    [RequestHelp POST:JS_CITANG_DETAIL_URL parameters:@{@"id":self.model.id} success:^(id result) {
-        self.DetailModel =[CitangDetailModel yy_modelWithJSON:result];
-      
-    } failure:^(NSError *error) {
-        
-    }];
-}
 
 -(void)refreshPaiWei
 {
+    NSMutableArray * countArr =[NSMutableArray array];
+    
+    for (int i=0; i<self.DetailModel.zpList2.count; i++)
+    {
+        FamilyTreeModel * model=self.DetailModel.zpList2[i];
+        
+        [countArr addObject:model.lisCount];
+    }
+    CGFloat width =40.f;
+    
+    CGFloat height =64.f;
+    
+    CGFloat  margin_y =20;
+    
+    CGFloat Margin_x =(Screen_Width -8*width)/9;
+    
+    
+    UIView * bgView =[[UIView alloc]initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-K_NaviHeight)];
+   
+    UIScrollView * scView =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(bgView.frame))];
+    [bgView addSubview:scView];
+    
+    for (int i=0; i<self.DetailModel.zpList2.count; i++)
+    {
+        FamilyTreeModel * model =self.DetailModel.zpList2[i];
+        
+        for (int j=0; j<model.list.count;j++)
+        {
+            FamilyTreeMember * member =model.list[j];
+            if ([model.lisCount isEqualToString:@"1"])
+            {
+                UIButton * button =[UIButton new];
+                button.frame =CGRectMake(0, 0, width, height);
+//                [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
+                button.backgroundColor =[UIColor redColor];
+                [button setNormalTitle:member.name font:MKFont(20) titleColor:[UIColor whiteColor]];
+                button.titleLabel.numberOfLines =0;
+                button.titleLabel.textAlignment =NSTextAlignmentCenter;
+//                button.contentMode =UIViewContentModeScaleAspectFill;
+                button.center= CGPointMake(Screen_Width/2, margin_y+height/2);
+                [scView addSubview:button];
+            }
+            if ([model.lisCount integerValue]>1 &&[model.lisCount integerValue]<9)
+            {
+            
+                 Margin_x =(Screen_Width -[model.lisCount integerValue]*width)/([model.lisCount integerValue]+1);
+                UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
+                button.frame =CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height);
+                  [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
+                 [button setNormalTitle:member.name font:MKFont(24) titleColor:[UIColor whiteColor]];
+                button.titleLabel.numberOfLines =0;
+               
+                 button.titleLabel.textAlignment =NSTextAlignmentCenter;
+                [scView addSubview:button];
+            }
+            else if ([model.lisCount integerValue]>8)
+            {
+                Margin_x =(Screen_Width -8*width)/9;
+                UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
+                button.frame =CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height);
+                  [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
+                  [button setNormalTitle:member.name font:MKFont(24) titleColor:[UIColor whiteColor]];
+                button.titleLabel.numberOfLines =0;
+                 button.titleLabel.textAlignment =NSTextAlignmentCenter;
+              
+                scView.contentSize =CGSizeMake(Margin_x+(width+Margin_x)*[model.lisCount integerValue], 0);
+                [scView addSubview:button];
+            }
+        }
+    }
+//    [self.view addSubview:bgView];
+        CGFloat image_Width =245*Screen_Width /1080;
+        CGFloat image_Height =310*(Screen_Height-K_NaviHeight)/1560;
+
+        UIImageView * image =[[UIImageView alloc]initWithImage:[self shotShareImage:bgView]];
+        image.bounds =CGRectMake(0, 0, image_Width, image_Height);
+        image.center =CGPointMake(Screen_Width/2,K_NaviHeight+(Screen_Height-K_NaviHeight)/(1560/113)+image_Height/2);
+         image.userInteractionEnabled = YES;
+
+        [self.view addSubview:image];
+        _jisiImage =image;
+    UITapGestureRecognizer *tap  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(magnifyImage)];
+    [image addGestureRecognizer:tap];
+
+}
+-(void)magnifyImage
+{
+    [ImageBigger showImage:_jisiImage];
+}
+- (UIImage *)shotShareImage:(UIView * )bgView {
+    //模糊方法
+//    UIGraphicsBeginImageContext(CGSizeMake(self.layer.bounds.size.width, self.layer.bounds.size.height));
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [self.layer renderInContext:context];
+//    UIImage* tImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return tImage;
+    
+    //高清方法
+    //第一个参数表示区域大小 第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
+    CGSize size = CGSizeMake(Screen_Width, Screen_Height-K_NaviHeight);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    [bgView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
     
 }
-
 
 
 /*

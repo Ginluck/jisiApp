@@ -10,6 +10,6 @@
 
 @implementation CitangDetailModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"zpList" : [FamilyTreeMember class]};
+    return @{@"zpList" : [FamilyTreeMember class],@"zpList2":[FamilyTreeModel class]};
 }
 @end

@@ -44,9 +44,9 @@
     
 }
 
--(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId;
+-(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(nonnull NSString *)count
 {
-    NSDictionary * param =@{@"type":@"1",@"useLength":time,@"jpId":proId,@"ctId":self.model.id,@"amountOfMoney":money};
+    NSDictionary * param =@{@"type":@"1",@"useLength":time,@"jpId":proId,@"ctId":self.model.id,@"amountOfMoney":money,@"count":count};
     [RequestHelp POST:JS_BUY_PRO_URL parameters:param success:^(id result) {
         MKLog(@"%@",result);
     } failure:^(NSError *error) {

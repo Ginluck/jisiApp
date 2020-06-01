@@ -35,22 +35,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/ChooseMemberController.m"
-            timestampString = "612435618.471634"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "-refreshPostData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddPersonCitangController.m"
             timestampString = "612435618.471778"
             startingColumnNumber = "9223372036854775807"
@@ -83,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Type/C/&#x8d21;&#x54c1;/XingliProController.m"
-            timestampString = "612435618.47269"
+            filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/WorshipController.m"
+            timestampString = "612689273.380313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-buyViewDelegate:time:amount:pro:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-requestData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
