@@ -7,11 +7,16 @@
 //
 
 #import "TPBaseTableViewCell.h"
-
+#import "GongFengListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GongFengOneTableViewCell : TPBaseTableViewCell
-
+@property(nonatomic,strong)GongFengListModel *model;
+@property (weak, nonatomic) IBOutlet UIImageView *Img;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *ColorLab;
+@property (weak, nonatomic) IBOutlet UILabel *DaysLab;
+@property (weak, nonatomic) IBOutlet UIButton *GoBtn;
 @end
 
 NS_ASSUME_NONNULL_END

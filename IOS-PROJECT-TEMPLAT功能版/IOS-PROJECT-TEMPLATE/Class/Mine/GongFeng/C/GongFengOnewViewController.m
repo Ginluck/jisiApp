@@ -69,7 +69,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.dataAry.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -79,6 +79,8 @@
 {
     
     GongFengOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GongFengOneTableViewCell class]) forIndexPath:indexPath];
+    GongFengListModel *model=self.dataAry[indexPath.row];
+    [cell setModel:model];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     return cell;
 }
@@ -111,7 +113,12 @@
     [self.tableView.mj_footer endRefreshing];
 }
 #pragma mark -- 设置暂无数据背景
-
+- (void)setupNotData
+{
+    //加载背景
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+}
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
     return [UIImage imageNamed:@"无数据"];
 }
@@ -135,9 +142,10 @@
 {
     UserModel * model =[[UserManager shareInstance]getUser];
     NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"jzId":model.jzId,@"ctId":@""};
-        [RequestHelp POST:selectByAppCiTang parameters:param success:^(id result) {
+        [RequestHelp POST:selectAppRechargeRecord parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[GongFengListModel class] json:result[@"list"]]];
+            [self setupNotData];
             [self.tableView reloadData];
             [self endRefresh];
         } failure:^(NSError *error) {

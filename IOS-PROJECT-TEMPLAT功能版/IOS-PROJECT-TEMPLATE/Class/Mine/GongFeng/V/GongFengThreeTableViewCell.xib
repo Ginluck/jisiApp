@@ -85,6 +85,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="ColorLab" destination="jwl-CK-TbN" id="ZLP-24-24R"/>
+                <outlet property="DaysLab" destination="OUV-U1-oiv" id="87G-MN-kJu"/>
+                <outlet property="GoBtn" destination="6VZ-LX-2EI" id="RSN-Vj-3NS"/>
+                <outlet property="Img" destination="oSm-BB-Kxx" id="RKK-1a-EAA"/>
+                <outlet property="Time" destination="Q7E-a4-dpM" id="Bul-ef-vUQ"/>
+                <outlet property="name" destination="PXX-55-Li1" id="PFU-6V-38S"/>
+            </connections>
             <point key="canvasLocation" x="139" y="108"/>
         </tableViewCell>
     </objects>
