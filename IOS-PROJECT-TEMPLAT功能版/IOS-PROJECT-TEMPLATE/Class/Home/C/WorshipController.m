@@ -13,6 +13,7 @@
 #import "CitangDetailModel.h"
 #import "NSString+Fit.h"
 #import "ImageBigger.h"
+#import "GongfengRecordController.h"
 @interface WorshipController ()
 @property(nonatomic,strong)UIImageView * backImage;
 @property(nonatomic,strong)CitangDetailModel * DetailModel;
@@ -32,9 +33,8 @@
 
 -(void)reloadUICompoents
 {
-    [self addNavigationItemWithTitle:@"修改" itemType:kNavigationItemTypeRight action:@selector(updateClick)];
+ 
     [self.view addSubview:self.backImage];
-    
     
     UIButton * btn_1 =[UIButton buttonWithType:UIButtonTypeCustom];
     [btn_1 setNormalTitle:@"点长明灯" font:MKFont(15) titleColor:[UIColor whiteColor]];
@@ -52,6 +52,16 @@
     btn_2.layer.masksToBounds =YES;
     [btn_2 addTarget:self action:@selector(buyProClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn_2];
+    
+    
+    UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-105, 30, 30);
+    [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];
+    button.backgroundColor =[UIColor whiteColor];
+    button.layer.cornerRadius =15.f;
+    button.layer.masksToBounds=YES;
+    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
 //
 //    CGFloat image_Width =245*Screen_Width /1080;
@@ -73,6 +83,47 @@
 //    webView.opaque = NO;
 //    [self.view addSubview:webView];
     [self showGifByImageView];
+}
+
+
+-(void)click
+{
+    //显示弹出框列表选择
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * action) {
+                                                             //响应事件
+                                                             NSLog(@"action = %@", action);
+                                                         }];
+    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"修改祠堂" style:UIAlertActionStyleDestructive
+                                                         handler:^(UIAlertAction * action) {
+                                                             //响应事件
+                                                             if ([self.model.type isEqualToString:@"1"])
+                                                             {
+                                                                 AddPersonCitangController * avc =[AddPersonCitangController new];
+                                                                 avc.model =self.model;
+                                                                 [self.navigationController pushViewController:avc animated:YES];
+                                                             }
+                                                             else if ([self.model.type isEqualToString:@"2"])
+                                                             {
+                                                                 AddFamilyCitangController * avc =[AddFamilyCitangController new];
+                                                                 avc.model=self.model;
+                                                                 [self.navigationController pushViewController:avc animated:YES];
+                                                             }
+                                                         }];
+    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"供奉记录" style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+                                                           //响应事件
+                                                           GongfengRecordController * gc=[[GongfengRecordController alloc]init];
+                                                           [self.navigationController pushViewController:gc animated:YES];
+                                                       }];
+    [alert addAction:saveAction];
+    [alert addAction:cancelAction];
+    [alert addAction:deleteAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 - (void)showGifByImageView {
     NSURL *gifUrl = [[NSBundle mainBundle] URLForResource:@"发光gif" withExtension:@"gif"];
@@ -119,21 +170,7 @@
         
     }];
 }
--(void)updateClick
-{
-    if ([self.model.type isEqualToString:@"1"])
-    {
-        AddPersonCitangController * avc =[AddPersonCitangController new];
-        avc.model =self.model;
-        [self.navigationController pushViewController:avc animated:YES];
-    }
-    else if ([self.model.type isEqualToString:@"2"])
-    {
-        AddFamilyCitangController * avc =[AddFamilyCitangController new];
-        avc.model=self.model;
-        [self.navigationController pushViewController:avc animated:YES];
-    }
-}
+
 
 
 -(void)buyProClick
@@ -195,7 +232,7 @@
                 UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
                 button.frame =CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height);
                   [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
-                 [button setNormalTitle:member.name font:MKFont(24) titleColor:[UIColor whiteColor]];
+                 [button setNormalTitle:member.name font:MKFont(20) titleColor:[UIColor whiteColor]];
                 button.titleLabel.numberOfLines =0;
                
                  button.titleLabel.textAlignment =NSTextAlignmentCenter;
@@ -207,7 +244,7 @@
                 UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
                 button.frame =CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height);
                   [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
-                  [button setNormalTitle:member.name font:MKFont(24) titleColor:[UIColor whiteColor]];
+                  [button setNormalTitle:member.name font:MKFont(20) titleColor:[UIColor whiteColor]];
                 button.titleLabel.numberOfLines =0;
                  button.titleLabel.textAlignment =NSTextAlignmentCenter;
               

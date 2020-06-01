@@ -182,6 +182,7 @@
 		71388AFA2480A28D0011E7A8 /* CitangDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388AF92480A28D0011E7A8 /* CitangDetailModel.m */; };
 		71388AFC2480BB710011E7A8 /* 发光gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71388AFB2480BB710011E7A8 /* 发光gif.gif */; };
 		71388AFF2484DF6C0011E7A8 /* ImageBigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388AFE2484DF6C0011E7A8 /* ImageBigger.m */; };
+		71388B022484F1A10011E7A8 /* GongfengRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71388B012484F1A10011E7A8 /* GongfengRecordController.m */; };
 		713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CB247252D400A00867 /* FamilyTreeModel.m */; };
 		713F31CF2472534200A00867 /* FamilyTreeMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31CE2472534200A00867 /* FamilyTreeMember.m */; };
 		713F31D32473888800A00867 /* AddrChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F31D12473888800A00867 /* AddrChooseController.m */; };
@@ -974,6 +975,8 @@
 		71388AFB2480BB710011E7A8 /* 发光gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "发光gif.gif"; sourceTree = "<group>"; };
 		71388AFD2484DF6C0011E7A8 /* ImageBigger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageBigger.h; sourceTree = "<group>"; };
 		71388AFE2484DF6C0011E7A8 /* ImageBigger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageBigger.m; sourceTree = "<group>"; };
+		71388B002484F1A10011E7A8 /* GongfengRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GongfengRecordController.h; sourceTree = "<group>"; };
+		71388B012484F1A10011E7A8 /* GongfengRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GongfengRecordController.m; sourceTree = "<group>"; };
 		713F31CA247252D400A00867 /* FamilyTreeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeModel.h; sourceTree = "<group>"; };
 		713F31CB247252D400A00867 /* FamilyTreeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FamilyTreeModel.m; sourceTree = "<group>"; };
 		713F31CD2472534200A00867 /* FamilyTreeMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FamilyTreeMember.h; sourceTree = "<group>"; };
@@ -3030,6 +3033,8 @@
 				7185BD05247F89360028AA75 /* ChooseMemberController.m */,
 				7185BD07248099C60028AA75 /* WorshipController.h */,
 				7185BD08248099C60028AA75 /* WorshipController.m */,
+				71388B002484F1A10011E7A8 /* GongfengRecordController.h */,
+				71388B012484F1A10011E7A8 /* GongfengRecordController.m */,
 				71388AFB2480BB710011E7A8 /* 发光gif.gif */,
 			);
 			path = C;
@@ -4333,6 +4338,7 @@
 				715EE9D024750D7A009CF31A /* EMAlertController.m in Sources */,
 				71388AFF2484DF6C0011E7A8 /* ImageBigger.m in Sources */,
 				715EE9AE24750D7A009CF31A /* MWPhotoBrowser.m in Sources */,
+				71388B022484F1A10011E7A8 /* GongfengRecordController.m in Sources */,
 				715EE9B324750D7A009CF31A /* MWPhoto.m in Sources */,
 				71BEE5AD22CB61EF00E1B9E3 /* DLSlideView.m in Sources */,
 				715EE9BA24750D7A009CF31A /* PSTCollectionViewCell.m in Sources */,

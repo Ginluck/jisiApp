@@ -68,12 +68,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/WorshipController.m"
-            timestampString = "612689273.380313"
+            timestampString = "612691231.971153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-requestData"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-showGifByImageView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
