@@ -49,7 +49,7 @@
 #define  UPDATE_ZJ_url  @"userApp/UPDATE_ZJ"
 //供奉记录
 
-#define  selectByAppCiTang  @"appCt/selectByAppCiTang"
+#define  selectAppRechargeRecord  @"appRechargeRecord/selectAppRechargeRecord"
 
 
 
