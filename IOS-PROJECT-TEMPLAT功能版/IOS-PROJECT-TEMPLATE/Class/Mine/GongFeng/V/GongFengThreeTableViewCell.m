@@ -14,7 +14,14 @@
     [super awakeFromNib];
     // Initialization code
 }
-
+-(void)setModel:(GongFengListModel *)model
+{
+    [self.Img sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl] placeholderImage:[UIImage imageNamed:@"商品占位图"]];
+    self.name.text=model.jpName;
+    self.ColorLab.text=model.jpMoral;
+    self.DaysLab.text=[NSString stringWithFormat:@"到期时间%@",model.beOverdueTime];
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

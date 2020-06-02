@@ -30,8 +30,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩下4天" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3Y-kF-Mff">
-                        <rect key="frame" x="249.5" y="28" width="55.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="260.5" y="30" width="44.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -75,6 +75,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="ColorLab" destination="R5m-yu-mAw" id="dTh-Sv-pfc"/>
+                <outlet property="DaysLab" destination="j3Y-kF-Mff" id="ghH-2r-fzb"/>
+                <outlet property="GoBtn" destination="X5o-Ua-IQb" id="XYL-bI-tRh"/>
+                <outlet property="Img" destination="PPl-eQ-SXt" id="efo-g0-FG1"/>
+                <outlet property="name" destination="6dr-FU-E8b" id="vso-bh-exF"/>
+            </connections>
             <point key="canvasLocation" x="139" y="108"/>
         </tableViewCell>
     </objects>

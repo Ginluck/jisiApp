@@ -77,7 +77,7 @@
         [[UserManager shareInstance]saveUser:modal];
         [[UserManager shareInstance]saveToken:result[@"token"]];
        
-        if (modal.userName ==nil ||modal.userName ==NULL||modal.userName.length==0 ) {
+        if (modal.realName ==nil ||modal.realName ==NULL||modal.realName.length==0 ) {
             YourNameAdressViewController *YNAVC=[YourNameAdressViewController new];
             TPNavigationController *navC = [[TPNavigationController alloc]initWithRootViewController:YNAVC];
                        navC.modalPresentationStyle=UIModalPresentationFullScreen;

@@ -9,6 +9,7 @@
 #import "GongFengTwoViewController.h"
 #import "GongFengOneTableViewCell.h"
 #import "GongPinDetialViewController.h"
+#import "GongFengListModel.h"
 @interface GongFengTwoViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -17,7 +18,11 @@
 @end
 
 @implementation GongFengTwoViewController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+     [self postDate];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
@@ -59,7 +64,7 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+     return self.dataAry.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -73,6 +78,8 @@
 {
     
     GongFengOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GongFengOneTableViewCell class]) forIndexPath:indexPath];
+    GongFengListModel *model=self.dataAry[indexPath.row];
+       [cell setModel:model];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     return cell;
 }
@@ -105,7 +112,12 @@
     [self.tableView.mj_footer endRefreshing];
 }
 #pragma mark -- 设置暂无数据背景
-
+- (void)setupNotData
+{
+    //加载背景
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+}
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
     return [UIImage imageNamed:@"无数据"];
 }
@@ -127,16 +139,17 @@
 }
 -(void)refreshPostData
 {
-    
-    //    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"1",@"isApp":@"1"};
-    //    [RequestHelp POST:GET_HOUSESALE_URL parameters:param success:^(id result) {
-    //        DLog(@"%@",result);
-    //        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[HouseSaleInfo class] json:result[@"list"]]];
-    //        [self.tableView reloadData];
-    //        [self endRefresh];
-    //    } failure:^(NSError *error) {
-    //        [self endRefresh];
-    //    }];
+    UserModel * model =[[UserManager shareInstance]getUser];
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"1",@"jzId":model.jzId,@"ctId":@""};
+        [RequestHelp POST:selectAppRechargeRecord parameters:param success:^(id result) {
+            DLog(@"%@",result);
+            [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[GongFengListModel class] json:result[@"list"]]];
+            [self setupNotData];
+            [self.tableView reloadData];
+            [self endRefresh];
+        } failure:^(NSError *error) {
+            [self endRefresh];
+        }];
 }
 /*
 #pragma mark - Navigation
