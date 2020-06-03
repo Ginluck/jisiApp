@@ -23,6 +23,7 @@
 @property(nonatomic,weak)IBOutlet UITextView * indtroduceTV;
 @property(nonatomic,strong)ValuePickerView *pickerView ;
 @property(nonatomic,strong) NSDate *currentDate;
+@property(nonatomic,strong)UIImageView *backImage;
 @end
 
 @implementation AddNewMemberController
@@ -31,7 +32,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self addNavigationTitleView:@"添加成员"];
+//      [self.view addSubview:self.backImage];
     [self setUICompoents];
+}
+-(UIImageView *)backImage
+{
+    if (!_backImage) {
+        _backImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        _backImage.image =KImageNamed(@"通用背景");
+    }
+    return _backImage;
 }
 -(ValuePickerView*)pickerView
 {
