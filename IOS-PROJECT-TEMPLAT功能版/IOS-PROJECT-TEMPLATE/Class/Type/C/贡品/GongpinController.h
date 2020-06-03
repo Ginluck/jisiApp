@@ -7,11 +7,13 @@
 //
 
 #import "TPBaseViewController.h"
-
+#import "JipinModel.h"
+#import "CitangListModel.h"
 NS_ASSUME_NONNULL_BEGIN
-
+typedef void(^SelectedItem1Block)(JipinChild *model);
 @interface GongpinController : TPBaseViewController
-
+@property (nonatomic, copy) SelectedItem1Block block;
+@property(strong,nonatomic)CitangListModel* model;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -55,6 +55,9 @@
         case 0:
         {
             XingliProController *ctrl = [[XingliProController alloc] init];
+            ctrl.block = ^(JipinChild * _Nonnull model) {
+                self.block(model);
+            };
             ctrl.model =self.model;
             return ctrl;
         }
@@ -62,7 +65,10 @@
         {
             
             GongpinController *ctrl = [[GongpinController alloc] init];
-            
+            ctrl.block = ^(JipinChild * _Nonnull model) {
+                self.block(model);
+            };
+            ctrl.model =self.model;
             return ctrl;
         }
             

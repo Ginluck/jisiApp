@@ -8,10 +8,12 @@
 
 #import "TPBaseViewController.h"
 #import "CitangListModel.h"
+#import "JipinModel.h"
 NS_ASSUME_NONNULL_BEGIN
-
+typedef void(^SelectedItemBlock)(JipinChild *model);
 @interface XingliProController : TPBaseViewController
 @property(strong,nonatomic)CitangListModel* model;
+@property (nonatomic, copy) SelectedItemBlock block;
 @end
 
 NS_ASSUME_NONNULL_END

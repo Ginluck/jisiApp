@@ -569,6 +569,7 @@
 		7185BD03247F854B0028AA75 /* ChooseFamilyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD02247F854B0028AA75 /* ChooseFamilyController.m */; };
 		7185BD06247F89360028AA75 /* ChooseMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD05247F89360028AA75 /* ChooseMemberController.m */; };
 		7185BD09248099C60028AA75 /* WorshipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BD08248099C60028AA75 /* WorshipController.m */; };
+		7196AE1A24864CC9008F4B2E /* JipinSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7196AE1924864CC9008F4B2E /* JipinSetModel.m */; };
 		719CEBC02474FEFF00E29E8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */; };
 		719CEBC12474FEFF00E29E8C /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */; };
 		719CEBC22474FEFF00E29E8C /* Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 719CEBBC2474FEFF00E29E8C /* Loading.gif */; };
@@ -612,6 +613,7 @@
 		71BEE5AB22CB61EF00E1B9E3 /* DLUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE5A422CB61EF00E1B9E3 /* DLUtility.m */; };
 		71BEE5AC22CB61EF00E1B9E3 /* DLCustomSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE5A522CB61EF00E1B9E3 /* DLCustomSlideView.m */; };
 		71BEE5AD22CB61EF00E1B9E3 /* DLSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE5A622CB61EF00E1B9E3 /* DLSlideView.m */; };
+		71CBDDC024864D8600DB8A0D /* JipinSetChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CBDDBF24864D8600DB8A0D /* JipinSetChild.m */; };
 		71E55B81246E658000255230 /* HelpHouseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B6E246E658000255230 /* HelpHouseCityModel.m */; };
 		71E55B82246E658000255230 /* SheZhiNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55B71246E658000255230 /* SheZhiNameViewController.xib */; };
 		71E55B83246E658000255230 /* MyIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B72246E658000255230 /* MyIntroductionViewController.m */; };
@@ -1504,6 +1506,8 @@
 		7185BD05247F89360028AA75 /* ChooseMemberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMemberController.m; sourceTree = "<group>"; };
 		7185BD07248099C60028AA75 /* WorshipController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorshipController.h; sourceTree = "<group>"; };
 		7185BD08248099C60028AA75 /* WorshipController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorshipController.m; sourceTree = "<group>"; };
+		7196AE1824864CC9008F4B2E /* JipinSetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JipinSetModel.h; sourceTree = "<group>"; };
+		7196AE1924864CC9008F4B2E /* JipinSetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JipinSetModel.m; sourceTree = "<group>"; };
 		719CEBBA2474FEFF00E29E8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		719CEBBB2474FEFF00E29E8C /* MBProgressHUD+NJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NJ.m"; sourceTree = "<group>"; };
 		719CEBBC2474FEFF00E29E8C /* Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Loading.gif; sourceTree = "<group>"; };
@@ -1595,6 +1599,8 @@
 		71BEE5A422CB61EF00E1B9E3 /* DLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLUtility.m; sourceTree = "<group>"; };
 		71BEE5A522CB61EF00E1B9E3 /* DLCustomSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCustomSlideView.m; sourceTree = "<group>"; };
 		71BEE5A622CB61EF00E1B9E3 /* DLSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSlideView.m; sourceTree = "<group>"; };
+		71CBDDBE24864D8600DB8A0D /* JipinSetChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JipinSetChild.h; sourceTree = "<group>"; };
+		71CBDDBF24864D8600DB8A0D /* JipinSetChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JipinSetChild.m; sourceTree = "<group>"; };
 		71E55B6E246E658000255230 /* HelpHouseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpHouseCityModel.m; sourceTree = "<group>"; };
 		71E55B6F246E658000255230 /* HelpHouseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpHouseCityModel.h; sourceTree = "<group>"; };
 		71E55B71246E658000255230 /* SheZhiNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SheZhiNameViewController.xib; sourceTree = "<group>"; };
@@ -3659,6 +3665,10 @@
 				71388AF92480A28D0011E7A8 /* CitangDetailModel.m */,
 				71388AFD2484DF6C0011E7A8 /* ImageBigger.h */,
 				71388AFE2484DF6C0011E7A8 /* ImageBigger.m */,
+				7196AE1824864CC9008F4B2E /* JipinSetModel.h */,
+				7196AE1924864CC9008F4B2E /* JipinSetModel.m */,
+				71CBDDBE24864D8600DB8A0D /* JipinSetChild.h */,
+				71CBDDBF24864D8600DB8A0D /* JipinSetChild.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -4349,6 +4359,7 @@
 				711B0B8224692B0C009C84DB /* NSString+Encryption.m in Sources */,
 				715EE9BE24750D7A009CF31A /* PSTCollectionViewUpdateItem.m in Sources */,
 				715EECF924750E02009CF31A /* ConfInviteUserCell.m in Sources */,
+				71CBDDC024864D8600DB8A0D /* JipinSetChild.m in Sources */,
 				711B0A932469294C009C84DB /* SZKCleanCache.m in Sources */,
 				711B0B42246929E8009C84DB /* HttpRequest.m in Sources */,
 				715EED7424750E02009CF31A /* EMCallViewController.m in Sources */,
@@ -4479,6 +4490,7 @@
 				715EECF024750E02009CF31A /* Call1v1VideoViewController.m in Sources */,
 				711B0B49246929E8009C84DB /* LYSDateBaseViewController.m in Sources */,
 				711B0B53246929E8009C84DB /* LYSDatePickerTypeTimeDelegate.m in Sources */,
+				7196AE1A24864CC9008F4B2E /* JipinSetModel.m in Sources */,
 				711B0BB1246946F1009C84DB /* MessageListTableViewCell.m in Sources */,
 				715EE9A724750D7A009CF31A /* EMGlobalVariables.m in Sources */,
 				711B0B8024692B0C009C84DB /* UIView+PYSearchExtension.m in Sources */,

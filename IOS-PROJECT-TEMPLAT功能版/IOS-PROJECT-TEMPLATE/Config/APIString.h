@@ -10,10 +10,10 @@
 #define APIString_h
 
 //#define SERVER_URL @"http://192.168.0.28:8085/userApp/"
-#define SERVER_URL @"http://123.56.153.251:8085/"
+#define SERVER_URL @"http://121.36.59.7:8085/"
 
 //#define IMAGE_URL @"http://192.168.0.28:8085/userApp/FILE_UPLOAD"
-#define IMAGE_URL @"http://123.56.153.251:8085/appUpload/FILE_UPLOAD"
+#define IMAGE_URL @"http://121.36.59.7:8085/appUpload/FILE_UPLOAD"
 
 
 
@@ -98,6 +98,8 @@
 #define JS_BUY_PRO_URL @"appRechargeRecord/addAppRechargeRecord"
 //供奉记录
 #define JS_GONFENG_RECORD_LIST @"appRechargeRecord/selectAppRechargeRecord"
+//祠堂祭品
+#define JS_JIPINPUT_URL @"appRechargeRecord/selectAppJiPin"
 
 
 #endif /* APIString_h */

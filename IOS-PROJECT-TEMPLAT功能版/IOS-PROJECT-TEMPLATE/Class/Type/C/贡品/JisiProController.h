@@ -9,12 +9,14 @@
 #import "TPBaseViewController.h"
 #import "DLTabedSlideView.h"
 #import "CitangListModel.h"
+#import "JipinModel.h"
 NS_ASSUME_NONNULL_BEGIN
-
+typedef void(^SelectedIteBlock)(JipinChild *model);
 @interface JisiProController : TPBaseViewController
 @property (weak, nonatomic) IBOutlet DLTabedSlideView *tabedSlideView;
 @property(assign,nonatomic)NSInteger selectedIndex;
 @property(strong,nonatomic)CitangListModel* model;
+@property (nonatomic, copy) SelectedIteBlock block;
 @end
 
 NS_ASSUME_NONNULL_END

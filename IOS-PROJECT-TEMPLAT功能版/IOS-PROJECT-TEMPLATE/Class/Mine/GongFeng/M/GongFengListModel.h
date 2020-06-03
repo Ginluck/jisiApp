@@ -26,6 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *createTime;
 @property(nonatomic,strong)NSString *useLength;
 
+
+
+@property(nonatomic,assign)CGFloat position_x;
+@property(nonatomic,assign)CGFloat position_y;
+
+@property(nonatomic,assign)CGFloat x_postion;
+@property(nonatomic,assign)CGFloat y_postion;
 @end
 
 NS_ASSUME_NONNULL_END

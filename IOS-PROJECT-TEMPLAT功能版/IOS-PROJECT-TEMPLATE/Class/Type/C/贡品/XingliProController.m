@@ -8,7 +8,7 @@
 
 #import "XingliProController.h"
 #import "JipinCell.h"
-#import "JipinModel.h"
+
 #import "BuyJPView.h"
 #import "JipinView.h"
 @class JPButton;
@@ -44,11 +44,13 @@
     
 }
 
--(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(nonnull NSString *)count
+-(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(nonnull NSString *)count model:(nonnull JipinChild *)model
 {
     NSDictionary * param =@{@"type":@"1",@"useLength":time,@"jpId":proId,@"ctId":self.model.id,@"amountOfMoney":money,@"count":count};
     [RequestHelp POST:JS_BUY_PRO_URL parameters:param success:^(id result) {
         MKLog(@"%@",result);
+        self.block(model);
+        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         
     }];

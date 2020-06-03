@@ -48,7 +48,7 @@
     {
         if (self.delegate) {
           
-            [self.delegate buyViewDelegate:sender time:self.JPTimeStr amount:self.JPPrice.text pro:_model.id count:self.JPCount.text];
+            [self.delegate buyViewDelegate:sender time:self.JPTimeStr amount:self.JPPrice.text pro:_model.id count:self.JPCount.text model:self.model];
         }
     }
     else

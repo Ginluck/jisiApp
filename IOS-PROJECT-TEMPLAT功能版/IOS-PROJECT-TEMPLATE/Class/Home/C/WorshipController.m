@@ -14,14 +14,33 @@
 #import "NSString+Fit.h"
 #import "ImageBigger.h"
 #import "GongfengRecordController.h"
+#import "JipinModel.h"
+#import "JipinSetModel.h"
 @interface WorshipController ()
 @property(nonatomic,strong)UIImageView * backImage;
 @property(nonatomic,strong)CitangDetailModel * DetailModel;
-@property(nonatomic,strong)UIImageView * jisiImage;
+@property(nonatomic,strong)UIImageView * jisiImage;//排位图
+@property(nonatomic,strong)UIImageView * itemImage;//购买商品的图片
+@property(nonatomic,strong)UIImageView * gifImage;//gif的图片
+@property(nonatomic,strong)JipinChild * itemChild;
+@property(nonatomic,strong)JipinSetModel * itemModel;
+@property(nonatomic,strong)UIImageView * table_1;//供桌1
+@property(nonatomic,strong)UIImageView * table_2;//供桌2
+
+@property(nonatomic,strong)NSMutableArray * table1_imageArr;
 @end
 
 @implementation WorshipController
 
+
+-(NSMutableArray *)table1_imageArr
+{
+    if (!_table1_imageArr)
+    {
+        _table1_imageArr =[NSMutableArray array];
+    }
+    return _table1_imageArr;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -63,6 +82,32 @@
     [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
+    CGFloat table_scale_x =0.4;
+    CGFloat table_width =Screen_Width*2/3;
+    CGFloat table_width2 =Screen_Width/2;
+    
+    _table_2= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, table_width2, (table_width2)*table_scale_x)];
+    _table_2.center =CGPointMake(Screen_Width/2, CGRectGetMinY(btn_1.frame)-(table_width2)*table_scale_x-65);
+    MKLog(@"%f",Screen_Height-K_NaviHeight);;
+    _table_2.image =KImageNamed(@"供桌");
+    [self.view addSubview:_table_2];
+    _table_1= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, table_width, (table_width)*table_scale_x)];
+     _table_1.center =CGPointMake(Screen_Width/2, CGRectGetMinY(btn_1.frame)-(table_width)*table_scale_x-5);
+    MKLog(@"%f",Screen_Height-K_NaviHeight);;
+    _table_1.image =KImageNamed(@"供桌");
+    [self.view addSubview:_table_1];
+    
+    
+    CGFloat item_width =table_width/7;
+    UIImageView * luzi_image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, item_width, item_width/2)];
+    luzi_image.center =CGPointMake(Screen_Width/2, CGRectGetMinY(_table_1.frame)-item_width/4);
+    luzi_image.image =KImageNamed(@"香炉2");
+    luzi_image.contentMode =UIViewContentModeScaleAspectFit;
+    [self.view addSubview:luzi_image];
+    
+    
+
+    
 //
 //    CGFloat image_Width =245*Screen_Width /1080;
 //    CGFloat image_Height =310*(Screen_Height-K_NaviHeight)/1560;
@@ -82,9 +127,16 @@
 //    webView.backgroundColor = [UIColor clearColor];
 //    webView.opaque = NO;
 //    [self.view addSubview:webView];
-    [self showGifByImageView];
-}
 
+}
+-(UIImageView *)itemImage
+{
+    if (!_itemImage) {
+        _itemImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _itemImage .center =CGPointMake(Screen_Width/2, 200);
+    }
+    return _itemImage;
+}
 
 -(void)click
 {
@@ -137,13 +189,13 @@
         [mutableArray addObject:image];
         CGImageRelease(imageRef);
     }
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
-    imageView.center =CGPointMake(Screen_Width/2, 200);
-    imageView.animationImages = mutableArray;
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.animationDuration = 2;
-    [imageView startAnimating];
-    [self.view addSubview:imageView];
+    _gifImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    _gifImage.center =CGPointMake(Screen_Width/2, 200);
+    _gifImage.animationImages = mutableArray;
+    _gifImage.contentMode = UIViewContentModeScaleAspectFit;
+    _gifImage.animationDuration = 5;
+    [_gifImage startAnimating];
+    [self.view addSubview:_gifImage];
     CFRelease(gifSource);
 }
 -(UIImageView *)backImage
@@ -151,6 +203,7 @@
     if (!_backImage) {
         _backImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-K_NaviHeight)];
         _backImage .image =KImageNamed(@"背景1");
+        _backImage.backgroundColor =[UIColor clearColor];
     }
     return _backImage;
 }
@@ -166,10 +219,98 @@
             model.lisCount= [NSString stringWithFormat:@"%ld",model.list.count];
         }
         [self refreshPaiWei];
+    } failure:^(NSError *error) {}];
+    
+    [RequestHelp POST:JS_JIPINPUT_URL parameters:@{@"ctId":self.model.id} success:^(id result) {
+        self.itemModel =[JipinSetModel yy_modelWithJSON:result];
+        [self setUIData];
     } failure:^(NSError *error) {
         
     }];
 }
+
+
+-(void)setUIData
+{
+    for (UIImageView *image in self.table1_imageArr) {
+        [image removeFromSuperview];
+    }
+    CGFloat item_width =CGRectGetWidth(self.table_1.frame)/7;
+    CGPoint table_item_point1 =CGPointMake(CGRectGetMinX(self.table_1.frame), CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point2 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point3 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*2, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point4 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*3, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point5 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*4, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point6 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*5, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point7 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*6, CGRectGetMinY(self.table_1.frame)-item_width);
+    
+    
+    NSMutableArray * imageArr =[NSMutableArray array];
+    NSMutableArray * teshuImage =[NSMutableArray array];
+    //第1部创建控件
+    for (int i=0; i<7; i++)
+    {
+        UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.table_1.frame)+i*item_width, CGRectGetMinY(self.table_1.frame)-item_width, item_width, item_width)];
+        [imageArr addObject:image];
+       
+    }
+    
+    
+    
+    //第2步确定坐标
+    
+    NSArray* arr =@[[NSValue valueWithCGPoint:table_item_point6],[NSValue valueWithCGPoint:table_item_point2],[NSValue valueWithCGPoint:table_item_point7],[NSValue valueWithCGPoint:table_item_point1]];
+    
+    if (self.itemModel.first.xiangList.count)
+    {
+        GongFengListModel * model =self.itemModel.first.xiangList[0];
+        model.position_x =table_item_point4.x;
+        model.position_y=table_item_point4.y;
+        
+        UIImageView * xiang =imageArr[3];
+        [self.view addSubview:xiang];
+        [xiang sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+        [self.table1_imageArr addObject:xiang];
+        
+    }
+    
+    if (self.itemModel.first.laList.count)
+    {
+        GongFengListModel * model =self.itemModel.first.xiangList[0];
+        model.position_x =table_item_point3.x;
+        model.position_y=table_item_point3.y;
+    
+        UIImageView * la_1 =imageArr[2];
+        UIImageView * la_2 =imageArr[4];
+        [la_1 sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+        [la_2 sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+        [self.view addSubview:la_1];
+        [self.view addSubview:la_2];
+        model.x_postion =table_item_point5.x;
+        model.y_postion=table_item_point5.y;
+        [self.table1_imageArr addObject:la_1];
+        [self.table1_imageArr addObject:la_2];
+    }
+    if (self.itemModel.first.qitaList.count)
+    {
+        for (int i=0; i<self.itemModel.first.qitaList.count; i++)
+        {
+            GongFengListModel * model =self.itemModel.first.qitaList[i];
+            CGPoint postion = [arr[i] CGPointValue];
+            model.position_x =postion.x;
+            model.position_y=postion.y;
+            
+            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(model.position_x, model.position_y
+                                                                              , item_width, item_width)];
+            [image sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+            image.contentMode =UIViewContentModeScaleAspectFit;
+            [self.view addSubview:image];
+            [self.table1_imageArr addObject:image];
+        }
+    }
+  
+}
+
 
 
 
@@ -177,9 +318,20 @@
 {
     JisiProController * jvc =[JisiProController new];
     jvc.model=self.model;
+    jvc.block = ^(JipinChild * _Nonnull model) {
+        self.itemChild =model;
+        [self showGifByImageView];
+        [self.itemImage sd_setImageWithURL:[NSURL URLWithString:model.imgUrl]];
+        [self.view addSubview:self.itemImage];
+        [self performSelector:@selector(remove) withObject:nil afterDelay:5.0f];
+    };
     [self.navigationController pushViewController:jvc animated:YES];
 }
-
+-(void)remove
+{
+    [self.itemImage removeFromSuperview];
+    [self.gifImage removeFromSuperview];
+}
 
 -(void)refreshPaiWei
 {

@@ -9,10 +9,14 @@
 #import "GongpinController.h"
 #import "JipinCell.h"
 #import "JipinModel.h"
-@interface GongpinController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+#import "BuyJPView.h"
+#import "JipinView.h"
+@class JPButton;
+@interface GongpinController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,BuyViewDelegate,JPCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
 @property(nonatomic,assign)NSInteger  page;
+@property (nonatomic,strong)BuyJPView * buyView;
 
 @end
 
@@ -33,7 +37,36 @@
     }];
     //     Do any additional setup after loading the view from its nib.
 }
+-(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(nonnull NSString *)count model:(nonnull JipinChild *)model
+{
+    NSDictionary * param =@{@"type":@"1",@"useLength":time,@"jpId":proId,@"ctId":self.model.id,@"amountOfMoney":money,@"count":count};
+    [RequestHelp POST:JS_BUY_PRO_URL parameters:param success:^(id result) {
+        MKLog(@"%@",result);
+        self.block(model);
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
+-(void)JPCellClick:(JPButton*)button
+{
+    JipinModel* model =self.dataAry[button.row];
+    JipinChild * child =model.sacrificeList[button.tag];
+    [self.buyView refreshUI:child];
+    [self.view addSubview:self.buyView];
+    
+}
+-(BuyJPView *)buyView
+{
+    if (!_buyView) {
+        _buyView =[[[NSBundle mainBundle] loadNibNamed:@"BuyJPView" owner:self options:nil] firstObject];
+        _buyView.frame =CGRectMake(0, 0, 200,250);
+        _buyView.delegate =self;
+        _buyView.center =CGPointMake(Screen_Width/2, Screen_Height/2-50);
+    }
+    return _buyView;
+}
 -(UITableView *)tableView
 {
     if (!_tableView)
@@ -75,6 +108,7 @@
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     JipinModel * model =self.dataAry[indexPath.section];
     [cell setCell:model.sacrificeList row:indexPath.section];
+    cell.delegate =self;
     return cell;
 }
 
