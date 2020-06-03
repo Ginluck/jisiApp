@@ -8,9 +8,9 @@
 
 #ifndef APIString_h
 #define APIString_h
-
+//192.168.0.123 121.36.59.7
 //#define SERVER_URL @"http://192.168.0.28:8085/userApp/"
-#define SERVER_URL @"http://123.56.153.251:8085/"
+#define SERVER_URL @"http://121.36.59.7.251:8085/"
 
 //#define IMAGE_URL @"http://192.168.0.28:8085/userApp/FILE_UPLOAD"
 #define IMAGE_URL @"http://123.56.153.251:8085/appUpload/FILE_UPLOAD"
@@ -23,6 +23,10 @@
 //用户登陆
 
 #define  login_url  @"userApp/login"
+//用户登陆
+
+#define  GETSECURITYCODE_url  @"userApp/GETSECURITYCODE"
+
 //退出登录
 
 #define  exit_url  @"userApp/exit"

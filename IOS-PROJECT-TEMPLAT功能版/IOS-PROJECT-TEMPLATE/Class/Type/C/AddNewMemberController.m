@@ -201,6 +201,19 @@
             [self.navigationController popViewControllerAnimated:YES];
         } failure:^(NSError *error) {}];
     }
+    else if ([self.type isEqualToString:@"4"])
+    {
+         UserModel *user =[[UserManager shareInstance]getUser];
+        [param setValue:@"2" forKey:@"type"];
+        [param setValue:self.member.id forKey:@"coverId"];
+        [param setValue:self.member.jzId forKey:@"jzId"];
+        [param setValue:user.id forKey:@"userUserId"];
+        [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
+            MKLog(@"%@",result);
+            ShowMessage(@"操作成功");
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+        } failure:^(NSError *error) {}];
+    }
     
 
 }

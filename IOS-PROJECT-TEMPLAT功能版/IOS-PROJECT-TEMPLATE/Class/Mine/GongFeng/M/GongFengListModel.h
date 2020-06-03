@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *beOverdueTime;
 @property(nonatomic,strong)NSString *createTime;
 @property(nonatomic,strong)NSString *useLength;
-
+@property(nonatomic,strong)NSString *count;
 @end
 
 NS_ASSUME_NONNULL_END

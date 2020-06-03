@@ -49,6 +49,15 @@
                                 self.BHBtn.alpha=0;
                             }
                                 break;
+            case 3:
+                                       {
+                                           self.Lab1.text=@"申请原因:";
+                                           self.Reason.text=self.model.reason;
+                                           self.TGBtn.alpha=0;
+                                           self.BHBtn.alpha=0;
+                                       }
+                                           break;
+
 
                  default:
                      break;
@@ -59,55 +68,65 @@
 }
 -(void)TGClick
 {
+    if ([self.model.state isEqualToString:@"3"]) {
+        [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"1",@"zpId":self.model.zp_id,@"isSh":@"0"} success:^(id result) {
+               ShowMessage(@"操作成功");
+               [self.navigationController popViewControllerAnimated:YES];
+           } failure:^(NSError *error) {
+              
+           }];
+    }else
+    {
+        [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"1"} success:^(id result) {
+            ShowMessage(@"操作成功");
+            [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {
+           
+        }];
+    }
    
-   [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"1"} success:^(id result) {
-        ShowMessage(@"操作成功");
-        [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(NSError *error) {
-       
-    }];
 }
 -(void)BHClick
 {
-    
-                //驳回
-                UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请填写驳回原因" preferredStyle:(UIAlertControllerStyleAlert)];
-                
-                [alertView addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                    
-    //                textField.keyboardType = UIKeyboardTypeNumberPad;
-                    
-                    textField.placeholder = @"请填写驳回原因";
-                    
-                }];
-                
-                UIAlertAction *alertText = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                    
-                    UITextField *textFieldUser = [[alertView textFields] firstObject];
-                    
-                    if (textFieldUser.text.length == 0)
-                    {
-                        ShowMessage(@"请填写驳回原因");return ;
-                    }
-                    
-                   
-                    
-                    [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"2",@"rejectReason":textFieldUser.text} success:^(id result) {
-                        ShowMessage(@"操作成功");
-                        [self.navigationController popViewControllerAnimated:YES];
-                    } failure:^(NSError *error) {
-                       
-                    }];
-                }];
-                
-                UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                }];
-                
-                [alertView addAction:cancleAction];
-                
-                [alertView addAction:alertText];
-                
-                [self presentViewController:alertView animated:YES completion:nil];
+ //驳回
+                        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请填写驳回原因" preferredStyle:(UIAlertControllerStyleAlert)];
+                        
+                        [alertView addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                            
+            //                textField.keyboardType = UIKeyboardTypeNumberPad;
+                            
+                            textField.placeholder = @"请填写驳回原因";
+                            
+                        }];
+                        
+                        UIAlertAction *alertText = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                            
+                            UITextField *textFieldUser = [[alertView textFields] firstObject];
+                            
+                            if (textFieldUser.text.length == 0)
+                            {
+                                ShowMessage(@"请填写驳回原因");return ;
+                            }
+                            
+                           
+                            
+                            [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"2",@"rejectReason":textFieldUser.text} success:^(id result) {
+                                ShowMessage(@"操作成功");
+                                [self.navigationController popViewControllerAnimated:YES];
+                            } failure:^(NSError *error) {
+                               
+                            }];
+                        }];
+                        
+                        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                        }];
+                        
+                        [alertView addAction:cancleAction];
+                        
+                        [alertView addAction:alertText];
+                        
+                        [self presentViewController:alertView animated:YES completion:nil];
+               
             
 }
 /*
