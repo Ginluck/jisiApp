@@ -31,6 +31,8 @@
 
 @property (nonatomic, copy) NSString *token;
 
+@property (nonatomic, copy) NSString *address;
+
 @property (nonatomic, copy) NSString *headAddress;
 
 @property (nonatomic, copy) NSString *ringLetterId;
@@ -57,5 +59,7 @@
 @property (nonatomic, copy) NSString *isRead;
 
 @property(nonatomic,copy)NSString *patriarch;
+
+@property(nonatomic,copy)NSString *introduce;
 
 @end
