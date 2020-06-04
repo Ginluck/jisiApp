@@ -29,6 +29,16 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+-(UIImagePickerController *)imagePickerVC
+{
+    if (!_imagePickerVC)
+    {
+        _imagePickerVC =[UIImagePickerController new];
+        _imagePickerVC.delegate =self;
+        _imagePickerVC.allowsEditing=YES;
+    }
+    return _imagePickerVC;
+}
 -(void)requsetData
 {
     UserModel * model =[[UserManager shareInstance]getUser];
@@ -133,6 +143,7 @@
         // 设置是否显示系统的相机页面
         self.imagePickerVC.showsCameraControls = YES;
         // model出控制器
+        self.imagePickerVC.modalPresentationStyle=UIModalPresentationFullScreen;
         [self presentViewController:self.imagePickerVC animated:YES completion:nil];
     }
 }
@@ -149,6 +160,7 @@
         self.imagePickerVC.videoQuality = UIImagePickerControllerQualityTypeHigh;
         self.imagePickerVC.mediaTypes = @[(NSString *)kUTTypeMovie, (NSString *)kUTTypeImage];
         // model出控制器
+         self.imagePickerVC.modalPresentationStyle=UIModalPresentationFullScreen;
         [self presentViewController:self.imagePickerVC animated:YES completion:nil];
     }
 }
@@ -209,6 +221,7 @@
               model.realName=self.Namelab.text;
               model.address=self.AddressLab.text;
               model.headAddress=self.HeadImgStr;
+               [[UserManager shareInstance]saveUser:model];
           } failure:^(NSError *error) {
               
           }];

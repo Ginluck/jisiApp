@@ -33,6 +33,9 @@
 //修改密码
 
 #define  UPDATE_PC_url  @"userApp/UPDATE_PC"
+//忘记密码
+
+#define  UPDATE_WJ_url  @"userApp/UPDATE_WJ"
 //验证密码
 
 #define  UPDATE_PHONE_url  @"userApp/UPDATE_PHONE"

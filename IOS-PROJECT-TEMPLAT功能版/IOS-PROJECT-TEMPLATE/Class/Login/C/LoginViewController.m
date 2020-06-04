@@ -11,6 +11,7 @@
 #import "RegisterViewController.h"
 #import "YourNameAdressViewController.h"
 #import "TPNavigationController.h"
+#import "ForgetPwdViewController.h"
 @interface LoginViewController ()
 @property(nonatomic,strong) NSString *Pwdstr;
 @end
@@ -133,6 +134,8 @@
     
 }
 - (IBAction)ForgetClick:(id)sender {
+    ForgetPwdViewController *RVC=[ForgetPwdViewController new];
+    [self.navigationController pushViewController:RVC animated:YES];
 }
 - (IBAction)RegisterClick:(id)sender {
     RegisterViewController *RVC=[RegisterViewController new];

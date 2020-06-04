@@ -26,11 +26,23 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.KNavHeight.constant=kNavagationBarH;
+    [self.KNavView setNeedsLayout];
     self.AddressLab.userInteractionEnabled=YES;
     [self addNavigationTitleView:@"个人资料"];
     [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick2)];
     [self requsetData];
     // Do any additional setup after loading the view from its nib.
+}
+-(UIImagePickerController *)imagePickerVC
+{
+    if (!_imagePickerVC)
+    {
+        _imagePickerVC =[UIImagePickerController new];
+        _imagePickerVC.delegate =self;
+        _imagePickerVC.allowsEditing=YES;
+    }
+    return _imagePickerVC;
 }
 -(void)requsetData
 {
@@ -141,6 +153,7 @@
         // 设置是否显示系统的相机页面
         self.imagePickerVC.showsCameraControls = YES;
         // model出控制器
+        self.imagePickerVC.modalPresentationStyle=UIModalPresentationFullScreen;
         [self presentViewController:self.imagePickerVC animated:YES completion:nil];
     }
 }
@@ -157,6 +170,7 @@
         self.imagePickerVC.videoQuality = UIImagePickerControllerQualityTypeHigh;
         self.imagePickerVC.mediaTypes = @[(NSString *)kUTTypeMovie, (NSString *)kUTTypeImage];
         // model出控制器
+        self.imagePickerVC.modalPresentationStyle=UIModalPresentationFullScreen;
         [self presentViewController:self.imagePickerVC animated:YES completion:nil];
     }
 }
@@ -223,6 +237,7 @@
               model.realName=self.Namelab.text;
               model.address=self.AddressLab.text;
               model.headAddress=self.HeadImgStr;
+              [[UserManager shareInstance]saveUser:model];
               [ViewControllerManager showMainViewController];
               [self.navigationController dismissViewControllerAnimated:NO completion:nil];
           } failure:^(NSError *error) {

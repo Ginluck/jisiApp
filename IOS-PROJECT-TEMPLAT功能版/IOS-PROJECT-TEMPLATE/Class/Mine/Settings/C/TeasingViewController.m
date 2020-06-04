@@ -24,9 +24,18 @@
     [self.view addSubview:self.TxtView];
     [self addNavigationTitleView:@"意见反馈"];
     // Do any additional setup after loading the view from its nib.
-    self.TxtView.placeholder=@"请填写你的意见（必填）";
+    self.TxtView.placeholder=@"写点什么吧...";
     self.TxtView.placeholderColor=[UIColor lightGrayColor];
-    [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick)];
+    
+    UIButton *Btn =[[UIButton alloc]initWithFrame:CGRectMake(36, 332+kNavagationBarH, Screen_Width-72, 40)];
+    [Btn setTitle:@"提交" forState:UIControlStateNormal];
+    [Btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    Btn.backgroundColor=K_Prokect_MainColor;
+    [Btn addTarget:self action:@selector(SubmitClick) forControlEvents:UIControlEventTouchUpInside];
+     Btn.layer.masksToBounds=YES;
+    Btn.layer.cornerRadius=20;
+    [self.view addSubview:Btn];
+//    [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick)];
 }
 -(void)SubmitClick
 {

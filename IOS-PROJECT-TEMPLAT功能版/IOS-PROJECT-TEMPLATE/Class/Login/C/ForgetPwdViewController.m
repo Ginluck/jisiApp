@@ -1,22 +1,31 @@
 //
-//  RegisterViewController.m
+//  ForgetPwdViewController.m
 //  IOS-PROJECT-TEMPLATE
 //
-//  Created by Apple on 2020/5/7.
+//  Created by Apple on 2020/6/4.
 //  Copyright © 2020 梦境网络. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "ForgetPwdViewController.h"
 #import "UILabel+WY_RichText.h"
 #import "NSMutableParagraphStyle+WY_Extension.h"
 #import "NSMutableAttributedString+WY_Extension.h"
 #import "NSString+Encryption.h"
 #import "JKCountDownButton.h"
-@interface RegisterViewController ()
+@interface ForgetPwdViewController ()
 
 @end
 
-@implementation RegisterViewController
+@implementation ForgetPwdViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.NumberTF addTarget:self action:@selector(phoneNumberTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+       [self.PwdTF  addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+       self.NavHeight.constant =kNavagationBarH;
+          [self.NavView setNeedsLayout];
+    // Do any additional setup after loading the view from its nib.
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
@@ -27,32 +36,6 @@
     [super viewWillDisappear:YES];
     self.editing=NO;
     [self hideNavigationBar:NO animated:NO];
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.NumberTF addTarget:self action:@selector(phoneNumberTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    [self.PwdTF  addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
-    self.NavHeight.constant =kNavagationBarH;
-       [self.NavView setNeedsLayout];
-     //需要点击的字符不同
-        NSString *label_text2 = @"同意《协议》";
-        NSMutableAttributedString *attributedString2 = [[NSMutableAttributedString alloc]initWithString:label_text2];
-        [attributedString2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(2, 4)];
-        [attributedString2 addAttribute:NSForegroundColorAttributeName value:[UIColor darkTextColor] range:NSMakeRange(2, 4)];
-        
-        self.xieyiLab.attributedText = attributedString2;
-    //    WS(weakSelf);
-        [self.xieyiLab wy_clickRichTextWithStrings:@[@"《协议》"] clickAction:^(NSString *string, NSRange range, NSInteger index) {
-            NSString *message = [NSString stringWithFormat:@"点击了“%@”字符\nrange: %@\nindex: %ld",string,NSStringFromRange(range),(long)index];
-            NSLog(@"messge = %@",message);
-//            PolicyViewController *PVC =[PolicyViewController new];
-//            PVC.url = index==0?[NSURL URLWithString:@"http://112.126.99.251:8080/clause/protocol.html"]:[NSURL URLWithString:@"http://112.126.99.251:8080/clause/serviceProtocol.html"];
-//            PVC.title =index==0?@"房匠隐私政策":@"房匠用户服务协议";
-//            [self.navigationController pushViewController:PVC animated:YES];
-        }];
-        //设置是否有点击效果，默认是YES
-        self.xieyiLab.wy_enabledClickEffect = NO;
-    // Do any additional setup after loading the view from its nib.
 }
 - (void)phoneNumberTextFieldDidChange:(UITextField *)textField{
     if (textField.text.length > 11) {
@@ -127,18 +110,6 @@
           
          
 }
-- (IBAction)XieYiBtn:(UIButton *)sender {
-    if (sender.selected) {
-      
-        [sender setTitle:@"✓" forState:UIControlStateNormal];
-        sender.backgroundColor=K_Prokect_MainColor;
-    }else
-    {
-        [sender setTitle:@"" forState:UIControlStateNormal];
-               sender.backgroundColor=[UIColor whiteColor];
-    }
-    sender.selected =!sender.selected;
-}
 - (IBAction)registerClick:(id)sender {
     DLog(@"%@",[UIUtils getCurrentTimes]);
     if (![UIUtils isValidateMobile:self.NumberTF.text]) {
@@ -155,7 +126,7 @@
     }
 
     NSDictionary * param  =@{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]],@"validCode":self.CodeTF.text};
-    [RequestHelp POST:@"userApp/register" parameters:param success:^(id result) {
+    [RequestHelp POST:UPDATE_WJ_url parameters:param success:^(id result) {
         DLog(@"%@",result);
         ShowMessage(@"注册成功");
         [self.navigationController popViewControllerAnimated:YES];
