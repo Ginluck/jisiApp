@@ -206,7 +206,9 @@
           [RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
               MKLog(@"%@",result);
               ShowMessage(@"修改成功");
-              
+              model.realName=self.Namelab.text;
+              model.address=self.AddressLab.text;
+              model.headAddress=self.HeadImgStr;
           } failure:^(NSError *error) {
               
           }];

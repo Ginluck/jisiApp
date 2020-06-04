@@ -30,6 +30,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.NumberTF addTarget:self action:@selector(phoneNumberTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.PwdTF  addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     self.NavHeight.constant =kNavagationBarH;
        [self.NavView setNeedsLayout];
      //需要点击的字符不同
@@ -51,6 +53,21 @@
         //设置是否有点击效果，默认是YES
         self.xieyiLab.wy_enabledClickEffect = NO;
     // Do any additional setup after loading the view from its nib.
+}
+- (void)phoneNumberTextFieldDidChange:(UITextField *)textField{
+    if (textField.text.length > 11) {
+       textField.text=[textField.text  substringToIndex:11];
+    }
+}
+- (void)passwordTextFieldDidChange:(UITextField *)textField{
+    NSString *str;
+    if (textField.text.length > 16) {
+        ShowMessage(@"密码不能超过16位");
+       textField.text=str;
+    }else
+    {
+        str=textField.text;
+    }
 }
 -(void)setNumberView:(UIView *)NumberView
 {
