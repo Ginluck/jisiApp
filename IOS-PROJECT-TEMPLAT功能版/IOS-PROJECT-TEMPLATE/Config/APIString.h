@@ -10,7 +10,7 @@
 #define APIString_h
 //192.168.0.123 121.36.59.7
 
-#define SERVER_URL @"http://192.168.0.114:8085/"
+#define SERVER_URL @"http://192.168.0.104:8085/"
 
 //#define SERVER_URL @"http://121.36.59.7:8085/"
 
@@ -111,6 +111,8 @@
 
 //查询用户余额
 #define appSelectYuEById_URL @"appRechargeRecord/appSelectYuEById"
+//设置为管理员
+#define JS_SETADMIN_URL @"appZp/updateAdminByIdAndJzId"
 
 
 

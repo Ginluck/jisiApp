@@ -18,6 +18,7 @@
 #import "JipinSetModel.h"
 #import "UILabel+WY_Extension.h"
 #import "PaiWeiView.h"
+#import "SJActionSheet.h"
 @interface WorshipController ()
 @property(nonatomic,strong)UIImageView * backImage;
 @property(nonatomic,strong)CitangDetailModel * DetailModel;
@@ -59,6 +60,7 @@
     
     [self reloadUICompoents];
     [self requestData];
+    [self setGPRequest];
 }
 
 
@@ -144,7 +146,7 @@
 -(UIImageView *)itemImage
 {
     if (!_itemImage) {
-        _itemImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _itemImage =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 75, 75)];
         _itemImage .center =CGPointMake(Screen_Width/2, 200);
     }
     return _itemImage;
@@ -152,43 +154,36 @@
 
 -(void)click
 {
-    //显示弹出框列表选择
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction * action) {
-                                                             //响应事件
-                                                             NSLog(@"action = %@", action);
-                                                         }];
-    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"修改祠堂" style:UIAlertActionStyleDestructive
-                                                         handler:^(UIAlertAction * action) {
-                                                             //响应事件
-                                                             if ([self.model.type isEqualToString:@"1"])
-                                                             {
-                                                                 AddPersonCitangController * avc =[AddPersonCitangController new];
-                                                                 avc.model =self.model;
-                                                                 [self.navigationController pushViewController:avc animated:YES];
-                                                             }
-                                                             else if ([self.model.type isEqualToString:@"2"])
-                                                             {
-                                                                 AddFamilyCitangController * avc =[AddFamilyCitangController new];
-                                                                 avc.model=self.model;
-                                                                 [self.navigationController pushViewController:avc animated:YES];
-                                                             }
-                                                         }];
-    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"供奉记录" style:UIAlertActionStyleDefault
-                                                       handler:^(UIAlertAction * action) {
-                                                           //响应事件
-                                                           GongfengRecordController * gc=[[GongfengRecordController alloc]init];
-                                                           gc.model =self.model;
-                                                           [self.navigationController pushViewController:gc animated:YES];
-                                                       }];
-    [alert addAction:saveAction];
-    [alert addAction:cancelAction];
-    [alert addAction:deleteAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:@[@"修改祠堂",@"供奉记录"]];
+    actionSheet.itemTextFont =MKFont(13);
+    actionSheet.cancelTextFont =MKFont(13);
+    actionSheet.itemTextColor =K_Prokect_MainColor;
+    actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
+    [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
+        if ([title isEqualToString:@"修改祠堂"])
+        {
+            if ([self.model.type isEqualToString:@"1"])
+            {
+                AddPersonCitangController * avc =[AddPersonCitangController new];
+                avc.model =self.model;
+                [self.navigationController pushViewController:avc animated:YES];
+            }
+            else if ([self.model.type isEqualToString:@"2"])
+            {
+                AddFamilyCitangController * avc =[AddFamilyCitangController new];
+                avc.model=self.model;
+                [self.navigationController pushViewController:avc animated:YES];
+            }
+        }
+        else if ([title isEqualToString:@"供奉记录"])
+        {
+            GongfengRecordController * gc=[[GongfengRecordController alloc]init];
+            gc.model =self.model;
+            [self.navigationController pushViewController:gc animated:YES];
+        }
+    }];
+
 }
 - (void)showGifByImageView {
     NSURL *gifUrl = [[NSBundle mainBundle] URLForResource:@"发光gif" withExtension:@"gif"];
@@ -234,6 +229,11 @@
         [self refreshPaiWei];
     } failure:^(NSError *error) {}];
     
+
+}
+
+-(void)setGPRequest
+{
     [RequestHelp POST:JS_JIPINPUT_URL parameters:@{@"ctId":self.model.id} success:^(id result) {
         self.itemModel =[JipinSetModel yy_modelWithJSON:result];
         [self setTable1Data];
@@ -243,8 +243,6 @@
         
     }];
 }
-
-
 -(void)setTable1Data
 {
     for (UIImageView *image in self.table1_imageArr) {
@@ -265,7 +263,7 @@
     //第1部创建控件
     for (int i=0; i<7; i++)
     {
-        UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.table_1.frame)+i*item_width, CGRectGetMinY(self.table_1.frame)-item_width-5, item_width, item_width)];
+        UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.table_1.frame)+i*item_width, CGRectGetMinY(self.table_1.frame)-item_width, item_width, item_width)];
         [imageArr addObject:image];
        
     }
@@ -283,6 +281,7 @@
         model.position_y=table_item_point4.y;
         
         UIImageView * xiang =imageArr[3];
+        xiang.frame =CGRectMake(CGRectGetMinX(self.table_1.frame)+3*item_width, CGRectGetMinY(self.table_1.frame)-item_width-5, item_width, item_width);
         [self.view addSubview:xiang];
         [xiang sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
         [self.table1_imageArr addObject:xiang];
@@ -376,18 +375,19 @@
         for (int i=0; i<self.itemModel.third.count; i++)
         {
             GongFengListModel * model =self.itemModel.third [i];
-            
-            CGPoint postion = [arr[i] CGPointValue];
-            model.position_x =postion.x;
-            model.position_y=postion.y;
-            
-            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0
-                                                                              , item_width, item_width)];
-            image.center =CGPointMake(model.position_x, model.position_y);
-            [image sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
-            image.contentMode =UIViewContentModeScaleAspectFit;
-            [self.view addSubview:image];
-            [self.table2_imageArr addObject:image];
+            if (i<2) {
+                CGPoint postion = [arr[i] CGPointValue];
+                model.position_x =postion.x;
+                model.position_y=postion.y;
+                
+                UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0
+                                                                                  , item_width, item_width)];
+                image.center =CGPointMake(model.position_x, model.position_y);
+                [image sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+                image.contentMode =UIViewContentModeScaleAspectFit;
+                [self.view addSubview:image];
+                [self.table2_imageArr addObject:image];
+            }
         }
     }
 }
@@ -409,6 +409,7 @@
 {
     [self.itemImage removeFromSuperview];
     [self.gifImage removeFromSuperview];
+    [self setGPRequest];
 }
 
 -(void)refreshPaiWei
@@ -471,8 +472,16 @@
         CGFloat image_Width =245*Screen_Width /1080;
         CGFloat image_Height =310*(Screen_Height-K_NaviHeight)/1560;
 
-        UIImageView * image =[[UIImageView alloc]initWithImage:[self shotShareImage:bgView]];
-        image.bounds =CGRectMake(0, 0, image_Width, image_Height);
+        UIImageView * image =[[UIImageView alloc]init];
+    if ([self.model.type isEqualToString:@"1"])
+    {
+        [image sd_setImageWithURL:[NSURL URLWithString:self.DetailModel.img]];
+    }
+    else
+    {
+        image.image =[self shotShareImage:bgView];
+    }
+    image.bounds =CGRectMake(0, 0, image_Width, image_Height);
         image.center =CGPointMake(Screen_Width/2,K_NaviHeight+(Screen_Height-K_NaviHeight)/(1560/113)+image_Height/2);
          image.userInteractionEnabled = YES;
 

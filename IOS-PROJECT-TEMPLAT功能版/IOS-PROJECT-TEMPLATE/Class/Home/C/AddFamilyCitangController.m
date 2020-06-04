@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self addNavigationTitleView:@"新建家庭祠堂"];
+    [self addNavigationTitleView:@"家庭私人祠堂"];
     self.introTV.placeholdFont =MKFont(14);
     if (self.model !=nil) {
         [self requestData];
@@ -164,7 +164,7 @@
         }
         else
         {
-            NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr,@"id":self.model.id};
+            NSDictionary *dic =@{@"type":@"2",@"name":self.nameTF.text,@"ctJs":self.introTV.text,@"img":self.imgUrl,@"jzId":self.family.id,@"memberId":self.IdStr,@"id":self.model.id,@"count":self.countStr};
             [RequestHelp POST:JS_CITANG_UPDATE_URL parameters:dic success:^(id result) {
                 MKLog(@"%@",result);
                 [self.navigationController popViewControllerAnimated:YES];

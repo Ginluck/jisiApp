@@ -44,7 +44,7 @@
 {
     if (!_headerView) {
         _headerView =[[[NSBundle mainBundle] loadNibNamed:@"CitangHeaderView" owner:self options:nil] firstObject];
-        _headerView.frame =CGRectMake(0, 0, Screen_Width,Screen_Width*256/1034+20);
+        _headerView.frame =CGRectMake(0, 0, Screen_Width,Screen_Width*256/1034+40);
     }
     return _headerView;
 }

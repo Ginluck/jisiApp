@@ -28,6 +28,10 @@
     [self addNavigationTitleView:@"消息"];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
+    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+    }];
     // Do any additional setup after loading the view.
 }
 - (UITableView *)tableView

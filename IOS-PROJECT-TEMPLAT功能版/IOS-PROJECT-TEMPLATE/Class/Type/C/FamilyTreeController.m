@@ -132,20 +132,17 @@
     UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-<<<<<<< HEAD
+
     NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息"]];
-    if ([self.model.isAdmin isEqualToString:@"1"] || [member.id isEqualToString:user.id])
+    if ([self.model.isAdmin isEqualToString:@"1"] || [member.userUserId isEqualToString:user.id])
     {
         [arr addObject:@"编辑成员信息"];
         [arr addObject:@"添加下一代"];
     }
-    
-=======
-    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代"]];
->>>>>>> ea6778f7688f3e8c9d6a903dfc10d0512f93b368
+
     if (!member.parentId.length)
     {
-        if ([self.model.isAdmin isEqualToString:@"1"] || [member.id isEqualToString:user.id])
+        if ([self.model.isAdmin isEqualToString:@"1"] || [member.userUserId isEqualToString:user.id])
         {
              [arr addObject:@"添加上一代"];
         }
@@ -158,7 +155,7 @@
     {
         [arr addObject:@"删除"];
     }
-    if ([self.model.isAdmin isEqualToString:@"1"])
+    if ([self.model.isAdmin isEqualToString:@"1"] && ![user.id isEqualToString:member.userUserId] && member.userPhone.length!=0)
     {
         [arr addObject:@"设置管理员"];
     }
@@ -196,6 +193,14 @@
             chatController.sendUrl =member.headAddress;
             chatController.hidesBottomBarWhenPushed=YES;
             [self.navigationController pushViewController:chatController animated:YES];
+        }
+        if ([title isEqualToString:@"设置管理员"]) {
+            NSDictionary * param =@{@"zpId":member.id,@"jzId":self.model.id,@"patriarch":@"1"};
+            [RequestHelp POST:JS_SETADMIN_URL parameters:param success:^(id result) {
+                MKLog(@"%@",result);
+            } failure:^(NSError *error) {
+                
+            }];
         }
         if ([title isEqualToString:@"删除"]) {
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示"

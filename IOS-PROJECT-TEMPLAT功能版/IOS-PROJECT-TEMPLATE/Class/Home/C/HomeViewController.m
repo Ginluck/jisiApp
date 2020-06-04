@@ -15,6 +15,7 @@
 #import "AddPersonCitangController.h"
 #import "AddFamilyCitangController.h"
 #import "WorshipController.h"
+#import "SJActionSheet.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -52,35 +53,54 @@
 
 -(void)click
 {
-    //显示弹出框列表选择
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"创建祠堂"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction * action) {
-                                                             //响应事件
-                                                             NSLog(@"action = %@", action);
-                                                         }];
-    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"新增个人祠堂" style:UIAlertActionStyleDestructive
-                                                         handler:^(UIAlertAction * action) {
-                                                             //响应事件
-                                                             AddPersonCitangController * avc =[AddPersonCitangController new];
-                                                             avc.hidesBottomBarWhenPushed =YES;
-                                                             [self.navigationController pushViewController:avc animated:YES];
-                                                             
-                                                         }];
-    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"新增家族祠堂" style:UIAlertActionStyleDefault
-                                                       handler:^(UIAlertAction * action) {
-                                                           //响应事件
-                                                           AddFamilyCitangController * avc =[AddFamilyCitangController new];
-                                                           avc.hidesBottomBarWhenPushed =YES;
-                                                           [self.navigationController pushViewController:avc animated:YES];
-                                                       }];
-    [alert addAction:saveAction];
-    [alert addAction:cancelAction];
-    [alert addAction:deleteAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:@[@"创建个人祠堂",@"创建家族私人祠堂"]];
+    actionSheet.itemTextFont =MKFont(13);
+    actionSheet.cancelTextFont =MKFont(13);
+    actionSheet.itemTextColor =K_Prokect_MainColor;
+    actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
+    [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
+        if ([title isEqualToString:@"创建个人祠堂"])
+        {
+            AddPersonCitangController * avc =[AddPersonCitangController new];
+            avc.hidesBottomBarWhenPushed =YES;
+            [self.navigationController pushViewController:avc animated:YES];
+        }
+        else if ([title isEqualToString:@"创建家族私人祠堂"])
+        {
+            AddFamilyCitangController * avc =[AddFamilyCitangController new];
+            avc.hidesBottomBarWhenPushed =YES;
+            [self.navigationController pushViewController:avc animated:YES];
+        }
+    }];
+//    //显示弹出框列表选择
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"创建祠堂"
+//                                                                   message:nil
+//                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+//
+//    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
+//                                                         handler:^(UIAlertAction * action) {
+//                                                             //响应事件
+//                                                             NSLog(@"action = %@", action);
+//                                                         }];
+//    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"新增个人祠堂" style:UIAlertActionStyleDestructive
+//                                                         handler:^(UIAlertAction * action) {
+//                                                             //响应事件
+//                                                             AddPersonCitangController * avc =[AddPersonCitangController new];
+//                                                             avc.hidesBottomBarWhenPushed =YES;
+//                                                             [self.navigationController pushViewController:avc animated:YES];
+//
+//                                                         }];
+//    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"新增家族祠堂" style:UIAlertActionStyleDefault
+//                                                       handler:^(UIAlertAction * action) {
+//                                                           //响应事件
+//                                                           AddFamilyCitangController * avc =[AddFamilyCitangController new];
+//                                                           avc.hidesBottomBarWhenPushed =YES;
+//                                                           [self.navigationController pushViewController:avc animated:YES];
+//                                                       }];
+//    [alert addAction:saveAction];
+//    [alert addAction:cancelAction];
+//    [alert addAction:deleteAction];
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 -(AVAudioPlayer *)player
 {

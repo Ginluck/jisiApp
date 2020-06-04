@@ -57,7 +57,7 @@
     [dateFormatter1 setDateFormat:@"yyyy-MM-dd"];
     NSDate  * date =[NSDate date];
     _currentDate =date;
-    if (self.member !=nil) {
+    if ([self.type  isEqualToString:@"1"]) {
         self.nameTF.text =self.member.name;
         [self.sexBtn setTitle:[self.member.sex isEqualToString:@"0"]?@"男":@"女" forState:UIControlStateNormal];
         self.sexValue =self.member.sex;
