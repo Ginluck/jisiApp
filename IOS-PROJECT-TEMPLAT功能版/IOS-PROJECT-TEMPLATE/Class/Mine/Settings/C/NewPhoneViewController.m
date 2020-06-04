@@ -21,7 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"输入新手机号"];
+    [self.PhoneTF addTarget:self action:@selector(phoneNumberTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
     // Do any additional setup after loading the view from its nib.
+}
+- (void)phoneNumberTextFieldDidChange:(UITextField *)textField{
+    if (textField.text.length > 11) {
+       textField.text=[textField.text  substringToIndex:11];
+    }
 }
 - (IBAction)CodeClick:(JKCountDownButton *)sender {
     if (![UIUtils isValidateMobile:self.PhoneTF.text]) {
@@ -32,7 +39,9 @@
     WS(weakSelf);
   
     
-    [RequestHelp POST:registers_url parameters:@{@"userPhone":self.PhoneTF.text} success:^(id result) {
+    NSDictionary *dicParams = @{@"userPhone":self.PhoneTF.text,@"codeType":@"12"};
+    
+    [RequestHelp POST:GETSECURITYCODE_url parameters:dicParams success:^(id result) {
         weakSelf.CodeBtn.enabled = NO;
         [weakSelf.CodeBtn startWithSecond:60];
         [weakSelf.CodeBtn didChange:^NSString *(JKCountDownButton *countDownButton,int second) {

@@ -9,9 +9,10 @@
 #ifndef APIString_h
 #define APIString_h
 //192.168.0.123 121.36.59.7
-//#define SERVER_URL @"http://192.168.0.114:8085/"
 
-#define SERVER_URL @"http://121.36.59.7:8085/"
+#define SERVER_URL @"http://192.168.0.114:8085/"
+
+//#define SERVER_URL @"http://121.36.59.7:8085/"
 
 
 //#define IMAGE_URL @"http://192.168.0.28:8085/userApp/FILE_UPLOAD"
@@ -104,8 +105,13 @@
 #define JS_BUY_PRO_URL @"appRechargeRecord/addAppRechargeRecord"
 //供奉记录
 #define JS_GONFENG_RECORD_LIST @"appRechargeRecord/selectAppRechargeRecord"
+
 //祠堂祭品
 #define JS_JIPINPUT_URL @"appRechargeRecord/selectAppJiPin"
+
+//查询用户余额
+#define appSelectYuEById_URL @"appRechargeRecord/appSelectYuEById"
+
 
 
 #endif /* APIString_h */

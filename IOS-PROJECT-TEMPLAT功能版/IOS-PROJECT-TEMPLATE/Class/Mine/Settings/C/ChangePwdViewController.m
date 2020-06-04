@@ -9,7 +9,7 @@
 #import "ChangePwdViewController.h"
 #import "NSString+Encryption.h"
 @interface ChangePwdViewController ()
-
+@property(nonatomic,strong) NSString *Pwdstr;
 @end
 
 @implementation ChangePwdViewController
@@ -17,7 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    [self addNavigationTitleView:@"修改密码"];
+    [self.OldTF addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.NewTF  addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.AgainTF  addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     // Do any additional setup after loading the view from its nib.
+}
+- (void)passwordTextFieldDidChange:(UITextField *)textField{
+    if (textField.text.length > 16) {
+           ShowMessage(@"密码不能超过16位");
+          textField.text=self.Pwdstr;
+       }else
+       {
+           self.Pwdstr=textField.text;
+       }
 }
 - (IBAction)Submit:(id)sender {
     if (self.OldTF.text.length<=0)

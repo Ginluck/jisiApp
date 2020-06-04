@@ -132,6 +132,7 @@
     UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
+<<<<<<< HEAD
     NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息"]];
     if ([self.model.isAdmin isEqualToString:@"1"] || [member.id isEqualToString:user.id])
     {
@@ -139,6 +140,9 @@
         [arr addObject:@"添加下一代"];
     }
     
+=======
+    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代"]];
+>>>>>>> ea6778f7688f3e8c9d6a903dfc10d0512f93b368
     if (!member.parentId.length)
     {
         if ([self.model.isAdmin isEqualToString:@"1"] || [member.id isEqualToString:user.id])

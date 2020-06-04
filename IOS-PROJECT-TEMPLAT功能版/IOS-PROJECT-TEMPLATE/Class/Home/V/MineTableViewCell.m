@@ -28,6 +28,12 @@
        } failure:^(NSError *error) {
            
        }];
+    [RequestHelp POST:appSelectYuEById_URL parameters:@{} success:^(id result) {
+        MKLog(@"%@",result);
+         self.GoldLab.text=result[@"returnData"];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 - (IBAction)BtnClick:(UIButton *)sender {
     if (self.VCClick) {

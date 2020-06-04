@@ -22,13 +22,14 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    [self requsetData];
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.AddressLab.userInteractionEnabled=YES;
     [self addNavigationTitleView:@"个人资料"];
     [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick2)];
+    [self requsetData];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)requsetData
@@ -218,8 +219,12 @@
     NSDictionary* param_dic =@{@"userPhone":model.userPhone,@"realName":self.Namelab.text,@"address":self.AddressLab.text,@"headAddress":self.HeadImgStr};
           [RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
               MKLog(@"%@",result);
-              ShowMessage(@"修改成功");
+              ShowMessage(@"提交成功");
+              model.realName=self.Namelab.text;
+              model.address=self.AddressLab.text;
+              model.headAddress=self.HeadImgStr;
               [ViewControllerManager showMainViewController];
+              [self.navigationController dismissViewControllerAnimated:NO completion:nil];
           } failure:^(NSError *error) {
               
           }];

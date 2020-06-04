@@ -16,6 +16,8 @@
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #import "ViewController.h"
+#import "YourNameAdressViewController.h"
+#import "TPNavigationController.h"
 #endif
 @interface AppDelegate ()
 @property (assign, nonatomic) BOOL isFirstLanuch;//检查是否是第一次登录
@@ -170,8 +172,13 @@
         }
         else
         {
-            
+            UserModel *model =[[UserManager shareInstance]getUser];
+            if (model.realName ==nil ||model.realName ==NULL||model.realName.length==0 ) {
+                       [ViewControllerManager showLoginViewController];//显示登录界面
+                   }else
+                   {
             [ViewControllerManager showMainViewController];//显示home界面
+                   }
         }
     }
 }

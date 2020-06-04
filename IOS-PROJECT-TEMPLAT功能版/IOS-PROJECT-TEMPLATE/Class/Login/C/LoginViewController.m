@@ -12,14 +12,44 @@
 #import "YourNameAdressViewController.h"
 #import "TPNavigationController.h"
 @interface LoginViewController ()
-
+@property(nonatomic,strong) NSString *Pwdstr;
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.NumberTF addTarget:self action:@selector(phoneNumberTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.PwdTF  addTarget:self action:@selector(passwordTextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    UserModel *model =[[UserManager shareInstance]getUser];
+    if (model !=nil) {
+        if (model.realName ==nil ||model.realName ==NULL||model.realName.length==0 ) {
+                      YourNameAdressViewController *YNAVC=[YourNameAdressViewController new];
+                      TPNavigationController *navC = [[TPNavigationController alloc]initWithRootViewController:YNAVC];
+                                 navC.modalPresentationStyle=UIModalPresentationFullScreen;
+                             [self presentViewController: navC animated:NO completion:nil];
+                  }else
+                  {
+                      [ViewControllerManager showMainViewController];
+                  }
+    }
+   
     // Do any additional setup after loading the view from its nib.
+}
+- (void)phoneNumberTextFieldDidChange:(UITextField *)textField{
+    if (textField.text.length > 11) {
+       textField.text=[textField.text  substringToIndex:11];
+    }
+}
+- (void)passwordTextFieldDidChange:(UITextField *)textField{
+   
+    if (textField.text.length > 16) {
+        ShowMessage(@"密码不能超过16位");
+       textField.text=self.Pwdstr;
+    }else
+    {
+        self.Pwdstr=textField.text;
+    }
 }
 -(void)viewWillAppear:(BOOL)animated
 {
