@@ -28,11 +28,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+
 @property(nonatomic,assign)CGFloat position_x;
 @property(nonatomic,assign)CGFloat position_y;
 
 @property(nonatomic,assign)CGFloat x_postion;
 @property(nonatomic,assign)CGFloat y_postion;
+
+@property(nonatomic,strong)NSString *count;
+
 @end
 
 NS_ASSUME_NONNULL_END

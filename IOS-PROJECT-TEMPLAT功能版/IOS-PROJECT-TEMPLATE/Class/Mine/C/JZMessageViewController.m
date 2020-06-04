@@ -15,6 +15,7 @@
 #import "MemberDetailController.h"
 #import "FamilyTreeModel.h"
 #import "EMChatViewController.h"
+#import "AddNewMemberController.h"
 @interface JZMessageViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,FamilyCellClickDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -125,7 +126,7 @@
     UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"认祖申请"]];
+    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"认祖确认"]];
     
     if (member.userPhone.length && ![member.userPhone isEqualToString:user.userPhone])
     {
@@ -142,8 +143,18 @@
             dc.member =member;
             [self.navigationController pushViewController:dc animated:YES];
         }
-       if ([title isEqualToString:@"认祖申请"]) {
-         
+       if ([title isEqualToString:@"认祖确认"]) {
+           
+           AddNewMemberController * fvc =[[AddNewMemberController alloc]init];
+           fvc.member =member;
+           fvc.type =@"4";
+           [self.navigationController pushViewController:fvc animated:YES];
+//           NSDictionary * param =@{@"type":@"1",@"coverId":member.id,@"userUserId":user.id,@"name":user.realName==nil?@"":user.realName,@"introduce":user.introduce==nil?@"":user.introduce,@"state":member.state,@"jzId":member.jzId,@"deathTime":member.deathTime==nil?@"":member.deathTime,@"birthTime":member.birthTime==nil?@"":member.birthTime,@"sex":member.sex};
+//                [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
+//                    DLog(@"%@",result);
+//                   ShowMessage(@"申请成功");
+//                } failure:^(NSError *error) {
+//                }];
        }
         if ([title isEqualToString:@"发起聊天"]) {
             EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:member.userPhone type:EMConversationTypeChat createIfNotExist:YES];

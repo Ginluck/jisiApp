@@ -9,6 +9,7 @@
 #import "GongfengRecordController.h"
 #import "GongFengOneTableViewCell.h"
 #import "GongPinDetialViewController.h"
+#import "GongFengListModel.h"
 @interface GongfengRecordController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -21,7 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
+    [self addNavigationTitleView:@"祠堂供奉记录"];
     [self regisNib];
+    [self postDate];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self postDate];
     }];
@@ -36,7 +39,7 @@
 {
     if (!_tableView)
     {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height ) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, K_NaviHeight, Screen_Width, Screen_Height-K_NaviHeight ) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
@@ -63,7 +66,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.dataAry.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -74,13 +77,13 @@
     
     GongFengOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GongFengOneTableViewCell class]) forIndexPath:indexPath];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
+      [cell setModel:self.dataAry[indexPath.row]];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GongPinDetialViewController *GPDVC=[GongPinDetialViewController new];
-    [self.navigationController pushViewController:GPDVC animated:YES];
+ 
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -130,7 +133,7 @@
         NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"ctId":self.model.id};
         [RequestHelp POST:JS_GONFENG_RECORD_LIST parameters:param success:^(id result) {
             DLog(@"%@",result);
-//            [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[HouseSaleInfo class] json:result[@"list"]]];
+            [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[GongFengListModel class] json:result[@"list"]]];
             [self.tableView reloadData];
             [self endRefresh];
         } failure:^(NSError *error) {

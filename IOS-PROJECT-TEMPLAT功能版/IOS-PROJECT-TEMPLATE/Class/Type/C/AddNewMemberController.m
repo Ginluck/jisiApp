@@ -57,6 +57,20 @@
     [dateFormatter1 setDateFormat:@"yyyy-MM-dd"];
     NSDate  * date =[NSDate date];
     _currentDate =date;
+    if (self.member !=nil) {
+        self.nameTF.text =self.member.name;
+        [self.sexBtn setTitle:[self.member.sex isEqualToString:@"0"]?@"男":@"女" forState:UIControlStateNormal];
+        self.sexValue =self.member.sex;
+        [self.stateBtn setTitle:[self.member.state isEqualToString:@"0"]?@"在世":@"离世" forState:UIControlStateNormal];
+        self.stateValue =self.member.state;
+        [self.birthBtn setTitle:self.member.birthTime forState:UIControlStateNormal];
+        self.birth =self.member.birthTime;
+        [self.deathBtn setTitle:self.member.deathTime forState:UIControlStateNormal];
+        self.death =self.member.deathTime;
+        self.indtroduceTV.placeholder =@"";
+        [self addNavigationTitleView:@"修改成员"];
+//        self.indtroduceTV.text =self.member.
+    }
 }
 
 
@@ -209,6 +223,19 @@
             MKLog(@"%@",result);
             ShowMessage(@"操作成功");
             [self.navigationController popViewControllerAnimated:YES];
+        } failure:^(NSError *error) {}];
+    }
+    else if ([self.type isEqualToString:@"4"])
+    {
+         UserModel *user =[[UserManager shareInstance]getUser];
+        [param setValue:@"2" forKey:@"type"];
+        [param setValue:self.member.id forKey:@"coverId"];
+        [param setValue:self.member.jzId forKey:@"jzId"];
+        [param setValue:user.id forKey:@"userUserId"];
+        [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
+            MKLog(@"%@",result);
+            ShowMessage(@"操作成功");
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
         } failure:^(NSError *error) {}];
     }
     

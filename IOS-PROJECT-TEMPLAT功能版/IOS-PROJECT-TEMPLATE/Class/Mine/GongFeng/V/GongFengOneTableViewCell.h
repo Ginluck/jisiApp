@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *ColorLab;
 @property (weak, nonatomic) IBOutlet UILabel *DaysLab;
 @property (weak, nonatomic) IBOutlet UIButton *GoBtn;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+
 @end
 
 NS_ASSUME_NONNULL_END

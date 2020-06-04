@@ -20,19 +20,27 @@
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)Submit:(id)sender {
-    if ([self.NewTF.text isEqualToString:self.AgainTF.text]&&self.NewTF.text.length>0) {
-         UserModel * model =[[UserManager shareInstance]getUser];
-        [RequestHelp POST:UPDATE_PC_url parameters:@{@"userPhone":model.userPhone,@"password":model.password,@"newPassword":[self.NewTF.text encryptAESWithkey:[UIUtils getCurrentTimes]]} success:^(id result){
-                 DLog(@"%@",result);
-                  ShowMessage(@"修改成功");
-            [self logOut];
-              } failure:^(NSError *error) {
-
-             }];
-    }else
-    {
-       ShowMessage(@"两次密码输入的不一致");
+    if (self.OldTF.text.length<=0)
+       {
+          ShowMessage(@"请输入旧密码");
+           return;
+       }
+    if (![self.NewTF.text isEqualToString:self.AgainTF.text]) {
+       ShowMessage(@"两次密码输入不一致");
+        return;
     }
+    if (self.NewTF.text.length<=0) {
+       ShowMessage(@"请输入新密码");
+        return;
+    }
+    UserModel * model =[[UserManager shareInstance]getUser];
+           [RequestHelp POST:UPDATE_PC_url parameters:@{@"userPhone":model.userPhone,@"password":self.OldTF.text,@"newPassword":[self.NewTF.text encryptAESWithkey:[UIUtils getCurrentTimes]]} success:^(id result){
+                    DLog(@"%@",result);
+                     ShowMessage(@"修改成功");
+               [self logOut];
+                 } failure:^(NSError *error) {
+
+                }];
    
     
 }

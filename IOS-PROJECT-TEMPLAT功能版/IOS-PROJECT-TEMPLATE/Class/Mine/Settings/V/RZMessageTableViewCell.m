@@ -21,19 +21,29 @@
     switch ([model.state intValue]) {
         case 0:
         {
-            self.stateLab.text=@"申请中";
+            self.stateLab.text=@"申请查看";
         }
             break;
             case 1:
                    {
-                       self.stateLab.text=@"申请通过";
+                       self.stateLab.text=@"申请查看通过";
                    }
                        break;
             case 2:
                    {
-                       self.stateLab.text=@"申请驳回";
+                       self.stateLab.text=@"申请查看驳回";
                    }
                        break;
+            case 3:
+                              {
+                                  self.stateLab.text=@"申请族谱";
+                              }
+                                  break;
+            case 4:
+                              {
+                                  self.stateLab.text=@"已加入族谱";
+                              }
+                                  break;
             
         default:
             break;

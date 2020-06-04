@@ -19,8 +19,9 @@
     [self.Img sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl] placeholderImage:[UIImage imageNamed:@"商品占位图"]];
     self.name.text=model.jpName;
     self.ColorLab.text=model.jpMoral;
-    self.DaysLab.text=[NSString stringWithFormat:@"到期时间%@",model.beOverdueTime];
-    
+    self.DaysLab.text=[NSString stringWithFormat:@"数量:%@ 单个时长%@天",model.count,model.useLength];
+     self.time.text=[NSString stringWithFormat:@"到期时间%@",model.beOverdueTime];
+    self.ColorLab.text=model.ctName;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

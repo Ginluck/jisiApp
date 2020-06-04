@@ -7,7 +7,7 @@
 //
 
 #import "GongFengThreeViewController.h"
-#import "GongFengThreeTableViewCell.h"
+#import "GongFengOneTableViewCell.h"
 #import "GongPinDetialViewController.h"
 #import "GongFengListModel.h"
 @interface GongFengThreeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
@@ -60,7 +60,7 @@
 
 -(void)regisNib
 {
-    [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([GongFengThreeTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GongFengThreeTableViewCell class])];
+    [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([GongFengOneTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([GongFengOneTableViewCell class])];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -77,7 +77,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    GongFengThreeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GongFengThreeTableViewCell class]) forIndexPath:indexPath];
+    GongFengOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GongFengOneTableViewCell class]) forIndexPath:indexPath];
     GongFengListModel *model=self.dataAry[indexPath.row];
     [cell setModel:model];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;

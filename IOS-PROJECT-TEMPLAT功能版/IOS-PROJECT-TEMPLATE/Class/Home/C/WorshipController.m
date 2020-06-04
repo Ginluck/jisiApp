@@ -16,6 +16,8 @@
 #import "GongfengRecordController.h"
 #import "JipinModel.h"
 #import "JipinSetModel.h"
+#import "UILabel+WY_Extension.h"
+#import "PaiWeiView.h"
 @interface WorshipController ()
 @property(nonatomic,strong)UIImageView * backImage;
 @property(nonatomic,strong)CitangDetailModel * DetailModel;
@@ -28,6 +30,7 @@
 @property(nonatomic,strong)UIImageView * table_2;//供桌2
 
 @property(nonatomic,strong)NSMutableArray * table1_imageArr;
+@property(nonatomic,strong)NSMutableArray * table2_imageArr;
 @end
 
 @implementation WorshipController
@@ -40,6 +43,15 @@
         _table1_imageArr =[NSMutableArray array];
     }
     return _table1_imageArr;
+}
+
+-(NSMutableArray *)table2_imageArr
+{
+    if (!_table2_imageArr)
+    {
+        _table2_imageArr =[NSMutableArray array];
+    }
+    return _table2_imageArr;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,12 +99,12 @@
     CGFloat table_width2 =Screen_Width/2;
     
     _table_2= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, table_width2, (table_width2)*table_scale_x)];
-    _table_2.center =CGPointMake(Screen_Width/2, CGRectGetMinY(btn_1.frame)-(table_width2)*table_scale_x-65);
+    _table_2.center =CGPointMake(Screen_Width/2, CGRectGetMinY(btn_1.frame)-(table_width2)*table_scale_x/2-75);
     MKLog(@"%f",Screen_Height-K_NaviHeight);;
     _table_2.image =KImageNamed(@"供桌");
     [self.view addSubview:_table_2];
     _table_1= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, table_width, (table_width)*table_scale_x)];
-     _table_1.center =CGPointMake(Screen_Width/2, CGRectGetMinY(btn_1.frame)-(table_width)*table_scale_x-5);
+     _table_1.center =CGPointMake(Screen_Width/2, CGRectGetMinY(btn_1.frame)-(table_width)*table_scale_x/2-5);
     MKLog(@"%f",Screen_Height-K_NaviHeight);;
     _table_1.image =KImageNamed(@"供桌");
     [self.view addSubview:_table_1];
@@ -170,6 +182,7 @@
                                                        handler:^(UIAlertAction * action) {
                                                            //响应事件
                                                            GongfengRecordController * gc=[[GongfengRecordController alloc]init];
+                                                           gc.model =self.model;
                                                            [self.navigationController pushViewController:gc animated:YES];
                                                        }];
     [alert addAction:saveAction];
@@ -223,14 +236,16 @@
     
     [RequestHelp POST:JS_JIPINPUT_URL parameters:@{@"ctId":self.model.id} success:^(id result) {
         self.itemModel =[JipinSetModel yy_modelWithJSON:result];
-        [self setUIData];
+        [self setTable1Data];
+        [self setTable2Data];
+        [self setHuaQuanData];
     } failure:^(NSError *error) {
         
     }];
 }
 
 
--(void)setUIData
+-(void)setTable1Data
 {
     for (UIImageView *image in self.table1_imageArr) {
         [image removeFromSuperview];
@@ -239,9 +254,9 @@
     CGPoint table_item_point1 =CGPointMake(CGRectGetMinX(self.table_1.frame), CGRectGetMinY(self.table_1.frame)-item_width);
     CGPoint table_item_point2 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width, CGRectGetMinY(self.table_1.frame)-item_width);
     CGPoint table_item_point3 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*2, CGRectGetMinY(self.table_1.frame)-item_width);
-    CGPoint table_item_point4 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*3, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point4 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*3, CGRectGetMinY(self.table_1.frame)-item_width+5);
     CGPoint table_item_point5 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*4, CGRectGetMinY(self.table_1.frame)-item_width);
-    CGPoint table_item_point6 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*5, CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point6 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*5, CGRectGetMinY(self.table_1.frame)-item_width+5);
     CGPoint table_item_point7 =CGPointMake(CGRectGetMinX(self.table_1.frame)+item_width*6, CGRectGetMinY(self.table_1.frame)-item_width);
     
     
@@ -250,7 +265,7 @@
     //第1部创建控件
     for (int i=0; i<7; i++)
     {
-        UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.table_1.frame)+i*item_width, CGRectGetMinY(self.table_1.frame)-item_width, item_width, item_width)];
+        UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.table_1.frame)+i*item_width, CGRectGetMinY(self.table_1.frame)-item_width-5, item_width, item_width)];
         [imageArr addObject:image];
        
     }
@@ -276,7 +291,7 @@
     
     if (self.itemModel.first.laList.count)
     {
-        GongFengListModel * model =self.itemModel.first.xiangList[0];
+        GongFengListModel * model =self.itemModel.first.laList[0];
         model.position_x =table_item_point3.x;
         model.position_y=table_item_point3.y;
     
@@ -310,9 +325,72 @@
     }
   
 }
+-(void)setTable2Data
+{
+    for (UIImageView *image in self.table2_imageArr) {
+        [image removeFromSuperview];
+    }
+    CGFloat item_width =CGRectGetWidth(self.table_2.frame)/7;
+    CGPoint table_item_point1 =CGPointMake(CGRectGetMinX(self.table_2.frame), CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point2 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width, CGRectGetMinY(self.table_2.frame)-item_width);
+    CGPoint table_item_point3 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*2, CGRectGetMinY(self.table_2.frame)-item_width);
+    CGPoint table_item_point4 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*3, CGRectGetMinY(self.table_2.frame)-item_width);
+    CGPoint table_item_point5 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*4, CGRectGetMinY(self.table_2.frame)-item_width);
+    CGPoint table_item_point6 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*5, CGRectGetMinY(self.table_2.frame)-item_width);
+    CGPoint table_item_point7 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*6, CGRectGetMinY(self.table_2.frame)-item_width);
+    
+        NSArray* arr =@[[NSValue valueWithCGPoint:table_item_point4],[NSValue valueWithCGPoint:table_item_point5],[NSValue valueWithCGPoint:table_item_point3],[NSValue valueWithCGPoint:table_item_point6],[NSValue valueWithCGPoint:table_item_point2],[NSValue valueWithCGPoint:table_item_point7],[NSValue valueWithCGPoint:table_item_point1]];
+    
+    
+    if (self.itemModel.second.count)
+    {
+        for (int i=0; i<self.itemModel.second.count; i++)
+        {
+            GongFengListModel * model =self.itemModel.second [i];
+            
+            CGPoint postion = [arr[i] CGPointValue];
+            model.position_x =postion.x;
+            model.position_y=postion.y;
+            
+            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(model.position_x, model.position_y+2
+                                                                              , item_width, item_width)];
+            [image sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+            image.contentMode =UIViewContentModeScaleAspectFit;
+            [self.view addSubview:image];
+            [self.table2_imageArr addObject:image];
+            
+        }
+    }
+}
 
-
-
+-(void)setHuaQuanData
+{
+    CGFloat item_width =Screen_Width/4 *0.8;
+    
+    CGPoint table_item_point1 =CGPointMake(Screen_Width/8, CGRectGetMinY(self.table_2.frame));
+    CGPoint table_item_point2 =CGPointMake(Screen_Width/8*7, CGRectGetMinY(self.table_2.frame));
+    
+    NSArray* arr =@[[NSValue valueWithCGPoint:table_item_point2],[NSValue valueWithCGPoint:table_item_point1]];
+    if (self.itemModel.third.count)
+    {
+        for (int i=0; i<self.itemModel.third.count; i++)
+        {
+            GongFengListModel * model =self.itemModel.third [i];
+            
+            CGPoint postion = [arr[i] CGPointValue];
+            model.position_x =postion.x;
+            model.position_y=postion.y;
+            
+            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0
+                                                                              , item_width, item_width)];
+            image.center =CGPointMake(model.position_x, model.position_y);
+            [image sd_setImageWithURL:[NSURL URLWithString:model.jpImgUrl]];
+            image.contentMode =UIViewContentModeScaleAspectFit;
+            [self.view addSubview:image];
+            [self.table2_imageArr addObject:image];
+        }
+    }
+}
 
 -(void)buyProClick
 {
@@ -343,7 +421,7 @@
         
         [countArr addObject:model.lisCount];
     }
-    CGFloat width =40.f;
+    CGFloat width =32.f;
     
     CGFloat height =64.f;
     
@@ -366,42 +444,26 @@
             FamilyTreeMember * member =model.list[j];
             if ([model.lisCount isEqualToString:@"1"])
             {
-                UIButton * button =[UIButton new];
-                button.frame =CGRectMake(0, 0, width, height);
-//                [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
-                button.backgroundColor =[UIColor redColor];
-                [button setNormalTitle:member.name font:MKFont(20) titleColor:[UIColor whiteColor]];
-                button.titleLabel.numberOfLines =0;
-                button.titleLabel.textAlignment =NSTextAlignmentCenter;
-//                button.contentMode =UIViewContentModeScaleAspectFill;
-                button.center= CGPointMake(Screen_Width/2, margin_y+height/2);
-                [scView addSubview:button];
+                PaiWeiView * pView =[[PaiWeiView alloc]initWithFrame:CGRectMake(0, 0, width, height)];;
+                pView.nameLabel.verticalText =member.name;
+                pView.center= CGPointMake(Screen_Width/2, margin_y+height/2+(height +margin_y)*i);
+                [scView addSubview:pView];
             }
             if ([model.lisCount integerValue]>1 &&[model.lisCount integerValue]<9)
             {
             
                  Margin_x =(Screen_Width -[model.lisCount integerValue]*width)/([model.lisCount integerValue]+1);
-                UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
-                button.frame =CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height);
-                  [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
-                 [button setNormalTitle:member.name font:MKFont(20) titleColor:[UIColor whiteColor]];
-                button.titleLabel.numberOfLines =0;
-               
-                 button.titleLabel.textAlignment =NSTextAlignmentCenter;
-                [scView addSubview:button];
+                PaiWeiView * pView =[[PaiWeiView alloc]initWithFrame:CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height)];;
+                pView.nameLabel.verticalText =member.name;
+                [scView addSubview:pView];
             }
             else if ([model.lisCount integerValue]>8)
             {
                 Margin_x =(Screen_Width -8*width)/9;
-                UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
-                button.frame =CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height);
-                  [button setBackgroundImage:KImageNamed(@"牌位1") forState:UIControlStateNormal];
-                  [button setNormalTitle:member.name font:MKFont(20) titleColor:[UIColor whiteColor]];
-                button.titleLabel.numberOfLines =0;
-                 button.titleLabel.textAlignment =NSTextAlignmentCenter;
-              
+                PaiWeiView * pView =[[PaiWeiView alloc]initWithFrame:CGRectMake(Margin_x +(width +Margin_x)*j, margin_y+(height +margin_y)*i, width, height)];;
+                pView.nameLabel.verticalText =member.name;
                 scView.contentSize =CGSizeMake(Margin_x+(width+Margin_x)*[model.lisCount integerValue], 0);
-                [scView addSubview:button];
+                [scView addSubview:pView];
             }
         }
     }

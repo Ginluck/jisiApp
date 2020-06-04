@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * updateTime;
 @property(nonatomic,strong)NSString * id;
 @property(nonatomic,strong)NSString * state;
+@property(nonatomic,strong)NSString * zp_id;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -170,7 +170,7 @@
 -(void)GoLook:(UIButton *)btn
 {
     RZMessageModel *model=self.dataAry[btn.tag-100];
-    if ([model.state isEqualToString:@"1"]) {
+    if ([model.state isEqualToString:@"1"]||[model.state isEqualToString:@"4"]) {
                JZMessageViewController * fvc =[JZMessageViewController new];
                 fvc.JzId=model.jzId;
                 [self.navigationController pushViewController:fvc animated:YES];

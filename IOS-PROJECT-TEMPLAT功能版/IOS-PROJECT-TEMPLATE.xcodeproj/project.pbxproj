@@ -560,6 +560,7 @@
 		715EED7724750E02009CF31A /* EMStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECEB24750E02009CF31A /* EMStreamView.m */; };
 		715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */; };
 		715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EED7C24765FFA009CF31A /* MessageListModel.m */; };
+		715F3CE424874C3700CC90B2 /* PaiWeiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715F3CE324874C3700CC90B2 /* PaiWeiView.m */; };
 		7185BCF5247E48170028AA75 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF3247E48170028AA75 /* MineHeaderView.m */; };
 		7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCF4247E48170028AA75 /* MineHeaderView.xib */; };
 		7185BCFA247F5C410028AA75 /* AddPersonCitangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */; };
@@ -1491,6 +1492,8 @@
 		715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "洪真英-活着 (Cheer Up).mp3"; sourceTree = "<group>"; };
 		715EED7B24765FFA009CF31A /* MessageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
 		715EED7C24765FFA009CF31A /* MessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
+		715F3CE224874C3700CC90B2 /* PaiWeiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaiWeiView.h; sourceTree = "<group>"; };
+		715F3CE324874C3700CC90B2 /* PaiWeiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaiWeiView.m; sourceTree = "<group>"; };
 		7185BCF2247E48160028AA75 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		7185BCF3247E48170028AA75 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
 		7185BCF4247E48170028AA75 /* MineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
@@ -1980,25 +1983,25 @@
 		711B0B5824692B0C009C84DB /* category */ = {
 			isa = PBXGroup;
 			children = (
-				711B0B5924692B0C009C84DB /* NSDate+CommonDate.h */,
-				711B0B5A24692B0C009C84DB /* PYSearch */,
 				711B0B6924692B0C009C84DB /* NSDate+CalendarDate.h */,
-				711B0B6A24692B0C009C84DB /* UIImage+GradiusColor.m */,
-				711B0B6B24692B0C009C84DB /* NSString+Encryption.m */,
-				711B0B6C24692B0C009C84DB /* NSString+Attributes.m */,
-				711B0B6D24692B0C009C84DB /* NSString+VerifyText.m */,
-				711B0B6E24692B0C009C84DB /* NSObject+SystemInfo.m */,
-				711B0B6F24692B0C009C84DB /* UIView+CornerRdius.h */,
-				711B0B7024692B0C009C84DB /* UIView+NXFrame.m */,
-				711B0B7124692B0C009C84DB /* NSDate+CommonDate.m */,
-				711B0B7224692B0C009C84DB /* NSString+Encryption.h */,
-				711B0B7324692B0C009C84DB /* UIImage+GradiusColor.h */,
 				711B0B7424692B0C009C84DB /* NSDate+CalendarDate.m */,
+				711B0B5924692B0C009C84DB /* NSDate+CommonDate.h */,
+				711B0B7124692B0C009C84DB /* NSDate+CommonDate.m */,
+				711B0B7724692B0C009C84DB /* NSObject+SystemInfo.h */,
+				711B0B6E24692B0C009C84DB /* NSObject+SystemInfo.m */,
+				711B0B7924692B0C009C84DB /* NSString+Attributes.h */,
+				711B0B6C24692B0C009C84DB /* NSString+Attributes.m */,
+				711B0B7224692B0C009C84DB /* NSString+Encryption.h */,
+				711B0B6B24692B0C009C84DB /* NSString+Encryption.m */,
+				711B0B7824692B0C009C84DB /* NSString+VerifyText.h */,
+				711B0B6D24692B0C009C84DB /* NSString+VerifyText.m */,
+				711B0B5A24692B0C009C84DB /* PYSearch */,
+				711B0B7324692B0C009C84DB /* UIImage+GradiusColor.h */,
+				711B0B6A24692B0C009C84DB /* UIImage+GradiusColor.m */,
+				711B0B6F24692B0C009C84DB /* UIView+CornerRdius.h */,
 				711B0B7524692B0C009C84DB /* UIView+CornerRdius.m */,
 				711B0B7624692B0C009C84DB /* UIView+NXFrame.h */,
-				711B0B7724692B0C009C84DB /* NSObject+SystemInfo.h */,
-				711B0B7824692B0C009C84DB /* NSString+VerifyText.h */,
-				711B0B7924692B0C009C84DB /* NSString+Attributes.h */,
+				711B0B7024692B0C009C84DB /* UIView+NXFrame.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -3036,6 +3039,8 @@
 				71EC5F9D247B9EDF00407D7F /* BuyJPView.h */,
 				71EC5F9E247B9EDF00407D7F /* BuyJPView.m */,
 				71EC5FA0247BA23E00407D7F /* BuyJPView.xib */,
+				715F3CE224874C3700CC90B2 /* PaiWeiView.h */,
+				715F3CE324874C3700CC90B2 /* PaiWeiView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -4511,6 +4516,7 @@
 				715EE9C424750D7A009CF31A /* PSTGridLayoutItem.m in Sources */,
 				715EEBB924750DDC009CF31A /* EMMsgTranspondViewController.m in Sources */,
 				715EE9BF24750D7A009CF31A /* PSTGridLayoutSection.m in Sources */,
+				715F3CE424874C3700CC90B2 /* PaiWeiView.m in Sources */,
 				711B0B8524692B0C009C84DB /* NSObject+SystemInfo.m in Sources */,
 				711B0B56246929E8009C84DB /* LYSDatePickerController.m in Sources */,
 				71E55BB8246E65C500255230 /* GongPinDetialTopView.m in Sources */,

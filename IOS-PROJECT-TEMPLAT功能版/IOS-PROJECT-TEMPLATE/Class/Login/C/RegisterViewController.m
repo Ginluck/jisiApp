@@ -146,7 +146,7 @@
     WS(weakSelf);
     NSDictionary *dicParams = @{@"userPhone":self.NumberTF.text,@"codeType":@"12"};
     
-    [RequestHelp POST:@"userApp/GETSECURITY" parameters:dicParams success:^(id result) {
+    [RequestHelp POST:GETSECURITYCODE_url parameters:dicParams success:^(id result) {
         weakSelf.CodeBtn.enabled = NO;
         [weakSelf.CodeBtn startWithSecond:60];
         [weakSelf.CodeBtn didChange:^NSString *(JKCountDownButton *countDownButton,int second) {

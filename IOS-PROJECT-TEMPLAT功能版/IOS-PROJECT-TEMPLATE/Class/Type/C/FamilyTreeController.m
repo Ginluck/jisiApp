@@ -132,18 +132,31 @@
     UserModel *user =[[UserManager shareInstance]getUser];
     FamilyTreeModel *model =self.dataAry[button.row];
     FamilyTreeMember * member=(FamilyTreeMember*)model.list[button.tag];
-    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息",@"编辑成员信息",@"添加下一代",]];
+    NSMutableArray * arr =[NSMutableArray arrayWithArray:@[@"查看成员信息"]];
+    if ([self.model.isAdmin isEqualToString:@"1"] || [member.id isEqualToString:user.id])
+    {
+        [arr addObject:@"编辑成员信息"];
+        [arr addObject:@"添加下一代"];
+    }
+    
     if (!member.parentId.length)
     {
-        [arr addObject:@"添加上一代"];
+        if ([self.model.isAdmin isEqualToString:@"1"] || [member.id isEqualToString:user.id])
+        {
+             [arr addObject:@"添加上一代"];
+        }
     }
     if (member.userPhone.length && ![member.userPhone isEqualToString:user.userPhone])
     {
           [arr addObject:@"发起聊天"];
     }
-    if ([member.isDelete isEqualToString:@"1"])
+    if ([member.isDelete isEqualToString:@"1"] && [self.model.isAdmin isEqualToString:@"1"])
     {
         [arr addObject:@"删除"];
+    }
+    if ([self.model.isAdmin isEqualToString:@"1"])
+    {
+        [arr addObject:@"设置管理员"];
     }
     SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:arr];
     actionSheet.itemTextFont =MKFont(13);
