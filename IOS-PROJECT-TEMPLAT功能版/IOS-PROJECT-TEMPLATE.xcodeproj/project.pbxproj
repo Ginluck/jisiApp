@@ -23,6 +23,8 @@
 		183015D82480F75700B43F64 /* JZMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015D62480F75700B43F64 /* JZMessageViewController.xib */; };
 		183015DC2481030C00B43F64 /* YourNameAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015DA2481030C00B43F64 /* YourNameAdressViewController.m */; };
 		183015DD2481030C00B43F64 /* YourNameAdressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */; };
+		185EDAD02488CF3300907C9B /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185EDACE2488CF3300907C9B /* ForgetPwdViewController.m */; };
+		185EDAD12488CF3300907C9B /* ForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185EDACF2488CF3300907C9B /* ForgetPwdViewController.xib */; };
 		18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F40324768FEB00B16077 /* MineDataModel.m */; };
 		18F930632477D942007BA7FF /* TeasingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F930602477D941007BA7FF /* TeasingViewController.xib */; };
 		18F930642477D942007BA7FF /* TeasingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F930622477D942007BA7FF /* TeasingViewController.m */; };
@@ -708,6 +710,9 @@
 		183015D92481030C00B43F64 /* YourNameAdressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourNameAdressViewController.h; sourceTree = "<group>"; };
 		183015DA2481030C00B43F64 /* YourNameAdressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourNameAdressViewController.m; sourceTree = "<group>"; };
 		183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourNameAdressViewController.xib; sourceTree = "<group>"; };
+		185EDACD2488CF3300907C9B /* ForgetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
+		185EDACE2488CF3300907C9B /* ForgetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
+		185EDACF2488CF3300907C9B /* ForgetPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPwdViewController.xib; sourceTree = "<group>"; };
 		18C1F40224768FEB00B16077 /* MineDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
 		18C1F40324768FEB00B16077 /* MineDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		18F930602477D941007BA7FF /* TeasingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeasingViewController.xib; sourceTree = "<group>"; };
@@ -3163,6 +3168,9 @@
 				719D4B39239F75F1003C6803 /* LoginViewController.h */,
 				719D4B3A239F75F1003C6803 /* LoginViewController.m */,
 				719D4B3B239F75F1003C6803 /* LoginViewController.xib */,
+				185EDACD2488CF3300907C9B /* ForgetPwdViewController.h */,
+				185EDACE2488CF3300907C9B /* ForgetPwdViewController.m */,
+				185EDACF2488CF3300907C9B /* ForgetPwdViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3984,6 +3992,7 @@
 				715EEB3F24750DDB009CF31A /* icon_010_cover.png in Resources */,
 				715EE9CF24750D7A009CF31A /* alert_success@3x.png in Resources */,
 				715EED4524750E02009CF31A /* kbps_gray@3x.png in Resources */,
+				185EDAD12488CF3300907C9B /* ForgetPwdViewController.xib in Resources */,
 				711B0B7E24692B0C009C84DB /* PYSearch.bundle in Resources */,
 				715EED2B24750E02009CF31A /* animate_00064.png in Resources */,
 				7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */,
@@ -4393,6 +4402,7 @@
 				711B0B4C246929E8009C84DB /* LYSDateHeaderViewController.m in Sources */,
 				715EE9B824750D7A009CF31A /* PSTCollectionViewController.m in Sources */,
 				715EED7624750E02009CF31A /* EMButton.m in Sources */,
+				185EDAD02488CF3300907C9B /* ForgetPwdViewController.m in Sources */,
 				715EE9C024750D7A009CF31A /* PSTCollectionViewItemKey.m in Sources */,
 				711B0AD924692979009C84DB /* CollectionHeaderView.m in Sources */,
 				715EE9AD24750D7A009CF31A /* amrFileCodec.mm in Sources */,
