@@ -16,11 +16,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Type/C/MemberDetailController.m"
-            timestampString = "612348195.62025"
+            timestampString = "612861216.496416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "265"
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddPersonCitangController.m"
-            timestampString = "612435618.4719059"
+            timestampString = "612959475.034861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -51,14 +51,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/WorshipController.m"
-            timestampString = "612696058.741313"
+            filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+            timestampString = "612959475.03521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "-showGifByImageView"
+            landmarkName = "-chooseClick:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddFamilyCitangController chooseClick:]"
+                  moduleName = "IOS-PROJECT-TEMPLATE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+                  timestampString = "612959475.540915"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "4208">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[AddFamilyCitangController chooseClick:]_block_invoke_2"
+                  moduleName = "IOS-PROJECT-TEMPLATE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+                  timestampString = "612959475.5450799"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.269"
+                  moduleName = "IOS-PROJECT-TEMPLATE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+                  timestampString = "612959475.548992"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -282,7 +282,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Pass the selected object to the new view controller.坎坎坷坷乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓乒乒乓乓婆婆哦 iiiiiiiiiiiiii 斤斤计较哈哈哈哈哈哈吧o
 }
 */
 

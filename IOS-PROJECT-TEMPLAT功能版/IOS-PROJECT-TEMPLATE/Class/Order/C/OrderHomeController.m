@@ -69,7 +69,7 @@
     textf.borderStyle=UITextBorderStyleRoundedRect;
     textf.font =MKFont(12);
     textf.delegate =self;
-    textf.placeholder =@"🔍请输入搜索内容";
+    textf.placeholder =@"🔍请输入要搜索的家族名称";
 
     [topView addSubview:textf];
 

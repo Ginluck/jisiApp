@@ -90,10 +90,10 @@
                         <constraint firstAttribute="height" constant="100" id="02U-gS-avm"/>
                         <constraint firstAttribute="width" constant="100" id="1fg-BW-QGf"/>
                     </constraints>
-                    <state key="normal" image="add1"/>
+                    <state key="normal" image="add"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                             <real key="value" value="1"/>
@@ -109,7 +109,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="GYt-Xw-A83"/>
                     </constraints>
-                    <state key="normal" title="创建">
+                    <state key="normal" title="提交">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -198,7 +198,7 @@
         </view>
     </objects>
     <resources>
-        <image name="add1" width="66" height="66"/>
+        <image name="add" width="200" height="200"/>
         <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>

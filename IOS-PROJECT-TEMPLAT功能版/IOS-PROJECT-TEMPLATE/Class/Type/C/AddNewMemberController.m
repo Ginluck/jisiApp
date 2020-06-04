@@ -57,6 +57,20 @@
     [dateFormatter1 setDateFormat:@"yyyy-MM-dd"];
     NSDate  * date =[NSDate date];
     _currentDate =date;
+    if ([self.type  isEqualToString:@"1"]) {
+        self.nameTF.text =self.member.name;
+        [self.sexBtn setTitle:[self.member.sex isEqualToString:@"0"]?@"男":@"女" forState:UIControlStateNormal];
+        self.sexValue =self.member.sex;
+        [self.stateBtn setTitle:[self.member.state isEqualToString:@"0"]?@"在世":@"离世" forState:UIControlStateNormal];
+        self.stateValue =self.member.state;
+        [self.birthBtn setTitle:self.member.birthTime forState:UIControlStateNormal];
+        self.birth =self.member.birthTime;
+        [self.deathBtn setTitle:self.member.deathTime forState:UIControlStateNormal];
+        self.death =self.member.deathTime;
+        self.indtroduceTV.placeholder =@"";
+        [self addNavigationTitleView:@"修改成员"];
+//        self.indtroduceTV.text =self.member.
+    }
 }
 
 

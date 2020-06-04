@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 获取UILable的行高(根据UILable的字号获取的，系统默认字号：17) */
 @property (nonatomic, assign, readonly) CGFloat wy_lineHeight;
-
+@property (nonatomic) NSString *verticalText;
 /** 设置标签左对齐 */
 - (void)wy_leftAlignment;
 

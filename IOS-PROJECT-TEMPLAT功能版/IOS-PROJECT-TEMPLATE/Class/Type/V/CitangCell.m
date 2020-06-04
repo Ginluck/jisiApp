@@ -24,24 +24,10 @@
 }
 -(void)reloadCell:(CitangListModel*)model
 {
-    if ([model.type isEqualToString:@"0"])
-    {
-        [self.familyImage sd_setImageWithURL:[NSURL URLWithString:model.img2]];
-        self.familyName.text =model.name2;
-        self.familyDesc.text =model.ctJs2;
-    }
-    else if ([model.type isEqualToString:@"1"])
-    {
-        [self.familyImage sd_setImageWithURL:[NSURL URLWithString:model.img]];
-        self.familyName.text =model.name;
-        self.familyDesc.text =model.ctJs;
-    }
-    else
-    {
-        [self.familyImage sd_setImageWithURL:[NSURL URLWithString:model.img2]];
-        self.familyName.text =model.name;
-        self.familyDesc.text =model.ctJs;
-    }
+    [self.familyImage sd_setImageWithURL:[NSURL URLWithString:model.img]];
+    self.familyName.text =model.name;
+    self.familyDesc.text =model.ctJs;
+
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

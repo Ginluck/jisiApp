@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self addNavigationTitleView:@"新建个人祠堂"];
+    [self addNavigationTitleView:@"个人祠堂"];
     self.introTV.placeholdFont =MKFont(14);
     if (self.model !=nil) {
         [self requestData];
