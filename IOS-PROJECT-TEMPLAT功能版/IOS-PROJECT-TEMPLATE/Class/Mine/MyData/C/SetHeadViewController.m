@@ -11,6 +11,7 @@
 #import "SheZhiNameViewController.h"
 #import "AddrChooseController.h"
 #import "MineDataModel.h"
+#import "PhoneChangeViewController.h"
 @interface SetHeadViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
 @property(nonatomic,strong)UIView *BackGroundView;
@@ -78,13 +79,19 @@
         }
             break;
             case 101:
+                       {
+                           PhoneChangeViewController *SZNVC=[PhoneChangeViewController new];
+                           [self.navigationController pushViewController:SZNVC animated:YES];
+                       }
+                           break;
+            case 102:
             {
                 SheZhiNameViewController *SZNVC=[SheZhiNameViewController new];
                 SZNVC.NameStr =self.Namelab.text;
                 [self.navigationController pushViewController:SZNVC animated:YES];
             }
                 break;
-            case 102:
+            case 103:
             {
                 AddrChooseController * avc =[AddrChooseController new];
                 avc.selectedRoomBlock = ^(NSObject * _Nonnull model) {
@@ -110,7 +117,7 @@
                 [self.navigationController pushViewController:avc animated:YES];
             }
                 break;
-            case 103:
+            case 104:
             {
                 MyIntroductionViewController *SZNVC=[MyIntroductionViewController new];
                 [self.navigationController pushViewController:SZNVC animated:YES];

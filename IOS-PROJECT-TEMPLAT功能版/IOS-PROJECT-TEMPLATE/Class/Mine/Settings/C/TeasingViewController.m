@@ -48,13 +48,13 @@
         ShowErrorStatus(@"请填写意见内容");
         return;
     }
-//    WS(weakSelf);
+    WS(weakSelf);
 //    ShowMaskStatus(@"提交中...");
 //    [RequestHelp POST:OTHER_COMPLAINT_URL parameters:@{@"content":self.TxtView.text,@"mobile":self.PhoneTF.text} success:^(id result) {
 //        DismissHud();
       ShowMessage(@"提交成功");
 //
-//        [weakSelf.navigationController popViewControllerAnimated:YES];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
 //    } failure:^(NSError *error) {
 //        ShowMessage(@"提交失败");
 //    }];

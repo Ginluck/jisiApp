@@ -22,7 +22,7 @@
 -(UserTextView *)TxtView
 {
     if (!_TxtView) {
-        _TxtView =[[UserTextView alloc]initWithFrame:CGRectMake(16, 12, Screen_Width-32, 240-24)];
+        _TxtView =[[UserTextView alloc]initWithFrame:CGRectMake(16, 12+kNavagationBarH, Screen_Width-32, 240-24)];
     }
     return _TxtView;
 }
