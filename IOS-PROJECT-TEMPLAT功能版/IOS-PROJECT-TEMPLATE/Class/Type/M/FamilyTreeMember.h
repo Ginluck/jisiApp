@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * isDelete;
 @property(nonatomic,strong)NSString * isSelected;
 @property(nonatomic,strong)NSString * count;
+@property(nonatomic,strong)NSString * introduce;
 
 @property(nonatomic,assign)NSInteger  parentIndex;
 @property(nonatomic,assign)NSInteger  parentSize;

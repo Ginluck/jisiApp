@@ -10,6 +10,7 @@
 #import "UITextView+WJPlaceholder.h"
 #import "ValuePickerView.h"
 #import "LYSDatePickerController.h"
+#import "FamilyDetailController.h"
 @interface AddNewMemberController ()<LYSDatePickerSelectDelegate>
 @property(nonatomic,weak)IBOutlet UITextField * nameTF;
 @property(nonatomic,weak)IBOutlet UIButton * sexBtn;
@@ -69,7 +70,7 @@
         self.death =self.member.deathTime;
         self.indtroduceTV.placeholder =@"";
         [self addNavigationTitleView:@"修改成员"];
-//        self.indtroduceTV.text =self.member.
+        self.indtroduceTV.text =self.member.introduce;
     }
 }
 
@@ -192,7 +193,7 @@
         }
 
     }
-
+   
     if ([self.type isEqualToString:@"1"])
     {
         [param setValue:self.member.id forKey:@"id"];
@@ -200,7 +201,12 @@
         [RequestHelp POST:JS_UPDATE_MEMBER_URL parameters:param success:^(id result) {
             MKLog(@"%@",result);
             ShowMessage(@"操作成功");
-            [self.navigationController popViewControllerAnimated:YES];
+            for (UIViewController * fvc in self.navigationController.viewControllers) {
+                if ([fvc isKindOfClass:[FamilyDetailController class]]) {
+                       [self.navigationController popToViewController:fvc animated:YES];
+                }
+            }
+       
         } failure:^(NSError *error) {}];
     }
     else if ([self.type isEqualToString:@"2"])
@@ -211,7 +217,11 @@
         [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
             MKLog(@"%@",result);
             ShowMessage(@"操作成功");
-            [self.navigationController popViewControllerAnimated:YES];
+            for (UIViewController * fvc in self.navigationController.viewControllers) {
+                if ([fvc isKindOfClass:[FamilyDetailController class]]) {
+                    [self.navigationController popToViewController:fvc animated:YES];
+                }
+            }
         } failure:^(NSError *error) {}];
     }
     else if ([self.type isEqualToString:@"3"])
@@ -222,7 +232,11 @@
         [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
             MKLog(@"%@",result);
             ShowMessage(@"操作成功");
-            [self.navigationController popViewControllerAnimated:YES];
+            for (UIViewController * fvc in self.navigationController.viewControllers) {
+                if ([fvc isKindOfClass:[FamilyDetailController class]]) {
+                    [self.navigationController popToViewController:fvc animated:YES];
+                }
+            }
         } failure:^(NSError *error) {}];
     }
     else if ([self.type isEqualToString:@"4"])

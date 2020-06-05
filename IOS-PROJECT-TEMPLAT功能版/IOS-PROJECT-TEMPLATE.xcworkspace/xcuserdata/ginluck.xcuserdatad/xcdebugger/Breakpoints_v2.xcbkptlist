@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddPersonCitangController.m"
-            timestampString = "612959475.034861"
+            timestampString = "612960392.0974849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-            timestampString = "612959475.03521"
+            timestampString = "612960392.097785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
@@ -68,12 +68,12 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "612959475.540915"
+                  timestampString = "613019276.3901581"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "4208">
+                  offsetFromSymbolStart = "4766">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -83,12 +83,12 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "612959475.5450799"
+                  timestampString = "613019276.392518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -98,12 +98,12 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "612959475.548992"
+                  timestampString = "613019276.396728"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
