@@ -77,6 +77,9 @@
     self.mapView.delegate = self;
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setUserTrackingMode:QUserTrackingModeFollow];
+    QUserLocationPresentation * p =[QUserLocationPresentation new];
+    p.icon =KImageNamed(@"dingwei");
+    [self.mapView configureUserLocationPresentation:p];
     //把mapView添加到view中进行显示
     [self.view addSubview:self.mapView];
     
