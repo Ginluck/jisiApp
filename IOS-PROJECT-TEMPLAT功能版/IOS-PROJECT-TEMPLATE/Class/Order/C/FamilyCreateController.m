@@ -240,6 +240,7 @@
         MKLog(@"%@",result);
         ShowMessage(@"创建成功");
         UserModel * model =[[UserManager shareInstance]getUser];
+        model.patriarch =@"1";
         if (!model.jzId.length)
         {
                model.jzId =(NSString*)result;

@@ -61,7 +61,7 @@
 {
     if (!_buyView) {
         _buyView =[[[NSBundle mainBundle] loadNibNamed:@"BuyJPView" owner:self options:nil] firstObject];
-        _buyView.frame =CGRectMake(0, 0, 200,250);
+        _buyView.frame =CGRectMake(0, 0, 200,264);
         _buyView.delegate =self;
         _buyView.center =CGPointMake(Screen_Width/2, Screen_Height/2-50);
     }
@@ -74,6 +74,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-K_NaviHeight-40) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+        imageV.image =KImageNamed(@"通用背景");
+        _tableView.backgroundView =imageV;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;
         _tableView.backgroundColor =kBGViewCOLOR;

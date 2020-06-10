@@ -16,7 +16,7 @@ static CGRect oldframe;
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     oldframe = [avatarImageView convertRect:avatarImageView.bounds toView:window];
-    backgroundView.backgroundColor = [UIColor blackColor];
+    backgroundView.backgroundColor = [UIColor whiteColor];
     backgroundView.alpha = 0;
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:oldframe];
     imageView.image = image;

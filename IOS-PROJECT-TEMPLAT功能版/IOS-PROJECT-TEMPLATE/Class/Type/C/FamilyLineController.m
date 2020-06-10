@@ -11,6 +11,7 @@
 #import "RectangleView.h"
 #import "FamilyTreeModel.h"
 #import "FamilyTreeMember.h"
+#import "FamilyTreeController.h"
 @interface FamilyLineController ()
 
 @property(nonatomic,strong)UIScrollView  * scView;;
@@ -32,7 +33,36 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.backImage];
     [self.view addSubview:self.scView];
-    [self resolveData];
+    [self refreshPostData];
+    
+    UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);
+    [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];
+    button.layer.cornerRadius =15.f;
+    button.layer.masksToBounds=YES;
+    [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+-(void)click
+{
+    FamilyTreeController * fvc =[FamilyTreeController new];
+    fvc.model=self.model;
+    [self.navigationController pushViewController:fvc animated:YES];
+}
+
+-(void)refreshPostData
+{
+    
+    NSDictionary * param =@{@"jzId":self.model.id,@"spouseId":@"1",@"firstGeneration":@"1"};
+    [RequestHelp POST:JS_SELECT_ZPLIST_URL parameters:param success:^(id result) {
+        DLog(@"%@",result);
+        self.dataAry =[NSArray yy_modelArrayWithClass:[FamilyTreeModel class] json:result];
+        if (self.dataAry.count) {
+              [self resolveData];
+        }
+    } failure:^(NSError *error) {
+       
+    }];
 }
 
 -(UIImageView *)backImage

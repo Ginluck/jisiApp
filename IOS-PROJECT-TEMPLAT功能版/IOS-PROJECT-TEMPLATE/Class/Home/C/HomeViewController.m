@@ -32,6 +32,7 @@
     [self addNavigationItemWithImageName:@"音乐图标" itemType:kNavigationItemTypeLeft action:@selector(soundClick)];
     [self.view addSubview:self.tableView];
     [self regisNib];
+    [self postDate];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self postDate];
     }];
@@ -43,7 +44,6 @@
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);
     [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];
-    button.backgroundColor =[UIColor whiteColor];
     button.layer.cornerRadius =15.f;
     button.layer.masksToBounds=YES;
     [button addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
@@ -179,12 +179,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CitangListModel * model =self.dataAry[indexPath.row];
-    WorshipController * jvc  =[WorshipController new];
-    jvc.model =model;
-    jvc.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:jvc animated:YES];
-    
+    if (self.dataAry.count) {
+        CitangListModel * model =self.dataAry[indexPath.row];
+        WorshipController * jvc  =[WorshipController new];
+        jvc.model =model;
+        jvc.hidesBottomBarWhenPushed=YES;
+        [self.navigationController pushViewController:jvc animated:YES];
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -252,6 +253,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
-    [self postDate];
+   
 }
 @end

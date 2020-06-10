@@ -37,7 +37,6 @@
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);
     [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];
-    button.backgroundColor =[UIColor whiteColor];
     button.layer.cornerRadius =15.f;
     button.layer.masksToBounds=YES;
     [button addTarget:self action:@selector(createFamily) forControlEvents:UIControlEventTouchUpInside];

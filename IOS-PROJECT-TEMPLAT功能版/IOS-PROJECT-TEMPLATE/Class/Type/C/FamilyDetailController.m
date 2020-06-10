@@ -12,8 +12,11 @@
 #import "JYEqualCellSpaceFlowLayout.h"
 #import "JisiProController.h"
 #import "FamilyTreeController.h"
+#import "CitangListModel.h"
+#import "WorshipController.h"
+#import "FamilyLineController.h"
 @interface FamilyDetailController ()
-<UICollectionViewDataSource,UICollectionViewDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,HeaderViewDelegate>
+<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,HeaderViewDelegate>
 
 @property(nonatomic,strong)UICollectionView *myCollectionView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -47,13 +50,17 @@
 {
     if (button.tag ==10)
     {
-        FamilyTreeController * fvc =[FamilyTreeController new];
+        FamilyLineController * fvc =[FamilyLineController new];
         fvc.model=self.model;
         [self.navigationController pushViewController:fvc animated:YES];
     }
     else
     {
-        
+        WorshipController * WVC =[WorshipController new];
+        CitangListModel  *MOdel =[CitangListModel new];
+        MOdel.id =self.model.ctId;
+        WVC.model =MOdel;
+        [self.navigationController pushViewController:WVC animated:YES];
     }
 }
 

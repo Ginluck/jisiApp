@@ -37,7 +37,7 @@
     }
     self.JPCount.text =[NSString stringWithFormat:@"%ld",(long)value];
     self.JPPrice.text =[NSString stringWithFormat:@"%ld",[_model.price integerValue]*value];
-    self.JPTime.text =[NSString stringWithFormat:@"时间:%ld小时",[_model.useLength integerValue] * value];
+    self.JPTime.text =[NSString stringWithFormat:@"时间:%ld天",[_model.useLength integerValue] * value];
     self.JPTimeStr=[NSString stringWithFormat:@"%ld",[_model.useLength integerValue] * value];
 }
 
@@ -64,7 +64,7 @@
     [self.JPImage sd_setImageWithURL:[NSURL URLWithString:_model.imgUrl]];
     self.JPName.text =_model.name;
     self.JPPrice.text =_model.price;
-    self.JPTime.text =[NSString stringWithFormat:@"时间:%@小时",_model.useLength];
+    self.JPTime.text =[NSString stringWithFormat:@"时间:%@天",_model.useLength];
     self.JPYuYi.text =[NSString stringWithFormat:@"寓意:%@",_model.moral];
     self.JPTimeStr =_model.useLength;
     

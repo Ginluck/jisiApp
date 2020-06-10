@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"族谱"];
-    [self addNavigationItemWithTitle:@"关系图" itemType:kNavigationItemTypeRight action:@selector(llook)];
     [self.view addSubview:self.tableView];
     [self regisNib];
     [self postDate];
@@ -42,12 +41,7 @@
 //    }];
     // Do any additional setup after loading the view from its nib.
 }
--(void)llook
-{
-    FamilyLineController * fvc =[FamilyLineController new];
-    fvc.dataAry =self.dataAry;
-    [self.navigationController pushViewController:fvc animated:YES];
-}
+
 -(UITableView *)tableView
 {
     if (!_tableView)
@@ -210,7 +204,7 @@
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {
                                                                       //响应事件
-                                                                      NSDictionary * param =@{@"id":member.id,@"deleteStatus":@"2"};
+                                                                      NSDictionary * param =@{@"id":member.id,@"deleteStatus":@"2",@"jzId":member.jzId};
                                                                       [RequestHelp POST:JS_UPDATE_MEMBER_URL parameters:param success:^(id result) {
                                                                           ShowMessage(@"删除成功");
                                                                           [self postDate];

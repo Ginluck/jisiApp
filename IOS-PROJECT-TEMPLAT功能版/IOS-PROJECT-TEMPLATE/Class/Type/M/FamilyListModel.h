@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * pcaName;
 @property(nonatomic,strong)NSString * lat;
 @property(nonatomic,strong)NSString * lon;
-
+@property(nonatomic,strong)NSString * ctId;
 @property(nonatomic,strong)NSString * isAdmin;
 @end
 

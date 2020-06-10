@@ -106,7 +106,7 @@
                                 <constraint firstAttribute="height" constant="65" id="fVG-PR-haS"/>
                                 <constraint firstAttribute="width" constant="65" id="rpV-EU-EaH"/>
                             </constraints>
-                            <state key="normal" title="Button" image="加号"/>
+                            <state key="normal" title="Button" image="add"/>
                             <connections>
                                 <action selector="chooseLogo:" destination="-1" eventType="touchUpInside" id="pk4-Bc-hZZ"/>
                             </connections>
@@ -214,7 +214,7 @@
         </view>
     </objects>
     <resources>
-        <image name="加号" width="150" height="150"/>
+        <image name="add" width="200" height="200"/>
         <image name="通用背景" width="1080" height="1557"/>
     </resources>
 </document>

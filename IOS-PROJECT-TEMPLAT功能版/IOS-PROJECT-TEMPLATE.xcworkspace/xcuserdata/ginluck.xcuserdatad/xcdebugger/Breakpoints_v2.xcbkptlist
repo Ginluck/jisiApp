@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Type/C/MemberDetailController.m"
-            timestampString = "612861216.496416"
+            timestampString = "613387391.474777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "265"
@@ -68,12 +68,12 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "613019276.3901581"
+                  timestampString = "613454245.73106"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "4766">
+                  offsetFromSymbolStart = "4208">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -83,12 +83,12 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "613019276.392518"
+                  timestampString = "613454245.735235"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -98,14 +98,30 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "613019276.396728"
+                  timestampString = "613454245.7388099"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
                   endingLineNumber = "168"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-PROJECT-TEMPLATE/Utilites/HUDManager/RequestHelp.m"
+            timestampString = "613032403.021955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "+POST:parameters:success:failure:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
