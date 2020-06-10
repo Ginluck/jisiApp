@@ -13,20 +13,26 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.contentView.backgroundColor =K_Prokect_MainColor;
 }
 
 -(void)setCell:(NSArray *)list row:(NSInteger)row
 {
-  
+    for (UIView * view  in self.contentView.subviews) {
+        [view removeFromSuperview];
+    }
+    
     UIScrollView * scroll =[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Width/4+35)];
     scroll.contentSize =CGSizeMake(Screen_Width/4*list.count+20, 0);
     scroll.contentOffset =CGPointMake(0, 0);
     scroll.showsHorizontalScrollIndicator=NO;
     [self.contentView addSubview:scroll];
     
-    UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width/4*list.count+20,  Screen_Width/4+35)];
-    image.image =KImageNamed(@"木材");
-    [scroll addSubview:image];
+
+    
+//    UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width/4*list.count+20,  Screen_Width/4+35)];
+//    image.image =KImageNamed(@"木材");
+//    [scroll addSubview:image];
     
     for (int i=0; i<list.count; i++)
     {

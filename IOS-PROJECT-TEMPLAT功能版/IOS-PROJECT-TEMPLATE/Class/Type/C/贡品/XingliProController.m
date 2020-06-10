@@ -25,14 +25,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     [self regisNib];
-    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self postDate];
-    }];
-    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        self.page = self.page + 1;
-        [self refreshPostData];
-        
-    }];
+    [self postDate];
     //     Do any additional setup after loading the view from its nib.
 }
 -(void)JPCellClick:(JPButton*)button
@@ -72,6 +65,9 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-K_NaviHeight-40) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
+        imageV.image =KImageNamed(@"通用背景");
+        _tableView.backgroundView =imageV;
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;
         _tableView.backgroundColor =kBGViewCOLOR;
@@ -184,7 +180,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
-    [self postDate];
 }
 
 @end

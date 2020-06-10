@@ -76,7 +76,7 @@
 -(void)TGClick
 {
     if ([self.model.state isEqualToString:@"3"]) {
-        [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"1",@"zpId":self.model.zp_id,@"isSh":@"0"} success:^(id result) {
+        [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"4",@"zpId":self.model.zp_id,@"isSh":@"0"} success:^(id result) {
                ShowMessage(@"操作成功");
                [self.navigationController popViewControllerAnimated:YES];
            } failure:^(NSError *error) {

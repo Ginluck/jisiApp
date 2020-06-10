@@ -28,7 +28,7 @@
     self.tabedSlideView.tabItemSelectedColor = [UIColor blackColor];
     //下面线颜色
     self.tabedSlideView.tabbarTrackColor = K_Prokect_MainColor;
-    self.tabedSlideView.tabbarBackgroundImage = [UIImage imageNamed:@"木材"];
+    self.tabedSlideView.tabbarBackgroundImage =[self createImageWithColor:K_Prokect_MainColor];
     //距离下面多少
     self.tabedSlideView.tabbarBottomSpacing = 0;
     
@@ -45,6 +45,18 @@
     
     //         [self addNavigationItemWithImageName:@"backblack" itemType:kNavigationItemTypeLeft action:@selector(backAction)];
     //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:ImageNamed(@"backblack") style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+}
+- (UIImage *)createImageWithColor: (UIColor *)color;
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 - (NSInteger)numberOfTabsInDLTabedSlideView:(DLTabedSlideView *)sender{
