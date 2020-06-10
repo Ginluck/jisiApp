@@ -150,7 +150,7 @@
 {
     UserModel * model =[[UserManager shareInstance]getUser];
     NSDictionary * param ;
-    if ([self.TypeStr isEqualToString:@"1"]) {
+    if ([model.patriarch isEqualToString:@"1"]&&[self.TypeStr isEqualToString:@"1"]) { 
         param =@{@"jzId":model.jzId,@"pageNum":@(self.page),@"pageRow":@"10"};
     }else
     {

@@ -81,7 +81,7 @@
        
        NumberView.layer.shadowRadius = 3.0;
        
-       NumberView.layer.cornerRadius = 30.0;
+       NumberView.layer.cornerRadius = 30.0*Kscale;
        
        NumberView.clipsToBounds = NO;
 }
@@ -97,7 +97,7 @@
        
        PwdView.layer.shadowRadius = 3.0;
        
-       PwdView.layer.cornerRadius = 30.0;
+       PwdView.layer.cornerRadius = 30.0*Kscale;
        
        PwdView.clipsToBounds = NO;
 }
@@ -113,7 +113,7 @@
        
        CodeView.layer.shadowRadius = 3.0;
        
-       CodeView.layer.cornerRadius = 30.0;
+       CodeView.layer.cornerRadius = 30.0*Kscale;
        
        CodeView.clipsToBounds = NO;
 }
@@ -123,7 +123,7 @@
           
        
           
-          LoginBtn.layer.cornerRadius = 30.0;
+          LoginBtn.layer.cornerRadius = 30.0*Kscale;
           
          
 }

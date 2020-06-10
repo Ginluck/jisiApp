@@ -63,13 +63,23 @@
         [RequestHelp POST:registers_url parameters:@{@"userPhone":model.userPhone,@"userId":model.id,@"validCode":self.CodeTF.text} success:^(id result){
                         DLog(@"%@",result);
                          ShowMessage(@"绑定成功");
-                         for(UIViewController*temp in self.navigationController.viewControllers) {
+//                         for(UIViewController*temp in self.navigationController.viewControllers) {
+//
+//                           if([temp isKindOfClass:[IDSafeViewController class]]) {
+//
+//                           [self.navigationController popToViewController:temp animated:YES];  }
+//
+//                           }
+            UserModel * model =[[UserManager shareInstance]getUser];
+               [RequestHelp POST:exit_url parameters:@{@"userPhone":model.userPhone} success:^(id result){
+                  DLog(@"%@",result);
+                   [[UserManager shareInstance]removeUserId];
+                   [[UserManager shareInstance]removeToken];
+                   [[UserManager shareInstance]removeUser];
+                   [ViewControllerManager showLoginViewController];
+               } failure:^(NSError *error) {
 
-                           if([temp isKindOfClass:[IDSafeViewController class]]) {
-
-                           [self.navigationController popToViewController:temp animated:YES];  }
-
-                           }
+              }];
                      } failure:^(NSError *error) {
 
                     }];

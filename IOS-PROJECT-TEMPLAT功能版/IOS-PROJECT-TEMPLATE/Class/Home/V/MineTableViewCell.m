@@ -30,7 +30,7 @@
        }];
     [RequestHelp POST:appSelectYuEById_URL parameters:@{} success:^(id result) {
         MKLog(@"%@",result);
-         self.GoldLab.text=result[@"returnData"];
+         self.GoldLab.text=[NSString stringWithFormat:@"纪念币：%@",result[@"returnData"]];
     } failure:^(NSError *error) {
         
     }];

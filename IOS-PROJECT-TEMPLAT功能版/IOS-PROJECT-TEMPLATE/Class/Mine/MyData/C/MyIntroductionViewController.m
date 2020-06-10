@@ -34,9 +34,22 @@
     self.TxtView.placeholder=@"请填写你的简介";
     self.TxtView.placeholderColor=[UIColor lightGrayColor];
     [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick)];
+    [self requsetData];
+}
+-(void)requsetData
+{
+    UserModel * model =[[UserManager shareInstance]getUser];
+       NSDictionary* param_dic =@{@"userPhone":model.userPhone};
+       [RequestHelp POST:SELECT_USERINFO_url parameters:param_dic success:^(id result) {
+           MKLog(@"%@",result);
+           self.TxtView.text=result[@"introduce"];
+       } failure:^(NSError *error) {
+           
+       }];
 }
 -(void)SubmitClick
 {
+    UserModel * model =[[UserManager shareInstance]getUser];
     NSString *str = self.TxtView.text;
     str = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@"\r" withString:@""];
@@ -47,15 +60,16 @@
         return;
     }
 //    WS(weakSelf);
-//    ShowMaskStatus(@"提交中...");
-//    [RequestHelp POST:OTHER_COMPLAINT_URL parameters:@{@"content":self.TxtView.text,@"mobile":self.PhoneTF.text} success:^(id result) {
-//        DismissHud();
-      ShowMessage(@"提交成功");
-//
-//        [weakSelf.navigationController popViewControllerAnimated:YES];
-//    } failure:^(NSError *error) {
-//        ShowMessage(@"提交失败");
-//    }];
+    ShowMaskStatus(@"提交中...");
+    NSDictionary* param_dic =@{@"userPhone":model.userPhone,@"introduce":self.TxtView.text};
+             [RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
+                 MKLog(@"%@",result);
+                 ShowMessage(@"修改成功");
+                 model.introduce =self.TxtView.text;
+                  [[UserManager shareInstance]saveUser:model];
+             } failure:^(NSError *error) {
+                 
+             }];
 }
 -(void)setBgView:(UIView *)BgView
 {

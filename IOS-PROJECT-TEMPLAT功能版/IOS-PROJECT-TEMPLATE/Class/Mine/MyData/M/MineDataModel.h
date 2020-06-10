@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong)NSString *userPhone;
 @property (nonatomic , strong)NSString *realName;
 @property (nonatomic , strong)NSString *address;
-
+@property (nonatomic , strong)NSString *introduce;
 @property (nonatomic , strong)NSString *aeskey;
 @property (nonatomic , strong)NSString *createTime;
 @property (nonatomic , strong)NSString *deleteStatus;
