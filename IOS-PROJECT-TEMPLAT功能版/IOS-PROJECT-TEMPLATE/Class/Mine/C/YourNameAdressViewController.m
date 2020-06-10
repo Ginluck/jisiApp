@@ -11,11 +11,13 @@
 #import "SheZhiNameViewController.h"
 #import "AddrChooseController.h"
 #import "MineDataModel.h"
+#import "UserTextView.h"
 @interface YourNameAdressViewController ()
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
 @property(nonatomic,strong)UIView *BackGroundView;
 @property(nonatomic,strong)NSString *HeadImgStr;
+@property (strong, nonatomic)  UserTextView *TxtView;
 @end
 
 @implementation YourNameAdressViewController
@@ -28,11 +30,18 @@
     [super viewDidLoad];
     self.KNavHeight.constant=kNavagationBarH;
     [self.KNavView setNeedsLayout];
+    [self AllocTextView];
     self.AddressLab.userInteractionEnabled=YES;
     [self addNavigationTitleView:@"个人资料"];
-    [self addNavigationItemWithTitle:@"提交" itemType:kNavigationItemTypeRight action:@selector(SubmitClick2)];
     [self requsetData];
     // Do any additional setup after loading the view from its nib.
+}
+-(void)AllocTextView
+{
+     _TxtView =[[UserTextView alloc]initWithFrame:CGRectMake(16, 290, Screen_Width-32, 200)];
+    self.TxtView.placeholder=@"写点什么吧...";
+    self.TxtView.placeholderColor=[UIColor lightGrayColor];
+    [self.BgView addSubview:self.TxtView];
 }
 -(UIImagePickerController *)imagePickerVC
 {
@@ -55,6 +64,7 @@
             self.NumberLab.text=model.userPhone;
             self.Namelab.text=model.realName;
             self.AddressLab.text=model.address;
+            self.TxtView.text=model.introduce;
            self.HeadImgStr=model.headAddress;
            if (model.realName ==nil ||model.realName ==NULL||model.realName.length==0 ) {
                self.Namelab.text=@"";
@@ -120,12 +130,7 @@
                 [self.navigationController pushViewController:avc animated:YES];
             }
                 break;
-            case 103:
-            {
-                MyIntroductionViewController *SZNVC=[MyIntroductionViewController new];
-                [self.navigationController pushViewController:SZNVC animated:YES];
-            }
-                break;
+           
             
         default:
             break;
@@ -220,7 +225,7 @@
         DismissHud();
     }];
 }
-- (void)SubmitClick2{
+- (IBAction)SaveClick:(id)sender {
      UserModel * model =[[UserManager shareInstance]getUser];
     if (self.Namelab.text.length==0) {
         ShowMessage(@"请填写姓名");
@@ -230,19 +235,30 @@
            ShowMessage(@"请选择地址");
            return;
        }
-    NSDictionary* param_dic =@{@"userPhone":model.userPhone,@"realName":self.Namelab.text,@"address":self.AddressLab.text,@"headAddress":self.HeadImgStr};
+    NSDictionary* param_dic =@{@"userPhone":model.userPhone,@"realName":self.Namelab.text,@"address":self.AddressLab.text,@"headAddress":self.HeadImgStr,@"introduce":self.TxtView.text};
           [RequestHelp POST:UPDATE_ZJ_url parameters:param_dic success:^(id result) {
               MKLog(@"%@",result);
               ShowMessage(@"提交成功");
               model.realName=self.Namelab.text;
               model.address=self.AddressLab.text;
               model.headAddress=self.HeadImgStr;
+              model.introduce=self.TxtView.text;
               [[UserManager shareInstance]saveUser:model];
               [ViewControllerManager showMainViewController];
               [self.navigationController dismissViewControllerAnimated:NO completion:nil];
           } failure:^(NSError *error) {
               
           }];
+}
+-(void)setSaveBtn:(UIButton *)SaveBtn
+{
+          SaveBtn.layer.masksToBounds=YES;
+          
+       
+          
+          SaveBtn.layer.cornerRadius = 30.0*Kscale;
+          
+         
 }
 /*
 #pragma mark - Navigation

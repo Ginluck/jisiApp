@@ -51,13 +51,13 @@
             self.NumberLab.text=model.userPhone;
             self.Namelab.text=model.realName;
             self.AddressLab.text=model.address;
-           self.HeadImgStr=model.headAddress;
+            self.HeadImgStr=model.headAddress;
        } failure:^(NSError *error) {
            
        }];
 }
 - (IBAction)Click:(UIButton *)sender {
-     WS(weakSelf);
+//     WS(weakSelf);
     switch (sender.tag) {
         case 100:
         {UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];

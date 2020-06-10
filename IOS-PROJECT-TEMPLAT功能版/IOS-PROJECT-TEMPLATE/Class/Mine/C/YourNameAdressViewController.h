@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImg;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *KNavHeight;
 @property (weak, nonatomic) IBOutlet UIView *KNavView;
+@property (weak, nonatomic) IBOutlet UIView *BgView;
+@property (weak, nonatomic) IBOutlet UIButton *SaveBtn;
 
 @end
 

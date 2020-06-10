@@ -95,11 +95,15 @@
           
        
           
-          LoginBtn.layer.cornerRadius = 30.0;
+          LoginBtn.layer.cornerRadius = 30.0*Kscale;
           
          
 }
 - (IBAction)LoginClick:(id)sender {
+    if (self.PwdTF.text.length==0) {
+        ShowMessage(@"请输入密码");
+        return;
+    }
     NSDictionary * dic = @{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]]};
     [RequestHelp POST:login_url parameters:dic success:^(id result) {
 //        DLog(@"%@",result);
