@@ -8,7 +8,6 @@
 //
 
 #import "PersonCenterController.h"
-#import "MineTableViewCell.h"
 #import "GongFengRecordViewController.h"
 #import "SetHeadViewController.h"
 #import "RZMessageViewController.h"
@@ -47,6 +46,12 @@
            MKLog(@"%@",result);
          MineDataModel *model =[MineDataModel yy_modelWithJSON:result];
            [self.MHView setModel:model];
+       } failure:^(NSError *error) {
+           
+       }];
+    [RequestHelp POST:appSelectYuEById_URL parameters:@{} success:^(id result) {
+           MKLog(@"%@",result);
+        self.MHView.GoldLab.text=[NSString stringWithFormat:@"纪念币：%@",result];
        } failure:^(NSError *error) {
            
        }];

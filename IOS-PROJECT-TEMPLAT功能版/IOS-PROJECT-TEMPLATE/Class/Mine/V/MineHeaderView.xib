@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYe-Q9-eW0">
-                    <rect key="frame" x="57" y="178" width="300" height="300"/>
+                    <rect key="frame" x="57" y="158" width="300" height="300"/>
                     <subviews>
                         <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-qB-AAU">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
@@ -347,7 +345,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xk5-FW-iEM">
-                    <rect key="frame" x="0.0" y="28" width="414" height="140"/>
+                    <rect key="frame" x="0.0" y="8" width="414" height="140"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="临时占位图" translatesAutoresizingMaskIntoConstraints="NO" id="1AD-bw-Tet">
                             <rect key="frame" x="177" y="15" width="60" height="60"/>
@@ -362,7 +360,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-vS-aGT">
-                            <rect key="frame" x="188" y="85" width="38" height="18"/>
+                            <rect key="frame" x="188" y="83" width="38" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="6HR-DQ-drO"/>
                             </constraints>
@@ -371,7 +369,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiC-o3-0aa">
-                            <rect key="frame" x="190.66666666666666" y="113" width="33" height="15"/>
+                            <rect key="frame" x="190.66666666666666" y="120" width="33" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="VHK-mu-EEb"/>
                             </constraints>
@@ -379,8 +377,17 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="纪念币：0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-dn-bL9">
+                            <rect key="frame" x="178.66666666666666" y="103" width="57" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="MYU-A1-Fil"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hlx-Zg-g8P">
-                            <rect key="frame" x="234" y="85" width="15" height="18"/>
+                            <rect key="frame" x="234" y="83" width="15" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="15" id="bRJ-e1-XWQ"/>
                                 <constraint firstAttribute="height" constant="18" id="s7R-nm-ttW"/>
@@ -393,15 +400,16 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="140" id="2PX-xu-yzF"/>
+                        <constraint firstItem="qiC-o3-0aa" firstAttribute="top" secondItem="gGN-dn-bL9" secondAttribute="bottom" constant="2" id="8FA-uq-UP0"/>
+                        <constraint firstItem="gGN-dn-bL9" firstAttribute="centerX" secondItem="xk5-FW-iEM" secondAttribute="centerX" id="Gbn-Bf-5MX"/>
                         <constraint firstItem="JSu-l1-4WA" firstAttribute="leading" secondItem="xk5-FW-iEM" secondAttribute="leading" constant="60" id="IuS-Ka-Ic7"/>
                         <constraint firstItem="qiC-o3-0aa" firstAttribute="centerX" secondItem="1AD-bw-Tet" secondAttribute="centerX" id="N3y-r1-Jom"/>
-                        <constraint firstItem="qiC-o3-0aa" firstAttribute="top" secondItem="DvE-vS-aGT" secondAttribute="bottom" constant="10" id="Ujh-6e-zdw"/>
                         <constraint firstAttribute="bottom" secondItem="JSu-l1-4WA" secondAttribute="bottom" id="XAT-uL-gCp"/>
                         <constraint firstAttribute="trailing" secondItem="JSu-l1-4WA" secondAttribute="trailing" constant="60" id="XMo-OC-pfK"/>
                         <constraint firstItem="Hlx-Zg-g8P" firstAttribute="centerY" secondItem="DvE-vS-aGT" secondAttribute="centerY" id="XdV-tE-zcZ"/>
-                        <constraint firstItem="qiC-o3-0aa" firstAttribute="top" secondItem="DvE-vS-aGT" secondAttribute="bottom" constant="10" id="YRz-N0-TyG"/>
-                        <constraint firstItem="DvE-vS-aGT" firstAttribute="top" secondItem="1AD-bw-Tet" secondAttribute="bottom" constant="10" id="ZVi-vy-OXy"/>
+                        <constraint firstItem="DvE-vS-aGT" firstAttribute="top" secondItem="1AD-bw-Tet" secondAttribute="bottom" constant="8" id="ZVi-vy-OXy"/>
                         <constraint firstItem="Hlx-Zg-g8P" firstAttribute="leading" secondItem="DvE-vS-aGT" secondAttribute="trailing" constant="8" id="cue-tY-vWS"/>
+                        <constraint firstItem="gGN-dn-bL9" firstAttribute="top" secondItem="DvE-vS-aGT" secondAttribute="bottom" constant="2" id="i7f-lc-L9w"/>
                         <constraint firstItem="1AD-bw-Tet" firstAttribute="centerX" secondItem="xk5-FW-iEM" secondAttribute="centerX" id="pqh-5I-a8z"/>
                         <constraint firstItem="1AD-bw-Tet" firstAttribute="top" secondItem="xk5-FW-iEM" secondAttribute="top" constant="15" id="qtL-yl-Jcf"/>
                         <constraint firstItem="DvE-vS-aGT" firstAttribute="centerX" secondItem="1AD-bw-Tet" secondAttribute="centerX" id="uVl-wG-FyE"/>
@@ -409,7 +417,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdm-en-vGz">
-                    <rect key="frame" x="16" y="486" width="382" height="50"/>
+                    <rect key="frame" x="16" y="466" width="382" height="50"/>
                     <color key="backgroundColor" red="0.36862745099999999" green="0.066666666669999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="pDu-4X-SBj"/>
@@ -438,6 +446,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="GoldLab" destination="gGN-dn-bL9" id="sUt-Tg-86y"/>
                 <outlet property="HeadImg" destination="1AD-bw-Tet" id="NqV-Js-sNU"/>
                 <outlet property="HeaderBtn" destination="JSu-l1-4WA" id="zLJ-TA-MiI"/>
                 <outlet property="LoginOutBtn" destination="Mdm-en-vGz" id="Lnn-bb-2do"/>
@@ -448,7 +457,7 @@
         </view>
     </objects>
     <resources>
-        <image name="临时占位图" width="83" height="87"/>
+        <image name="临时占位图" width="83" height="87.666664123535156"/>
         <image name="供奉记录" width="66" height="80"/>
         <image name="关于祭祖平台图标" width="50" height="52"/>
         <image name="意见反馈图标" width="50" height="52"/>

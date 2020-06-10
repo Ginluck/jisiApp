@@ -26,7 +26,13 @@
     if (textField.text.length > 16) {
            ShowMessage(@"密码不能超过16位");
           textField.text=self.Pwdstr;
-       }else
+       }
+    else if (textField.text.length < 8)
+       {
+           ShowMessage(@"密码不能小于8位");
+            textField.text=self.Pwdstr;
+       }
+    else
        {
            self.Pwdstr=textField.text;
        }

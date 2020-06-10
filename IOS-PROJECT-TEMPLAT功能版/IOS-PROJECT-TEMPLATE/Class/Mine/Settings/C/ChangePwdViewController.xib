@@ -71,7 +71,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0j-cK-UxQ">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请设置8—16密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0j-cK-UxQ">
                             <rect key="frame" x="106" y="14.5" width="284" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="LN8-ro-0pO"/>
