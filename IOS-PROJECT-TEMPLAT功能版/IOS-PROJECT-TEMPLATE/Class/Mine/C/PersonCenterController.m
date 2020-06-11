@@ -51,7 +51,7 @@
        }];
     [RequestHelp POST:appSelectYuEById_URL parameters:@{} success:^(id result) {
            MKLog(@"%@",result);
-        self.MHView.GoldLab.text=[NSString stringWithFormat:@"纪念币：%@",result];
+        [self.MHView.GoldBtn setTitle:[NSString stringWithFormat:@"纪念币：%@",result] forState:UIControlStateNormal];
        } failure:^(NSError *error) {
            
        }];
@@ -64,6 +64,7 @@
         _MHView.frame =CGRectMake(0, kNavagationBarH, Screen_Width, 550);
         [_MHView.HeaderBtn addTarget:self action:@selector(HeaderClick) forControlEvents:UIControlEventTouchUpInside];
            [_MHView.LoginOutBtn addTarget:self action:@selector(logOut) forControlEvents:UIControlEventTouchUpInside];
+         [_MHView.GoldBtn addTarget:self action:@selector(GoldClick) forControlEvents:UIControlEventTouchUpInside];
           _MHView.VCClick = ^(NSInteger index) {
               [weakSelf BtnViewClick:index];
           };
@@ -200,6 +201,10 @@
     } failure:^(NSError *error) {
 
    }];
+}
+-(void)GoldClick
+{
+    
 }
 /*
 #pragma mark - Navigation
