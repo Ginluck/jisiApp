@@ -16,6 +16,7 @@ typedef void(^ViewClickBlock)(NSInteger index);
 @property (weak, nonatomic) IBOutlet UILabel *PhoneLab;
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImg;
 @property (weak, nonatomic) IBOutlet UIButton *LoginOutBtn;
+@property (weak, nonatomic) IBOutlet UIButton *GoldBtn;
 @property(nonatomic,strong)ViewClickBlock VCClick;
 @property(nonatomic,strong)MineDataModel *model;
 @end

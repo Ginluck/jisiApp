@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong)NSString *createTime;
 @property (nonatomic , strong)NSString *deleteStatus;
 @property (nonatomic , strong)NSString *email;
+@property (nonatomic , strong)NSString *gold;
 @end
 
 NS_ASSUME_NONNULL_END
