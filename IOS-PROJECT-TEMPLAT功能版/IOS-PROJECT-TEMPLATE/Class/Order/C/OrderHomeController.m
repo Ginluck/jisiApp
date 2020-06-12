@@ -138,6 +138,7 @@
             pinView.canShowCallout = YES;
             pinView.selected=YES;
             pinView.enabled =YES;
+            pinView.image =KImageNamed(@"dingwei");
         }
         
         return pinView;

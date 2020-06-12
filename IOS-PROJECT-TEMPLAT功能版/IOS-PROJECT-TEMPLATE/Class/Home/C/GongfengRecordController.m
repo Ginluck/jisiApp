@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    [self addNavigationTitleView:@"祠堂供奉记录"];
+    [self addNavigationTitleView:@"供奉记录"];
     [self regisNib];
     [self postDate];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{

@@ -168,6 +168,8 @@
 		711B0BB2246946F1009C84DB /* MessageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711B0BB0246946F1009C84DB /* MessageListTableViewCell.xib */; };
 		711B0BB524694764009C84DB /* SystemMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711B0BB424694764009C84DB /* SystemMessageController.m */; };
 		711B0BB8246947A6009C84DB /* NSString+Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = 711B0BB6246947A6009C84DB /* NSString+Fit.m */; };
+		711F4172249205A100575228 /* MoneyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F4170249205A100575228 /* MoneyRecordViewController.m */; };
+		711F4173249205A100575228 /* MoneyRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711F4171249205A100575228 /* MoneyRecordViewController.xib */; };
 		7125004F22DC68120053B3EA /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125004E22DC68120053B3EA /* libAFNetworking.a */; };
 		7125005122DC68120053B3EA /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005022DC68120053B3EA /* libDTCoreText.a */; };
 		7125005322DC68120053B3EA /* libDTFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005222DC68120053B3EA /* libDTFoundation.a */; };
@@ -972,6 +974,9 @@
 		711B0BB424694764009C84DB /* SystemMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMessageController.m; sourceTree = "<group>"; };
 		711B0BB6246947A6009C84DB /* NSString+Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Fit.m"; sourceTree = "<group>"; };
 		711B0BB7246947A6009C84DB /* NSString+Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Fit.h"; sourceTree = "<group>"; };
+		711F416F249205A100575228 /* MoneyRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyRecordViewController.h; sourceTree = "<group>"; };
+		711F4170249205A100575228 /* MoneyRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyRecordViewController.m; sourceTree = "<group>"; };
+		711F4171249205A100575228 /* MoneyRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoneyRecordViewController.xib; sourceTree = "<group>"; };
 		7125004E22DC68120053B3EA /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125005022DC68120053B3EA /* libDTCoreText.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDTCoreText.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125005222DC68120053B3EA /* libDTFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDTFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3152,9 +3157,14 @@
 				1805FA002484AAE2009B5652 /* ContactCustomerViewController.h */,
 				1805FA012484AAE2009B5652 /* ContactCustomerViewController.m */,
 				1805FA022484AAE2009B5652 /* ContactCustomerViewController.xib */,
+
 				1864E40524935DCC00708D52 /* FirstTypeHomeViewController.h */,
 				1864E40624935DCC00708D52 /* FirstTypeHomeViewController.m */,
 				1864E40724935DCC00708D52 /* FirstTypeHomeViewController.xib */,
+
+				711F416F249205A100575228 /* MoneyRecordViewController.h */,
+				711F4170249205A100575228 /* MoneyRecordViewController.m */,
+				711F4171249205A100575228 /* MoneyRecordViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3858,6 +3868,7 @@
 				715EEB9E24750DDC009CF31A /* msg_recv_audio01@3x.png in Resources */,
 				715EED5024750E02009CF31A /* recorder_gray@3x.png in Resources */,
 				715EEB5C24750DDC009CF31A /* icon_013_cover.png in Resources */,
+				711F4173249205A100575228 /* MoneyRecordViewController.xib in Resources */,
 				715EED4724750E02009CF31A /* answer@3x.png in Resources */,
 				715EEB6B24750DDC009CF31A /* chatbar_call_blue@2x.png in Resources */,
 				711B0B02246929CE009C84DB /* HomeHeaderView.xib in Resources */,
@@ -4575,6 +4586,7 @@
 				715EEB3B24750DDB009CF31A /* EMMoreFunctionView.m in Sources */,
 				711B0B7A24692B0C009C84DB /* UIColor+PYSearchExtension.m in Sources */,
 				71E55B8A246E658000255230 /* GusetChooseCityView.m in Sources */,
+				711F4172249205A100575228 /* MoneyRecordViewController.m in Sources */,
 				711B0B7F24692B0C009C84DB /* NSBundle+PYSearchExtension.m in Sources */,
 				715EE9C724750D7A009CF31A /* EMMulticastDelegate.m in Sources */,
 				71E55BB1246E65C500255230 /* TravelWebTableViewCell.m in Sources */,
