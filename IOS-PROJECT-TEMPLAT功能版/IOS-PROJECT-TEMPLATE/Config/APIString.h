@@ -108,6 +108,10 @@
 #define JS_BUY_PRO_URL @"appRechargeRecord/addAppRechargeRecord"
 //供奉记录
 #define JS_GONFENG_RECORD_LIST @"appRechargeRecord/selectAppRechargeRecord"
+//快速寻祖
+#define select_LIST_URL @"appJz/select"
+//绑定族谱
+#define update_appZp_URL @"appZp/update"
 
 //祠堂祭品
 #define JS_JIPINPUT_URL @"appRechargeRecord/selectAppJiPin"
