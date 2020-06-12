@@ -17,14 +17,18 @@
 		182D7CC22477DFBD0019DCD3 /* RZMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D7CC12477DFBD0019DCD3 /* RZMessageModel.m */; };
 		182D7CC62477E2B90019DCD3 /* RZLookReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D7CC42477E2B90019DCD3 /* RZLookReasonViewController.m */; };
 		182D7CC72477E2B90019DCD3 /* RZLookReasonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D7CC52477E2B90019DCD3 /* RZLookReasonViewController.xib */; };
-		183015D1247E17AE00B43F64 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015D0247E17AE00B43F64 /* MineHeaderView.m */; };
-		183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015D2247E17C300B43F64 /* MineHeaderView.xib */; };
 		183015D72480F75700B43F64 /* JZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015D52480F75700B43F64 /* JZMessageViewController.m */; };
 		183015D82480F75700B43F64 /* JZMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015D62480F75700B43F64 /* JZMessageViewController.xib */; };
 		183015DC2481030C00B43F64 /* YourNameAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183015DA2481030C00B43F64 /* YourNameAdressViewController.m */; };
 		183015DD2481030C00B43F64 /* YourNameAdressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */; };
+		1842ACB42490C1B10061AFB2 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1842ACB12490C1B00061AFB2 /* MineHeaderView.xib */; };
+		1842ACB52490C1B10061AFB2 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842ACB22490C1B00061AFB2 /* MineHeaderView.m */; };
 		185EDAD02488CF3300907C9B /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185EDACE2488CF3300907C9B /* ForgetPwdViewController.m */; };
 		185EDAD12488CF3300907C9B /* ForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185EDACF2488CF3300907C9B /* ForgetPwdViewController.xib */; };
+		1864E40824935DCC00708D52 /* FirstTypeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E40624935DCC00708D52 /* FirstTypeHomeViewController.m */; };
+		1864E40924935DCC00708D52 /* FirstTypeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864E40724935DCC00708D52 /* FirstTypeHomeViewController.xib */; };
+		1864E40D24935ECD00708D52 /* FirstTypeHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E40B24935ECD00708D52 /* FirstTypeHomeTableViewCell.m */; };
+		1864E40E24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */; };
 		18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F40324768FEB00B16077 /* MineDataModel.m */; };
 		18F930632477D942007BA7FF /* TeasingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F930602477D941007BA7FF /* TeasingViewController.xib */; };
 		18F930642477D942007BA7FF /* TeasingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F930622477D942007BA7FF /* TeasingViewController.m */; };
@@ -563,8 +567,6 @@
 		715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */; };
 		715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EED7C24765FFA009CF31A /* MessageListModel.m */; };
 		715F3CE424874C3700CC90B2 /* PaiWeiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715F3CE324874C3700CC90B2 /* PaiWeiView.m */; };
-		7185BCF5247E48170028AA75 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF3247E48170028AA75 /* MineHeaderView.m */; };
-		7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCF4247E48170028AA75 /* MineHeaderView.xib */; };
 		7185BCFA247F5C410028AA75 /* AddPersonCitangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */; };
 		7185BCFB247F5C410028AA75 /* AddPersonCitangController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7185BCF9247F5C410028AA75 /* AddPersonCitangController.xib */; };
 		7185BCFF247F62820028AA75 /* AddFamilyCitangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCFD247F62820028AA75 /* AddFamilyCitangController.m */; };
@@ -704,18 +706,24 @@
 		182D7CC32477E2B90019DCD3 /* RZLookReasonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZLookReasonViewController.h; sourceTree = "<group>"; };
 		182D7CC42477E2B90019DCD3 /* RZLookReasonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZLookReasonViewController.m; sourceTree = "<group>"; };
 		182D7CC52477E2B90019DCD3 /* RZLookReasonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RZLookReasonViewController.xib; sourceTree = "<group>"; };
-		183015CF247E17AE00B43F64 /* MineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
-		183015D0247E17AE00B43F64 /* MineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
-		183015D2247E17C300B43F64 /* MineHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
 		183015D42480F75700B43F64 /* JZMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZMessageViewController.h; sourceTree = "<group>"; };
 		183015D52480F75700B43F64 /* JZMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZMessageViewController.m; sourceTree = "<group>"; };
 		183015D62480F75700B43F64 /* JZMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JZMessageViewController.xib; sourceTree = "<group>"; };
 		183015D92481030C00B43F64 /* YourNameAdressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourNameAdressViewController.h; sourceTree = "<group>"; };
 		183015DA2481030C00B43F64 /* YourNameAdressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourNameAdressViewController.m; sourceTree = "<group>"; };
 		183015DB2481030C00B43F64 /* YourNameAdressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourNameAdressViewController.xib; sourceTree = "<group>"; };
+		1842ACB12490C1B00061AFB2 /* MineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
+		1842ACB22490C1B00061AFB2 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		1842ACB32490C1B10061AFB2 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
 		185EDACD2488CF3300907C9B /* ForgetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
 		185EDACE2488CF3300907C9B /* ForgetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
 		185EDACF2488CF3300907C9B /* ForgetPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPwdViewController.xib; sourceTree = "<group>"; };
+		1864E40524935DCC00708D52 /* FirstTypeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstTypeHomeViewController.h; sourceTree = "<group>"; };
+		1864E40624935DCC00708D52 /* FirstTypeHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstTypeHomeViewController.m; sourceTree = "<group>"; };
+		1864E40724935DCC00708D52 /* FirstTypeHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTypeHomeViewController.xib; sourceTree = "<group>"; };
+		1864E40A24935ECD00708D52 /* FirstTypeHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstTypeHomeTableViewCell.h; sourceTree = "<group>"; };
+		1864E40B24935ECD00708D52 /* FirstTypeHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstTypeHomeTableViewCell.m; sourceTree = "<group>"; };
+		1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTypeHomeTableViewCell.xib; sourceTree = "<group>"; };
 		18C1F40224768FEB00B16077 /* MineDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
 		18C1F40324768FEB00B16077 /* MineDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		18F930602477D941007BA7FF /* TeasingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeasingViewController.xib; sourceTree = "<group>"; };
@@ -1499,9 +1507,6 @@
 		715EED7C24765FFA009CF31A /* MessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
 		715F3CE224874C3700CC90B2 /* PaiWeiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaiWeiView.h; sourceTree = "<group>"; };
 		715F3CE324874C3700CC90B2 /* PaiWeiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaiWeiView.m; sourceTree = "<group>"; };
-		7185BCF2247E48160028AA75 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
-		7185BCF3247E48170028AA75 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
-		7185BCF4247E48170028AA75 /* MineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
 		7185BCF7247F5C410028AA75 /* AddPersonCitangController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPersonCitangController.h; sourceTree = "<group>"; };
 		7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPersonCitangController.m; sourceTree = "<group>"; };
 		7185BCF9247F5C410028AA75 /* AddPersonCitangController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPersonCitangController.xib; sourceTree = "<group>"; };
@@ -1758,12 +1763,12 @@
 		18C1F4052477CB4D00B16077 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				7185BCF2247E48160028AA75 /* MineHeaderView.h */,
-				7185BCF3247E48170028AA75 /* MineHeaderView.m */,
-				7185BCF4247E48170028AA75 /* MineHeaderView.xib */,
-				183015CF247E17AE00B43F64 /* MineHeaderView.h */,
-				183015D0247E17AE00B43F64 /* MineHeaderView.m */,
-				183015D2247E17C300B43F64 /* MineHeaderView.xib */,
+				1842ACB32490C1B10061AFB2 /* MineHeaderView.h */,
+				1842ACB22490C1B00061AFB2 /* MineHeaderView.m */,
+				1842ACB12490C1B00061AFB2 /* MineHeaderView.xib */,
+				1864E40A24935ECD00708D52 /* FirstTypeHomeTableViewCell.h */,
+				1864E40B24935ECD00708D52 /* FirstTypeHomeTableViewCell.m */,
+				1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -3147,6 +3152,9 @@
 				1805FA002484AAE2009B5652 /* ContactCustomerViewController.h */,
 				1805FA012484AAE2009B5652 /* ContactCustomerViewController.m */,
 				1805FA022484AAE2009B5652 /* ContactCustomerViewController.xib */,
+				1864E40524935DCC00708D52 /* FirstTypeHomeViewController.h */,
+				1864E40624935DCC00708D52 /* FirstTypeHomeViewController.m */,
+				1864E40724935DCC00708D52 /* FirstTypeHomeViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3948,7 +3956,9 @@
 				715EED5824750E02009CF31A /* ring_gray@2x.png in Resources */,
 				715EED2624750E02009CF31A /* animate_00040.png in Resources */,
 				715EEB4324750DDC009CF31A /* icon_002.gif in Resources */,
+				1842ACB42490C1B10061AFB2 /* MineHeaderView.xib in Resources */,
 				715EE99424750D7A009CF31A /* uncheck@3x.png in Resources */,
+				1864E40E24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib in Resources */,
 				7185BCFB247F5C410028AA75 /* AddPersonCitangController.xib in Resources */,
 				715EED3D24750E02009CF31A /* animate_00039.png in Resources */,
 				715EE9CC24750D7A009CF31A /* alert_error@2x.png in Resources */,
@@ -4010,8 +4020,6 @@
 				185EDAD12488CF3300907C9B /* ForgetPwdViewController.xib in Resources */,
 				711B0B7E24692B0C009C84DB /* PYSearch.bundle in Resources */,
 				715EED2B24750E02009CF31A /* animate_00064.png in Resources */,
-				7185BCF6247E48170028AA75 /* MineHeaderView.xib in Resources */,
-				183015D3247E17C300B43F64 /* MineHeaderView.xib in Resources */,
 				711B0AE5246929A7009C84DB /* FamilyCreateController.xib in Resources */,
 				715EEB3624750DDB009CF31A /* pin-red.png in Resources */,
 				715EED0724750E02009CF31A /* animate_00025.png in Resources */,
@@ -4045,6 +4053,7 @@
 				715EEB4924750DDC009CF31A /* icon_022_cover.png in Resources */,
 				715EE9CE24750D7A009CF31A /* alert_default@3x.png in Resources */,
 				715EEB3824750DDB009CF31A /* pin-white.png in Resources */,
+				1864E40924935DCC00708D52 /* FirstTypeHomeViewController.xib in Resources */,
 				715EED3624750E02009CF31A /* animate_00062.png in Resources */,
 				711B0BA424693FA8009C84DB /* GongFengOnewViewController.xib in Resources */,
 				711B0AD624692979009C84DB /* CollectionHeaderView.xib in Resources */,
@@ -4317,9 +4326,11 @@
 				7125FC7E247DFA53006F4B54 /* MemberDetailModel.m in Sources */,
 				715EE9DA24750D7A009CF31A /* EMRealtimeSearch.m in Sources */,
 				715EEB8D24750DDC009CF31A /* EMMsgTextBubbleView.m in Sources */,
+				1864E40824935DCC00708D52 /* FirstTypeHomeViewController.m in Sources */,
 				715EE98F24750D7A009CF31A /* UIViewController+Util.m in Sources */,
 				715EE9C124750D7A009CF31A /* PSTCollectionView.m in Sources */,
 				71E55BE5246E7CDB00255230 /* ZupuHomeCell.m in Sources */,
+				1842ACB52490C1B10061AFB2 /* MineHeaderView.m in Sources */,
 				182D7CBD2477DD200019DCD3 /* RZMessageTableViewCell.m in Sources */,
 				715EEB3C24750DDB009CF31A /* EMReadReceiptMsgViewController.m in Sources */,
 				711B0B03246929CE009C84DB /* JYEqualCellSpaceFlowLayout.m in Sources */,
@@ -4404,6 +4415,7 @@
 				711B0B9524692B38009C84DB /* NSMutableAttributedString+WY_Extension.m in Sources */,
 				715EE9B124750D7A009CF31A /* UIImage+MWPhotoBrowser.m in Sources */,
 				711B0BA724693FA8009C84DB /* GongFengThreeViewController.m in Sources */,
+				1864E40D24935ECD00708D52 /* FirstTypeHomeTableViewCell.m in Sources */,
 				711B0B3E246929E8009C84DB /* UIUtils.m in Sources */,
 				71BEE59322CB5FAD00E1B9E3 /* TPBaseTableViewCell.m in Sources */,
 				715EEB3524750DDB009CF31A /* EMChatBarItem.m in Sources */,
@@ -4537,7 +4549,6 @@
 				71005ED6246A5408002F0BF1 /* TaoCanCell.m in Sources */,
 				71534AFF239F6515009AF361 /* RequestHelp.m in Sources */,
 				71E55BAF246E65C500255230 /* NJKWebViewProgressView.m in Sources */,
-				7185BCF5247E48170028AA75 /* MineHeaderView.m in Sources */,
 				715EEB8824750DDC009CF31A /* EMMsgExtGifBubbleView.m in Sources */,
 				713F31D32473888800A00867 /* AddrChooseController.m in Sources */,
 				711B0B4B246929E8009C84DB /* LYSDatePickerViewController.m in Sources */,
@@ -4568,7 +4579,6 @@
 				715EE9C724750D7A009CF31A /* EMMulticastDelegate.m in Sources */,
 				71E55BB1246E65C500255230 /* TravelWebTableViewCell.m in Sources */,
 				71E55BB9246E65C500255230 /* AddOrderTableViewCell.m in Sources */,
-				183015D1247E17AE00B43F64 /* MineHeaderView.m in Sources */,
 				71BEE58222CB597000E1B9E3 /* UILabel+layout.m in Sources */,
 				715EEB8624750DDC009CF31A /* EMMessageTimeCell.m in Sources */,
 				715EE98B24750D7A009CF31A /* EMNotificationHelper.m in Sources */,
