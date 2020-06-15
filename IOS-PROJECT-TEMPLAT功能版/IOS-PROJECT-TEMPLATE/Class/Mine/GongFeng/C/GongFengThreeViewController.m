@@ -10,6 +10,7 @@
 #import "GongFengOneTableViewCell.h"
 #import "GongPinDetialViewController.h"
 #import "GongFengListModel.h"
+#import "WorshipController.h"
 @interface GongFengThreeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
@@ -86,7 +87,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GongPinDetialViewController *GPDVC=[GongPinDetialViewController new];
+    WorshipController *GPDVC=[WorshipController new];
+    CitangListModel* modal =[CitangListModel new];
+    GongFengListModel *model=self.dataAry[indexPath.row];
+    modal.id=model.ctId;
+    GPDVC.model=modal;
     [self.navigationController pushViewController:GPDVC animated:YES];
 }
 

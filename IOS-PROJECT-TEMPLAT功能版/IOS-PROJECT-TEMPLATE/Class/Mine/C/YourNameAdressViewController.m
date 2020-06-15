@@ -12,6 +12,7 @@
 #import "AddrChooseController.h"
 #import "MineDataModel.h"
 #import "UserTextView.h"
+#import "FirstTypeHomeViewController.h"
 @interface YourNameAdressViewController ()
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
@@ -125,6 +126,7 @@
 //                        self.lat =[NSString stringWithFormat:@"%f",code.location.latitude];
                         self.AddressLab.text=code.title;
                     }
+                    self.AddressLab.text=@"河北省石家庄市长安区裕华东路123号";
                   
                 };
                 [self.navigationController pushViewController:avc animated:YES];
@@ -244,8 +246,13 @@
               model.headAddress=self.HeadImgStr;
               model.introduce=self.TxtView.text;
               [[UserManager shareInstance]saveUser:model];
-              [ViewControllerManager showMainViewController];
-              [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+              FirstTypeHomeViewController *FTHVC=[FirstTypeHomeViewController new];
+              FTHVC.VCClick = ^(NSInteger index) {
+                  [ViewControllerManager showMainViewController];
+                [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+              };
+              [self.navigationController pushViewController:FTHVC animated:YES];
+             
           } failure:^(NSError *error) {
               
           }];

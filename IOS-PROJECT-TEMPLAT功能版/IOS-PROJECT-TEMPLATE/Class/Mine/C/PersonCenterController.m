@@ -190,8 +190,6 @@
 }
 -(void)logOut
 {
-
-
     UserModel * model =[[UserManager shareInstance]getUser];
     [RequestHelp POST:exit_url parameters:@{@"userPhone":model.userPhone} success:^(id result){
        DLog(@"%@",result);
