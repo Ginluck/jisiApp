@@ -28,12 +28,24 @@
 
 @implementation FamilyLineController
 
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    for (UIView * view in self.scView.subviews)
+    {
+        [view removeFromSuperview];
+    }
+    [self refreshPostData];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.backImage];
     [self.view addSubview:self.scView];
-    [self refreshPostData];
+
     
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);

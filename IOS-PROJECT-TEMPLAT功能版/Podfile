@@ -23,6 +23,7 @@ target 'IOS-PROJECT-TEMPLATE' do
   pod 'TencentMap-SDK'
   pod 'Hyphenate'
   pod 'JPush'
+  pod 'FSCalendar', '~> 2.7.9'
   # Pods for IOS-PROJECT-TEMPLATE
 
   target 'IOS-PROJECT-TEMPLATETests' do

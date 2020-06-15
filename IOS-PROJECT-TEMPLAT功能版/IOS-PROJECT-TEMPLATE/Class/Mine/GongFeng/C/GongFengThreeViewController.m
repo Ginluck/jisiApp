@@ -21,12 +21,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-     [self postDate];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
        [self regisNib];
+    [self postDate];
        self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
            [self postDate];
        }];
@@ -41,7 +41,7 @@
 {
     if (!_tableView)
     {
-         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height ) style:UITableViewStyleGrouped];
+         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height -K_NaviHeight-44) style:UITableViewStyleGrouped];
                             _tableView.delegate = self;
                             _tableView.dataSource = self;
                             UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
@@ -64,11 +64,11 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-     return self.dataAry.count;
+     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.dataAry.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -135,12 +135,13 @@
 {
     self.page = 1;
     [self.dataAry removeAllObjects];
+    [self.tableView reloadData];
     [self refreshPostData];
 }
 -(void)refreshPostData
 {
 //    UserModel * model =[[UserManager shareInstance]getUser];
-    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"jzId":@"",@"ctId":@""};
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"2",@"jzId":@"",@"ctId":@""};
         [RequestHelp POST:selectAppRechargeRecord parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[GongFengListModel class] json:result[@"list"]]];

@@ -244,6 +244,7 @@
 {
     self.page = 1;
     [self.dataAry removeAllObjects];
+    [self.tableView reloadData];
     [self refreshPostData];
 }
 -(void)refreshPostData

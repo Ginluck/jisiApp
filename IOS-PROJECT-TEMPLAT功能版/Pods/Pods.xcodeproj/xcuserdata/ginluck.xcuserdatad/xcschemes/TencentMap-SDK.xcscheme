@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12E66090E7CD65999F07D959FF546318"
+               BlueprintIdentifier = "BCE05BE96BE4DFFBBEFFAE78DEBE6663"
                BlueprintName = "TencentMap-SDK"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "TencentMap-SDK">

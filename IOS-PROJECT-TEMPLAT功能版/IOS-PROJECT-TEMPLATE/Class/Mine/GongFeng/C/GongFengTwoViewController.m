@@ -41,7 +41,7 @@
 {
     if (!_tableView)
     {
-       _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height ) style:UITableViewStyleGrouped];
+       _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height-K_NaviHeight-44 ) style:UITableViewStyleGrouped];
                             _tableView.delegate = self;
                             _tableView.dataSource = self;
                             UIImageView * imageV =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, CGRectGetHeight(_tableView.frame))];
@@ -135,6 +135,7 @@
 {
     self.page = 1;
     [self.dataAry removeAllObjects];
+    [self.tableView reloadData];
     [self refreshPostData];
 }
 -(void)refreshPostData

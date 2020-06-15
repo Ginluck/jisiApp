@@ -173,7 +173,9 @@
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     cell.backgroundView .backgroundColor =[UIColor clearColor];
     cell.backgroundColor =[UIColor clearColor];
-    [cell reloadCell:self.dataAry[indexPath.row]];
+    if (self.dataAry.count) {
+          [cell reloadCell:self.dataAry[indexPath.row]];
+    }
     return cell;
 }
 
@@ -228,21 +230,25 @@
 {
     self.page = 1;
     [self.dataAry removeAllObjects];
+    [self.tableView reloadData];
     [self refreshPostData];
 }
 -(void)refreshPostData
 {
-    UserModel * model =[[UserManager shareInstance]getUser];
-    
-    if (!model.jzId.length) {
-        ShowMessage(@"您暂时还没有加入家族");
-        return;
-    }
+//    UserModel * model =[[UserManager shareInstance]getUser];
+//
+//    if (!model.jzId.length) {
+//        ShowMessage(@"您暂时还没有加入家族");
+//        return;
+//    }
 
-        NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"jzId":model.jzId};
+        NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0"};
         [RequestHelp POST:JS_SELECT_CTLIST_URL parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[CitangListModel class] json:result[@"list"]]];
+            if (self.dataAry.count==0) {
+                [self.tabBarController setSelectedIndex:2];
+            }
             [self.tableView reloadData];
             [self endRefresh];
         } failure:^(NSError *error) {

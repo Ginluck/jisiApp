@@ -68,7 +68,7 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "613548352.634542"
+                  timestampString = "613646774.882864"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
@@ -83,7 +83,7 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "613548352.63659"
+                  timestampString = "613646774.885751"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
@@ -98,7 +98,7 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
-                  timestampString = "613548352.6385421"
+                  timestampString = "613646774.888384"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "168"
@@ -122,6 +122,54 @@
             endingLineNumber = "7"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-PROJECT-TEMPLATE/Class/Type/C/AddNewMemberController.m"
+            timestampString = "613647930.351287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-setUICompoents"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-PROJECT-TEMPLATE/Class/Type/C/FamilyDetailController.m"
+            timestampString = "613647930.351406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-bottomView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-PROJECT-TEMPLATE/Class/Mine/GongFeng/C/GongFengThreeViewController.m"
+            timestampString = "613647930.351477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-refreshPostData"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

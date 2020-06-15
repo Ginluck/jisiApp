@@ -17,6 +17,7 @@
 #import "SZKCleanCache.h"
 #import "MineHeaderView.h"
 #import "ContactCustomerViewController.h"
+#import "MoneyRecordViewController.h"
 @interface PersonCenterController ()
 @property(nonatomic,strong)MineHeaderView * MHView;
 
@@ -204,7 +205,9 @@
 }
 -(void)GoldClick
 {
-    
+    MoneyRecordViewController * mvc =[MoneyRecordViewController new];
+    mvc.hidesBottomBarWhenPushed=YES;
+    [self.navigationController pushViewController:mvc animated:YES];
 }
 /*
 #pragma mark - Navigation

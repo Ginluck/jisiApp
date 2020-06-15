@@ -15,6 +15,7 @@
 #import "CitangListModel.h"
 #import "WorshipController.h"
 #import "FamilyLineController.h"
+#import "UILabel+WY_Extension.h"
 @interface FamilyDetailController ()
 <DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,HeaderViewDelegate>
 
@@ -85,6 +86,7 @@
         
         _introduceLab  =[[UILabel alloc]initWithFrame:CGRectMake(10, 10, Screen_Width-20, CGRectGetHeight(_bottomView.frame)-20)];
         _introduceLab.font =MKFont(14);
+        [_introduceLab textLeftTopAlign];
         _introduceLab.textColor =K_PROJECT_GARYTEXTCOLOR;
         _introduceLab.text =self.model.introduce;
         _introduceLab.numberOfLines =0;

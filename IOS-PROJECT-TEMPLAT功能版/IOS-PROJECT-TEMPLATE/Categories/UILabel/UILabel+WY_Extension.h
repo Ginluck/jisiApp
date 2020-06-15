@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 创建lable */
 + (UILabel *)wy_createLabWithFrame:(CGRect)frame textColor:(UIColor *)textColor font:(UIFont *)font;
-
+- (void) textLeftTopAlign;
 @end
 
 NS_ASSUME_NONNULL_END

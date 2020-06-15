@@ -94,27 +94,33 @@
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     cell.backgroundView .backgroundColor =[UIColor clearColor];
     cell.backgroundColor =[UIColor clearColor];
-    [cell reloadCell:self.dataAry[indexPath.row]];
-    cell.detailButton.tag =indexPath.row;
-    [cell.detailButton addTarget:self action:@selector(detailClick:) forControlEvents:UIControlEventTouchUpInside];
+    if (self.dataAry.count) {
+        [cell reloadCell:self.dataAry[indexPath.row]];
+        cell.detailButton.tag =indexPath.row;
+        [cell.detailButton addTarget:self action:@selector(detailClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
     return cell;
 }
 -(void)detailClick:(UIButton *)sender
 {
-    FamilyListModel * model =self.dataAry[sender.tag];
-    FamilyDetailController * fvc =[FamilyDetailController new];
-    fvc.hidesBottomBarWhenPushed =YES;
-    fvc.model =model;
-    [self.navigationController pushViewController:fvc animated:YES];
+    if (self.dataAry.count) {
+        FamilyListModel * model =self.dataAry[sender.tag];
+        FamilyDetailController * fvc =[FamilyDetailController new];
+        fvc.hidesBottomBarWhenPushed =YES;
+        fvc.model =model;
+        [self.navigationController pushViewController:fvc animated:YES];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FamilyListModel * model =self.dataAry[indexPath.row];
-    FamilyDetailController * fvc =[FamilyDetailController new];
-    fvc.hidesBottomBarWhenPushed =YES;
-    fvc.model =model;
-    [self.navigationController pushViewController:fvc animated:YES];
+    if (self.dataAry.count) {
+        FamilyListModel * model =self.dataAry[indexPath.row];
+        FamilyDetailController * fvc =[FamilyDetailController new];
+        fvc.hidesBottomBarWhenPushed =YES;
+        fvc.model =model;
+        [self.navigationController pushViewController:fvc animated:YES];
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -157,20 +163,19 @@
 {
     self.page = 1;
     [self.dataAry removeAllObjects];
+    [self.tableView reloadData];
     [self refreshPostData];
 }
 -(void)refreshPostData
-{
-    UserModel * model =[[UserManager shareInstance]getUser];
-    
-    if (!model.jzId.length) {
-        ShowMessage(@"您暂时还没有加入家族");
-        return;
-    }
-    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"id":model.jzId};
+{UserModel * model =[[UserManager shareInstance]getUser];
+
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0"};
     [RequestHelp POST:JS_FAMILY_LIST_URL parameters:param success:^(id result) {
         DLog(@"%@",result);
         [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyListModel class] json:result[@"list"]]];
+        if (self.dataAry.count==0) {
+            [self.tabBarController setSelectedIndex:2];
+        }
         [self.tableView reloadData];
         [self endRefresh];
     } failure:^(NSError *error) {

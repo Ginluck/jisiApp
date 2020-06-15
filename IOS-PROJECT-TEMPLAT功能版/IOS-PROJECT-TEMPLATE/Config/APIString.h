@@ -10,13 +10,13 @@
 #define APIString_h
 //192.168.0.123 121.36.59.7
 
-//#define SERVER_URL @"http://192.168.0.114:8085/"
+#define SERVER_URL @"http://192.168.0.104:8085/"
 
-#define SERVER_URL @"http://121.36.59.7:8085/"
+//#define SERVER_URL @"http://121.36.59.7:8085/"
 
 
-//#define IMAGE_URL @"http://192.168.0.28:8085/userApp/FILE_UPLOAD"
-#define IMAGE_URL @"http://121.36.59.7:8085/appUpload/FILE_UPLOAD"
+#define IMAGE_URL @"http://192.168.0.107:8085/userApp/FILE_UPLOAD"
+//#define IMAGE_URL @"http://121.36.59.7:8085/appUpload/FILE_UPLOAD"
 
 
 
@@ -80,6 +80,8 @@
 #define JS_CREATE_FAMILY_URL @"appJz/addJz"
 //族谱列表&寻找家族$家族详情
 #define JS_FAMILY_LIST_URL @"appJz/selectByUser"
+//寻找家族
+#define JS_FAMILY_LIST_URL2 @"appJz/selectByUser2"
 //查看族谱列表
 #define JS_SELECT_ZPLIST_URL @"appZp/selectByAppZuPu"
 //查看祠堂列表

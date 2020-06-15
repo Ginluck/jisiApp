@@ -27,14 +27,7 @@
 
     [self.view addSubview:self.tableView];
     [self regisNib];
-    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self postDate];
-    }];
-    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        self.page = self.page + 1;
-        [self refreshPostData];
-        
-    }];
+    [self postDate];
     //     Do any additional setup after loading the view from its nib.
 }
 -(void)buyViewDelegate:(UIButton *)sender time:(NSString *)time  amount:(NSString *)money pro:(NSString *)proId count:(nonnull NSString *)count model:(nonnull JipinChild *)model
@@ -170,6 +163,7 @@
 {
     self.page = 1;
     [self.dataAry removeAllObjects];
+    [self.tableView reloadData];
     [self refreshPostData];
 }
 -(void)refreshPostData
@@ -188,7 +182,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
-    [self postDate];
 }
 
 @end

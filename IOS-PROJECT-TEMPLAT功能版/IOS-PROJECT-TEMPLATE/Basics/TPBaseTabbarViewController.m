@@ -73,18 +73,18 @@
     [nav popToRootViewControllerAnimated:YES];
 }
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
-{
-    TPNavigationController * nav =(TPNavigationController*)viewController;
-    if ([nav.viewControllers[0] isKindOfClass:[HomeViewController class]]||[nav.viewControllers[0] isKindOfClass: [TypeHomeController class]]) {
-        UserModel * model =[[UserManager shareInstance]getUser];
-        if (!model.jzId.length)
-        {
-            ShowMessage(@"您暂时没有加入家族,请先寻找家族");
-            return NO;
-        }
-        return YES;;
-    }
-    return YES;
-}
+//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+//{
+//    TPNavigationController * nav =(TPNavigationController*)viewController;
+//    if ([nav.viewControllers[0] isKindOfClass:[HomeViewController class]]||[nav.viewControllers[0] isKindOfClass: [TypeHomeController class]]) {
+//        UserModel * model =[[UserManager shareInstance]getUser];
+//        if (!model.jzId.length)
+//        {
+//            ShowMessage(@"您暂时没有加入家族,请先寻找家族");
+//            return NO;
+//        }
+//        return YES;;
+//    }
+//    return YES;
+//}
 @end

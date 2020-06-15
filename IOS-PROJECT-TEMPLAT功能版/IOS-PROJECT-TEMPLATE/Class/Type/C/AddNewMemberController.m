@@ -11,6 +11,7 @@
 #import "ValuePickerView.h"
 #import "LYSDatePickerController.h"
 #import "FamilyDetailController.h"
+#import "NSDate+CommonDate.h"
 @interface AddNewMemberController ()<LYSDatePickerSelectDelegate>
 @property(nonatomic,weak)IBOutlet UITextField * nameTF;
 @property(nonatomic,weak)IBOutlet UIButton * sexBtn;
@@ -58,10 +59,16 @@
     [dateFormatter1 setDateFormat:@"yyyy-MM-dd"];
     NSDate  * date =[NSDate date];
     _currentDate =date;
+    self.stateBtn.userInteractionEnabled =YES;
     if ([self.type  isEqualToString:@"1"]) {
         self.nameTF.text =self.member.name;
         [self.sexBtn setTitle:[self.member.sex isEqualToString:@"0"]?@"男":@"女" forState:UIControlStateNormal];
         self.sexValue =self.member.sex;
+        if (self.member.deathTime.length)
+        {
+            self.stateBtn.userInteractionEnabled =NO;
+          
+        }
         [self.stateBtn setTitle:[self.member.state isEqualToString:@"0"]?@"在世":@"离世" forState:UIControlStateNormal];
         self.stateValue =self.member.state;
         [self.birthBtn setTitle:self.member.birthTime forState:UIControlStateNormal];
@@ -72,11 +79,13 @@
         [self addNavigationTitleView:@"修改成员"];
         self.indtroduceTV.text =self.member.introduce;
     }
+  
 }
 
 
 -(IBAction)btnClick:(UIButton*)sender
 {
+    [self.nameTF endEditing:YES];
     switch (sender.tag) {
         case 10:
         {
@@ -106,11 +115,16 @@
         {
             WS(weakSelf);
             [LYSDatePickerController alertDatePickerInWindowRootVCWithType:(LYSDatePickerTypeDay) selectDate:_currentDate];
+           
             [LYSDatePickerController customPickerDelegate:self];
             [LYSDatePickerController customdidSelectDatePicker:^(NSDate *date) {
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-                [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+                [dateFormat setDateFormat:@"yyyy-MM-dd"];
                 weakSelf.currentDate = date;
+                if ([[NSDate date] compare:date]==-1) {
+                    ShowMessage(@"出生时间不能晚于当前时间");
+                    return ;
+                }
                 [sender setTitle:[NSString stringWithFormat:@"%@",[dateFormat stringFromDate:date]] forState:UIControlStateNormal];
                 weakSelf.birth =[dateFormat stringFromDate:date];
             }];
@@ -123,7 +137,11 @@
             [LYSDatePickerController customPickerDelegate:self];
             [LYSDatePickerController customdidSelectDatePicker:^(NSDate *date) {
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-                [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+                [dateFormat setDateFormat:@"yyyy-MM-dd"];
+//                if ([[NSDate date] compare:date]==-1) {
+//                    ShowMessage(@"出生时间不能晚于当前时间");
+//                    return ;
+//                }
                 weakSelf.currentDate = date;
                 [sender setTitle:[NSString stringWithFormat:@"%@",[dateFormat stringFromDate:date]] forState:UIControlStateNormal];
                 weakSelf.death =[dateFormat stringFromDate:date];
