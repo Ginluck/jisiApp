@@ -46,7 +46,7 @@
     [self.view addSubview:self.backImage];
     [self.view addSubview:self.scView];
 
-    
+    [self addNavigationTitleView:@"世系图"];
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame =CGRectMake(Screen_Width-50, Screen_Height-K_BottomHeight-85, 30, 30);
     [button setImage:KImageNamed(@"add1") forState:UIControlStateNormal];

@@ -32,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addNavigationTitleView:@"族谱详情"];
+    [self addNavigationTitleView:self.model.name];
     [self.view addSubview:self.backImage];
     [self.view addSubview:self.HHView];
     [self.view addSubview:self.bottomView];

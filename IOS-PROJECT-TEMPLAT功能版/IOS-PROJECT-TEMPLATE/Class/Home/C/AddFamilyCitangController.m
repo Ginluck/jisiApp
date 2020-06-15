@@ -13,6 +13,7 @@
 #import "ChooseMemberController.h"
 #import "FamilyTreeMember.h"
 #import "CitangDetailModel.h"
+#import "SJActionSheet.h"
 @interface AddFamilyCitangController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,weak)IBOutlet UITextField * nameTF;
 @property(nonatomic,weak)IBOutlet UITextView * introTV;
@@ -33,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self addNavigationTitleView:@"家庭私人祠堂"];
+    [self addNavigationTitleView:@"创建家庭私人祠堂"];
     self.introTV.placeholdFont =MKFont(14);
     if (self.model !=nil) {
         [self requestData];
@@ -114,21 +115,40 @@
     }
     else if (sender.tag ==7)
     {
-        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self selectImageFromCamera];
+        SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:@"选择图片" style:SJSheetStyleDefault itemTitles:@[@"相机",@"相册"]];
+        actionSheet.titleTextFont =MKFont(15);
+        actionSheet.itemTextFont =MKFont(13);
+        actionSheet.cancelTextFont =MKFont(13);
+        actionSheet.itemTextColor =K_Prokect_MainColor;
+        actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
+        [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
+            if ([title isEqualToString:@"相机"])
+            {
+                [self selectImageFromCamera];
+            }
+            else if ([title isEqualToString:@"相册"])
+            {
+                 [self selectImageFromAlbum];
+            }
         }];
         
-        UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self selectImageFromAlbum];
-        }];
-        
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        [alertVc addAction:cameraAction];
-        [alertVc addAction:photoAction];
-        [alertVc addAction:cancelAction];
-        [self presentViewController:alertVc animated:YES completion:nil];
+//        
+//        
+//        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+//        
+//        UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            [self selectImageFromCamera];
+//        }];
+//        
+//        UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            [self selectImageFromAlbum];
+//        }];
+//        
+//        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//        [alertVc addAction:cameraAction];
+//        [alertVc addAction:photoAction];
+//        [alertVc addAction:cancelAction];
+//        [self presentViewController:alertVc animated:YES completion:nil];
 
     }
     else

@@ -10,13 +10,13 @@
 #define APIString_h
 //192.168.0.123 121.36.59.7
 
-#define SERVER_URL @"http://192.168.0.114:8085/"
+//#define SERVER_URL @"http://192.168.0.104:8085/"
 
-//#define SERVER_URL @"http://121.36.59.7:8085/"
+#define SERVER_URL @"http://121.36.59.7:8085/"
 
 
-#define IMAGE_URL @"http://192.168.0.114:8085/userApp/FILE_UPLOAD"
-//#define IMAGE_URL @"http://121.36.59.7:8085/appUpload/FILE_UPLOAD"
+//#define IMAGE_URL @"http://192.168.0.104:8085/userApp/FILE_UPLOAD"
+#define IMAGE_URL @"http://121.36.59.7:8085/appUpload/FILE_UPLOAD"
 
 
 

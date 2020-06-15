@@ -115,7 +115,7 @@
 {
     if (!_mView) {
         _mView =[[[NSBundle mainBundle] loadNibNamed:@"MoneyView" owner:self options:nil] firstObject];
-        _mView.frame =CGRectMake(0, 0, Screen_Width, 270);
+        _mView.frame =CGRectMake(0, 0, Screen_Width, Screen_Height-K_NaviHeight);
         _mView.delegate =self;
     }
     return _mView;
@@ -139,18 +139,20 @@
     [[UIApplication sharedApplication].keyWindow addSubview:self.bgButton];
     [self.bgButton addSubview:self.cView];
 }
--(CalendarView *)cView
-{
-    if (!_cView) {
-        _cView =[[CalendarView alloc]initWithFrame:CGRectMake(0, 0, 280, 280)];
-        _cView.center =CGPointMake(Screen_Width/2, Screen_Height/2);
-    }
-    return _cView;
-}
+//-(CalendarView *)cView
+//{
+//    if (!_cView) {
+//        _cView =[[CalendarView alloc]initWithFrame:CGRectMake(0, 0, 280, 280)];
+//        _cView.center =CGPointMake(Screen_Width/2, Screen_Height/2);
+//    }
+//    return _cView;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
-    [self regisNib];
+    self.mView.frame =CGRectMake(0, 0, Screen_Width, Screen_Height-K_NaviHeight);
+    [self.view addSubview:self.mView];
+//    [self.view addSubview:self.tableView];
+//    [self regisNib];
     [self addNavigationTitleView:@"纪念币"];
 //    self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [self postDate];

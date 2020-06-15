@@ -13,6 +13,7 @@
 #import "MineDataModel.h"
 #import "UserTextView.h"
 #import "FirstTypeHomeViewController.h"
+#import "SJActionSheet.h"
 @interface YourNameAdressViewController ()
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC;
@@ -82,21 +83,23 @@
 - (IBAction)Click:(UIButton *)sender {    
     switch (sender.tag) {
         case 100:
-        {UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
-            
-            UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self selectImageFromCamera];
+        {
+            SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:@"选择图片" style:SJSheetStyleDefault itemTitles:@[@"相机",@"相册"]];
+            actionSheet.titleTextFont =MKFont(15);
+            actionSheet.itemTextFont =MKFont(13);
+            actionSheet.cancelTextFont =MKFont(13);
+            actionSheet.itemTextColor =K_Prokect_MainColor;
+            actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
+            [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
+                if ([title isEqualToString:@"相机"])
+                {
+                    [self selectImageFromCamera];
+                }
+                else if ([title isEqualToString:@"相册"])
+                {
+                    [self selectImageFromAlbum];
+                }
             }];
-            
-            UIAlertAction *photoAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self selectImageFromAlbum];
-            }];
-            
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-            [alertVc addAction:cameraAction];
-            [alertVc addAction:photoAction];
-            [alertVc addAction:cancelAction];
-            [self presentViewController:alertVc animated:YES completion:nil];
               
         }
             break;

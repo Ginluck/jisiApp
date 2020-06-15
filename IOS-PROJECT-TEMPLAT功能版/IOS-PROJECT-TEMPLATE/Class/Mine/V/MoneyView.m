@@ -8,10 +8,14 @@
 
 #import "MoneyView.h"
 #import "HongBaoView.h"
+#import "CalendarView.h"
 @interface MoneyView()
 @property(nonatomic,weak)IBOutlet UIView * hongBaoView;
 @property(nonatomic,weak)IBOutlet UILabel * moneyLabel;
 @property(nonatomic,weak)IBOutlet UILabel * signLabel;
+
+@property(nonatomic,weak)IBOutlet UIView * calendarView;
+@property(nonatomic,strong)CalendarView  * cView;
 @end
 @implementation MoneyView
 
@@ -31,6 +35,7 @@
         hongbao.days.text =ary[i];
         [self.hongBaoView addSubview:hongbao];
     }
+    [self.calendarView addSubview:self.cView];
 }
 -(IBAction)calendarClick
 {
@@ -38,6 +43,16 @@
         [self.delegate calendarBtnClick];
     }
 }
+
+
+-(CalendarView *)cView
+{
+    if (!_cView) {
+        _cView =[[CalendarView alloc]initWithFrame:CGRectMake(10, 10, Screen_Width-52, Screen_Width-52)];
+    }
+    return _cView;
+}
+
 
 -(IBAction)inviteClick
 {

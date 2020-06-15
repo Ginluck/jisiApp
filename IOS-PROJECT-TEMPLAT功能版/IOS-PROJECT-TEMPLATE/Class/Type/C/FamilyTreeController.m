@@ -157,6 +157,7 @@
     actionSheet.itemTextFont =MKFont(13);
     actionSheet.cancelTextFont =MKFont(13);
     actionSheet.cancleTextColor=K_PROJECT_GARYTEXTCOLOR;
+    actionSheet.itemTextColor =K_Prokect_MainColor;
     [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
         if ([title isEqualToString:@"查看成员信息"]) {
             MemberDetailController * dc =[[MemberDetailController alloc]init];

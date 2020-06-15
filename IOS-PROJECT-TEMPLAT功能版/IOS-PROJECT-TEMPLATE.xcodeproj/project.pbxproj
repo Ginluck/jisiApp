@@ -630,6 +630,8 @@
 		71BEE5AC22CB61EF00E1B9E3 /* DLCustomSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE5A522CB61EF00E1B9E3 /* DLCustomSlideView.m */; };
 		71BEE5AD22CB61EF00E1B9E3 /* DLSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BEE5A622CB61EF00E1B9E3 /* DLSlideView.m */; };
 		71CBDDC024864D8600DB8A0D /* JipinSetChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CBDDBF24864D8600DB8A0D /* JipinSetChild.m */; };
+		71DA413A24970C3B00D42D55 /* RecordMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */; };
+		71DA413B24970C3B00D42D55 /* RecordMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */; };
 		71E55B81246E658000255230 /* HelpHouseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B6E246E658000255230 /* HelpHouseCityModel.m */; };
 		71E55B82246E658000255230 /* SheZhiNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55B71246E658000255230 /* SheZhiNameViewController.xib */; };
 		71E55B83246E658000255230 /* MyIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B72246E658000255230 /* MyIntroductionViewController.m */; };
@@ -1643,6 +1645,9 @@
 		71BEE5A622CB61EF00E1B9E3 /* DLSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSlideView.m; sourceTree = "<group>"; };
 		71CBDDBE24864D8600DB8A0D /* JipinSetChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JipinSetChild.h; sourceTree = "<group>"; };
 		71CBDDBF24864D8600DB8A0D /* JipinSetChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JipinSetChild.m; sourceTree = "<group>"; };
+		71DA413724970C3B00D42D55 /* RecordMoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordMoneyViewController.h; sourceTree = "<group>"; };
+		71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMoneyViewController.m; sourceTree = "<group>"; };
+		71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordMoneyViewController.xib; sourceTree = "<group>"; };
 		71E55B6E246E658000255230 /* HelpHouseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpHouseCityModel.m; sourceTree = "<group>"; };
 		71E55B6F246E658000255230 /* HelpHouseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpHouseCityModel.h; sourceTree = "<group>"; };
 		71E55B71246E658000255230 /* SheZhiNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SheZhiNameViewController.xib; sourceTree = "<group>"; };
@@ -1794,12 +1799,6 @@
 			children = (
 				7101DBA524921935004DF6BD /* LunarFormatter.h */,
 				7101DBA624921936004DF6BD /* LunarFormatter.m */,
-				7185BCF2247E48160028AA75 /* MineHeaderView.h */,
-				7185BCF3247E48170028AA75 /* MineHeaderView.m */,
-				7185BCF4247E48170028AA75 /* MineHeaderView.xib */,
-				183015CF247E17AE00B43F64 /* MineHeaderView.h */,
-				183015D0247E17AE00B43F64 /* MineHeaderView.m */,
-				183015D2247E17C300B43F64 /* MineHeaderView.xib */,
 				711F417424920A9200575228 /* MoneyView.h */,
 				711F417524920A9200575228 /* MoneyView.m */,
 				711F417724920AB200575228 /* MoneyView.xib */,
@@ -1813,14 +1812,12 @@
 				7101DBA8249235E3004DF6BD /* ShareView.h */,
 				7101DBA9249235E3004DF6BD /* ShareView.m */,
 				7101DBAB249235FB004DF6BD /* ShareView.xib */,
-
 				1842ACB32490C1B10061AFB2 /* MineHeaderView.h */,
 				1842ACB22490C1B00061AFB2 /* MineHeaderView.m */,
 				1842ACB12490C1B00061AFB2 /* MineHeaderView.xib */,
 				1864E40A24935ECD00708D52 /* FirstTypeHomeTableViewCell.h */,
 				1864E40B24935ECD00708D52 /* FirstTypeHomeTableViewCell.m */,
 				1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */,
-
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -3204,14 +3201,15 @@
 				1805FA002484AAE2009B5652 /* ContactCustomerViewController.h */,
 				1805FA012484AAE2009B5652 /* ContactCustomerViewController.m */,
 				1805FA022484AAE2009B5652 /* ContactCustomerViewController.xib */,
-
 				1864E40524935DCC00708D52 /* FirstTypeHomeViewController.h */,
 				1864E40624935DCC00708D52 /* FirstTypeHomeViewController.m */,
 				1864E40724935DCC00708D52 /* FirstTypeHomeViewController.xib */,
-
 				711F416F249205A100575228 /* MoneyRecordViewController.h */,
 				711F4170249205A100575228 /* MoneyRecordViewController.m */,
 				711F4171249205A100575228 /* MoneyRecordViewController.xib */,
+				71DA413724970C3B00D42D55 /* RecordMoneyViewController.h */,
+				71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */,
+				71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -3939,6 +3937,7 @@
 				715EED5E24750E02009CF31A /* invite_gray@3x.png in Resources */,
 				715EEB6F24750DDC009CF31A /* chatbar_face@2x.png in Resources */,
 				715EEB9224750DDC009CF31A /* msg_location_white@3x.png in Resources */,
+				71DA413B24970C3B00D42D55 /* RecordMoneyViewController.xib in Resources */,
 				715EED0124750E02009CF31A /* animate_00033.png in Resources */,
 				71BEE52C22CB51ED00E1B9E3 /* LaunchScreen.storyboard in Resources */,
 				715EED6324750E02009CF31A /* minimize_white@2x.png in Resources */,
@@ -4628,6 +4627,7 @@
 				715EE9B624750D7A009CF31A /* MWGridCell.m in Sources */,
 				711B0B51246929E8009C84DB /* LYSDatePickerManager.m in Sources */,
 				711B0AD724692979009C84DB /* MemberDetailInfoCell.m in Sources */,
+				71DA413A24970C3B00D42D55 /* RecordMoneyViewController.m in Sources */,
 				71534B11239F66D1009AF361 /* NSObject+PerformBlock.m in Sources */,
 				71BEE5A722CB61EF00E1B9E3 /* DLLRUCache.m in Sources */,
 				711B0A802469294C009C84DB /* AboutMeViewController.m in Sources */,
