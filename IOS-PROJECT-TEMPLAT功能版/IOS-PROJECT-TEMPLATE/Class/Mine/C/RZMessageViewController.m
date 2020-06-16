@@ -91,7 +91,7 @@
     
     RZMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RZMessageTableViewCell class]) forIndexPath:indexPath];
     RZMessageModel *model=self.dataAry[indexPath.row];
-    [cell setModel:model];
+    [cell setModel:model type:self.TypeStr];
     cell.lookBtn.tag=100+indexPath.row;
     [cell.lookBtn addTarget:self action:@selector(GoLook:) forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
@@ -152,10 +152,10 @@
     UserModel * model =[[UserManager shareInstance]getUser];
     NSDictionary * param ;
     if ([model.patriarch isEqualToString:@"1"]&&[self.TypeStr isEqualToString:@"1"]) { 
-        param =@{@"jzId":model.jzId,@"pageNum":@(self.page),@"pageRow":@"10"};
+        param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"type":@"1"};
     }else
     {
-        param =@{@"id":model.id,@"pageNum":@(self.page),@"pageRow":@"10"};
+        param =@{@"id":model.id,@"pageNum":@(self.page),@"pageRow":@"10",@"type":@"0"};
     }
     
        

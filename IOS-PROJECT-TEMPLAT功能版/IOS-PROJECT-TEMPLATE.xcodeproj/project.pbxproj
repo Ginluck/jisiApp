@@ -575,7 +575,6 @@
 		715EED7524750E02009CF31A /* CallSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECE424750E02009CF31A /* CallSettingViewController.m */; };
 		715EED7624750E02009CF31A /* EMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECE624750E02009CF31A /* EMButton.m */; };
 		715EED7724750E02009CF31A /* EMStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EECEB24750E02009CF31A /* EMStreamView.m */; };
-		715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */; };
 		715EED7D24765FFA009CF31A /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EED7C24765FFA009CF31A /* MessageListModel.m */; };
 		715F3CE424874C3700CC90B2 /* PaiWeiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715F3CE324874C3700CC90B2 /* PaiWeiView.m */; };
 		7185BCFA247F5C410028AA75 /* AddPersonCitangController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7185BCF8247F5C410028AA75 /* AddPersonCitangController.m */; };
@@ -632,6 +631,7 @@
 		71CBDDC024864D8600DB8A0D /* JipinSetChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CBDDBF24864D8600DB8A0D /* JipinSetChild.m */; };
 		71DA413A24970C3B00D42D55 /* RecordMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */; };
 		71DA413B24970C3B00D42D55 /* RecordMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */; };
+		71DA413D24975FC100D42D55 /* 3858567684.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71DA413C24975FC100D42D55 /* 3858567684.mp3 */; };
 		71E55B81246E658000255230 /* HelpHouseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B6E246E658000255230 /* HelpHouseCityModel.m */; };
 		71E55B82246E658000255230 /* SheZhiNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55B71246E658000255230 /* SheZhiNameViewController.xib */; };
 		71E55B83246E658000255230 /* MyIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B72246E658000255230 /* MyIntroductionViewController.m */; };
@@ -1533,7 +1533,6 @@
 		715EECEA24750E02009CF31A /* EMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMButton.h; sourceTree = "<group>"; };
 		715EECEB24750E02009CF31A /* EMStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMStreamView.m; sourceTree = "<group>"; };
 		715EED782475249F009CF31A /* IOS-PROJECT-TEMPLATE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IOS-PROJECT-TEMPLATE.entitlements"; sourceTree = "<group>"; };
-		715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "洪真英-活着 (Cheer Up).mp3"; sourceTree = "<group>"; };
 		715EED7B24765FFA009CF31A /* MessageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
 		715EED7C24765FFA009CF31A /* MessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
 		715F3CE224874C3700CC90B2 /* PaiWeiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaiWeiView.h; sourceTree = "<group>"; };
@@ -1648,6 +1647,7 @@
 		71DA413724970C3B00D42D55 /* RecordMoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordMoneyViewController.h; sourceTree = "<group>"; };
 		71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMoneyViewController.m; sourceTree = "<group>"; };
 		71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordMoneyViewController.xib; sourceTree = "<group>"; };
+		71DA413C24975FC100D42D55 /* 3858567684.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3858567684.mp3; sourceTree = "<group>"; };
 		71E55B6E246E658000255230 /* HelpHouseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpHouseCityModel.m; sourceTree = "<group>"; };
 		71E55B6F246E658000255230 /* HelpHouseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpHouseCityModel.h; sourceTree = "<group>"; };
 		71E55B71246E658000255230 /* SheZhiNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SheZhiNameViewController.xib; sourceTree = "<group>"; };
@@ -3361,8 +3361,8 @@
 				71BEE55B22CB52A200E1B9E3 /* APPEntry */,
 				71BEE55A22CB529500E1B9E3 /* Frameworks */,
 				71BEE52222CB51EB00E1B9E3 /* ViewController.h */,
-				715EED79247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 */,
 				71BEE52322CB51EB00E1B9E3 /* ViewController.m */,
+				71DA413C24975FC100D42D55 /* 3858567684.mp3 */,
 				71BEE52D22CB51ED00E1B9E3 /* Info.plist */,
 				71BEE52822CB51ED00E1B9E3 /* Assets.xcassets */,
 			);
@@ -3872,7 +3872,6 @@
 				715EED6924750E02009CF31A /* speaker_gray@2x.png in Resources */,
 				71E55BB5246E65C500255230 /* AddOrderTableViewCell.xib in Resources */,
 				715EEB4B24750DDC009CF31A /* icon_007.gif in Resources */,
-				715EED7A247617E6009CF31A /* 洪真英-活着 (Cheer Up).mp3 in Resources */,
 				71E55BE1246E7C3F00255230 /* CitangHeaderView.xib in Resources */,
 				7185BD00247F62820028AA75 /* AddFamilyCitangController.xib in Resources */,
 				715EED6824750E02009CF31A /* mute_red@2x.png in Resources */,
@@ -3928,6 +3927,7 @@
 				715EE9D224750D7A009CF31A /* alert_default@2x.png in Resources */,
 				715EED2024750E02009CF31A /* animate_00055.png in Resources */,
 				71071DEF24776D04003CAAB7 /* ApplyController.xib in Resources */,
+				71DA413D24975FC100D42D55 /* 3858567684.mp3 in Resources */,
 				715EEB9824750DDC009CF31A /* msg_recv_audio02@3x.png in Resources */,
 				715EED3724750E02009CF31A /* animate_00074.png in Resources */,
 				715EEB9724750DDC009CF31A /* msg_location_white@2x.png in Resources */,

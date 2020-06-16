@@ -139,13 +139,8 @@
 }
 -(void)refreshPostData
 {
-    UserModel * model =[[UserManager shareInstance]getUser];
-    
-    if (!model.jzId.length) {
-        ShowMessage(@"您暂时还没有加入家族");
-        return;
-    }
-    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"id":model.jzId};
+
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0"};
     [RequestHelp POST:JS_FAMILY_LIST_URL parameters:param success:^(id result) {
         DLog(@"%@",result);
         [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyListModel class] json:result[@"list"]]];

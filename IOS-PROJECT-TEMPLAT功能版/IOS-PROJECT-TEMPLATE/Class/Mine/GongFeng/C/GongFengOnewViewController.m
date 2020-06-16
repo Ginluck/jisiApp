@@ -146,8 +146,8 @@
 }
 -(void)refreshPostData
 {
-    UserModel * model =[[UserManager shareInstance]getUser];
-    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"jzId":model.jzId,@"ctId":@""};
+    
+    NSDictionary * param =@{@"pageNum":@(self.page),@"pageRow":@"10",@"status":@"0",@"ctId":@""};
         [RequestHelp POST:selectAppRechargeRecord parameters:param success:^(id result) {
             DLog(@"%@",result);
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[GongFengListModel class] json:result[@"list"]]];

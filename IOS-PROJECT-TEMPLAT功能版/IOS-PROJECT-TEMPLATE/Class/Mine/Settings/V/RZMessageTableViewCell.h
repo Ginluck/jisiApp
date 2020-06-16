@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *stateLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UIButton *lookBtn;
-@property (strong, nonatomic)RZMessageModel *model;
+-(void)setModel:(RZMessageModel *)model type:(NSString *)type;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -86,13 +86,16 @@
     switch (index) {
         case 0:
         {
-            ContactCustomerViewController *GFRVC=[ContactCustomerViewController new];
-            GFRVC.hidesBottomBarWhenPushed=YES;
-            [self.navigationController pushViewController:GFRVC animated:YES];
+             //认祖申请
+           RZMessageViewController *GFRVC=[RZMessageViewController new];
+           GFRVC.TypeStr=@"2";
+           GFRVC.hidesBottomBarWhenPushed=YES;
+           [self.navigationController pushViewController:GFRVC animated:YES];
         }
             break;
             case 1:
             {
+              //供奉记录
                                if (model.jzId==nil) {
                                    ShowMessage(@"您还没有家族");
                                }else
@@ -106,6 +109,7 @@
                 break;
             case 2:
             {
+               //认祖审核
                 if ([model.patriarch isEqualToString:@"1"]) {
                     RZMessageViewController *GFRVC=[RZMessageViewController new];
                     GFRVC.TypeStr=@"1";
@@ -120,6 +124,7 @@
                 break;
             case 3:
             {
+                //账户安全
                 IDSafeViewController*TVC=[IDSafeViewController new];
                 TVC.hidesBottomBarWhenPushed=YES;
                 [self.navigationController pushViewController:TVC animated:YES];
@@ -127,13 +132,13 @@
                 break;
             case 4:
             {
-                TeasingViewController *TVC=[TeasingViewController new];
-                TVC.hidesBottomBarWhenPushed=YES;
-                [self.navigationController pushViewController:TVC animated:YES];
+                //金币充值
+               
             }
                 break;
             case 5:
             {
+               //关于
                 AboutMeViewController*TVC=[AboutMeViewController new];
                 TVC.hidesBottomBarWhenPushed=YES;
                            [self.navigationController pushViewController:TVC animated:YES];
@@ -141,6 +146,7 @@
                 break;
             case 6:
             {
+                 //清理缓存
                 [SZKCleanCache cleanCache:^{
                            ShowMessage(@"清理成功");
                            
@@ -149,12 +155,21 @@
                 break;
         case 7:
                    {
-                      RZMessageViewController *GFRVC=[RZMessageViewController new];
-                       GFRVC.TypeStr=@"2";
-                       GFRVC.hidesBottomBarWhenPushed=YES;
-                       [self.navigationController pushViewController:GFRVC animated:YES];
+                      //联系客服
+                      
+                       ContactCustomerViewController *GFRVC=[ContactCustomerViewController new];
+                                  GFRVC.hidesBottomBarWhenPushed=YES;
+                                  [self.navigationController pushViewController:GFRVC animated:YES];
                    }
                        break;
+            case 8:
+                              {
+                                 //意见反馈
+                                 TeasingViewController *TVC=[TeasingViewController new];
+                                                TVC.hidesBottomBarWhenPushed=YES;
+                                                [self.navigationController pushViewController:TVC animated:YES];
+                              }
+                                  break;
             
         default:
             break;

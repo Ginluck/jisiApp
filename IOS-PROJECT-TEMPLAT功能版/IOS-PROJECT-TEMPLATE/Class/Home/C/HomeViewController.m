@@ -105,7 +105,7 @@
 -(AVAudioPlayer *)player
 {
     if (!_player) {
-          NSURL *url = [[NSBundle mainBundle] URLForResource:@"洪真英-活着 (Cheer Up).mp3" withExtension:nil];
+          NSURL *url = [[NSBundle mainBundle] URLForResource:@"3858567684.mp3" withExtension:nil];
         _player =[[AVAudioPlayer alloc]initWithContentsOfURL:url error:nil];
     }
     return _player;

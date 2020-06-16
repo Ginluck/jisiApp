@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * id;
 @property(nonatomic,strong)NSString * state;
 @property(nonatomic,strong)NSString * zp_id;
+@property(nonatomic,strong)NSString * real_name;
 @end
 
 NS_ASSUME_NONNULL_END

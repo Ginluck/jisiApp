@@ -162,11 +162,16 @@
     [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
         if ([title isEqualToString:@"修改祠堂"])
         {
-            if ([self.model.type isEqualToString:@"1"])
+            if ([self.model.type isEqualToString:@"1"]  ||([self.model.type isEqualToString:@"0"]&&[self.DetailModel.isAdmin isEqualToString:@"1"]))
             {
                 AddPersonCitangController * avc =[AddPersonCitangController new];
                 avc.model =self.model;
                 [self.navigationController pushViewController:avc animated:YES];
+            }
+            else if ([self.model.type isEqualToString:@"0"] && [self.DetailModel.isAdmin isEqualToString:@"0"])
+            {
+                ShowMessage(@"暂无权限修改");
+                return ;
             }
             else if ([self.model.type isEqualToString:@"2"])
             {

@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * name2;
 @property(nonatomic,strong)NSString * img;
 @property(nonatomic,strong)NSString * ancestralHome;
+@property(nonatomic,strong)NSString * isAdmin;
 
 @property(nonatomic,strong)NSString * type;
 @property(nonatomic,strong)NSString * userName;

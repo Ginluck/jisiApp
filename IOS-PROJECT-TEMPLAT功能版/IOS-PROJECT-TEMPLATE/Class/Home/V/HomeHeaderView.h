@@ -22,6 +22,8 @@ typedef void(^ViewClickBlock)(NSInteger index);
 @property(nonatomic,weak)IBOutlet UILabel * allLab;
 @property(nonatomic,weak)IBOutlet UILabel * zsLab;
 @property(nonatomic,weak)IBOutlet UILabel * lsLab;
+@property (weak, nonatomic) IBOutlet UIButton *ChageBtn;
+
 @end
 
 NS_ASSUME_NONNULL_END

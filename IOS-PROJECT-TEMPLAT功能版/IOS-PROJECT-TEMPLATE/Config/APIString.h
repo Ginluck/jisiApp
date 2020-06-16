@@ -122,7 +122,8 @@
 #define appSelectYuEById_URL @"appRechargeRecord/appSelectYuEById"
 //设置为管理员
 #define JS_SETADMIN_URL @"appZp/updateAdminByIdAndJzId"
-
+//管理员修改家族简介
+#define JS_updateJz_URL @"appJz/updateJz"
 
 
 #endif /* APIString_h */

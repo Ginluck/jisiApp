@@ -14,9 +14,15 @@
     [super awakeFromNib];
     // Initialization code
 }
--(void)setModel:(RZMessageModel *)model
+-(void)setModel:(RZMessageModel *)model type:(nonnull NSString *)type
 {
-    self.nameLab.text=[NSString stringWithFormat:@"家族名：%@",model.name];
+    if ([type isEqualToString:@"0"]) {
+        self.nameLab.text=[NSString stringWithFormat:@"家族名：%@",model.name];
+    }
+    else
+    {
+         self.nameLab.text=[NSString stringWithFormat:@"申请人：%@",model.real_name];
+    }
     self.timeLab.text=[NSString stringWithFormat:@"申请时间：%@",model.createTime];
     switch ([model.state intValue]) {
         case 0:

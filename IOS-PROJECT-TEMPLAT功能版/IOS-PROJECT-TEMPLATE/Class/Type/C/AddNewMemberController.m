@@ -20,8 +20,10 @@
 @property(nonatomic,strong) NSString * stateValue;
 @property(nonatomic,weak)IBOutlet UIButton * birthBtn;
 @property(nonatomic,strong) NSString * birth;
+@property(nonatomic,strong) NSDate * birthDate;
 @property(nonatomic,weak)IBOutlet UIButton * deathBtn;
 @property(nonatomic,strong) NSString * death;
+@property(nonatomic,strong) NSDate * deathDate;
 @property(nonatomic,weak)IBOutlet UITextView * indtroduceTV;
 @property(nonatomic,strong)ValuePickerView *pickerView ;
 @property(nonatomic,strong) NSDate *currentDate;
@@ -71,10 +73,15 @@
         }
         [self.stateBtn setTitle:[self.member.state isEqualToString:@"0"]?@"在世":@"离世" forState:UIControlStateNormal];
         self.stateValue =self.member.state;
-        [self.birthBtn setTitle:self.member.birthTime forState:UIControlStateNormal];
-        self.birth =self.member.birthTime;
-        [self.deathBtn setTitle:self.member.deathTime forState:UIControlStateNormal];
-        self.death =self.member.deathTime;
+       
+        self.birth =[self.member.birthTime substringToIndex:10];
+        [self.birthBtn setTitle:self.birth forState:UIControlStateNormal];
+        self.birthDate =[NSDate dateWithFormat:@"yyyy-MM-dd" dateString:self.birth];
+        
+        self.death =[self.member.deathTime substringToIndex:10];
+        [self.deathBtn setTitle:self.death forState:UIControlStateNormal];
+        self.deathDate =[NSDate dateWithFormat:@"yyyy-MM-dd" dateString:self.death];
+        
         self.indtroduceTV.placeholder =@"";
         [self addNavigationTitleView:@"修改成员"];
         self.indtroduceTV.text =self.member.introduce;
@@ -120,9 +127,19 @@
             [LYSDatePickerController customdidSelectDatePicker:^(NSDate *date) {
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"yyyy-MM-dd"];
+                self.birthDate =date;
                 weakSelf.currentDate = date;
-                if ([[NSDate date] compare:date]==-1) {
-                    ShowMessage(@"出生时间不能晚于当前时间");
+                if (self.deathDate !=nil)
+                {
+                    if ([self.deathDate compare:self.birthDate]==-1)
+                    {
+                        ShowMessage(@"请选择正确的出生日期");
+                        return ;
+                    }
+                }
+                if ([[NSDate date] compare:date]==-1)
+                {
+                    ShowMessage(@"请选择正确的出生日期");
                     return ;
                 }
                 [sender setTitle:[NSString stringWithFormat:@"%@",[dateFormat stringFromDate:date]] forState:UIControlStateNormal];
@@ -138,10 +155,20 @@
             [LYSDatePickerController customdidSelectDatePicker:^(NSDate *date) {
                 NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                 [dateFormat setDateFormat:@"yyyy-MM-dd"];
-//                if ([[NSDate date] compare:date]==-1) {
-//                    ShowMessage(@"出生时间不能晚于当前时间");
-//                    return ;
-//                }
+                self.deathDate =date;
+                if (self.birthDate !=nil)
+                {
+                    if ([self.deathDate compare:self.birthDate]==-1)
+                    {
+                        ShowMessage(@"请选择正确的离世日期");
+                        return ;
+                    }
+                }
+                
+                if ([[NSDate date] compare:date]==-1) {
+                    ShowMessage(@"请选择正确的离世日期");
+                    return ;
+                }
                 weakSelf.currentDate = date;
                 [sender setTitle:[NSString stringWithFormat:@"%@",[dateFormat stringFromDate:date]] forState:UIControlStateNormal];
                 weakSelf.death =[dateFormat stringFromDate:date];
