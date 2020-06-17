@@ -82,7 +82,7 @@
         }
         else
         {
-            self.isRead.hidden=NO;
+            self.isRead.hidden=YES;
         }
 }
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated {

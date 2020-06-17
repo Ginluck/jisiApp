@@ -334,7 +334,7 @@
         [image removeFromSuperview];
     }
     CGFloat item_width =CGRectGetWidth(self.table_2.frame)/7;
-    CGPoint table_item_point1 =CGPointMake(CGRectGetMinX(self.table_2.frame), CGRectGetMinY(self.table_1.frame)-item_width);
+    CGPoint table_item_point1 =CGPointMake(CGRectGetMinX(self.table_2.frame), CGRectGetMinY(self.table_2.frame)-item_width);
     CGPoint table_item_point2 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width, CGRectGetMinY(self.table_2.frame)-item_width);
     CGPoint table_item_point3 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*2, CGRectGetMinY(self.table_2.frame)-item_width);
     CGPoint table_item_point4 =CGPointMake(CGRectGetMinX(self.table_2.frame)+item_width*3, CGRectGetMinY(self.table_2.frame)-item_width);

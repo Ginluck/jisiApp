@@ -15,6 +15,7 @@
                 <outlet property="addrBtn" destination="I5q-U0-xwc" id="70F-DK-RgV"/>
                 <outlet property="contentTV" destination="z2G-G3-gBo" id="DYn-AY-1W6"/>
                 <outlet property="detailAddr" destination="jJZ-Ra-66x" id="pvF-20-aJ4"/>
+                <outlet property="lookBtn" destination="mxj-R8-EOG" id="au4-NB-2uA"/>
                 <outlet property="nameTF" destination="wc8-1G-3ef" id="Z4o-Yh-fUI"/>
                 <outlet property="view" destination="YgF-JL-HqP" id="FTS-fu-sdw"/>
             </connections>
@@ -144,12 +145,33 @@
                         <constraint firstItem="xNX-Lv-zkt" firstAttribute="top" secondItem="th0-jV-951" secondAttribute="top" constant="16" id="tiT-i7-ghR"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-R8-EOG">
+                    <rect key="frame" x="10" y="617" width="355" height="40"/>
+                    <color key="backgroundColor" red="0.36862745099999999" green="0.066666666669999999" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="brS-Iy-AhJ"/>
+                    </constraints>
+                    <state key="normal" title="申请查看">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="jumpClick" destination="-1" eventType="touchUpInside" id="TO8-GK-gED"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="th0-jV-951" firstAttribute="leading" secondItem="CVT-6T-IYf" secondAttribute="leading" id="29u-4N-VDW"/>
+                <constraint firstItem="CVT-6T-IYf" firstAttribute="trailing" secondItem="mxj-R8-EOG" secondAttribute="trailing" constant="10" id="5ax-yT-bd3"/>
                 <constraint firstItem="CVT-6T-IYf" firstAttribute="trailing" secondItem="th0-jV-951" secondAttribute="trailing" id="XoS-BQ-FRy"/>
+                <constraint firstItem="CVT-6T-IYf" firstAttribute="bottom" secondItem="mxj-R8-EOG" secondAttribute="bottom" constant="10" id="dol-XL-HeB"/>
                 <constraint firstItem="th0-jV-951" firstAttribute="top" secondItem="CVT-6T-IYf" secondAttribute="top" id="grh-yH-cu9"/>
+                <constraint firstItem="mxj-R8-EOG" firstAttribute="leading" secondItem="CVT-6T-IYf" secondAttribute="leading" constant="10" id="oef-Mz-qXn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="CVT-6T-IYf"/>
             <point key="canvasLocation" x="317.60000000000002" y="84.107946026986511"/>

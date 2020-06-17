@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString * lon;
 @property(nonatomic,strong)NSString * ctId;
 @property(nonatomic,strong)NSString * isAdmin;
+
+@property(nonatomic,strong)NSString * contentType;
+@property(nonatomic,strong)NSString * userType;
 @end
 
 NS_ASSUME_NONNULL_END

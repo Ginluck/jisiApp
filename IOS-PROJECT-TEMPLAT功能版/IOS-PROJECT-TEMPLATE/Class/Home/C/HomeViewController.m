@@ -65,7 +65,7 @@
             avc.hidesBottomBarWhenPushed =YES;
             [self.navigationController pushViewController:avc animated:YES];
         }
-        else if ([title isEqualToString:@"创建家族私人祠堂"])
+        else if ([title isEqualToString:@"家族私人祠堂"])
         {
             AddFamilyCitangController * avc =[AddFamilyCitangController new];
             avc.hidesBottomBarWhenPushed =YES;

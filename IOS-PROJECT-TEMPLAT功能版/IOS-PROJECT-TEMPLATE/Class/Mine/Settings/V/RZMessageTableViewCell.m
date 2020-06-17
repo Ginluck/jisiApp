@@ -16,7 +16,7 @@
 }
 -(void)setModel:(RZMessageModel *)model type:(nonnull NSString *)type
 {
-    if ([type isEqualToString:@"0"]) {
+    if ([type isEqualToString:@"2"]) {
         self.nameLab.text=[NSString stringWithFormat:@"家族名：%@",model.name];
     }
     else
