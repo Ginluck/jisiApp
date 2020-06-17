@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *NavHeight;
 @property (weak, nonatomic) IBOutlet UIView *NavView;
 @property (weak, nonatomic) IBOutlet UIButton *LoginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *XieYiBtn;
 @end
 
 NS_ASSUME_NONNULL_END
