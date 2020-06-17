@@ -152,6 +152,9 @@
         self.imagePickerVC.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
         // 设置是否显示系统的相机页面
         self.imagePickerVC.showsCameraControls = YES;
+        self.imagePickerVC.allowsEditing =YES;//这两句保证了图片可以裁剪为正方形
+
+        self.imagePickerVC.allowsImageEditing=YES;///这两句保证了图片可以裁剪为正方形
         // model出控制器
         self.imagePickerVC.modalPresentationStyle=UIModalPresentationFullScreen;
         [self presentViewController:self.imagePickerVC animated:YES completion:nil];
@@ -221,6 +224,7 @@
         DismissHud();
     }];
 }
+
 -(void)UpdateMyData
 {
      UserModel * model =[[UserManager shareInstance]getUser];

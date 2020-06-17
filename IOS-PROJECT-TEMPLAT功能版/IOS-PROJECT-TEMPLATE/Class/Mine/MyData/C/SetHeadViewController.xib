@@ -187,7 +187,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Akg-N1-H7J" firstAttribute="centerY" secondItem="CgO-86-AeE" secondAttribute="centerY" id="1D3-Lf-Bmp"/>
                         <constraint firstAttribute="trailing" secondItem="H67-fv-Nbq" secondAttribute="trailing" constant="16" id="2EF-io-saK"/>

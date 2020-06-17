@@ -64,7 +64,8 @@
     if (textField.text.length > 16) {
         ShowMessage(@"密码不能超过16位");
        textField.text=str;
-    }else
+    }
+    else
     {
         str=textField.text;
     }
@@ -153,7 +154,10 @@
         ShowMessage(@"请输入验证码");
         return;
     }
-
+   if (self.PwdTF.text.length<8) {
+              ShowMessage(@"密码不能少于8位");
+             return;
+         }
     NSDictionary * param  =@{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]],@"validCode":self.CodeTF.text};
     [RequestHelp POST:@"userApp/register" parameters:param success:^(id result) {
         DLog(@"%@",result);

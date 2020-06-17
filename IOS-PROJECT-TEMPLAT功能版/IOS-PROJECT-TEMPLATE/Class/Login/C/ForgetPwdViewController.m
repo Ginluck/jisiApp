@@ -64,7 +64,7 @@
        
        NumberView.layer.shadowRadius = 3.0;
        
-       NumberView.layer.cornerRadius = 30.0;
+       NumberView.layer.cornerRadius = 30.0*Kscale;
        
        NumberView.clipsToBounds = NO;
 }
@@ -80,7 +80,7 @@
        
        PwdView.layer.shadowRadius = 3.0;
        
-       PwdView.layer.cornerRadius = 30.0;
+       PwdView.layer.cornerRadius = 30.0*Kscale;
        
        PwdView.clipsToBounds = NO;
 }
@@ -96,7 +96,7 @@
        
        CodeView.layer.shadowRadius = 3.0;
        
-       CodeView.layer.cornerRadius = 30.0;
+       CodeView.layer.cornerRadius = 30.0*Kscale;
        
        CodeView.clipsToBounds = NO;
 }
@@ -124,11 +124,14 @@
         ShowMessage(@"请输入验证码");
         return;
     }
-
+    if (self.PwdTF.text.length<8) {
+               ShowMessage(@"密码不能少于8位");
+              return;
+          }
     NSDictionary * param  =@{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]],@"validCode":self.CodeTF.text};
     [RequestHelp POST:UPDATE_WJ_url parameters:param success:^(id result) {
         DLog(@"%@",result);
-        ShowMessage(@"注册成功");
+        ShowMessage(@"修改成功");
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         
@@ -146,7 +149,7 @@
     WS(weakSelf);
     NSDictionary *dicParams = @{@"userPhone":self.NumberTF.text,@"codeType":@"12"};
     
-    [RequestHelp POST:GETSECURITYCODE_url parameters:dicParams success:^(id result) {
+    [RequestHelp POST:GETSECURITY_url parameters:dicParams success:^(id result) {
         weakSelf.CodeBtn.enabled = NO;
         [weakSelf.CodeBtn startWithSecond:60];
         [weakSelf.CodeBtn didChange:^NSString *(JKCountDownButton *countDownButton,int second) {

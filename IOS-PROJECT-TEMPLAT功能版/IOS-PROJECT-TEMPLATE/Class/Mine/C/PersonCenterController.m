@@ -110,15 +110,15 @@
             case 2:
             {
                //认祖审核
-                if ([model.patriarch isEqualToString:@"1"]) {
+//                if ([model.patriarch isEqualToString:@"1"]) {
                     RZMessageViewController *GFRVC=[RZMessageViewController new];
                     GFRVC.TypeStr=@"1";
                     GFRVC.hidesBottomBarWhenPushed=YES;
                     [self.navigationController pushViewController:GFRVC animated:YES];
-                }else
-                {
-                    ShowMessage(@"没有权限");
-                }
+//                }else
+//                {
+//                    ShowMessage(@"没有权限");
+//                }
                 
             }
                 break;
