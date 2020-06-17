@@ -104,11 +104,7 @@
         ShowMessage(@"请输入密码");
         return;
     }
-    if (self.PwdTF.text.length<8) {
-            ShowMessage(@"密码不能少于8位");
-           return;
-       }
-    
+  
     NSDictionary * dic = @{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]]};
     [RequestHelp POST:login_url parameters:dic success:^(id result) {
 //        DLog(@"%@",result);
