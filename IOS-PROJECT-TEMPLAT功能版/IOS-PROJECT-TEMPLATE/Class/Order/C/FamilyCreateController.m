@@ -241,8 +241,8 @@
     [RequestHelp POST:JS_CREATE_FAMILY_URL parameters:paramDic success:^(id result) {
         MKLog(@"%@",result);
         ShowMessage(@"创建成功");
-//        UserModel * model =[[UserManager shareInstance]getUser];
-//        model.patriarch =@"1";
+        UserModel * model =[[UserManager shareInstance]getUser];
+        model.patriarch =@"1";
 //        if (!model.jzId.length)
 //        {
 //               model.jzId =(NSString*)result;
@@ -264,7 +264,7 @@
 //           
 //        }
 //     
-//        [[UserManager shareInstance]saveUser:model];
+        [[UserManager shareInstance]saveUser:model];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         

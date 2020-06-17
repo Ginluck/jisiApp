@@ -13,6 +13,8 @@
 @property(nonatomic,weak)IBOutlet UITextField * nameTF;
 @property(nonatomic,weak)IBOutlet UIButton * detailAddr;
 @property(nonatomic,weak)IBOutlet UITextView * contentTV;
+
+@property(nonatomic,weak)IBOutlet UIButton * lookBtn;
 @end
 
 @implementation FamilyDescController
@@ -21,17 +23,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setUICompoents];
-    [self addNavigationItemWithTitle:@"申请查看" itemType:kNavigationItemTypeRight action:@selector(jumpClick)];
 }
 
 -(void)setUICompoents
 {
+    self.lookBtn.hidden=NO;
+    if ([self.model.contentType integerValue]>0)
+    {
+        self.lookBtn.hidden=YES;
+    }
+    else
+    {
+        if (self.model.userType !=0) {
+            self.lookBtn.hidden=YES;
+        }
+    }
     self.nameTF.text =self.model.name;
     [self.addrBtn setTitle:self.model.pcaName forState:UIControlStateNormal];
     [self.detailAddr setTitle:self.model.address forState:UIControlStateNormal];
     self.contentTV.text =self.model.introduce;
 }
--(void)jumpClick
+-(IBAction)jumpClick
 {
     ApplyController * AVC =[ApplyController new];
     AVC.model =self.model;

@@ -146,7 +146,10 @@
      self.dataArr =[[EMClient sharedClient].chatManager getAllConversations];
     if (self.dataAry.count)
     {
-        [self.tableView reloadData];
+        if (!self.dataArr.count) {
+            return;
+        }
+        [self requestData];
     }
     else
     {
