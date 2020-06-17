@@ -64,6 +64,22 @@
                                           
                                        }
                                            break;
+            case 5:
+                                                 {
+                                                     self.Lab1.text=@"申请原因:";
+                                                     self.Reason.text=self.model.reason;
+                                                     if ([self.TypeStr isEqualToString:@"1"]) {
+                                                         self.TGBtn.alpha=1;
+                                                         self.BHBtn.alpha=1;
+                                                     }else
+                                                     {
+                                                         self.TGBtn.alpha=0;
+                                                         self.BHBtn.alpha=0;
+                                                     }
+                                                    
+                                                 }
+                                                     break;
+
 
 
                  default:
@@ -82,7 +98,16 @@
            } failure:^(NSError *error) {
               
            }];
-    }else
+    }else if ([self.model.state isEqualToString:@"5"])
+    {
+        [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"4"} success:^(id result) {
+                   ShowMessage(@"操作成功");
+                   [self.navigationController popViewControllerAnimated:YES];
+               } failure:^(NSError *error) {
+                  
+               }];
+    }
+    else
     {
         [RequestHelp POST:update_url parameters:@{@"id":self.model.id,@"state":@"1"} success:^(id result) {
             ShowMessage(@"操作成功");

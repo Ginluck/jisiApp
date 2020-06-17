@@ -92,6 +92,8 @@
 #define JS_SELECT_CTLIST_URL @"appCt/selectByAppCiTang"
 //添加上一代or下一代
 #define JS_ADD_NEWMEMBER_URL @"appZp/addAppZuPu"
+//确认自己
+#define JS_insert_URL @"apply/insert"
 //系统消息
 #define JS_SYSMESSAGE_LILST_URL @"appPushRecord/list"
 //申请查看族谱

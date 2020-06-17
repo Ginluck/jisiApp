@@ -192,7 +192,7 @@
         }];
         [weakSelf.CodeBtn didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
             countDownButton.enabled = YES;
-            return @"重新获取";
+            return @"获取验证码";
         }];
     } failure:^(NSError *error) {
         

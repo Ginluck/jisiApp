@@ -182,7 +182,7 @@
     //3
     [self dismissViewControllerAnimated:YES completion:nil];
     //如果是拍照
-    UIImage *image=[info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image=[info objectForKey:UIImagePickerControllerEditedImage];
     /***
      */
     [self uploadImage:image];
@@ -219,6 +219,7 @@
         DLog(@"%@",result);
         DismissHud();
         self.HeadImgStr=result[@"url"];
+        [self.HeadImg sd_setImageWithURL:[NSURL URLWithString:self.HeadImgStr] placeholderImage:[UIImage imageNamed:@"临时占位图"]];
         [self UpdateMyData];
     } failure:^(NSError *error) {
         DismissHud();
@@ -235,7 +236,7 @@
               model.realName=self.Namelab.text;
               model.address=self.AddressLab.text;
               model.headAddress=self.HeadImgStr;
-               [[UserManager shareInstance]saveUser:model];
+            [[UserManager shareInstance]saveUser:model];
           } failure:^(NSError *error) {
               
           }];

@@ -189,7 +189,7 @@
     //3
     [self dismissViewControllerAnimated:YES completion:nil];
     //如果是拍照
-    UIImage *image=[info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image=[info objectForKey:UIImagePickerControllerEditedImage];
     /***
      */
     [self uploadImage:image];
@@ -226,6 +226,7 @@
         DLog(@"%@",result);
         DismissHud();
         self.HeadImgStr=result[@"url"];
+         self.HeadImg.image=image;
     } failure:^(NSError *error) {
         DismissHud();
     }];
