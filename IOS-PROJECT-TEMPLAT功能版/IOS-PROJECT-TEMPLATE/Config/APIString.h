@@ -30,6 +30,9 @@
 
 #define  GETSECURITYCODE_url  @"userApp/GETSECURITYCODE"
 
+
+#define  GETSECURITY_url  @"userApp/GETSECURITY"
+
 //退出登录
 
 #define  exit_url  @"userApp/exit"
