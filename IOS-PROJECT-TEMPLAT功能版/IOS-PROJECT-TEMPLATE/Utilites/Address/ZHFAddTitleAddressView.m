@@ -652,7 +652,6 @@
         NSDictionary *parameters = [[NSDictionary alloc]init];
     NSString * UserID =@"123";
         if (addressID == 1) {
-            ShowMessage(@"加载地区数据中..");
             //获取省份的URL
             addressUrl = @"userApp/SELECT_PROVINCE";
             //请求省份需要传递的参数
@@ -677,7 +676,6 @@
         switch (addressID) {
             case 1:
             {
-                DismissHud();
                 arr =result [@"list"];
                 [self caseProvinceArr:arr];
             }

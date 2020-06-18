@@ -93,7 +93,9 @@
     RZMessageModel *model=self.dataAry[indexPath.row];
     [cell setModel:model type:self.TypeStr];
     cell.lookBtn.tag=100+indexPath.row;
+    cell.lookBtn.tag=10000+indexPath.row;
     [cell.lookBtn addTarget:self action:@selector(GoLook:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.cencelBtn addTarget:self action:@selector(Gocencel:) forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     return cell;
 }
@@ -187,6 +189,17 @@
     }
    
 }
+-(void)Gocencel:(UIButton *)btn
+{
+    RZMessageModel *model=self.dataAry[btn.tag-10000];
+    [RequestHelp POST:update_url parameters:@{@"id":model.id,@"state":@"6"} success:^(id result) {
+        ShowMessage(@"操作成功");
+        [self postDate];
+    } failure:^(NSError *error) {
+       
+    }];
+}
+
 /*
 #pragma mark - Navigation
 

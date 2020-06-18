@@ -36,7 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddPersonCitangController.m"
+<<<<<<< HEAD
             timestampString = "614139611.030589"
+=======
+            timestampString = "613990687.721802"
+>>>>>>> bba5161dd759f9dbfbc5060e9e94843c2b22f48a
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
@@ -52,7 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+<<<<<<< HEAD
             timestampString = "614139611.030658"
+=======
+            timestampString = "613990687.7219141"
+>>>>>>> bba5161dd759f9dbfbc5060e9e94843c2b22f48a
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
@@ -68,7 +76,11 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+<<<<<<< HEAD
                   timestampString = "614139612.052392"
+=======
+                  timestampString = "613989874.867772"
+>>>>>>> bba5161dd759f9dbfbc5060e9e94843c2b22f48a
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -83,7 +95,11 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+<<<<<<< HEAD
                   timestampString = "614139612.056653"
+=======
+                  timestampString = "613989874.870946"
+>>>>>>> bba5161dd759f9dbfbc5060e9e94843c2b22f48a
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -98,7 +114,11 @@
                   moduleName = "IOS-PROJECT-TEMPLATE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ginluck/jisiapp/IOS-PROJECT-TEMPLAT%E5%8A%9F%E8%83%BD%E7%89%88/IOS-PROJECT-TEMPLATE/Class/Home/C/AddFamilyCitangController.m"
+<<<<<<< HEAD
                   timestampString = "614139612.059981"
+=======
+                  timestampString = "613989874.873867"
+>>>>>>> bba5161dd759f9dbfbc5060e9e94843c2b22f48a
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "188"
@@ -131,7 +151,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Home/C/WorshipController.m"
+<<<<<<< HEAD
             timestampString = "614139611.0307339"
+=======
+            timestampString = "613990687.722043"
+>>>>>>> bba5161dd759f9dbfbc5060e9e94843c2b22f48a
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -163,7 +187,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Mine/Settings/V/RZMessageTableViewCell.m"
-            timestampString = "614068092.478037"
+            timestampString = "613990687.722134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -179,28 +203,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOS-PROJECT-TEMPLATE/Class/Message/C/MessageHomeController.m"
-            timestampString = "614068092.478598"
+            timestampString = "613990687.722191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
             landmarkName = "-viewWillAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOS-PROJECT-TEMPLATE/Utilites/HUDManager/RequestHelp.m"
-            timestampString = "614071404.408327"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "+uploadPhotoData:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

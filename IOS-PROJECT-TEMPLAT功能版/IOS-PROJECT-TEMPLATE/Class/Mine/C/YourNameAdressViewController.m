@@ -226,6 +226,7 @@
         DLog(@"%@",result);
         DismissHud();
         self.HeadImgStr=result[@"url"];
+         self.HeadImg.image=image;
     } failure:^(NSError *error) {
         DismissHud();
     }];

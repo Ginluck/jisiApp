@@ -37,7 +37,7 @@
                        break;
             case 2:
                    {
-                       self.stateLab.text=@"申请查看驳回";
+                       self.stateLab.text=@"申请驳回";
                    }
                        break;
             case 3:
@@ -50,6 +50,11 @@
                                   self.stateLab.text=@"已加入族谱";
                               }
                                   break;
+            case 5:
+            {
+                self.stateLab.text=@"申请确认自己";
+            }
+                break;
             
         default:
             break;

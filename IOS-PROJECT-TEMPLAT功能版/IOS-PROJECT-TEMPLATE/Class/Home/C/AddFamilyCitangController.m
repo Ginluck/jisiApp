@@ -252,7 +252,7 @@
     //3
     [self dismissViewControllerAnimated:YES completion:nil];
     //如果是拍照
-    UIImage *image=[info objectForKey:UIImagePickerControllerEditedImage];
+    UIImage *image=[info objectForKey:UIImagePickerControllerOriginalImage];
     /***
      */
     [self uploadImage:image];

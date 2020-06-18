@@ -132,6 +132,10 @@
     {
           [arr addObject:@"发起聊天"];
     }
+    if ([user.userName isEqualToString:member.name])
+    {
+          [arr addObject:@"确认自己"];
+    }
   
     SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:arr];
     actionSheet.itemTextFont =MKFont(13);
@@ -149,13 +153,16 @@
            fvc.member =member;
            fvc.type =@"4";
            [self.navigationController pushViewController:fvc animated:YES];
-//           NSDictionary * param =@{@"type":@"1",@"coverId":member.id,@"userUserId":user.id,@"name":user.realName==nil?@"":user.realName,@"introduce":user.introduce==nil?@"":user.introduce,@"state":member.state,@"jzId":member.jzId,@"deathTime":member.deathTime==nil?@"":member.deathTime,@"birthTime":member.birthTime==nil?@"":member.birthTime,@"sex":member.sex};
-//                [RequestHelp POST:JS_ADD_NEWMEMBER_URL parameters:param success:^(id result) {
-//                    DLog(@"%@",result);
-//                   ShowMessage(@"申请成功");
-//                } failure:^(NSError *error) {
-//                }];
+
        }
+        if ([title isEqualToString:@"确认自己"]) {
+                            NSDictionary * param =@{@"jzId":member.jzId,@"userUserId":user.id,@"zpId":member.id,@"state":@"5"};
+                                   [RequestHelp POST:JS_insert_URL parameters:param success:^(id result) {
+                                       DLog(@"%@",result);
+                                      ShowMessage(@"操作成功");
+                                   } failure:^(NSError *error) {
+                                   }];
+               }
         if ([title isEqualToString:@"发起聊天"]) {
             EMChatViewController *chatController = [[EMChatViewController alloc] initWithConversationId:member.userPhone type:EMConversationTypeChat createIfNotExist:YES];
             chatController.userName =member.name;

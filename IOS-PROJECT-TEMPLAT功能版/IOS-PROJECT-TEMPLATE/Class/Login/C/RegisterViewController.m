@@ -131,12 +131,12 @@
 - (IBAction)XieYiBtn:(UIButton *)sender {
     if (sender.selected) {
       
-        [sender setTitle:@"✓" forState:UIControlStateNormal];
-        sender.backgroundColor=K_Prokect_MainColor;
+        [sender setTitle:@"" forState:UIControlStateNormal];
+        sender.backgroundColor=[UIColor whiteColor];
     }else
     {
-        [sender setTitle:@"" forState:UIControlStateNormal];
-               sender.backgroundColor=[UIColor whiteColor];
+        [sender setTitle:@"✓" forState:UIControlStateNormal];
+        sender.backgroundColor=K_Prokect_MainColor;
     }
     sender.selected =!sender.selected;
 }
@@ -158,6 +158,10 @@
               ShowMessage(@"密码不能少于8位");
              return;
          }
+    if (!self.XieYiBtn.selected) {
+        ShowMessage(@"请勾选协议");
+        return;
+    }
     NSDictionary * param  =@{@"userPhone":self.NumberTF.text,@"password":[self.PwdTF.text encryptAESWithkey:[UIUtils getCurrentTimes]],@"validCode":self.CodeTF.text};
     [RequestHelp POST:@"userApp/register" parameters:param success:^(id result) {
         DLog(@"%@",result);
@@ -188,7 +192,7 @@
         }];
         [weakSelf.CodeBtn didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
             countDownButton.enabled = YES;
-            return @"重新获取";
+            return @"获取验证码";
         }];
     } failure:^(NSError *error) {
         

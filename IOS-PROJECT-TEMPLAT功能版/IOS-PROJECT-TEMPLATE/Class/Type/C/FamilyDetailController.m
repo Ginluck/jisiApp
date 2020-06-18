@@ -96,7 +96,6 @@
         _TxtView.text =self.model.introduce;
         _TxtView.placeholder=@"写点什么吧...";
         _TxtView.placeholderColor=[UIColor lightGrayColor];
-        _TxtView.backgroundColor =[UIColor clearColor];
         [_bottomView addSubview:_TxtView];
         if ([self.model.isAdmin isEqualToString:@"1"]) {
             _TxtView.selectable=YES;

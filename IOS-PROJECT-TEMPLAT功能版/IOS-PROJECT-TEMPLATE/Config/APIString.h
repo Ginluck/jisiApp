@@ -15,8 +15,10 @@
 //#define SERVER_URL @"http://121.36.59.7:8085/"
 
 
+//#define SERVER_URL @"http://121.36.59.7:8085/"
+
 #define IMAGE_URL @"http://192.168.0.2:8085/appUpload/FILE_UPLOAD"
-//#define IMAGE_URL @"http://121.36.59.7:8085/appUpload/FILE_UPLOAD"
+
 
 
 
@@ -91,6 +93,8 @@
 #define JS_SELECT_CTLIST_URL @"appCt/selectByAppCiTang"
 //添加上一代or下一代
 #define JS_ADD_NEWMEMBER_URL @"appZp/addAppZuPu"
+//确认自己
+#define JS_insert_URL @"apply/insert"
 //系统消息
 #define JS_SYSMESSAGE_LILST_URL @"appPushRecord/list"
 //申请查看族谱
