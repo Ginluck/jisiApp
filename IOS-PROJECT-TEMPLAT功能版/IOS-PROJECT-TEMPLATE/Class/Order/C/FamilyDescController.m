@@ -28,16 +28,6 @@
 -(void)setUICompoents
 {
     self.lookBtn.hidden=NO;
-    if ([self.model.contentType integerValue]>0)
-    {
-        self.lookBtn.hidden=YES;
-    }
-    else
-    {
-        if (self.model.userType !=0) {
-            self.lookBtn.hidden=YES;
-        }
-    }
     self.nameTF.text =self.model.name;
     [self.addrBtn setTitle:self.model.pcaName forState:UIControlStateNormal];
     [self.detailAddr setTitle:self.model.address forState:UIControlStateNormal];
@@ -45,6 +35,17 @@
 }
 -(IBAction)jumpClick
 {
+    if (self.model.contentType!=0)
+    {
+        ShowMessage(@"您已加入该家族");
+        return;
+    }
+    if (self.model.userType!=0)
+    {
+        ShowMessage(@"您已申请该家族，请勿重新申请");
+        return;
+    }
+    
     ApplyController * AVC =[ApplyController new];
     AVC.model =self.model;
     [self.navigationController pushViewController:AVC animated:YES];

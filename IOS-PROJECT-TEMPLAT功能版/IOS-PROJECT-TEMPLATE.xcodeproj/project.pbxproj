@@ -632,6 +632,8 @@
 		71DA413A24970C3B00D42D55 /* RecordMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */; };
 		71DA413B24970C3B00D42D55 /* RecordMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */; };
 		71DA413D24975FC100D42D55 /* 3858567684.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71DA413C24975FC100D42D55 /* 3858567684.mp3 */; };
+		71DA4140249B168F00D42D55 /* OpinionFeedBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA413F249B168F00D42D55 /* OpinionFeedBackView.m */; };
+		71DA4142249B16CF00D42D55 /* OpinionFeedBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA4141249B16CF00D42D55 /* OpinionFeedBackView.xib */; };
 		71E55B81246E658000255230 /* HelpHouseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B6E246E658000255230 /* HelpHouseCityModel.m */; };
 		71E55B82246E658000255230 /* SheZhiNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55B71246E658000255230 /* SheZhiNameViewController.xib */; };
 		71E55B83246E658000255230 /* MyIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B72246E658000255230 /* MyIntroductionViewController.m */; };
@@ -1648,6 +1650,9 @@
 		71DA413824970C3B00D42D55 /* RecordMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMoneyViewController.m; sourceTree = "<group>"; };
 		71DA413924970C3B00D42D55 /* RecordMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordMoneyViewController.xib; sourceTree = "<group>"; };
 		71DA413C24975FC100D42D55 /* 3858567684.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3858567684.mp3; sourceTree = "<group>"; };
+		71DA413E249B168F00D42D55 /* OpinionFeedBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpinionFeedBackView.h; sourceTree = "<group>"; };
+		71DA413F249B168F00D42D55 /* OpinionFeedBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpinionFeedBackView.m; sourceTree = "<group>"; };
+		71DA4141249B16CF00D42D55 /* OpinionFeedBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpinionFeedBackView.xib; sourceTree = "<group>"; };
 		71E55B6E246E658000255230 /* HelpHouseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpHouseCityModel.m; sourceTree = "<group>"; };
 		71E55B6F246E658000255230 /* HelpHouseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpHouseCityModel.h; sourceTree = "<group>"; };
 		71E55B71246E658000255230 /* SheZhiNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SheZhiNameViewController.xib; sourceTree = "<group>"; };
@@ -3100,6 +3105,9 @@
 				71EC5FA0247BA23E00407D7F /* BuyJPView.xib */,
 				715F3CE224874C3700CC90B2 /* PaiWeiView.h */,
 				715F3CE324874C3700CC90B2 /* PaiWeiView.m */,
+				71DA413E249B168F00D42D55 /* OpinionFeedBackView.h */,
+				71DA413F249B168F00D42D55 /* OpinionFeedBackView.m */,
+				71DA4141249B16CF00D42D55 /* OpinionFeedBackView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -4051,6 +4059,7 @@
 				715EED0524750E02009CF31A /* animate_00030.png in Resources */,
 				715EECFB24750E02009CF31A /* bg_micro@3x.png in Resources */,
 				715EECFD24750E02009CF31A /* floating_voice@3x.png in Resources */,
+				71DA4142249B16CF00D42D55 /* OpinionFeedBackView.xib in Resources */,
 				715EED3E24750E02009CF31A /* animate_00038.png in Resources */,
 				711B0BA624693FA8009C84DB /* GongFengTwoViewController.xib in Resources */,
 				715EED5C24750E02009CF31A /* kbps_white@2x.png in Resources */,
@@ -4630,6 +4639,7 @@
 				71DA413A24970C3B00D42D55 /* RecordMoneyViewController.m in Sources */,
 				71534B11239F66D1009AF361 /* NSObject+PerformBlock.m in Sources */,
 				71BEE5A722CB61EF00E1B9E3 /* DLLRUCache.m in Sources */,
+				71DA4140249B168F00D42D55 /* OpinionFeedBackView.m in Sources */,
 				711B0A802469294C009C84DB /* AboutMeViewController.m in Sources */,
 				711B0B45246929E8009C84DB /* CountyModel.m in Sources */,
 				71BEE58A22CB5D3900E1B9E3 /* TPNavigationController.m in Sources */,

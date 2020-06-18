@@ -477,7 +477,7 @@
         CGFloat image_Height =310*(Screen_Height-K_NaviHeight)/1560;
 
         UIImageView * image =[[UIImageView alloc]init];
-    if ([self.model.type isEqualToString:@"1"])
+    if ([self.model.type isEqualToString:@"1"]   || (self.DetailModel.zpList2.count ==0 &&[self.model.type isEqualToString:@"0"]))
     {
         [image sd_setImageWithURL:[NSURL URLWithString:self.DetailModel.img]];
     }

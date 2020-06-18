@@ -69,7 +69,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 1;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -79,7 +79,7 @@
 {
     
     GongFengOneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([GongFengOneTableViewCell class]) forIndexPath:indexPath];
-    GongFengListModel *model=self.dataAry[indexPath.row];
+    GongFengListModel *model=self.dataAry[indexPath.section];
        [cell setModel:model];
     cell.selectionStyle  =UITableViewCellSeparatorStyleNone;
     return cell;
