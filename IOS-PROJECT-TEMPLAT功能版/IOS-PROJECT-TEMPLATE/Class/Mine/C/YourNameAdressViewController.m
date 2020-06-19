@@ -66,7 +66,6 @@
             self.NumberLab.text=model.userPhone;
             self.Namelab.text=model.realName;
             self.AddressLab.text=model.address;
-            self.TxtView.text=model.introduce;
            self.HeadImgStr=model.headAddress;
            if (model.realName ==nil ||model.realName ==NULL||model.realName.length==0 ) {
                self.Namelab.text=@"";
