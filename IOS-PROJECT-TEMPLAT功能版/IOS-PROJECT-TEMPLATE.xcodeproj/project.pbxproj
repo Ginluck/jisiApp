@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,10 +29,11 @@
 		1864E40924935DCC00708D52 /* FirstTypeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864E40724935DCC00708D52 /* FirstTypeHomeViewController.xib */; };
 		1864E40D24935ECD00708D52 /* FirstTypeHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E40B24935ECD00708D52 /* FirstTypeHomeTableViewCell.m */; };
 		1864E40E24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */; };
+		18B8E8A824985E4500BDE399 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8E8A724985E4500BDE399 /* MobileCoreServices.framework */; };
 		18C1F40424768FEB00B16077 /* MineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F40324768FEB00B16077 /* MineDataModel.m */; };
 		18F930632477D942007BA7FF /* TeasingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F930602477D941007BA7FF /* TeasingViewController.xib */; };
 		18F930642477D942007BA7FF /* TeasingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F930622477D942007BA7FF /* TeasingViewController.m */; };
-		43D7FC46BAC818DB99D825DD /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005E22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a */; };
+		43D7FC46BAC818DB99D825DD /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		71005EC0246A4706002F0BF1 /* JisiProController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71005EBE246A4706002F0BF1 /* JisiProController.m */; };
 		71005EC1246A4706002F0BF1 /* JisiProController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71005EBF246A4706002F0BF1 /* JisiProController.xib */; };
 		71005EC4246A4732002F0BF1 /* XingliProController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71005EC3246A4732002F0BF1 /* XingliProController.m */; };
@@ -187,8 +188,6 @@
 		7125005922DC68120053B3EA /* libMasonry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005822DC68120053B3EA /* libMasonry.a */; };
 		7125005B22DC68120053B3EA /* libMJExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005A22DC68120053B3EA /* libMJExtension.a */; };
 		7125005D22DC68120053B3EA /* libMJRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005C22DC68120053B3EA /* libMJRefresh.a */; };
-		7125005F22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125005E22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a */; };
-		7125006122DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006022DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a */; };
 		7125006322DC68120053B3EA /* libpop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006222DC68120053B3EA /* libpop.a */; };
 		7125006522DC68120053B3EA /* libReachability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006422DC68120053B3EA /* libReachability.a */; };
 		7125006722DC68120053B3EA /* libSDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006622DC68120053B3EA /* libSDCycleScrollView.a */; };
@@ -680,7 +679,7 @@
 		71EC5FA1247BA23E00407D7F /* BuyJPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71EC5FA0247BA23E00407D7F /* BuyJPView.xib */; };
 		8B7904F6CB736013CCA7923B /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21506B8CD3DCE940FF05FA63 /* libPods-IOS-PROJECT-TEMPLATETests.a */; };
 		8C0F704AC3E8DD30114C5F5A /* libPods-IOS-PROJECT-TEMPLATE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192026675E89DE0F104F7AA6 /* libPods-IOS-PROJECT-TEMPLATE.a */; };
-		B58C5CFA15C764C29F37CCC6 /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7125006022DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a */; };
+		B58C5CFA15C764C29F37CCC6 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		BF5035499122EDD2CD3369EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E330E6BAB19EA25C87E5B13 /* libPods-IOS-PROJECT-TEMPLATEUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -737,6 +736,7 @@
 		1864E40A24935ECD00708D52 /* FirstTypeHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstTypeHomeTableViewCell.h; sourceTree = "<group>"; };
 		1864E40B24935ECD00708D52 /* FirstTypeHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstTypeHomeTableViewCell.m; sourceTree = "<group>"; };
 		1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTypeHomeTableViewCell.xib; sourceTree = "<group>"; };
+		18B8E8A724985E4500BDE399 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		18C1F40224768FEB00B16077 /* MineDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineDataModel.h; sourceTree = "<group>"; };
 		18C1F40324768FEB00B16077 /* MineDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineDataModel.m; sourceTree = "<group>"; };
 		18F930602477D941007BA7FF /* TeasingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeasingViewController.xib; sourceTree = "<group>"; };
@@ -1011,8 +1011,6 @@
 		7125005822DC68120053B3EA /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125005A22DC68120053B3EA /* libMJExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMJExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125005C22DC68120053B3EA /* libMJRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMJRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7125005E22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-IOS-PROJECT-TEMPLATETests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7125006022DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-IOS-PROJECT-TEMPLATEUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125006222DC68120053B3EA /* libpop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libpop.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125006422DC68120053B3EA /* libReachability.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReachability.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7125006622DC68120053B3EA /* libSDCycleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDCycleScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1741,8 +1739,6 @@
 				7125005B22DC68120053B3EA /* libMJExtension.a in Frameworks */,
 				715EE9AA24750D7A009CF31A /* libopencore-amrwb.a in Frameworks */,
 				7125005D22DC68120053B3EA /* libMJRefresh.a in Frameworks */,
-				7125005F22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */,
-				7125006122DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */,
 				7125006322DC68120053B3EA /* libpop.a in Frameworks */,
 				7125006522DC68120053B3EA /* libReachability.a in Frameworks */,
 				715EE9AB24750D7A009CF31A /* libopencore-amrnb.a in Frameworks */,
@@ -1751,6 +1747,7 @@
 				7125006B22DC68120053B3EA /* libSVProgressHUD.a in Frameworks */,
 				7125006D22DC68120053B3EA /* libWMPageController.a in Frameworks */,
 				7125006F22DC68120053B3EA /* libYYModel.a in Frameworks */,
+				18B8E8A824985E4500BDE399 /* MobileCoreServices.framework in Frameworks */,
 				8C0F704AC3E8DD30114C5F5A /* libPods-IOS-PROJECT-TEMPLATE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1760,7 +1757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B7904F6CB736013CCA7923B /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */,
-				43D7FC46BAC818DB99D825DD /* libPods-IOS-PROJECT-TEMPLATETests.a in Frameworks */,
+				43D7FC46BAC818DB99D825DD /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1769,7 +1766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5035499122EDD2CD3369EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */,
-				B58C5CFA15C764C29F37CCC6 /* libPods-IOS-PROJECT-TEMPLATEUITests.a in Frameworks */,
+				B58C5CFA15C764C29F37CCC6 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1845,6 +1842,7 @@
 		3C15AFF04DFFE3DA4783E46D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18B8E8A724985E4500BDE399 /* MobileCoreServices.framework */,
 				7125004E22DC68120053B3EA /* libAFNetworking.a */,
 				7125005022DC68120053B3EA /* libDTCoreText.a */,
 				7125005222DC68120053B3EA /* libDTFoundation.a */,
@@ -1853,8 +1851,6 @@
 				7125005822DC68120053B3EA /* libMasonry.a */,
 				7125005A22DC68120053B3EA /* libMJExtension.a */,
 				7125005C22DC68120053B3EA /* libMJRefresh.a */,
-				7125005E22DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATETests.a */,
-				7125006022DC68120053B3EA /* libPods-IOS-PROJECT-TEMPLATEUITests.a */,
 				7125006222DC68120053B3EA /* libpop.a */,
 				7125006422DC68120053B3EA /* libReachability.a */,
 				7125006622DC68120053B3EA /* libSDCycleScrollView.a */,
@@ -3760,8 +3756,8 @@
 				71BEE51822CB51EB00E1B9E3 /* Sources */,
 				71BEE51922CB51EB00E1B9E3 /* Frameworks */,
 				71BEE51A22CB51EB00E1B9E3 /* Resources */,
-				9BB08333F113D903B052943A /* [CP] Copy Pods Resources */,
-				BF9844FE2A031D23DA963FDB /* [CP] Embed Pods Frameworks */,
+				21F1586A5FFCFFDA88B8DFE0 /* [CP] Embed Pods Frameworks */,
+				889A521D7513936AC56D6E7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3847,6 +3843,23 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				ar,
+				"zh-Hans",
+				ja,
+				es,
+				da,
+				it,
+				ko,
+				"zh-Hant",
+				tr,
+				pl,
+				vi,
+				ru,
+				fr,
+				id,
+				nl,
+				pt,
 			);
 			mainGroup = 71BEE51322CB51EB00E1B9E3;
 			productRefGroup = 71BEE51D22CB51EB00E1B9E3 /* Products */;
@@ -4223,6 +4236,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21F1586A5FFCFFDA88B8DFE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4CCAB1D312B52683D73ADAF8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4245,6 +4275,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		889A521D7513936AC56D6E7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		94060A59D714CC0D9F68AD87 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4265,56 +4312,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9BB08333F113D903B052943A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				"${PODS_ROOT}/TencentMap-SDK/sdk/QMapKit.framework/QMapKit.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMapKit.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF9844FE2A031D23DA963FDB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-frameworks.sh",
-				"${PODS_ROOT}/Hyphenate/Hyphenate.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hyphenate.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOS-PROJECT-TEMPLATE/Pods-IOS-PROJECT-TEMPLATE-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E125E724BBA37AE76D770F7C /* [CP] Check Pods Manifest.lock */ = {
