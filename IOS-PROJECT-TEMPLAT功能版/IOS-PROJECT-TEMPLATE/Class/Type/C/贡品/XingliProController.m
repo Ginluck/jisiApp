@@ -71,6 +71,7 @@
         _tableView.emptyDataSetSource =self;
         _tableView.emptyDataSetDelegate=self;
         _tableView.backgroundColor =kBGViewCOLOR;
+        _tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
         _tableView.showsVerticalScrollIndicator = NO;
         if (@available(iOS 11, *)) {
             _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -113,7 +114,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 30.f;
+    return 40.f;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
@@ -121,9 +122,14 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
+    UIView * view =[[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
     
-    UILabel * lab =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, 30)];
+    UILabel * lab =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150, 30)];
+    view.backgroundColor =K_Prokect_MainColor;
+    lab.center =CGPointMake(Screen_Width/2, 25);
+    lab.backgroundColor =[UIColor whiteColor];
+    lab.layer.cornerRadius =5.;
+    lab.layer.masksToBounds=YES;
     lab.textAlignment =NSTextAlignmentCenter;
     [lab setFont:MKFont(15)];
     lab.textColor =K_Prokect_MainColor;

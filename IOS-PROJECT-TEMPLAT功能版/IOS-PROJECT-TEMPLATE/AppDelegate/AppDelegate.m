@@ -39,6 +39,11 @@
     [[EMClient sharedClient] initializeSDKWithOptions:options];
     //配置极光推送
     [self setJPush:launchOptions];
+    //存储启动时间
+    NSString * launchTime = [UIUtils getCurrentTimes];
+    NSDictionary * launchDic =@{@"launchTime":launchTime,@"isOut":@"0"};
+    [[NSUserDefaults standardUserDefaults]setObject:launchDic forKey:@"launch_Dic"];
+
     //展示首图
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ViewController *vc = [ViewController new];

@@ -634,6 +634,8 @@
 		71DA413D24975FC100D42D55 /* 3858567684.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71DA413C24975FC100D42D55 /* 3858567684.mp3 */; };
 		71DA4140249B168F00D42D55 /* OpinionFeedBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA413F249B168F00D42D55 /* OpinionFeedBackView.m */; };
 		71DA4142249B16CF00D42D55 /* OpinionFeedBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DA4141249B16CF00D42D55 /* OpinionFeedBackView.xib */; };
+		71DA4146249B4ADE00D42D55 /* SignModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA4145249B4ADE00D42D55 /* SignModel.m */; };
+		71DA4149249B4B6400D42D55 /* SigninChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DA4148249B4B6400D42D55 /* SigninChild.m */; };
 		71E55B81246E658000255230 /* HelpHouseCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B6E246E658000255230 /* HelpHouseCityModel.m */; };
 		71E55B82246E658000255230 /* SheZhiNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E55B71246E658000255230 /* SheZhiNameViewController.xib */; };
 		71E55B83246E658000255230 /* MyIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E55B72246E658000255230 /* MyIntroductionViewController.m */; };
@@ -1653,6 +1655,10 @@
 		71DA413E249B168F00D42D55 /* OpinionFeedBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpinionFeedBackView.h; sourceTree = "<group>"; };
 		71DA413F249B168F00D42D55 /* OpinionFeedBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpinionFeedBackView.m; sourceTree = "<group>"; };
 		71DA4141249B16CF00D42D55 /* OpinionFeedBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpinionFeedBackView.xib; sourceTree = "<group>"; };
+		71DA4144249B4ADE00D42D55 /* SignModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignModel.h; sourceTree = "<group>"; };
+		71DA4145249B4ADE00D42D55 /* SignModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignModel.m; sourceTree = "<group>"; };
+		71DA4147249B4B6400D42D55 /* SigninChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SigninChild.h; sourceTree = "<group>"; };
+		71DA4148249B4B6400D42D55 /* SigninChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SigninChild.m; sourceTree = "<group>"; };
 		71E55B6E246E658000255230 /* HelpHouseCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpHouseCityModel.m; sourceTree = "<group>"; };
 		71E55B6F246E658000255230 /* HelpHouseCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpHouseCityModel.h; sourceTree = "<group>"; };
 		71E55B71246E658000255230 /* SheZhiNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SheZhiNameViewController.xib; sourceTree = "<group>"; };
@@ -1825,13 +1831,6 @@
 				1864E40C24935ECD00708D52 /* FirstTypeHomeTableViewCell.xib */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		18C1F4062477CB5200B16077 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		3925BBAB13672EB3637F5948 /* Pods */ = {
@@ -3068,7 +3067,7 @@
 		719D4B27239F7573003C6803 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				18C1F4062477CB5200B16077 /* M */,
+				71DA4143249B4AC200D42D55 /* M */,
 				18C1F4052477CB4D00B16077 /* V */,
 				71E55B6C246E658000255230 /* MyData */,
 				711B0B9624693FA8009C84DB /* GongFeng */,
@@ -3625,6 +3624,17 @@
 				71BEE5A322CB61EF00E1B9E3 /* DLFixedTabbarView.m */,
 			);
 			path = DLTabbarView;
+			sourceTree = "<group>";
+		};
+		71DA4143249B4AC200D42D55 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				71DA4144249B4ADE00D42D55 /* SignModel.h */,
+				71DA4145249B4ADE00D42D55 /* SignModel.m */,
+				71DA4147249B4B6400D42D55 /* SigninChild.h */,
+				71DA4148249B4B6400D42D55 /* SigninChild.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		71E55B6C246E658000255230 /* MyData */ = {
@@ -4565,6 +4575,7 @@
 				719D4B40239F7601003C6803 /* PersonCenterController.m in Sources */,
 				71EC5F9F247B9EE000407D7F /* BuyJPView.m in Sources */,
 				71BEE5A822CB61EF00E1B9E3 /* DLTabedSlideView.m in Sources */,
+				71DA4146249B4ADE00D42D55 /* SignModel.m in Sources */,
 				711B0B8324692B0C009C84DB /* NSString+Attributes.m in Sources */,
 				713F31CC247252D400A00867 /* FamilyTreeModel.m in Sources */,
 				715EE9DC24750D7A009CF31A /* EMChineseToPinyin.m in Sources */,
@@ -4666,6 +4677,7 @@
 				71BEE57E22CB597000E1B9E3 /* UIButton+layout.m in Sources */,
 				711B0B7C24692B0C009C84DB /* PYSearchSuggestionViewController.m in Sources */,
 				71EC5F96247771DF00407D7F /* MineDataModel.m in Sources */,
+				71DA4149249B4B6400D42D55 /* SigninChild.m in Sources */,
 				71005EC4246A4732002F0BF1 /* XingliProController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

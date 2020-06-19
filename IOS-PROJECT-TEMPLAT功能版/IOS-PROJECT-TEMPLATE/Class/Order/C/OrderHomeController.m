@@ -41,6 +41,7 @@
     button.layer.masksToBounds=YES;
     [button addTarget:self action:@selector(createFamily) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    [self requestData];
 }
 -(void)createFamily
 {
@@ -50,7 +51,41 @@
     [self.navigationController pushViewController:fvc animated:YES];
 }
 
-
+-(void)requestData
+{
+    [RequestHelp POST:JS_FAMILY_LIST_URL2 parameters:@{@"pageNum":@"1",@"pageRow":@"999",@"id":@""} success:^(id result) {
+        MKLog(@"%@",result);
+        [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[FamilyListModel class] json:result[@"list"]]];
+        
+        if (self.dataAry.count)
+        {
+            for (int i=0; i<self.dataAry.count; i++)
+            {
+                FamilyListModel * model =self.dataAry[i];
+                QPointAnnotation *pointAnnotation = [[QPointAnnotation alloc] init];
+                CLLocationCoordinate2D point = (CLLocationCoordinate2D){[model.lat floatValue],[model.lon floatValue]};
+                [self.nameAry addObject:model.name];
+                pointAnnotation.coordinate = point;
+                // 点标注的标题
+                pointAnnotation.title = model.name;
+                // 副标题
+                pointAnnotation.subtitle = model.introduce;
+                // 将点标记添加到地图中
+                [self.mapView addAnnotation:pointAnnotation];
+                if (i==0)
+                {
+                    [self.mapView setCenterCoordinate:point];
+                }
+            }
+        }
+        else
+        {
+            ShowMessage(@"未搜索到相应家族");
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
 -(NSMutableArray *)nameAry
 {
     if (!_nameAry) {
@@ -119,6 +154,10 @@
                         [self.mapView setCenterCoordinate:point];
                     }
                 }
+            }
+            else
+            {
+                ShowMessage(@"未搜索到相应家族");
             }
         } failure:^(NSError *error) {
             

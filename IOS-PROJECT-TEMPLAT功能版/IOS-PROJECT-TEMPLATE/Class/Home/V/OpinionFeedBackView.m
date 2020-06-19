@@ -7,9 +7,21 @@
 //
 
 #import "OpinionFeedBackView.h"
+@interface OpinionFeedBackView()
 
+
+@end
 @implementation OpinionFeedBackView
 
+
+
+
+-(IBAction)click:(UIButton*)sender
+{
+    if (self.delegate) {
+        [self.delegate opinionViewClick:sender];
+    }
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -86,7 +86,8 @@
 -(FSCalendar *)calendar
 {
     if (!_calendar) {
-        _calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 0, 280, 280)];
+        _calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _calendar.center =CGPointMake(self.frame.size.width/2, 140);
         _calendar.backgroundColor = [UIColor whiteColor];
         _calendar.dataSource = self;
         _calendar.delegate = self;

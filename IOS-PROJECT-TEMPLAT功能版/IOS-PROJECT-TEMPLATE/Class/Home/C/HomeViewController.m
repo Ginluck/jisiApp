@@ -16,23 +16,35 @@
 #import "AddFamilyCitangController.h"
 #import "WorshipController.h"
 #import "SJActionSheet.h"
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+#import "NSDate+CommonDate.h"
+#import "OpinionFeedBackView.h"
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate,OpinionViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray  * dataAry ;
 @property(nonatomic,assign)NSInteger  page;
 @property(nonatomic,strong)HomeTableHeaderView  * headerView;
+@property(nonatomic,strong)UIButton *  bgButton;
+@property(nonatomic,strong)OpinionFeedBackView  * oView;
 @property(nonatomic,strong)AVAudioPlayer *player;
 @end
 
 @implementation HomeViewController
-
+-(UIButton *)bgButton
+{
+    if (!_bgButton) {
+        _bgButton =[UIButton buttonWithType:UIButtonTypeCustom];
+        _bgButton .frame =CGRectMake(0, 0, Screen_Width, Screen_Height);
+        _bgButton.backgroundColor =COLOR(0, 0, 0, 0.6);
+//        [_bgButton addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _bgButton;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationTitleView:@"祠堂"];
     [self addNavigationItemWithImageName:@"音乐图标" itemType:kNavigationItemTypeLeft action:@selector(soundClick)];
     [self.view addSubview:self.tableView];
     [self regisNib];
-    [self postDate];
     self.tableView.mj_header =[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self postDate];
     }];
@@ -50,7 +62,35 @@
     [self.view addSubview:button];
     //     Do any additional setup after loading the view from its nib.
 }
-
+-(void)opinionViewClick:(UIButton *)button
+{
+    if (button.tag ==9)
+    {
+        UserModel * model =[[UserManager shareInstance]getUser];
+        if (!self.oView.feedView.text.length) {
+            ShowMessage(@"请输入反馈意见");return;
+        }
+        [RequestHelp POST:JS_FEEDBACK_URL parameters:@{@"content":self.oView.feedView.text,@"userUserId":model.id} success:^(id result) {
+            DLog(@"%@",result);
+            ShowMessage(@"反馈成功");
+            NSDictionary * dic=@{@"launchTime":[UIUtils getCurrentTimes],@"isOut":@"1"};
+            [[NSUserDefaults standardUserDefaults]setObject:dic forKey:@"launch_Dic"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            [self.oView removeFromSuperview];
+            [self.bgButton removeFromSuperview];
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+    else
+    {
+        NSDictionary * dic=@{@"launchTime":[UIUtils getCurrentTimes],@"isOut":@"0"};
+        [[NSUserDefaults standardUserDefaults]setObject:dic forKey:@"launch_Dic"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [self.oView removeFromSuperview];
+        [self.bgButton removeFromSuperview];
+    }
+}
 -(void)click
 {
     SJActionSheet *actionSheet = [[SJActionSheet alloc] initSheetWithTitle:nil style:SJSheetStyleDefault itemTitles:@[@"创建个人祠堂",@"创建家族私人祠堂"]];
@@ -72,35 +112,6 @@
             [self.navigationController pushViewController:avc animated:YES];
         }
     }];
-//    //显示弹出框列表选择
-//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"创建祠堂"
-//                                                                   message:nil
-//                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-//
-//    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
-//                                                         handler:^(UIAlertAction * action) {
-//                                                             //响应事件
-//                                                             NSLog(@"action = %@", action);
-//                                                         }];
-//    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"新增个人祠堂" style:UIAlertActionStyleDestructive
-//                                                         handler:^(UIAlertAction * action) {
-//                                                             //响应事件
-//                                                             AddPersonCitangController * avc =[AddPersonCitangController new];
-//                                                             avc.hidesBottomBarWhenPushed =YES;
-//                                                             [self.navigationController pushViewController:avc animated:YES];
-//
-//                                                         }];
-//    UIAlertAction* saveAction = [UIAlertAction actionWithTitle:@"新增家族祠堂" style:UIAlertActionStyleDefault
-//                                                       handler:^(UIAlertAction * action) {
-//                                                           //响应事件
-//                                                           AddFamilyCitangController * avc =[AddFamilyCitangController new];
-//                                                           avc.hidesBottomBarWhenPushed =YES;
-//                                                           [self.navigationController pushViewController:avc animated:YES];
-//                                                       }];
-//    [alert addAction:saveAction];
-//    [alert addAction:cancelAction];
-//    [alert addAction:deleteAction];
-//    [self presentViewController:alert animated:YES completion:nil];
 }
 -(AVAudioPlayer *)player
 {
@@ -127,6 +138,17 @@
         _headerView =[[[NSBundle mainBundle] loadNibNamed:@"HomeTableHeaderView" owner:self options:nil] firstObject];
     }
     return _headerView;
+}
+
+-(OpinionFeedBackView *)oView
+{
+    if (!_oView) {
+        _oView =[[[NSBundle mainBundle] loadNibNamed:@"OpinionFeedBackView" owner:self options:nil] firstObject];
+        _oView.frame =CGRectMake(0, 0, 240, 320);
+        _oView.center =CGPointMake(Screen_Width/2, Screen_Height/2);
+        _oView.delegate =self;
+    }
+    return _oView;
 }
 -(UITableView *)tableView
 {
@@ -248,7 +270,9 @@
             [self.dataAry addObjectsFromArray:[NSArray yy_modelArrayWithClass:[CitangListModel class] json:result[@"list"]]];
             if (self.dataAry.count==0) {
                 [self.tabBarController setSelectedIndex:2];
+                return ;
             }
+            [self refreshOUTView];
             [self.tableView reloadData];
             [self endRefresh];
         } failure:^(NSError *error) {
@@ -256,9 +280,33 @@
         }];
 }
 
+
+-(void)refreshOUTView
+{
+//      NSDictionary * launchDic =@{@"launchTime":launchTime,@"isOut":@"0"};
+    NSDictionary * dic =[[NSUserDefaults standardUserDefaults]objectForKey:@"launch_Dic"];
+    if ([dic[@"isOut"] isEqualToString:@"1"])
+    {
+        return;
+    }
+//    NSCalendarUnitYear| NSCalendarUnitMonth| NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|
+    NSString  * oldTime =dic[@"launchTime"];
+    NSString *  nTime =[UIUtils getCurrentTimes];
+    
+    NSDate * oldDate =[NSDate dateWithFormat:@"yyyy-MM-dd HH:mm:ss" dateString:oldTime];
+    NSDate * nDate =[NSDate dateWithFormat:@"yyyy-MM-dd HH:mm:ss" dateString:nTime];
+    NSCalendar *cal=[NSCalendar currentCalendar];
+    unsigned int unitFlags = NSCalendarUnitSecond;
+    NSDateComponents *d = [cal components:unitFlags fromDate:oldDate toDate:nDate options:0];
+    if ([d second]>15)
+    {
+        [[[UIApplication sharedApplication]keyWindow]addSubview:self.bgButton];
+        [self.bgButton addSubview:self.oView];
+    }
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
-   
+     [self postDate];
 }
 @end
